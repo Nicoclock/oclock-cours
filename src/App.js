@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Switch, Route, Redirect, NavLink} from "react-router-dom";
+
+import {SocleJS, ReactJS} from "./cours";
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <NavLink className="App-link" to="/js">Socle JS</NavLink>
+        <NavLink className="App-link" to="/react">ReactJS</NavLink>
       </header>
+      <main className="App-main">
+        <Switch>
+          <Route path="/js" exact component={SocleJS} />
+          <Route path="/react" exact component={ReactJS} />
+          <Redirect to="/" />
+        </Switch>
+      </main>
     </div>
   );
 }

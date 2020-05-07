@@ -1,0 +1,43 @@
+.Name {
+    width: 96%;
+    margin: 0px auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold
+}
+
+.Name img {
+    height: 50%;
+    width: auto;
+}
+
+.Name label {
+    width: 70%;
+    text-align: center;
+}
+
+.Title {
+    width: 96%;
+    margin: 0px auto;
+    height: 40px;
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+.Episode {
+    width: 80%;
+    margin: 0px auto;
+    height: 30px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.Episode:hover, .Episode.Active {
+    background-color: #ccc;
+}
