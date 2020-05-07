@@ -1,8 +1,13 @@
-import React from "react";
+import React, {Fragment} from "react";
+
+import "../../../style.scss"
 
 const S6E02 = props => {
     return (
-        <div>S6E02</div>
+        <Fragment>
+            <div className="Title">Models</div>
+            <div className="Inner"></div>
+        </Fragment>
     );
 }
 

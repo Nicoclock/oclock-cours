@@ -11,6 +11,7 @@ class Saison extends Component {
 
     state = {
         showTitle: this.props.saison === this.props.code,
+        // showEpisodes: true
         showEpisodes: this.props.saison === this.props.code
     }
 

@@ -1,9 +1,14 @@
-import React from "react";
+import React, {Fragment} from "react";
 
-const S1E03 = props => {
+import "../../../style.scss"
+
+const S1E03 = () => {
     return (
-        <div>S1E03</div>
-    );
+        <Fragment>
+        <div className="Title">Box-model</div>
+        <div className="Inner"></div>
+    </Fragment>
+);
 }
 
 export default S1E03;
