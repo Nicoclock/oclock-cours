@@ -592,12 +592,17 @@ const S2E01 = props => {
                         </li>
                         <li className="Demo">
                             <div className="Item">Démo repo</div>
+                            <div className="Item">Commit / push</div>
                             <div className="Item">Addition ensemble</div>
                             <div className="Item">Soustraction, multiplication division en autonomie</div>
                         </li>
                         <li className="Control">
                             <div className="Item">C'est ok les opérations ?</div>
                             <div className="Item">Sondage opérations ok : oui/non</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo repo</div>
+                            <div className="Item">Commit / push</div>
                         </li>
                         <li className="Recap">
                             <div className="Item">Où mettre notre code js : appel dans body, src dans fichier externe dans un répertoire</div>
@@ -646,6 +651,10 @@ const S2E01 = props => {
                         <li className="Control">
                             <div className="Item">C'est clair l'utilisation de prompt ?</div>
                         </li>
+                        <li className="Demo">
+                            <div className="Item">Démo repo</div>
+                            <div className="Item">Commit / push</div>
+                        </li>
                         <li className="ListItem">
                             <div className="Slide">Exo</div>
                             <div className="Item">- On a le prénom, demandons le nom</div>
@@ -663,6 +672,216 @@ const S2E01 = props => {
                         <li className="Transition">
                             <div className="Item">Déjà chouette mais on va souvent vouloir faire des traitements différents selon la réponse reçue</div>
                             <div className="Item">JS y a pensé pour nous, dans notre code on va pouvoir mettre des conditions</div>
+                        </li>
+                    </ul>
+                </Card>
+                <Card title="Un peu de logique">
+                    <div className="Doc">Slides : http://localhost:1234/s2/e1/conditions</div>
+                    <ul className="List">
+                        <li className="ListItem">
+                            <div className="Slide">Conditions</div>
+                            <div className="Item">- Comment ça marche ?</div>
+                        </li>
+                        <li className="Click">Click right</li>
+                        <li className="ListItem">
+                            <div className="Slide">Principe</div>
+                            <div className="Item">- Mécanisme qui va renvoyer un boolean</div>
+                            <div className="Item">- Rappel : un boolean ne peut être que true ou false</div>
+                            <div className="Item">- Mécanisme renvoie true => certain traitement</div>
+                            <div className="Item">- Mécanisme renvoie false => aucun traitement ou autre traiement</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Mise en place</div>
+                            <div className="Item">- On part d'une hypothèse</div>
+                            <div className="Item">- SI hypothèse est vraie ALORS on fait un truc</div>
+                            <div className="Item">- SI fausse ALORS on fait rien ou un autre truc</div>
+                            <div className="Item">- Comme les théorèmes de maths au collège</div>
+                            <div className="Item">- Exemple slide</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Conditionner le traitement</div>
+                            <div className="Item">- Définition des critères</div>
+                            <div className="Item">- SI critère vérifié (est vrai, renvoie true) ALORS traitement</div>
+                            <div className="Item">- Exemple slide</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Avec des SI</div>
+                            <div className="Item">- Exemple plus concret</div>
+                            <div className="Question">Vous avez identifié le critère à évaluer ?</div>
+                            <div className="Question">Le traitement si c'est vrai ?</div>
+                            <div className="Question">Si c'est faux ?</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Reformuler le problème</div>
+                            <div className="Item">- Identification du problème : remplace si par est-ce que</div>
+                            <div className="Item">- Réponse oui, c'est vrai, réponse non, c'est faux</div>
+                        </li>
+                        <li className="Control">
+                            <div className="Item">Vous voyez comment ça s'articule ?</div>
+                            <div className="Item">Cette histoire de oui/non true/false, ça s'éclaircit ?</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Plus complexe</div>
+                            <div className="Item">- On peut enchaîner les conditions avec SINON</div>
+                            <div className="Item">- Exemple slide</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Et la prog ?</div>
+                            <div className="Item">- Avec SI, SINON et ALORS on décrit un cheminement de pensée</div>
+                            <div className="Item">- C'est déjà un algorithme</div>
+                        </li>
+                        <li className="Click">Click right</li>
+                        <li className="ListItem">
+                            <div className="Item">- On n'a plus qu'à le traduire en JS</div>
+                            <div className="Question">On va faire ... ?</div>
+                            <div className="Item">- L'implémentation</div>
+                        </li>
+                        <li className="Click">Click bottom x 2</li>
+                        <li className="ListItem">
+                            <div className="Slide">Exemple concret</div>
+                            <div className="Question">Reformulez le critère avec âge</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">On reformule</div>
+                            <div className="Item">- On met le critère entre parenthèses</div>
+                            <div className="Item">- On se prépare psychologiquement à la suite</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                        <div className="Slide">Apercu JS</div>
+                            <div className="Item">- Qu'est-ce que ça donne en JS ?</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">En JS</div>
+                            <div className="Item">- Plusieurs choses importantes à noter</div>
+                            <div className="SubItem">* SI devient if</div>
+                            <div className="SubItem">* Le critère est entre parenthèse</div>
+                            <div className="SubItem">* Le traitement, l'ensemble des instructions est mis entre accolades</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">SINON</div>
+                            <div className="Item">- On reprend l'exemple du quiz</div>
+                            <div className="Item">- On a déjà notre algo</div>
+                            <div className="Question">Vous pouvez le reformuler avec le mot score ?</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Pseudo-code</div>
+                            <div className="Item">- Avant la condition, le message est vide</div>
+                            <div className="Item">- Si score > 2, le message devient "Bien joué !"</div>
+                            <div className="Item">- Sinon, le message devient "On révise encore un coup"</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Implémentation</div>
+                            <div className="Item">- SINON dans l'algorithme devient else en JS</div>
+                            <div className="Item">- Si question pourquoi message déclaré d'abord :</div>
+                            <div className="SubItem">* chaque variable a une portée, un scope, une zone de définition</div>
+                            <div className="SubItem">* une var déclarée entre les accolades n'existera que là</div>
+                            <div className="SubItem">* On ne pourra pas l'utiliser ailleurs, elle sera undefined</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">SINON SI</div>
+                            <div className="Item">- Dans notre exemple, on ajoute un critère et un message avec SINON SI</div>
+                            <div className="Question">Question vache : vous avez une idée de l'implémentation en JS ?</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Implémentation</div>
+                            <div className="Item">- SINON SI devient else if</div>
+                            <div className="Item">- Remarquez comment on teste si 2 valeurs sont égales</div>
+                            <div className="Item">- Pas une faute de frappe, il faut bien 3 =</div>
+                            <div className="Item">- On en reparle tout de suite</div>
+                        </li>
+                        <li className="Recap">
+                            <div className="Item">Conditions permettent d'effectuer un traitement différent selon critère true ou false</div>
+                            <div className="Item">En algo, de la forme SI critère ALORS traitement</div>
+                            <div className="Item">On peut le complexifier avec SINON et SINON SI</div>
+                            <div className="Item">En JS, if (...) &lcub;...&lcub; else if () &lcub;...&lcub; else &lcub;...&lcub;</div>
+                        </li>
+                        <li className="Click">Click right</li>
+                        <li className="ListItem">
+                            <div className="Slide">Comparaisons</div>
+                            <div className="Item">- On va définir nos critère en utilisant des comparaisons</div>
+                            <div className="Item">- JS met à dispo plusieurs opérateurs</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Opérateurs de comparaison</div>
+                            <div className="Item">- Parcours slide</div>
+                            <div className="Item">- Vous retiendrez vite ces opérateurs</div>
+                            <div className="Item">- Pas nombreux et on s'en sert tout le temps</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Bizarrerie du ===</div>
+                            <div className="Item">- Egalité stricte</div>
+                            <div className="Item">- Autre opérateur pour égalité pas stricte, ==</div>
+                            <div className="Item">- Pour la culture, on s'en servira pas</div>
+                            <div className="Item">- Différence : </div>
+                            <div className="SubItem">=== compare la valeur ET le type de variable</div>
+                            <div className="SubItem">== compare JUSTE la valeur</div>
+                        </li>
+                        <li className="Control">
+                            <div className="Item">Quiz opérateurs</div>
+                            <div className="Item">25 &gt; 15 : vrai ou faux ?</div>
+                            <div className="Item">12 &lt;= 12 : vrai ou faux ?</div>
+                            <div className="Item">"5" === 5 : vrai ou faux ?</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Combinaison</div>
+                            <div className="Item">- On va pouvoir combiner plusieurs critères dans la même série de ()</div>
+                            <div className="Item">- un critère ET un autre critère : &amp;&amp;</div>
+                            <div className="SubItem">* Tous les critères doivent être vrais pour avoir true</div>
+                            <div className="Item">- un critère OU un autre critère : ||</div>
+                            <div className="SubItem">* Au moins un des critères doit être vrai pour avoir true</div>
+                        </li>
+                        <li className="Control">
+                            <div className="Item">Quiz combinaisons</div>
+                            <div className="Item">12 &lt; 30 &amp;&amp; 15 &gt; 10 : true ou false ?</div>
+                            <div className="Item">12 &gt; 30 &amp;&amp; 15 &gt; 10 : true ou false ?</div>
+                            <div className="Item">"5" === "5" || 12 > 30 : true ou false ?</div>
+                        </li>
+                        <li className="Click">Click right</li>
+                        <li className="Recap">
+                            <div className="Item">Comparaisons avec différents opérateurs</div>
+                            <div className="Item">Comparer l'égalité de façon stricte avec ===</div>
+                            <div className="Item">Combiner des critères avec &amp;&amp; et ||</div>
+                        </li>
+                        <li className="Transition">
+                            <div className="Item">Pour terminer, on refait un peu de pratique</div>
+                            <div className="Item">Nouvelle méthode pour récupérer une info utilisateur : confirm</div>
+                            <div className="Item">Marche comme prompt mais au lieu d'une string, retourne un boolean quand click ok</div>
+                            <div className="Item">Pratique pour les conditions :-)</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo repo</div>
+                            <div className="Item">Exo : Demander à l'utilisateur s'il veut jouer avec confirm</div>
+                            <div className="Item">Réponse true ou false</div>
+                            <div className="Item">Si true, afficher "Bienvenue !"</div>
+                            <div className="Item">Si false, afficher "Une prochaine fois alors ..."</div>
+                        </li>
+                        <li className="Transition">
+                            <div className="Item">Le challenge de ce soir va vous refaire pratiquer tout ça</div>
+                            <div className="Item">Je vous le met en ligne et je vous le présente</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo repo</div>
+                            <div className="Item">Manip partage challenge du jour</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Présentation challenge</div>
                         </li>
                     </ul>
                 </Card>
