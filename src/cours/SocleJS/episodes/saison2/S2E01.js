@@ -171,7 +171,70 @@ const S2E01 = props => {
                         </li>
                         <li className="Transition">
                             <div className="Item">Mais avant de ré-écrire World of Warcraft, faut commencer par le début</div>
-                            <div className="Item">C'est quoi la programmation ? qu'est-ce que ça mange le matin ?</div>
+                            <div className="Item">C'est quoi la programmation ? Qu'est-ce que ça mange le matin ?</div>
+                        </li>
+                    </ul>
+                </Card>
+                <Card title="Programmation">
+                    <div className="Doc">RPG : http://localhost:1235/RPG/</div>
+                    <ul className="List">
+                        <li className="ListItem">
+                            <div className="Slide">Qu'est-ce que c'est la programmation ?</div>
+                            <div className="Question">Y en parmi vous qui ont déjà écrit du code ?</div>
+                            <div className="Question">Dans quel langage ? Pour faire quoi ?</div>
+                            <div className="Item">- Indiquer à l'ordi grâce à du code comment :</div>
+                            <div className="SubItem">* Résoudre un problème</div>
+                            <div className="SubItem">* Effectuer une action</div>
+                            <div className="Item">- Pour écrire ce code, on utilise un langage de programmation</div>
+                            <div className="Item">- Bien différencier les langages de description ...</div>
+                            <div className="SubItem">* HTML pour décrire le fond, écrit avec des balises</div>
+                            <div className="SubItem">* CSS pour décrire la forme, écrit avec des propriétés</div>
+                            <div className="Item">- ... et les langages de programmation, utilisé pour détailler les étapes :</div>
+                            <div className="SubItem">* pour résoudre un problème</div>
+                            <div className="SubItem">* pour effectuer une action</div>
+                            <div className="Question">Vous connaissez sûrement des noms de langage de prog ?</div>
+                            <div className="Item">- Peut-être entendu parler de Java, C++, Python</div>
+                            <div className="Item">- Pendant cette saison, on va utiliser JS</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Algorithmique</div>
+                            <div className="Item">- Ces langages permettent d'implémenter des algorithmes : j'explique !</div>
+                            <div className="Item">- Algorithme : cheminement de pensée pour résoudre un problème</div>
+                            <div className="Item">- Dans notre cas, le problème : emmener le player sur la case arrivée</div>
+                            <div className="Question">Comment vous feriez, vous ?</div>
+                            <div className="Question">Ce serait quoi les étapes ?</div>
+                        </li>
+                        <li className="Control">
+                            <div className="Item">Bravo, vous venez de réfléchir à votre 1er algorithme !</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Implémentation</div>
+                            <div className="Item">- Etape suivante : traduire notre cheminement de pensée dans un langage de prog</div>
+                            <div className="Item">- RPG : les devs ont utilisé JS pour dire à l'ordi comment :</div>
+                            <div className="SubItem">* tourner à gauche ou à droite</div>
+                            <div className="SubItem">* avancer</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo console</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Méthode</div>
+                            <div className="Item">- Découpe du raisonnement en petites portions :</div>
+                            <div className="SubItem">* Mises bout à bout, elles permettent de déplacer le player</div>
+                            <div className="SubItem">* On peut l'amener au bon endroit, problème résolu</div>
+                            <div className="Item">- En prog, très souvent plusieurs solutions possible</div>
+                            <div className="SubItem">* Pas forcément une meilleure que les autres</div>
+                            <div className="SubItem">* Dépend souvent des préférences ou habitudes du dev</div>
+                            <div className="SubItem">* Parfois certaines plus adaptées ou plus élégantes</div>
+                            <div className="SubItem">* On se fera une idée au fur et à mesure qu'on deviendra super fort</div>
+                        </li>
+                        <li className="Recap">
+                            <div className="Item">En prog, pour résoudre un problème, on utilise</div>
+                            <div className="Item">des algorithmes (cheminements de pensée)</div>
+                            <div className="Item">implémentés (traduits) dans un langage de prog</div>
+                        </li>
+                        <li className="Transition">
+                            <div className="Item">Voyons comment ça a été fait dans notre jeu</div>
                         </li>
                     </ul>
                 </Card>

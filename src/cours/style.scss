@@ -39,8 +39,9 @@
 }
 
 .Doc {
+    position: relative;
     width: 80%;
-    margin: 0px auto;
+    margin: 25px auto;
     min-height: 70px;
     background-color: #777;
     border-radius: 20px;
@@ -51,16 +52,26 @@
     font-size: 24px;
 }
 
+ul, li {
+    margin-left: 0;
+    padding-left: 0;    
+}
+
 .List {
-    width: 100%;
+    position: relative;
+    width: 90%;
+    margin: 10px auto;
 }
 
 .ListItem {
+    position: relative;
     width: 96%;
-    margin: 0px auto;
+    margin: 20px auto;
 }
 
 .Slide {
+    width: 96%;
+    margin: 10px auto;
     font-size: 20px;
     font-weight: bold;
     text-align: left;
@@ -81,7 +92,7 @@
 
 .ListItem .Item {
     width: 90%;
-    margin: 5px auto;
+    margin: 10px auto;
     height: 50px;
     display: flex;
     align-items: center;
@@ -103,8 +114,8 @@
 
 .Question {
     width: 80%;
-    margin: 5px auto;
-    height: 50px;
+    margin: 20px auto;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,7 +129,7 @@
 
 .Control {
     width: 80%;
-    margin: 5px auto;
+    margin: 10px auto;
     min-height: 70px;
     background-color: rgba(255, 0, 0, 0.1);
     border: 3px solid red;
@@ -132,7 +143,7 @@
 
 .Recap {
     width: 80%;
-    margin: 5px auto;
+    margin: 10px auto;
     min-height: 70px;
     background-color: rgba(0, 255, 0, 0.1);
     border: 3px solid green;
@@ -146,7 +157,7 @@
 
 .Transition {
     width: 80%;
-    margin: 5px auto;
+    margin: 10px auto;
     min-height: 70px;
     background-color: rgba(0, 0, 255, 0.1);
     border: 3px solid blue;
@@ -158,7 +169,20 @@
     justify-content: center;
 }
 
-.Control .Item, .Recap .Item, .Transition .Item {
+.Demo {
+    width: 50%;
+    margin: 10px auto;
+    min-height: 70px;
+    background-color: rgba(255, 255, 0, 0.1);
+    border: 3px solid rgb(255, 255, 0);
+    border-radius: 20px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Control .Item, .Recap .Item, .Transition .Item, .Demo .Item {
     display: flex;
     align-items: center;
     justify-content: center;
