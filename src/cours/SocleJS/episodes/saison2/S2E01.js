@@ -312,6 +312,7 @@ const S2E01 = props => {
                             <div className="Item">- Ecrire du texte dans la source sans influencer l'exécution</div>
                             <div className="Item">- Nous accompagne dans tous nos devs</div>
                             <div className="Item">- Documenter, expliquer le code, pour mémoire ou pour d'autres devs</div>
+                            <div className="Item">- Desactiver du code sans le supprimer</div>
                             <div className="Item">- On peut mettre un roman, ignoré l'exécution</div>
                             <div className="Item">- Deux façons de les écrire :</div>
                             <div className="SubItem">* Sur une ligne ou en fin de ligne : //</div>
@@ -608,6 +609,60 @@ const S2E01 = props => {
                             <div className="Item">Y a pas que console dans la vie</div>
                             <div className="Item">Voyons d'autres méthodes pour afficher des messages</div>
                             <div className="Item">ou demander des infos à l'utilisateur</div>
+                        </li>
+                    </ul>
+                </Card>
+                <Card title="Premiers pas">
+                    <div className="Doc">Repo : http://localhost:1235/Syntaxe</div>
+                    <ul className="List">
+                        <li className="ListItem">
+                            <div className="Slide">Alert</div>
+                            <div className="Item">- On peut afficher un message autrement</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo repo</div>
+                            <div className="Item">alert("Mon chouette message !")</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Pas idéal</div>
+                            <div className="Item">- Chargement coincé tant qu'on a pas cliqué ok</div>
+                            <div className="Item">- Fonction dite bloquante</div>
+                            <div className="Item">- Pas top pour expérience utilisateur mais on peut avoir des raisons</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Prompt</div>
+                            <div className="Item">- Permet de demander des infos à l'utilisateur</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo repo</div>
+                            <div className="Item">Commenter alert</div>
+                            <div className="Item">var firstName = prompt("Quel est votre prenom ?")</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Utilisation</div>
+                            <div className="Item">- On déclare une variable pour stocker la saisie utilisateur</div>
+                            <div className="Item">- On l'assigne (donne une valeur) avec le résultat du prompt</div>
+                        </li>
+                        <li className="Control">
+                            <div className="Item">C'est clair l'utilisation de prompt ?</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Exo</div>
+                            <div className="Item">- On a le prénom, demandons le nom</div>
+                            <div className="Question">A vous de jouer, comment vous feriez ça ?</div>
+                            <div className="Item">- Faisons la même chose avec l'âge</div>
+                            <div className="Question">Je vous écoute, qu'est-ce qu'on écrit ?</div>
+                            <div className="Item">- On a ces infos dans des variables, affichons-les</div>
+                            <div className="Item">- console.log ou alert, comme vous préférez</div>
+                            <div className="Question">Dites-moi tout, comment on fait ça ?</div>
+                        </li>
+                        <li className="Recap">
+                            <div className="Item">On a déjà dégrossi pas mal de choses</div>
+                            <div className="Item">On a commencé à jouer avec des variables</div>
+                        </li>
+                        <li className="Transition">
+                            <div className="Item">Déjà chouette mais on va souvent vouloir faire des traitements différents selon la réponse reçue</div>
+                            <div className="Item">JS y a pensé pour nous, dans notre code on va pouvoir mettre des conditions</div>
                         </li>
                     </ul>
                 </Card>
