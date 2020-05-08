@@ -296,7 +296,7 @@ const S2E01 = props => {
                     <div className="Doc">Repo : http://localhost:1235/Syntaxe</div>
                     <ul className="List">
                         <li className="ListItem">
-                            <div className="Slide">Cases du JS</div>
+                            <div className="Slide">Bases du JS</div>
                             <div className="Item">Pas le plus drôle mais vraiment nécessaire</div>
                             <div className="Item">Concepts très généraux, utiles dans tous les langages</div>
                         </li>
@@ -338,19 +338,19 @@ const S2E01 = props => {
                             <div className="Item">- Intérêt pas encore évident, plus parlant dans gros projets avec des dizaines de fichiers</div>
                             <div className="Item">- Prenons tout de suite l'habitude</div>
                         </li>
-                        <li className="Demo">
-                            <div className="Item">Démo dans repo Syntaxe</div>
-                            <div className="Item">Création js/syntaxe.js</div>
-                            <div className="Item">Exemple de commentaires</div>
-                            <div className="Item">Creation repo</div>
-                            <div className="Item">First commit and push</div>
-                        </li>
                         <li className="ListItem">
                             <div className="Slide">Démo commentaires</div>
                             <div className="Item">- Essayez de coder avec moi</div>
                             <div className="Item">- On est entre nous, commentaires en français</div>
                             <div className="Item">- Pour les applis en prod, mieux en anglais</div>
                             <div className="Item">- On a décrit ce qu'on voulait faire, on peut coder</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo dans repo Syntaxe</div>
+                            <div className="Item">Création js/syntaxe.js</div>
+                            <div className="Item">Exemple de commentaires</div>
+                            <div className="Item">Creation repo</div>
+                            <div className="Item">First commit and push</div>
                         </li>
                         <li className="Click">Click bottom</li>
                         <li className="ListItem">
@@ -386,7 +386,7 @@ const S2E01 = props => {
                         <li className="ListItem">
                             <div className="Slide">Modification</div>
                             <div className="Item">- Une variable peut varier</div>
-                            <div className="Item">- Pour la modifier, on réassigne une nouvelle valeur avec =</div>
+                            <div className="Item">- Pour la modifier, on assigne une nouvelle valeur avec =</div>
                         </li>
                         <li className="Demo">
                             <div className="Item">Démo console</div>
@@ -479,6 +479,9 @@ const S2E01 = props => {
                             <div className="Item">2+5</div>
                             <div className="Item">"2"+5</div>
                         </li>
+                        <li className="Control">
+                            <div className="Item">Ca va ? Pas trop mal au crâne encore ?</div>
+                        </li>
                         <li className="Recap">
                             <div className="Item">On a vu les 3 types primitifs de variables</div>
                             <div className="Item">Les nombres ou numbers, les float utilise le .</div>
@@ -545,14 +548,15 @@ const S2E01 = props => {
                         <li className="Click">Click bottom x 2</li>
                         <li className="ListItem">
                             <div className="Slide">Affichage</div>
-                            <div className="Item">- console a de nombreuses méthode, fonctionnalités rattavhées à un objet</div>
+                            <div className="Item">- console a de nombreuses méthodes, fonctionnalités rattachées à un objet</div>
                             <div className="Item">- avec console.log, on affiche ce qu'on veut</div>
                             <div className="Item">- même des variables</div>
                         </li>
                         <li className="Demo">
                             <div className="Item">Démo console</div>
                             <div className="Item">console.log("Hello, Nico vous parle")</div>
-                            <div className="Item">var bool = "Dune"</div>
+                            <div className="Item">console.log( 7+5)</div>
+                            <div className="Item">var book = "Dune"</div>
                             <div className="Item">console.log(book)</div>
                         </li>
                         <li className="ListItem">
@@ -562,8 +566,6 @@ const S2E01 = props => {
                         <li className="Demo">
                             <div className="Item">Démo console</div>
                             <div className="Item">console.log("test", true, 12345, book)</div>
-                            <div className="Item">var bool = "Dune"</div>
-                            <div className="Item">console.log(book)</div>
                         </li>
                         <li className="Control">
                             <div className="Item">Utilisation de console ok ?</div>
@@ -580,8 +582,32 @@ const S2E01 = props => {
                         <li className="Demo">
                             <div className="Item">Démo repo</div>
                             <div className="Item">Objet livre : title, author, year, price, isRead</div>
-                            <div className="Item">console.log phrase de description du livre</div>
-                            <div className="Item">Opérations sur les nombres</div>
+                            <div className="Item">console.log title de author</div>
+                            <div className="Item">exo : Ajout - Date de parution : year - Prix : price - Déjà lu : isRead</div>
+                        </li>
+                        <li className="Control">
+                            <div className="Item">C'est bon pour vous la concaténation ?</div>
+                            <div className="Item">Sondage concaténation ok : oui/non</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo repo</div>
+                            <div className="Item">Addition ensemble</div>
+                            <div className="Item">Soustraction, multiplication division en autonomie</div>
+                        </li>
+                        <li className="Control">
+                            <div className="Item">C'est ok les opérations ?</div>
+                            <div className="Item">Sondage opérations ok : oui/non</div>
+                        </li>
+                        <li className="Recap">
+                            <div className="Item">Où mettre notre code js : appel dans body, src dans fichier externe dans un répertoire</div>
+                            <div className="Item">Déclaration de nos premières variables</div>
+                            <div className="Item">Concaténer des variables</div>
+                            <div className="Item">Opérations simples sur les nombres</div>
+                        </li>
+                        <li className="Transition">
+                            <div className="Item">Y a pas que console dans la vie</div>
+                            <div className="Item">Voyons d'autres méthodes pour afficher des messages</div>
+                            <div className="Item">ou demander des infos à l'utilisateur</div>
                         </li>
                     </ul>
                 </Card>
