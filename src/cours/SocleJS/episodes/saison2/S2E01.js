@@ -291,6 +291,300 @@ const S2E01 = props => {
                         </li>
                     </ul>
                 </Card>
+                <Card title="Bases du langage">
+                    <div className="Doc">Slides : http://localhost:1234/s2/e1/decouverte-js</div>
+                    <div className="Doc">Repo : http://localhost:1235/Syntaxe</div>
+                    <ul className="List">
+                        <li className="ListItem">
+                            <div className="Slide">Cases du JS</div>
+                            <div className="Item">Pas le plus drôle mais vraiment nécessaire</div>
+                            <div className="Item">Concepts très généraux, utiles dans tous les langages</div>
+                        </li>
+                        <li className="Click">Click right</li>
+                        <li className="ListItem">
+                            <div className="Slide">Syntaxe</div>
+                            <div className="Item">En français, grammaire et orthographe</div>
+                            <div className="Item">En JS (même en prog), syntaxe, règles d'écriture</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Commentaires</div>
+                            <div className="Item">- Ecrire du texte dans la source sans influencer l'exécution</div>
+                            <div className="Item">- Nous accompagne dans tous nos devs</div>
+                            <div className="Item">- Documenter, expliquer le code, pour mémoire ou pour d'autres devs</div>
+                            <div className="Item">- On peut mettre un roman, ignoré l'exécution</div>
+                            <div className="Item">- Deux façons de les écrire :</div>
+                            <div className="SubItem">* Sur une ligne ou en fin de ligne : //</div>
+                            <div className="SubItem">* Sur plusieurs lignes : /* */</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo dans repo Syntaxe</div>
+                            <div className="Item">Création index.html</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Où mettre le code ?</div>
+                            <div className="Item">- Dans une balise script</div>
+                            <div className="Item">- Comme CSS, plusieurs endroits possible :</div>
+                            <div className="SubItem">* directement dans le HTML, en fin de body</div>
+                            <div className="SubItem">* dans un fichier externe, script avec src</div>
+                            <div className="Item">- Nous, on va mettre dans un fichier externe</div>
+                            <div className="Question">Vous voyez pourquoi c'est mieux ?</div>
+                            <div className="Question">Avantage du fichier externe ?</div>
+                            <div className="Item">- Séparation logique / présentations</div>
+                            <div className="Item">- Code plus lisible</div>
+                            <div className="Item">- Code réutilisable par d'autres pages HTML</div>
+                            <div className="Item">- Nous les développeurs, on n'aime pas se répéter, on préfère les fichiers externes</div>
+                            <div className="Item">- Bonne pratique : regroupement par répertoire</div>
+                            <div className="Item">- Intérêt pas encore évident, plus parlant dans gros projets avec des dizaines de fichiers</div>
+                            <div className="Item">- Prenons tout de suite l'habitude</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo dans repo Syntaxe</div>
+                            <div className="Item">Création js/syntaxe.js</div>
+                            <div className="Item">Exemple de commentaires</div>
+                            <div className="Item">Creation repo</div>
+                            <div className="Item">First commit and push</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Démo commentaires</div>
+                            <div className="Item">- Essayez de coder avec moi</div>
+                            <div className="Item">- On est entre nous, commentaires en français</div>
+                            <div className="Item">- Pour les applis en prod, mieux en anglais</div>
+                            <div className="Item">- On a décrit ce qu'on voulait faire, on peut coder</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Variables</div>
+                            <div className="Item">- En prog, on entendra tout le temps parler de variables</div>
+                            <div className="Item">- C'est quoi une variable, à quoi ça sert ?</div>
+                        </li>
+                        <li className="Click">Click bottom x 2</li>
+                        <li className="ListItem">
+                            <div className="Slide">C'est quoi</div>
+                            <div className="Item">- Une sorte de boite avec une étiquette, un nom, et qui contient des infos</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Ca sert à quoi</div>
+                            <div className="Item">- C'est une référence pour les infos stockées</div>
+                            <div className="Item">- Dans notre programme, on utilise les noms de variables pour accéder aux infos</div>
+                            <div className="Item">- A l'exécution, le navigateur va remplacer le nom de variable par les infos qu'elle contient</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Déclaration</div>
+                            <div className="Item">- On utilise le mot-clé var</div>
+                            <div className="Item">- Suivi du nom de la boite, son etiquette</div>
+                            <div className="Item">- On lui assigne une valeur avec = suivi de la valeur</div>
+                            <div className="Item">- Sans assignation, la valeur est undefined</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo console</div>
+                            <div className="Item">console.log</div>
+                            <div className="Item">firstName, firstName =</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Modification</div>
+                            <div className="Item">- Une variable peut varier</div>
+                            <div className="Item">- Pour la modifier, on réassigne une nouvelle valeur avec =</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo console</div>
+                            <div className="Item">firstName = nouvelle valeur</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Instructions</div>
+                            <div className="Item">- En JS, pas des phrases, des instructions</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Description</div>
+                            <div className="Item">- S'écrit sur une ligne</div>
+                            <div className="Item">- Se termine par un ;</div>
+                            <div className="Item">- Pas obligatoire en JS mais bonne pratique</div>
+                            <div className="Item">- Si j'oublie, vous avez droit de me fâcher</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Ne pas faire</div>
+                            <div className="Item">- Assigner sans déclarer</div>
+                            <div className="Item">- JS est permissif, pas d'erreur</div>
+                            <div className="Item">- Effets de bord, effets inattendus, à proscrire !!</div>
+                        </li>
+                        <li className="Recap">
+                            <div className="Item">Déclarer une variable avec var, lui assigner une valeur avec =</div>
+                            <div className="Item">Sans assignation, la variable a pour valeur undefined</div>
+                            <div className="Item">Modifier la valeur d'une variable en lui assignat une nouvelle valeur avec =</div>
+                            <div className="Item">Pour parler JS avec l'ordi, on écrit des instructions sur une ligne terminées par ;</div>
+                        </li>
+                        <li className="Transition">
+                            <div className="Item">Parlons un peu des différents types de variables disponibles</div>
+                        </li>
+                        <li className="Click">Click right</li>
+                        <li className="ListItem">
+                            <div className="Slide">Types de données</div>
+                            <div className="Item">- Une variable est toujours d'un certain type</div>
+                            <div className="Item">- Types de base, types primitifs</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Les nombres</div>
+                            <div className="Item">- On les note tel quel, juste les chiffres</div>
+                            <div className="Item">- Nombre à virgule, on met un .</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo console</div>
+                            <div className="Item">entier</div>
+                            <div className="Item">décimal</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Les booléens</div>
+                            <div className="Item">- Type le plus simple</div>
+                            <div className="Item">- Ne peut prendre que 2 valeurs : frai ou faux</div>
+                            <div className="Item">- En anglais, comme en JS : true ou false</div>
+                            <div className="Item">- Convention : on les appelle isXXX</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo console</div>
+                            <div className="Item">isNice</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Les chaines de caractères (string)</div>
+                            <div className="Item">- On les note entre '' ou ""</div>
+                            <div className="Item">- On peut les ajouter, les concaténer avec +</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo console</div>
+                            <div className="Item">"Nico"+" "+"Charpin"</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Opérateur +</div>
+                            <div className="Item">- Utilisé pour une autre opération</div>
+                            <div className="Question">Vous voyez laquelle ?</div>
+                        </li>
+                        <li className="Click">Click bottom x 2</li>
+                        <li className="ListItem">
+                            <div className="Slide">Addition</div>
+                            <div className="Item">- sur 2 strings, concaténation</div>
+                            <div className="Item">- sur 2 nombres, addition</div>
+                            <div className="Item">- sur 1 nombre et 1 string, concaténation</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo console</div>
+                            <div className="Item">"2"+"5"</div>
+                            <div className="Item">2+5</div>
+                            <div className="Item">"2"+5</div>
+                        </li>
+                        <li className="Recap">
+                            <div className="Item">On a vu les 3 types primitifs de variables</div>
+                            <div className="Item">Les nombres ou numbers, les float utilise le .</div>
+                            <div className="Item">Les booléen, de valeur true ou false</div>
+                            <div className="Item">Les chaines de caractères, du texte noté entre '' ou ""</div>
+                        </li>
+                        <li className="Transition">
+                            <div className="Item">Maintenant qu'on sait déclarer des variables, on va commencer à les utiliser</div>
+                        </li>
+                        <li className="Click">Click right</li>
+                        <li className="ListItem">
+                            <div className="Slide">Opérations sur les nombres</div>
+                            <div className="Item">- Faisons un peu de maths</div>
+                            <div className="Item">- Marche avec les entiers et les floats</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Addition / soustraction</div>
+                            <div className="Item">- opérateur + comme on vient de voir</div>
+                            <div className="Item">- opérateur - pour la soustraction</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo console</div>
+                            <div className="Item">5 + 18</div>
+                            <div className="Item">25.3 + 24.7</div>
+                            <div className="Item">12 - 5</div>
+                            <div className="Item">17.3 - 4.8</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Multiplication / division</div>
+                            <div className="Item">- opérateur *</div>
+                            <div className="Item">- opérateur /</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo console</div>
+                            <div className="Item">25 * 4</div>
+                            <div className="Item">12.5 * 4</div>
+                            <div className="Item">100 / 5</div>
+                            <div className="Item">25.5 / 2</div>
+                        </li>
+                        <li className="Click">Click right</li>
+                        <li className="ListItem">
+                            <div className="Slide">Pratique</div>
+                            <div className="Item">- Temps de se chauffer les doigts</div>
+                            <div className="Item">- Plus pénible est passé, on va commencer à jouer</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Outils</div>
+                            <div className="Item">- Petit point sur les outils nécessaires</div>
+                        </li>
+                        <li className="Click">Click bottom x 2</li>
+                        <li className="ListItem">
+                            <div className="Slide">Navigateur</div>
+                            <div className="Item">- Dans un 1er temps, suffisant pour jouer</div>
+                        </li>
+                        <li className="Click">Click bottom</li>
+                        <li className="ListItem">
+                            <div className="Slide">Console</div>
+                            <div className="Item">- JS nous met à dispo la console</div>
+                        </li>
+                        <div className="Doc">Ressource : https://developer.mozilla.org/fr/docs/Web/API/Console</div>
+                        <li className="Click">Click bottom x 2</li>
+                        <li className="ListItem">
+                            <div className="Slide">Affichage</div>
+                            <div className="Item">- console a de nombreuses méthode, fonctionnalités rattavhées à un objet</div>
+                            <div className="Item">- avec console.log, on affiche ce qu'on veut</div>
+                            <div className="Item">- même des variables</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo console</div>
+                            <div className="Item">console.log("Hello, Nico vous parle")</div>
+                            <div className="Item">var bool = "Dune"</div>
+                            <div className="Item">console.log(book)</div>
+                        </li>
+                        <li className="ListItem">
+                            <div className="Slide">Plusieurs arguments</div>
+                            <div className="Item">- Entre les paranthèses, on peut mettre plusieurs éléments de plusieurs type séparés par une virgule</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo console</div>
+                            <div className="Item">console.log("test", true, 12345, book)</div>
+                            <div className="Item">var bool = "Dune"</div>
+                            <div className="Item">console.log(book)</div>
+                        </li>
+                        <li className="Control">
+                            <div className="Item">Utilisation de console ok ?</div>
+                            <div className="Item">Sondage console ok : oui/non</div>
+                        </li>
+                        <li className="Recap">
+                            <div className="Item">Console outil très pratique pour tester rapidement</div>
+                            <div className="Item">Juste besoin du navigateur</div>
+                        </li>
+                        <li className="Transition">
+                            <div className="Item">Continuons nos tests</div>
+                            <div className="Item">On retourne dans notre repo syntaxe</div>
+                        </li>
+                        <li className="Demo">
+                            <div className="Item">Démo repo</div>
+                            <div className="Item">Objet livre : title, author, year, price, isRead</div>
+                            <div className="Item">console.log phrase de description du livre</div>
+                            <div className="Item">Opérations sur les nombres</div>
+                        </li>
+                    </ul>
+                </Card>
             </div>
         </Fragment>
 );
