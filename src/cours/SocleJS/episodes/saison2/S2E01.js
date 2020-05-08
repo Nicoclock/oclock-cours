@@ -238,6 +238,59 @@ const S2E01 = props => {
                         </li>
                     </ul>
                 </Card>
+                <Card title="Ca sert à quoi ?">
+                    <div className="Doc">RPG : http://localhost:1235/RPG/</div>
+                    <ul className="List">
+                        <li className="ListItem">
+                            <div className="Slide">Actions possibles</div>
+                            <div className="Item">- Voyons quelles fonctionnalités les devs ont mis à notre dispo</div>
+                            <div className="Item">- On va se servir de la console</div>
+                            <div className="Question">Est-ce que savez où elle est ?</div>
+                            <div className="Item">- Vous connaissez l'inspecteur ? Onglet d'à côté</div>
+                            <div className="Control">
+                                <div className="Item">Tout le monde a sa console affichée ?</div>
+                                <div className="Item">Sondage console affichée : oui/non</div>
+                            </div>
+                            <div className="Item">- La console sert à :</div>
+                            <div className="SubItem">* Afficher des traces de l'exécution, messages d'erreur, de contrôle, ...</div>
+                            <div className="SubItem">* Exécuter du code</div>
+                            <div className="Item">- Les devs ont mis à dispo plusieurs actions :</div>
+                            <div className="SubItem">* moveForward()</div>
+                            
+                            <li className="Demo">
+                                <div className="Item">Démo console</div>
+                            </li>
+                            <div className="SubItem">* turnLeft()</div>
+                            <li className="Demo">
+                                <div className="Item">Démo console</div>
+                            </li>
+                            <div className="SubItem">* turnRight()</div>
+                            <li className="Demo">
+                                <div className="Item">Démo console</div>
+                            </li>
+                            <div className="Item">- Aussi des fonctionnalités plus exotiques :</div>
+                            <div className="SubItem">* surprise()</div>
+                            <li className="Demo">
+                                <div className="Item">Démo console</div>
+                            </li>
+                            <div className="SubItem">* makeBeautiful()</div>
+                            <li className="Demo">
+                                <div className="Item">Démo console</div>
+                            </li>
+                            <div className="Item">- Ca sert pas à grand-chose mais c'est rigolo</div>
+                            <div className="Item">- Avantage : ça nous montre d'autres trucs qu'on peut contrôler avec JS</div>
+                        </li>
+                        <li className="Recap">
+                            <div className="Item">Console est un outil puissant</div>
+                            <div className="Item">Permet de suivre le fonctionnement d'un programme</div>
+                            <div className="Item">Peux exécuter du code</div>
+                        </li>
+                        <li className="Transition">
+                            <div className="Item">Vous avez l'eau à la bouche ?</div>
+                            <div className="Item">Temps de passer à du concret</div>
+                        </li>
+                    </ul>
+                </Card>
             </div>
         </Fragment>
 );
