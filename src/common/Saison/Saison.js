@@ -22,13 +22,6 @@ class Saison extends Component {
         else {
             this.props.resetSaison();
         }
-
-        // if (this.props.saison)
-        //     this.props.resetSaison();
-        // else {
-        //     this.setState({showTitle: !this.state.showEpisodes, showEpisodes: !this.state.showEpisodes});
-        //     this.props.setSaison(this.props.code);
-        // }
     }
 
     render() {

@@ -1,0 +1,18 @@
+.CardButton {
+    width: 50%;
+    margin: 10px auto;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    border-radius: 20px;
+    color: black;
+    font-size: 20px;
+}
+
+.CardButton:hover {
+    color: red;
+    font-size: 24px;
+
+}
