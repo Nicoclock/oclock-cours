@@ -807,7 +807,7 @@ const S2E01 = props => {
                             <div className="Item">Conditions permettent d'effectuer un traitement différent selon critère true ou false</div>
                             <div className="Item">En algo, de la forme SI critère ALORS traitement</div>
                             <div className="Item">On peut le complexifier avec SINON et SINON SI</div>
-                            <div className="Item">En JS, if (...) &lcub;...&lcub; else if () &lcub;...&lcub; else &lcub;...&lcub;</div>
+                            <div className="Item">{`En JS, if (...) {...} else if () {...} else {...}`}</div>
                         </li>
                         <li className="Click">Click right</li>
                         <li className="ListItem">
@@ -834,30 +834,30 @@ const S2E01 = props => {
                         </li>
                         <li className="Control">
                             <div className="Item">Quiz opérateurs</div>
-                            <div className="Item">25 &gt; 15 : vrai ou faux ?</div>
-                            <div className="Item">12 &lt;= 12 : vrai ou faux ?</div>
+                            <div className="Item">{`25 > 15 : vrai ou faux ?`}</div>
+                            <div className="Item">{`12 <= 12 : vrai ou faux ?`}</div>
                             <div className="Item">"5" === 5 : vrai ou faux ?</div>
                         </li>
                         <li className="Click">Click bottom</li>
                         <li className="ListItem">
                             <div className="Slide">Combinaison</div>
                             <div className="Item">- On va pouvoir combiner plusieurs critères dans la même série de ()</div>
-                            <div className="Item">- un critère ET un autre critère : &amp;&amp;</div>
+                            <div className="Item">{`- un critère ET un autre critère : &&`}</div>
                             <div className="SubItem">* Tous les critères doivent être vrais pour avoir true</div>
                             <div className="Item">- un critère OU un autre critère : ||</div>
                             <div className="SubItem">* Au moins un des critères doit être vrai pour avoir true</div>
                         </li>
                         <li className="Control">
                             <div className="Item">Quiz combinaisons</div>
-                            <div className="Item">12 &lt; 30 &amp;&amp; 15 &gt; 10 : true ou false ?</div>
-                            <div className="Item">12 &gt; 30 &amp;&amp; 15 &gt; 10 : true ou false ?</div>
-                            <div className="Item">"5" === "5" || 12 > 30 : true ou false ?</div>
+                            <div className="Item">{`12 < 30 && 15 > 10 : true ou false ?`}</div>
+                            <div className="Item">{`12 > 30 && 15 > 10 : true ou false ?`}</div>
+                            <div className="Item">{`"5" === "5" || 12 > 30 : true ou false ?`}</div>
                         </li>
                         <li className="Click">Click right</li>
                         <li className="Recap">
                             <div className="Item">Comparaisons avec différents opérateurs</div>
                             <div className="Item">Comparer l'égalité de façon stricte avec ===</div>
-                            <div className="Item">Combiner des critères avec &amp;&amp; et ||</div>
+                            <div className="Item">{`Combiner des critères avec && et ||`}</div>
                         </li>
                         <li className="Transition">
                             <div className="Item">Pour terminer, on refait un peu de pratique</div>
