@@ -375,6 +375,8 @@ const S2E01 = props => {
                             <div className="Slide">Déclaration</div>
                             <div className="Item">- On utilise le mot-clé var</div>
                             <div className="Item">- Suivi du nom de la boite, son etiquette</div>
+                            <div className="Item">- Pas de caractères spéciaux(accents), ne peut commencer par un chiffre</div>
+                            <div className="Item">- Bonne pratique : camelCase</div>
                             <div className="Item">- On lui assigne une valeur avec = suivi de la valeur</div>
                             <div className="Item">- Sans assignation, la valeur est undefined</div>
                         </li>
