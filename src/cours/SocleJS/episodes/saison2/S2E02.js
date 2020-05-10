@@ -1,6 +1,7 @@
 import React, {Fragment} from "react";
 
 import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem} from "../../../../common";
+import * as code from "../../code";
 
 import "../../../style.scss"
 
@@ -36,8 +37,7 @@ const S2E02 = props => {
                             <Item text="on déclare nos 2 variables et on leur assigne une valeur" />
                         </ListItem>
                         <Demo type="repo ChallengeS1E01">
-                            <BoxItem text={`var question1 = "..."`} />
-                            <BoxItem text={`var solution1 = "..."`} />
+                            <Code language="JavaScript" code={code.exo1} />
                         </Demo>
                         <Control>
                             <BoxItem text="Ok exo 1 ? Y avait pas de piège ..." />
@@ -46,25 +46,19 @@ const S2E02 = props => {
                             <Question text="Qu'est-ce qu'on va utiliser comme fonction ?" />
                         </ListItem>
                         <Demo type="repo ChallengeS1E01">
-                            <BoxItem text="var reponse1 = prompt(question1)" />
+                        <Code language="JavaScript" code={code.exo2Prompt} />
                         </Demo>
                         <ListItem title="Correction exo2 - 2">
                             <Item text="Vous avez remarqué la phrase ? On dirait de l'algo ..." />
                         </ListItem>
                         <Demo type="repo ChallengeS1E01">
-                            <BoxItem text="/*SI reponse égale solution" />
-                            <BoxItem text="ALORS affiche Gagné !" />
-                            <BoxItem text="*/SINON affiche Perdu ..." />
+                        <Code language="JavaScript" code={code.exo2Algo} />
                         </Demo>
                         <ListItem title="Correction exo2 - 3">
                             <Question text="Qui me dit comment on va implémenter ça ?" />
                         </ListItem>
                         <Demo type="repo ChallengeS1E01">
-                            <BoxItem text={`if (reponse1 === solution1) {`} />
-                            <BoxItem text={`alert("Gagné !");`} />
-                            <BoxItem text={`} else {`} />
-                            <BoxItem text={`alert("Perdu ...");`} />
-                            <BoxItem text={`}`} />
+                        <Code language="JavaScript" code={code.exo2Condition} />
                         </Demo>
                         <Control>
                             <BoxItem text="C'est clair ce if ?" />
@@ -75,9 +69,7 @@ const S2E02 = props => {
                             <Item text="On pose la question et on stocke dans reponse2" />
                         </ListItem>
                         <Demo type="repo ChallengeS1E01">
-                            <BoxItem text={`var question2 = "..."`} />
-                            <BoxItem text={`var solution2 = "..."`} />
-                            <BoxItem text={`var reponse2 = prompt(question2)`} />
+                        <Code language="JavaScript" code={code.exo3Reponse} />
                         </Demo>
                         <ListItem title="Correction exo3 - 2">
                             <Item text="Ensuite on doit comparer avec la bonne réponse, c'est là que ça se corse :" />
@@ -93,11 +85,7 @@ const S2E02 = props => {
                         </ListItem>
                         <Demo type="console">
                             <BoxItem text={`parseInt("35"), retourne 35`} />
-                            <BoxItem text={`parseInt("35.5") retourne 35, parseInt renvoie un entier`} />
-                            <BoxItem text={`parseInt("35px"), retourne 35`} />
-                            <BoxItem text={`var num = parseInt("35"), typeof num`} />
-                            <BoxItem text={`var str = "test", typeof str`} />
-                            <BoxItem text={`parseInt("test") c'est quoi ce truc bizarre NaN ?`} />
+                            <Code language="JavaScript" code={code.parseIntTest} />
                         </Demo>
                         <ListItem title="Correction exo3 - 4">
                             <Item text="NaN : not a number, la conversion n'a pas marché" />
@@ -106,10 +94,7 @@ const S2E02 = props => {
                         </ListItem>
                         <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Number" />
                         <Demo type="console">
-                            <BoxItem text={`Number("35"), retourne 35`} />
-                            <BoxItem text={`Number("35.5") retourne 35.5, prend en compte les float`} />
-                            <BoxItem text={`var num = Number("35.5"), typeof num`} />
-                            <BoxItem text={`Number("35px"), retourne NaN`} />
+                        <Code language="JavaScript" code={code.NumberTest} />
                         </Demo>
                         <Recap>
                             <BoxItem text="2 méthodes pour transformer une string en number" />
@@ -126,46 +111,33 @@ const S2E02 = props => {
                             <Item text="On va transformer reponse2 en number" />
                         </ListItem>
                         <Demo type="repo ChallengeS1E01">
-                            <BoxItem text="var reponse2Number = parseInt(reponse2, 10)" />
-                            <BoxItem text="if (reponse2Number === solution2)" />
-                            <BoxItem text="Reste du test : copier/coller" />
+                        <Code language="JavaScript" code={code.exo3Number} />
                         </Demo>
-                        <ListItem title="Correction bonus - 5">
+                        <ListItem title="Correction bonus - 1">
                             <Question text="Réfléchissons ensemble, c'est quoi les étapes ?" />
                             <Item text="On va créer une variable pour contenir le score" />
                             <Item text="On va la mettre à jour à chaque bonne réponse" />
                             <Item text="On va afficher le score à la fin du jeu" />
                         </ListItem>
                         <Demo type="repo ChallengeS1E01">
-                            <BoxItem text="var score = 0;" />
+                            <Code language="JavaScript" code={code.scoreDeclare} />
                         </Demo>
-                        <ListItem title="Correction bonus - 6">
+                        <ListItem title="Correction bonus - 2">
                             <Item text="On doit donc ajouter 1 à score à chaque bonne réponse" />
                             <Question text="On fait comment dans le coup ?" />
                             <Item text="Il faut incrémenter la variable, lui ajouter 1" />
                             <Item text="On assigne une nouvelle valeur : l'ancienne valeur + 1" />
                         </ListItem>
                         <Demo type="repo ChallengeS1E01">
-                            <BoxItem text={`après alert("Gagné !"), score = score + 1;`} />
-                            <BoxItem text="//score += 1;" />
-                            <BoxItem text="//score++;" />
+                        <Code language="JavaScript" code={code.scoreIncrement} />
                         </Demo>
-                        <ListItem title="Correction bonus - 7">
-                            <Item text="Il nous resete à afficher le score en fin de partie" />
+                        <ListItem title="Correction bonus - 3">
+                            <Item text="Il nous reste à afficher le score en fin de partie" />
+                            <Item text="On va afficher un message différent : au pluriel si score > 1, sinon singulier" />
+                            <Question text="On va utiliser une ... ?" />
                         </ListItem>
                         <Demo type="repo ChallengeS1E01">
-                            <BoxItem text="En fin de code, alert(score)" />
-                        </Demo>
-                        <ListItem title="Correction bonus - 8">
-                            <Item text="On va afficher un message différent au singulier ou au pluriel" />
-                            <Question text="On va utilisr une ... ?" />
-                            <Item text="SI score supérieur à 1 ALORS afficher avec s SINON afficher sans s" />
-                        </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                            <BoxItem text={`var message = ""`} />
-                            <BoxItem text={`if (score > 1) message = pluriel`} />
-                            <BoxItem text="else message = singulier" />
-                            <BoxItem text="alert(message);" />
+                        <Code language="JavaScript" code={code.scoreDisplay} />
                         </Demo>
                         <Recap>
                             <BoxItem text="Dans ce challenge on a révisé les variables, les conditions et les comparaisons" />

@@ -106,4 +106,70 @@ else {
 }
 `;
 
+export const exo1 = `var question1 = "Quelle mer borde la ville de Sébastopol ?";
+var solution1 = "la mer Noire";`;
 
+export const exo2Prompt = `var reponse1 = prompt(question1);`;
+
+export const exo2Algo = `SI (réponse égale solution)
+ALORS affiche "Gagné !"
+SINON affiche Perdu ...`;
+
+export const exo2Condition = `if (reponse1 === solution1) {
+    alert("Gagné !");
+}
+else {
+    alert("Perdu...");
+}`;
+
+export const exo3Reponse = `var question2 = "Quel est l'âge du capitaine ?";
+var solution2 = 63;
+var reponse2 = prompt(question2);`;
+
+export const parseIntTest = `parseInt("35"); //35
+parseInt("35.5"); //35, parseInt renvoie un entier
+parseInt("35px"); //35
+
+var num = parseInt("35");
+typeof num; //number
+
+var str = "test";
+typeof str; //string
+
+parseInt("test"); //NaN, c'est quoi ce truc bizarre ?`;
+
+export const NumberTest = `Number("35"); //35
+Number("35.5"); //35.5, prend en compte les float
+
+var num = Number("35.5");
+typeof num; //number
+
+Number("35px"); //NaN`;
+
+
+export const exo3Number = `var reponse2Number = paserInt(reponse2, 10);
+if (reponse2Number === solution2) {
+    alert("Gagné !");
+}
+else {
+    alert("Perdu...")
+}`;
+
+export const scoreDeclare = `var score = 0;`;
+
+export const scoreIncrement = `{
+    alert("Gagné !);
+    score = score + 1;
+    //score += 1;
+    //score++;
+}`;
+
+export const scoreDisplay = `//SI score supérieur à 1 ALORS afficher avec s SINON afficher sans s
+var message = "";
+if (score > 1) {
+    message = "Vous avez " + score + " bonnes réponses";
+}
+else {
+    message = "Vous avez " + score + " bonne réponse";
+}
+alert(message);`;
