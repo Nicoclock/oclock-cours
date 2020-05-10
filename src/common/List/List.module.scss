@@ -1,0 +1,129 @@
+@mixin setMargin($tb) {
+    margin: $tb auto;
+}
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexStart {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ItemDefault {
+    position: relative;
+    flex-direction: column;
+    border-radius: 20px;
+    list-style: none;
+}
+
+.ItemPart {
+    position: relative;
+    width: 80%;
+}
+
+.ListBox {
+    @extend .flexCenter;
+    @extend .ItemDefault;
+    @extend .ItemPart;
+    @include setMargin(20px);
+    min-height: 70px;
+    border-radius: 20px;
+}
+
+.List {
+    position: relative;
+    width: 90%;
+    @include setMargin(10px);
+}
+
+.ListItem {
+    @extend .ItemDefault;
+    @include setMargin(20px);
+}
+
+.Click {
+    @extend .flexCenter;
+    @extend .ItemDefault;
+    @include setMargin(30px);
+    width: 30%;
+    height: 50px;
+    background-color: #ccc;
+    font-size: 30px;
+}
+
+.Title {
+    @extend .ItemPart;
+    @include setMargin(10px);
+    width: 96%;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.ListItem .Item {
+    @extend .flexStart;
+    @include setMargin(10px);
+    width: 90%;
+    height: 50px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.SubItem {
+    @extend .flexStart;
+    @include setMargin(5px);
+    width: 80%;
+    height: 50px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.Question {
+    @extend .flexCenter;
+    @include setMargin(20px);
+    width: 80%;
+    min-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #eee;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: red;
+}
+
+.Control {
+    @extend .ListBox;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 3px solid red;
+}
+
+.Recap {
+    @extend .ListBox;
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 3px solid green;
+}
+
+.Transition {
+    @extend .ListBox;
+    background-color: rgba(0, 0, 255, 0.1);
+    border: 3px solid blue;
+}
+
+.Demo {
+    @extend .ListBox;
+    background-color: rgba(255, 255, 0, 0.1);
+    border: 3px solid rgb(255, 255, 0);
+}
+
+.Control .Item, .Recap .Item, .Transition .Item, .Demo .Item {
+    @extend .flexCenter;
+    min-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
