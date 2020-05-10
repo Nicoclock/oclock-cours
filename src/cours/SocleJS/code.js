@@ -173,3 +173,97 @@ else {
     message = "Vous avez " + score + " bonne réponse";
 }
 alert(message);`;
+
+export const checkReponseDeclare = `var checkReponse = function(reponse, solution) {
+// check si solution est number en vérifiant son type
+//SI solution est de type number ALORS on convertit reponse avec parseInt ou Number
+
+//SI reponse égale la solution
+//ALORS affiche "Gagné !", mise à jour du score
+//SINON affiche "Perdu ..."
+
+}`;
+
+export const checkReponseCast = `if (typeof solution === "number) {
+    reponse = parseInt(reponse, 10);
+}`;
+
+export const checkReponseCompare = `if (reponse === solution) {
+    alert("Gagné !");
+    score += 1;
+} 
+else {
+    alert("Perdu...");
+}`;
+
+export const checkReponseCall = `var question1 = "Quelle mer borde la ville de Sébastopol ?";
+var solution1 = "la mer Noire";
+var reponse1 = prompt(question1);
+checkReponse(reponse1, solution1)
+
+var question2 = "Quel est l'âge du capitaine ?";
+var solution2 = 63;
+var reponse2 = prompt(question2);
+checkReponse(reponse2, solution2)
+`;
+
+export const displayScore = `var displayScore = function() {
+    var message = "";
+    if (score > 1) {
+        message = "Vous avez " + score + " bonnes réponses";
+    }
+    else {
+        message = "Vous avez " + score + " bonne réponse";
+    }
+    alert(message);
+}`;
+
+export const carreV1 = `var carre = function(num) {
+    var square = num * num;
+    console.log(num + " au carré : " + square);
+}
+carre(12);`;
+
+export const isNaN = `var test = "text";
+isNaN(text);
+var num = 12;
+isNaN(num);`;
+
+export const carreV2 = `var carre = function(numStr) {
+    var num = Number(numStr);
+    if (isNaN(num)) {
+        console.log("Saisissez un nombre !");
+    } 
+    else {
+        var square = num * num;
+        console.log(num + " au carré : " + square);
+    }
+}
+var numberString = prompt("Quel nombre voulez-vous mettre au carré ?");
+carre(numberString);`;
+
+export const carreV3 = `var carre = function(numStr) {
+    var num = Number(numStr);
+    if (isNaN(num)) {
+        console.log("Saisissez un nombre !");
+    } 
+    else {
+        var square = Math.pow(num, 2);
+        console.log(num + " au carré : " + square);
+    }
+}
+var numberString = prompt("Quel nombre voulez-vous mettre au carré ?");
+carre(numberString);`;
+
+export const randomMultiplyV1 = `var randomMultiply = function(num) {
+    var randomNum = num * Math.random();
+    console.log(randomNum);
+}
+randomMultiply(49);`;
+
+export const randomMultiplyV2 = `var randomMultiply = function(num) {
+    var randomNum = num * Math.random();
+    var randomInt = Math.floor(randomNum);
+    console.log(randomInt);
+}
+randomMultiply(49);`;

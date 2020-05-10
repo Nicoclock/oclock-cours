@@ -8,11 +8,10 @@ import "../../../style.scss"
 const S2E02 = props => {
     return (
         <Fragment>
-            <Code />
             <div className="Title">JS, ça fonctionne bien</div>
             <div className="Inner">
                 <Card title="Correction">
-                    <Doc type="Challenge" url="http://localhost:1235/ChallengeS2E01/" />
+                    <Doc type="Challenge" url="http://localhost:1235/E01/ChallengeS2E01/" />
                     <List>
                         <Recap>
                             <BoxItem text="A quoi peut servir JS" />
@@ -290,6 +289,178 @@ const S2E02 = props => {
                         <Transition>
                             <BoxItem text="Pratiquons avec code du challenge" />
                             <BoxItem text="On va le rendre beau, propre, réutilisable" />
+                        </Transition>
+                    </List>
+                </Card>
+                <Card title="Isoler son code">
+                    <Doc type="Challenge" url="http://localhost:1235/E01/ChallengeS2E01/" />
+                    <List>
+                        <ListItem title="Analyse">
+                            <Item text="Commençons par repérer les code qui se ressemble, qui se répète" />
+                            <Question text="Qu'est-ce qu'on peut factoriser ?" />
+                            <Item text="Comparer la réponse et la solution" />
+                            <Item text="Mettre le score à jour si besoin" />
+                            <Item text="Afficher le message adéquat" />
+                            <Question text="Y a une 'tite dubtilité, différence de traitement. Vous la voyez ?" />
+                            <Item text="Avant comparaison, on check si la solution est un number" />
+                            <Item text="SI solution est de type number ALORS transforme réponse en number" />
+                        </ListItem>
+                        <Recap>
+                            <BoxItem text="Vérifier si solution est number" />
+                            <BoxItem text="Si number, on transforme la réponse en number" />
+                            <BoxItem text="Vérifier si solution eet réponse sont égales" />
+                            <BoxItem text="Si bonne réponse, mise à jour du score" />
+                        </Recap>
+                        <ListItem title="Déclaration fonction">
+                            <Question text="Est-ce qu'on a besoin de configurer la fonction ?" />
+                            <Question text="Qu'est-ce qu'on met comme paramètres ?" />
+                            <Item text="On fait la déclaration ensemble" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS1E01">
+                            <Code language="javaScript" code={code.checkReponseDeclare} />
+                        </Demo>
+                        <ListItem title="Implémentation en autonomie">
+                            <Item text="A vous de jouer, essayez d'implémenter cet algo" />
+                            <Item text="Je vous laisse 5 minutes et on corrige ensemble" />
+                        </ListItem>
+                        <ListItem title="Implémentation">
+                            <Question text="On doit trouver le type de solution, qu'est-ce qu'on a comme outil pour ça ?" />
+                            <Question text="Comment on va pourvoir utiliser ça dans une condition ?" />
+                            <Item text={`On va comparer typeof solution avec "number"`} />
+                            <Item text="SI comparaison est true, on convertit" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS1E01">
+                            <Code language="javaScript" code={code.checkReponseCast} />
+                        </Demo>
+                        <ListItem title="Implémentation">
+                            <Item text="Maintenant que tout est en string, on peut comparer reponse et solution" />
+                            <Item text="Si gagné, on n'oublie pas d'incrémenter le score" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS1E01">
+                            <Code language="javaScript" code={code.checkReponseCompare} />
+                        </Demo>
+                        <ListItem title="Appel fonction">
+                            <Item text="Il nous reste à appeler notre fonction dans le code" />
+                            <Item text="Je vous écoute, on l'appelle où et comment ? Avec quels arguments ?" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS1E01">
+                            <Code language="javaScript" code={code.checkReponseCall} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Comment ça va jusque là ?" />
+                            <BoxItem text="Sondage fonction checkReponse : c'est ok / à pratiquer / suis largué ..." />
+                        </Control>
+                        <ListItem title="DisplayScore">
+                            <Item text="Poussons le vice un peu" />
+                            <Item text="Je voudrais mettre la logique d'affichage du score dans une fonction displayScore" />
+                            <Item text="On pourra l'appeler après chaque question pour voir le score au fur et à mesure" />
+                            <Question text="Est-ce qu'on a besoin de configurer cette fonction ? ?" />
+                            <Item text="On va juste déplacer la logique dans le corps de notre fonction" />
+                            <Item text="On va l'appeler après chaque appel à checkReponse" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS1E01">
+                            <Code language="javaScript" code={code.displayScore} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="C'est bon pour tout le monde ?" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="On a donc vu la démarche pour faire du refactoring" />
+                            <BoxItem text="On repère les parties du code qui se répètent ou se ressemblent beaucoup" />
+                            <BoxItem text="On crée une fonction qui va stocker les instructions" />
+                            <BoxItem text="On remplace le code par un appel à la fonction" />
+                        </Recap>
+                        <Demo type="repo Syntaxe">
+                            <BoxItem text="Commit / push" />
+                        </Demo>
+                    </List>
+                    <Doc type="Challenge" url="http://localhost:1235/E02/Maths/" />
+                    <List>
+                        <ListItem title="Exo autonomie - 1">
+                            <Item text="Fonction avec un nombre en paramètre" />
+                            <Item text="Doit afficher ce nombre au carre en console" />
+                            <Item text="Son nom : carre" />
+                            <Item text="On fait un test en l'appelant" />
+                        </ListItem>
+                        <Demo type="repo Maths">
+                            <BoxItem text="Création repo, index.html, js/maths.js" />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Vous êtes à l'aise ou pas ?" />
+                            <BoxItem text="Vous voulez qu'on fasse la déclaration ensemble ?" />
+                        </Control>
+                        <Demo type="repo Maths">
+                            <Code language="JavaScript" code={code.carreV1} />
+                        </Demo>
+                        <ListItem title="Exo autonomie - 2">
+                            <Item text="Le nombre à mettre au carré est demandé à l'utilisateur" />
+                            <Item text="Fonction avec une string en paramètre" />
+                            <Question text="Ca va poser des problèmes dans notre code. Vous voyez lequels ?" />
+                            <Item text="Prévoir conversion string to number" />
+                            <Item text="Vérifier que la conversion a marché" />
+                            <Item text="Nouvelle fonction : isNaN qui va retourner true si son argument n'est PAS un nombre" />
+                            <Item text="is not a number" />
+                        </ListItem>
+                        <Demo type="repo console">
+                            <Code language="JavaScript" code={code.isNaN} />
+                        </Demo>
+                        <Recap>
+                            <BoxItem text="L'utilisateur saisi quelque chose au clavier" />
+                            <BoxItem text="On passe cette saisie en argument à carre()" />
+                            <BoxItem text="Dans la fonction, on convertie la saisie en number" />
+                            <BoxItem text="On verifie avec isNaN si on a bien un nombre" />
+                            <BoxItem text="Si oui, on affiche le carre dans la console" />
+                            <BoxItem text="Si non, on affiche un message d'erreur" />
+                        </Recap>
+                        <Demo type="repo Maths">
+                            <Code language="JavaScript" code={code.carreV2} />
+                        </Demo>
+                        <Transition>
+                            <BoxItem text="On va faire une dernière version qui va utiliser une bibliothèque javascript" />
+                            <BoxItem text="C'est un ensemble de fonctions qu'on a regroupé" />
+                            <BoxItem text="La lib s'appelle Math et permet nombreuses opérations" />
+                            <BoxItem text="N'hésitez pas à checker la doc" />
+                        </Transition>
+                        <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math" />
+                        <ListItem title="Exo autonomie - 3">
+                            <Item text="Scroll un peu on arrive à Math.pow" />
+                            <Item text="Mettre au carré, c'est passer le nombre à la puissance 2" />
+                            <Question text="Comment on peut utiliser Math.pow dans notre code ?" />
+                        </ListItem>
+                        <Demo type="repo Maths">
+                            <Code language="JavaScript" code={code.carreV3} />
+                        </Demo>
+                        <ListItem title="Exo autonomie - 4">
+                            <Item text="Autre méthode super utile : Math.random" />
+                            <Item text="En prog, souvent besoin d'un nombre aléatoire" />
+                            <Item text="Imaginons qu'on veuille simuler tirage du loto : nombre au hasard entre 1 et 49" />
+                            <Item text="Math.random donne un nb au hasard entre 0 et 1" />
+                            <Item text="En multipliant 49 par random, on obtient % de 49" />
+                        </ListItem>
+                        <Demo type="repo Maths">
+                            <Code language="JavaScript" code={code.randomMultiplyV1} />
+                        </Demo>
+                        <ListItem title="Exo autonomie - 4">
+                            <Item text="Au loto, y a pas de nombre à virgule" />
+                            <Question text="Vous voyez quelque chose qui peut nous aider dans la doc ? Une fonction qui nous renvoie un entier ?" />
+                            <Item text="Math.floor, Math.ceil, Math.round" />
+                        </ListItem>
+                        <Demo type="repo Maths">
+                            <Code language="JavaScript" code={code.randomMultiplyV2} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Vous vous sentez bien toujours ?" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="On a vu plein de chose encore !" />
+                            <BoxItem text="Refactoring du code : plus beau ou plus efficace" />
+                            <BoxItem text="La lib Math : plein d'opérations disponibles" />
+                        </Recap>
+                        <Transition>
+                            <BoxItem text="Pour un vrai tirage du loto, on aurait besoin de garder des traces des tirages" />
+                            <BoxItem text="Il faudrait qu'on les stocke pour les afficher" />
+                            <BoxItem text="On peut créer une variable par boule mais c'est pas génial" />
+                            <BoxItem text="Nouveau type de variable : le tableau" />
                         </Transition>
                     </List>
                 </Card>

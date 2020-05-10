@@ -154,7 +154,7 @@ const S2E01 = props => {
                     </List>
                 </Card>
                 <Card title="Programmation">
-                    <Doc type="RPG" url="http://localhost:1235/RPG/" />
+                    <Doc type="RPG" url="http://localhost:1235/E01/RPG/" />
                     <List>
                         <ListItem title="Qu'est-ce que c'est la programmation ?">
                             <Question text="Y en parmi vous qui ont déjà écrit du code ?" />
@@ -211,7 +211,7 @@ const S2E01 = props => {
                     </List>
                 </Card>
                 <Card title="Ca sert à quoi ?">
-                    <Doc type="RPG" url="http://localhost:1235/RPG/" />
+                    <Doc type="RPG" url="http://localhost:1235/E01/RPG/" />
                     <List>
                         <ListItem title="Actions possibles">
                             <Item text="Voyons quelles fonctionnalités les devs ont mis à notre dispo" />
@@ -264,7 +264,7 @@ const S2E01 = props => {
                 </Card>
                 <Card title="Bases du langage">
                     <Doc type="Slides" url="http://localhost:1234/s2/e1/decouverte-js" />
-                    <Doc type="Repo" url="http://localhost:1235/Syntaxe" />
+                    <Doc type="Repo" url="http://localhost:1235/E01/Syntaxe" />
                     <List>
                         <ListItem title="Bases du JS">
                             <Item text="Pas le plus drôle mais vraiment nécessaire" />
@@ -540,7 +540,7 @@ const S2E01 = props => {
                     </List>
                 </Card>
                 <Card title="Premiers pas">
-                    <Doc type="Repo" url="http://localhost:1235/Syntaxe" />
+                    <Doc type="Repo" url="http://localhost:1235/E01/Syntaxe" />
                     <List>
                         <ListItem title="Alert">
                             <Item text="On peut afficher un message autrement" />
