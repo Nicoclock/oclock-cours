@@ -665,6 +665,178 @@ const S2E02 = props => {
                         </Transition>
                     </List>
                 </Card>
+                <Card title="Boucles">
+                    <Doc type="Slides" url="http://localhost:1234/s2/e2/boucle" />
+                    <List>
+                        <ListItem title="C'est quoi une boucle">
+                            <Item text="Structure de code qui va permettre de répéter des instructions" />
+                            <Item text="Pas limpide, voyons ça plus en détail" />
+                        </ListItem>
+                        <Click dir="right" />
+                        <ListItem title="Principe - 1">
+                            <Item text="Mecanisme basé sur les conditions" />
+                            <Item text="Tant qu'une condition est vérifiée (true), on exécute les instructions de la boucle" />
+                            <Item text="Quand condition est false, on sort de la boucle et on exécute le code après la boucle" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Principe - 2">
+                            <Item text="Principe plutôt clair, mais grattons un peu pour bien comprendre" />
+                            <Item text="Reprenons notre tableau de fruits" />
+                            <Question text="On s'y prend comment pour afficher les valeurs du tableau une par une ?" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Principe - 3">
+                            <Item text="On peut utiliser console.log avec chaque index" />
+                            <Item text="Ca marche mais devient vite fastidieux" />
+                            <Question text="Si on a 200 fruits ou 1000 fruits ?" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Principe - 4">
+                            <Item text="2 façon d'envisager le problème, 2 algos :" />
+                            <SubItem text="TANT QU'il y a des fruits dans le tableau, on affiche" />
+                            <SubItem text="POUR chaque élément dans le tableau, on affiche" />
+                        </ListItem>
+                        <Control>
+                            <BoxItem text="Vous comprenez le principe ?" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="Dans les 2 cas, on va PARCOURIR notre tableau de l'index 0 à la fin" />
+                            <BoxItem text="On va passer sur chaque élément et l'afficher" />
+                        </Recap>
+                        <Click dir="right" />
+                        <ListItem title="While - 1">
+                            <Item text="Commençons par l'algo TANT QUE" />
+                        </ListItem>
+                        <Click dir="right" />
+                        <ListItem title="While - 2">
+                            <Item text="Rappel principe : TANT QUE condition est vraie, on exécute les instructions dans la boucle" />
+                            <Item text="En JS, TANT QUE va se dire while" />
+                            <Item text="Regardons le code proposé :" />
+                            <SubItem text="on déclare une var compteur initialisée à 0" />
+                            <SubItem text="tant que le compteur est inférieur à 3" />
+                            <SubItem text="on affiche le fruit à l'index compteur" />
+                            <SubItem text="on incrémente notre compteur (ajoute 1)" />
+                            <Item text="Attention à l'incrémentation : super important" />
+                            <Item text="Si on l'oublie, on ne sort jamais de la boucle" />
+                            <Item text="Boucle infinie ou boucle folle" />
+                            <Item text="Sur certains système (au hasard windows ...), ça peut planter la machine" />
+                            <Item text="J'insiste : dans boucle while, toujours prévoir une porte de sortie" />
+                            <Item text="Dans le code de la boucle, faire en sorte que la condition puisse passer à false" />
+                            <Item text="Règle d'or pour while : prévoir comment sortir de la boucle" />
+                        </ListItem>
+                        <Click dir="right" />
+                        <ListItem title="for">
+                            <Item text="Rappel principe : POUR chaque élément du tableau, afficher" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="for">
+                            <Item text="Le fonctionnement est à peu près le même" />
+                            <Item text="On l'écrit différemment" />
+                            <Item text="POUR devient for en JS" />
+                            <Item text="entre les parenthèses, on décrit le comportement de notre compteur (ici index)" />
+                            <Item text="3 instructions condensés sur 1 ligne séparées par ;" />
+                            <SubItem text="déclaration : var index = 0;" />
+                            <SubItem text="condition : index < 3;" />
+                            <SubItem text="incrémentation : index++; ou index += 1; ou index = index+1;" />
+                            <Item text="Comme avec while, tant que la condition est true, on exécute les instructions de la boucle" />
+                            <Item text="Ici, on affiche le fruit à l'index index" />
+                            <Item text="Côté pratique du for, moins de chance d'oublier l'incrémentation :-)" />
+                        </ListItem>
+                        <Control>
+                            <BoxItem text="Comment vous le sentez les boucles ? Ca va ?" />
+                        </Control>
+                        <Click dir="right" />
+                        <Recap>
+                            <BoxItem text="Une boucle sert donc à répéter des instructions selon une condition" />
+                            <BoxItem text="On a vu 2 façons de faire une boucle" />
+                            <BoxItem text="Algo TANT QUE, while en js" />
+                            <BoxItem text="déclaration avant boucle, condition entre (), incrémentation dans le corps de la boucle" />
+                            <BoxItem text="Algo POUR, for en js" />
+                            <BoxItem text="déclaration condition incrémentation dans la même ligne séparées par ;" />
+                        </Recap>
+                        <Transition>
+                            <BoxItem text="pour que ça rentre bien, il faut qu'on pratique, allons jouer !" />
+                        </Transition>
+                        <Doc type="repo Boucles" url="http://localhost:1235/E02/Boucles/" />
+                        <ListItem title="exo autonomie">
+                            <Item text="Rien de tel qu'un 'tit exo" />
+                            <Item text="On va se créer un nouveau repo Boucles, index, js/boucles" />
+                            <Item text="Dans le js, on va se créer un tableau" />
+                            <Item text="Avec une boucle, on va le remplir avec les chiffres de 0 à 9" />
+                            <Item text="On va le faire avec while d'abord, on le refera avec for" />
+                            <Question text="Vous vous sentez de faire ça tout seul ?" />
+                            <Question text="On se fait le while ensemble ?" />
+                        </ListItem>
+                        <ListItem>
+                            <Item text="On commence par déclarer notre tableau vide" />
+                        </ListItem>
+                        <Demo type="repo Boucles">
+                            <Code language="JavaScript" code={code.whileStart} />
+                        </Demo>
+                        <ListItem>
+                            <Question text="Ensuite, qu'est-ce qu'il faut qu'on fasse ?" />
+                            <Item text="Il faut initialiser notre compteur" />
+                        </ListItem>
+                        <Demo type="repo Boucles">
+                            <Code language="JavaScript" code={code.whileCounter} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="On a notre tableau pour stocker les résultats, on a notre compteur" />
+                            <Question text="Je vous écoute, on fait quoi maintenant ?" />
+                            <Item text="On va lancer la boucle" />
+                        </ListItem>
+                        <Demo type="repo Boucles">
+                            <Code language="JavaScript" code={code.whileFoireux} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Ma boucle est foireuse là" />
+                            <BoxItem text="Qui peut me dire pourquoi ?" />
+                        </Control>
+                        <ListItem>
+                            <Item text="Je n'ai pas incrémenté mon compteur !!!" />
+                            <Item text="Je lance pas ma page, je corrige d'abord !" />
+                        </ListItem>
+                        <Demo type="repo Boucles">
+                            <Code language="JavaScript" code={code.whileOk} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Pour finir, on va afficher un message pour vérifier combien d'éléments dans le tab" />
+                        </ListItem>
+                        <Demo type="repo Boucles">
+                            <Code language="JavaScript" code={code.whileFull} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="C'est ok pour le while ? Clair pour vous ?" />
+                        </Control>
+                        <ListItem>
+                            <Item text="Dans le coup, à vous de jouer pour le for" />
+                        </ListItem>
+                        <Demo type="repo Boucles">
+                            <Code language="JavaScript" code={code.forFull} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="On déclare un autre tableau" />
+                            <Item text="On lance le for avec init, condition et incrémentation" />
+                            <Item text="On affiche le nb d'éléments dans le tableau" />
+                        </ListItem>
+                        <Control>
+                            <BoxItem text="Ok pour vous le for ?" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="On a donc revu ensemble le principe des boucles" />
+                            <BoxItem text="Avec while : compteur déclaré hors boucle, condition entre (), incrémentation dans la boucle" />
+                            <BoxItem text="Avec for : déclaration, condition incrémentation entre () séparées par ;" />
+                        </Recap>
+                        <Transition>
+                            <BoxItem text="Encore une bonne journée !! Riche en nouveautés !" />
+                            <BoxItem text="Vous allez repratiquer tout ça dans le challenge, on le regarde tout de suite" />
+                        </Transition>
+                        <Demo type="repo ChallengeS1E02">
+                            <BoxItem text="Manip partage challenge du jour" />
+                        </Demo>
+                        <ListItem title="Présentation challenge" />
+                    </List>
+                </Card>
             </div>
         </Fragment>
     );

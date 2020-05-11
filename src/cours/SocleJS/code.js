@@ -307,3 +307,66 @@ export const fruits = `var fruits = ["pomme", "poire", "banane", "goyave"];
 
 console.log("Je mange une " + fruits[2]);
 console.log("Je mange une " + fruits[Math.floor(Math.random()*fruits.length)]);`;
+
+export const whileStart = `//avec TANT QUE
+
+//on initialise le tableau qui va contenir les résultats
+var tab = [];`;
+
+export const whileCounter = `//on initialise notre compteur
+var compteur = 0;`;
+
+export const whileFoireux = `//on lance la boucle
+while(compteur < 10) {
+    //on vérifie la valeur du compteur dans cette itération
+    console.log("Valeur du compteur de la boucle while : ", compteur);
+
+    //on stocke la valeur du compteur dans le tableau
+    tab[compteur] = compteur;
+}`;
+
+export const whileOk = `//on lance la boucle
+while(compteur < 10) {
+    //on vérifie la valeur du compteur dans cette itération
+    console.log("Valeur du compteur de la boucle while : ", compteur);
+    //on stocke la valeur du compteur dans le tableau
+    tab[compteur] = compteur;
+    //on incrémente notre compteur
+    compteur++
+}`;
+
+export const whileFull = `//avec TANT QUE
+
+//on initialise le tableau qui va contenir les résultats
+var tab = [];
+
+//on initialise notre compteur
+var compteur = 0;
+
+//on lance la boucle
+while(compteur < 10) {
+    //on vérifie la valeur du compteur dans cette itération
+    console.log("Valeur du compteur de la boucle while : ", compteur);
+    //on stocke la valeur du compteur dans le tableau
+    tab[compteur] = compteur;
+    //on incrémente notre compteur
+    compteur++
+}
+//on vérifie le nb d'éléments dans le tableau
+console.log("Le tableau rempli par while contient " + tab.length + " éléments");`;
+
+export const forFull = `//avec POUR
+
+//on initialise un nouveau tableau de résultats
+var tab2 = [];
+
+//on lance la boucle 
+for (var compteur2 = 0; compteur2 < 10; compteur2++) {
+    //on vérifie la valeur du compteur dans cette itération
+    console.log("Valeur du compteur de la boucle for : ", compteur2);
+
+    //on stocke la valeur du compteur dans le tableau
+    tab2[compteur2] = compteur2;
+}
+//on vérifie le nb d'éléments dans le tableau
+console.log("Le tableau rempli par for contient " + tab2.length + " éléments");`;
