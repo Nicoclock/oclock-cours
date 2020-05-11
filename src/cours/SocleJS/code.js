@@ -370,3 +370,129 @@ for (var compteur2 = 0; compteur2 < 10; compteur2++) {
 }
 //on vérifie le nb d'éléments dans le tableau
 console.log("Le tableau rempli par for contient " + tab2.length + " éléments");`;
+
+export const randomNumber = `//on déclare un variable max
+var MAX = 500;
+
+//création du nombre aléatoire entre 0 et MAX
+//déja la partie aléatoire
+var random = Math.random();
+
+//on l'applique à notre fourchette en multipliant random par la valeur max
+var fork = MAX * random;
+
+//on arrondit cette fourchette pour avoir un nombre entier
+var toGuess = Math.round(fork);
+
+//version condensée
+//var toGuess = Math.round(Math.random()*500);`;
+
+export const randomInput = `var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));`;
+
+export const randomWhile = `while(userGuess !== randomNumber) {
+    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+}`;
+
+export const randomNan = `//SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
+if (isNaN(userGuess)) {
+    console.log("Veuillez saisir un nombre entre 0 et "+MAX);
+}`;
+
+export const randomWhileFull = `while(userGuess !== randomNumber) {
+    //récup saisie de l'utilisateur
+    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+    //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
+    if (isNaN(userGuess)) {
+        console.log("Veuillez saisir un nombre entre 0 et "+MAX);
+    }
+    //SINON SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
+    else if (userGuess < randomNumber) {
+        console.log("Le nombre à deviner est plus grand");
+    }
+    //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
+    else if (userGuess > randomNumber) {
+        console.log("Le nombre à deviner est plus petit");
+    }
+}`;
+
+export const randomWin = `//message gagné
+console.log("Clap clap, vous avez trouvé le nb "+randomNumber);`;
+
+export const randomFull = `//on déclare un variable max
+var MAX = 500;
+
+//création du nombre aléatoire entre 0 et MAX
+//déja la partie aléatoire
+var random = Math.random();
+
+//on l'applique à notre fourchette en multipliant random par la valeur max
+var fork = MAX * random;
+
+//on arrondit cette fourchette pour avoir un nombre entier
+var randomNumber = Math.round(fork);
+
+//version condensée
+//var randomNumber = Math.round(Math.random()*500);
+
+var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+var nbTries = 1;
+
+while(userGuess !== randomNumber) {
+    //récup saisie de l'utilisateur
+    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+    //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
+    if (isNaN(userGuess)) {
+        console.log("Veuillez saisir un nombre entre 0 et "+MAX);
+    }
+    //SINON SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
+    else if (userGuess < randomNumber) {
+        console.log("Le nombre à deviner est plus grand");
+    }
+    //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
+    else if (userGuess > randomNumber) {
+        console.log("Le nombre à deviner est plus petit");
+    }
+    //on incrémente le nb d'essais
+    nbTries++;
+}
+//message gagné
+console.log("Clap clap, vous avez trouvé le nb "+randomNumber+" en "+nbTries+" coups !");`;
+
+export const randomDoWhile = `//on déclare un variable max
+var MAX = 500;
+
+//création du nombre aléatoire entre 0 et MAX
+//déja la partie aléatoire
+var random = Math.random();
+
+//on l'applique à notre fourchette en multipliant random par la valeur max
+var fork = MAX * random;
+
+//on arrondit cette fourchette pour avoir un nombre entier
+var randomNumber = Math.round(fork);
+
+//version condensée
+//var randomNumber = Math.round(Math.random()*500);
+
+var nbTries = 0;
+
+do {
+    //récup saisie de l'utilisateur
+    var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+    //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
+    if (isNaN(userGuess)) {
+        console.log("Veuillez saisir un nombre entre 0 et "+MAX);
+    }
+    //SINON SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
+    else if (userGuess < randomNumber) {
+        console.log("Le nombre à deviner est plus grand");
+    }
+    //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
+    else if (userGuess > randomNumber) {
+        console.log("Le nombre à deviner est plus petit");
+    }
+    //on incrémente le nb d'essais
+    nbTries++;
+} while(userGuess !== randomNumber)
+//message gagné
+console.log("Clap clap, vous avez trouvé le nb "+randomNumber+" en "+nbTries+" coups !");`;
