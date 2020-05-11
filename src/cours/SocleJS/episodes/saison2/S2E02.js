@@ -464,6 +464,207 @@ const S2E02 = props => {
                         </Transition>
                     </List>
                 </Card>
+                <Card title="Tableaux">
+                    <Doc type="Slides" url="http://localhost:1234/s2/e2/tableau" />
+                    <List>
+                        <ListItem title="Les tableaux">
+                            <Item text="Découvrons ensemble ce nouveau type, ce qu'il mange le matin, ..." />
+                        </ListItem>
+                        <Click dir="right" />
+                        <ListItem title="Types connus">
+                            <Item text="On a déjà vu plusieurs types de variables" />
+                            <SubItem text="boolean : true ou false" />
+                            <SubItem text="string : chaine de caractères" />
+                            <SubItem text="number : nombres entiers ou float" />
+                            <Item text="Il existe d'autres types qu'on va voir au fur et à mesure" />
+                            <Item text="Notamment le tableau ou Array" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Tableaux, c'est à dire">
+                            <Item text="Variable : boite avec un nom et une valeur" />
+                            <Item text="Tableau : étagère de boites, liste de valeurs" />
+                            <Item text="Ex prénom ou tirage loto : " />
+                            <SubItem text="pour stocker plusieurs valeurs, une variable à chaque fois" />
+                            <SubItem text="peut vite devenir fastidieux ..." />
+                            <SubItem text="si nb de valeurs inconnu, on est coincé !" />
+                        </ListItem>
+                        <Click dir="right" />
+                        <ListItem title="Tableaux en JS">
+                            <Item text="Intérêt du tableau : on peut y ajouter autant de valeurs qu'on veut" />
+                            <Item text="Référence unique, nom unique pour désigner la liste de valeurs" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Déclaration">
+                            <Item text="En JS : avec le mot-clé var, comme toujours" />
+                            <Item text="Tableau se note entre crochets" />
+                            <Item text="Si pas de valeur entre crochets, le tableau existe, pas undefined, juste vide" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.emptyTab} />
+                        </Demo>
+                        <Click dir="bottom" />
+                        <ListItem title="Déclaration avec valeurs">
+                            <Item text="Pas toujours le cas mais des fois, valeurs connues d'avance" />
+                            <Item text="On peut alors les indiquer à la déclaration" />
+                            <Item text="Chaque valeur est séparée par une virgule" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.prenomsTab} />
+                        </Demo>
+                        <Click dir="bottom" />
+                        <ListItem title="Lecture des valeurs">
+                            <Item text="Pour lire les valeurs, on utilise leur position, leur index : nom tab + index entre crochets" />
+                            <Item text="Dans majorité des langages, le premier élément est à l'index 0, 2ème, 1, 3ème, 2, etc..." />
+                            <Item text="Coup à prendre, on s'y fait très vite !" />
+                            <Item text="Ex slide : on accède à la deuxième valeur du tab avec l'index 1" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.prenomsRead} />
+                        </Demo>
+                        <Click dir="bottom" />
+                        <ListItem title="Ajout de valeurs">
+                            <Item text="On peut ajouter des valeurs après la déclaration" />
+                            <Item text="Quand on connait le contenu, il suffit d'utiliser l'index suivant" />
+                            <Item text="Dans notre cas, 3 valeurs stockées aux index 0, 1 et 2" />
+                            <Item text="Prochain index 3, on ajoute la valeur avec [3]" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.prenomsAdd} />
+                        </Demo>
+                        <Click dir="bottom" />
+                        <ListItem title="Entrées vides">
+                            <Item text="Si on se trompe dans l'index, qu'on met 4, pas d'erreur" />
+                            <Item text="JS comble l'élément manquant avec un élément vide" />
+                            <Item text="Log du tableau : 1 élément noté empty" />
+                            <Item text="Log de cet élément : undefined" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.prenomsEmptyVal} />
+                        </Demo>
+                        <Click dir="bottom" />
+                        <ListItem title="Override">
+                            <Item text="Si on se trompe dans l'autre sens, qu'on réutilise index 1, pas d'erreur non plus" />
+                            <Item text="Y a déjà une valeur à cet index, elle va être écrasée par la nouvelle valeur" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.prenomsOverride} />
+                        </Demo>
+                        <ListItem title="Contourner index - 1">
+                            <Item text="Cette histoire d'index : un peu fastidieux" />
+                            <Item text="On connait pas toujours le contenu, donc l'index suivant" />
+                            <Item text="Les tableaux en js ont une propriété, une variable qui leur appartient : length" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.prenomsLength} />
+                        </Demo>
+                        <ListItem title="Contourner index - 2">
+                            <Item text="Vous remarquez ? le nombre renvoyé par length, c'est le nb d'éléments du tab" />
+                            <Item text="Mais c'est aussi l'index suivant ! Pratique !!" />
+                            <Item text="Si tab.length renvoie 3, on sait que les éléments 0, 1 et 2 sont occupés" />
+                            <Item text="On peut ajouter une valeur en fin de tableau en utilisant length" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.prenomsAddLength} />
+                        </Demo>
+                        <ListItem title="Contourner index - 3">
+                            <Item text="Autre solution : utiliser une méthode des tableaux, une fonction rattaché à un type d'objet" />
+                            <Item text="push() permet d'ajouter un élément en fin de tableau" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.prenomsPush} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Comment ça va jusqu'à maintenant ?" />
+                            <BoxItem text="Vous commencez à voir l'intérêt des tableaux ?" />
+                            <BoxItem text={`Quiz : on le tableau suivant : var tirage = ["boule1", "boule2", "boule3"];`} />
+                            <BoxItem text="Quel élément est à l'index 2 ? boule1, boule2, boule3" />
+                            <BoxItem text="Comment afficher le 2ème élément ?" />
+                             <BoxItem text="console.log(tirage[0]), console.log(tirage[1]), console.log(tirage[2])" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="On a vu comment déclarer un tableau" />
+                            <BoxItem text="Comment y stocker des valeurs" />
+                            <BoxItem text="Comment accéder à ces valeurs avec l'index" />
+                            <BoxItem text="Comment ajouter des valeurs avec l'index, en utilisant length ou avec push" />
+                        </Recap>
+                        <Click dir="right" />
+                        <Transition>
+                            <BoxItem text="Pour l'instant, on a mis que des string dans le tab" />
+                            <BoxItem text="Vous commencez à connaitre JS, ça se limite pas à ça !" />
+                        </Transition>
+                        <Click dir="bottom" />
+                        <ListItem title="Stockage - 1">
+                            <Item text="On peut y stocker tous les types de valeurs qu'on a vu :" />
+                            <SubItem text="des strings" />
+                            <SubItem text="des numbers" />
+                            <SubItem text="des booleans" />
+                            <Item text="Souplesse de JS : tableaux ne sont pas typés" />
+                            <Item text="On peut mélanger les types de variables dedans, pas permis dans tous les langages" />
+                            <Item text="Pas obligé de mettre des valeurs en dur, on peut mettre des variables" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.tabWithVars} />
+                        </Demo>
+                        <Click dir="bottom" />
+                        <ListItem title="Stockage - 2">
+                            <Item text="On peut même ajouter un tableau dans un tableau" />
+                            <Item text="Ca parait vicieux mais ça peut être très utile" />
+                            <Item text="Ex slide : pour accéder à une valeur du tab dans le tab :" />
+                            <SubItem text="Premier index pour accéder au tableau" />
+                            <SubItem text="Second index : pour accéder à une valeur dans le tableau" />
+                        </ListItem>
+                        <ListItem title="Petite parenthèse">
+                            <Item text="Pour JS, une string, c'est aussi un tableau" />
+                            <Item text="On peut récupérer un caractère précis avec son index" />
+                            <Item text="On peut connaitre sa longueur avec length" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.stringTab} />
+                        </Demo>
+                        <Click dir="bottom" />
+                        <ListItem title="Présentation">
+                            <Item text="Quand un tableau contient beaucoup d'éléments, on peut le présenter différemment" />
+                            <Item text="On place un élément par ligne" />
+                            <Item text="Plus lisible, plus facile à modifier" />
+                        </ListItem>
+                        <Control>
+                            <BoxItem text="Tout le monde est là ? J'ai perdu personne ?" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="Tableaux peuvent contenir tous les types, même un autre tableau" />
+                            <BoxItem text="La string est une sorte de tableau, caractères par index, méthode length" />
+                            <BoxItem text="Libre dans la présentation, plus c'est clair mieux c'est !" />
+                        </Recap>
+                        <Click dir="right" />
+                        <Transition>
+                            <BoxItem text="Assez de théorie, allons pratiquer avec un 'tit exo" />
+                        </Transition>
+                        <Doc type="repo Fruits" url="http://localhost:1235/E02/Fruits/" />
+                        <ListItem title="Exo en autonomie">
+                            <Item text="On va se créer un nouveau répertoire avec index et js/fruits.js" />
+                            <Item text="Dans le js, on déclare un tableau de quelques fruits" />
+                            <Item text={`On va afficher en console "je mange " + un fruit du tableau`} />
+                            <Item text="en utilisant un index pour récup la valeur" />
+                            <Item text="Si vous le sentez, essayez de mettre un index aléatoire avec Math.random" />
+                            <Item text="Faut un nombre entier pour les index, faudra combiner avec une autre méthode de Math" />
+                        </ListItem>
+                        <Demo type="console">
+                            <Code language="JavaScript" code={code.fruits} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Ok pour tout le monde ? les tableaux sont vos amis ?" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="On a décotiqué les tableaux : déclaration, modification, lecture des valeurs" />
+                        </Recap>
+                        <Transition>
+                            <BoxItem text="Imaginons qu'on a besoin d'un tableau avec tous les nb de 0 à 999" />
+                            <BoxItem text="On ne va pas assigner les valeurs une par une, trop galère" />
+                            <BoxItem text="On aurait besoin d'un outil pour répéter une action" />
+                            <BoxItem text="Merci JS, on va pouvoir faire ça avec les boucles" />
+                        </Transition>
+                    </List>
+                </Card>
             </div>
         </Fragment>
     );

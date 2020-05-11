@@ -267,3 +267,43 @@ export const randomMultiplyV2 = `var randomMultiply = function(num) {
     console.log(randomInt);
 }
 randomMultiply(49);`;
+
+export const emptyTab = `var prenoms = [];
+console.log(prenoms);`;
+
+export const prenomsTab = `var prenoms = ["Philippe", "Simon", "Etienne"];`;
+
+export const prenomsRead = `console.log(prenoms[1];`;
+
+export const prenomsAdd = `prenoms[3] = "Nico";
+console.log(prenoms);`;
+
+export const prenomsEmptyVal = `var prenoms = ["Philippe", "Simon", "Etienne"];
+prenoms[4] = "Nico";
+console.log(prenoms);
+console.log(prenoms[3]);`;
+
+export const prenomsOverride = `var prenoms = ["Philippe", "Simon", "Etienne"];
+prenoms[1] = "Nico";
+console.log(prenoms);`;
+
+export const prenomsLength = `console.log(prenoms.length);`;
+
+export const prenomsAddLength = `prenoms[prenoms.length] = "Simon";
+console.log(prenoms);`;
+
+export const prenomsPush = `prenoms.push("Lucie");
+console.log(prenoms);`;
+
+export const tabWithVars = `var nom = "Nico";
+var age = 42;
+var tab = [nom, age]`;
+
+export const stringTab = `var test = "du texte";
+console.log(test[3]); //t
+console.log(test.length); //8`;
+
+export const fruits = `var fruits = ["pomme", "poire", "banane", "goyave"];
+
+console.log("Je mange une " + fruits[2]);
+console.log("Je mange une " + fruits[Math.floor(Math.random()*fruits.length)]);`;
