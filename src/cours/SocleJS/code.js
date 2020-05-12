@@ -382,10 +382,10 @@ var random = Math.random();
 var fork = MAX * random;
 
 //on arrondit cette fourchette pour avoir un nombre entier
-var toGuess = Math.round(fork);
+var randomGuess = Math.round(fork);
 
 //version condensée
-//var toGuess = Math.round(Math.random()*500);`;
+//var randomGuess = Math.round(Math.random()*500);`;
 
 export const randomInput = `var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));`;
 
@@ -399,8 +399,6 @@ if (isNaN(userGuess)) {
 }`;
 
 export const randomWhileFull = `while(userGuess !== randomNumber) {
-    //récup saisie de l'utilisateur
-    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
     //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
     if (isNaN(userGuess)) {
         console.log("Veuillez saisir un nombre entre 0 et "+MAX);
@@ -413,6 +411,8 @@ export const randomWhileFull = `while(userGuess !== randomNumber) {
     else if (userGuess > randomNumber) {
         console.log("Le nombre à deviner est plus petit");
     }
+    //récup saisie de l'utilisateur
+    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
 }`;
 
 export const randomWin = `//message gagné
@@ -438,8 +438,6 @@ var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
 var nbTries = 1;
 
 while(userGuess !== randomNumber) {
-    //récup saisie de l'utilisateur
-    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
     //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
     if (isNaN(userGuess)) {
         console.log("Veuillez saisir un nombre entre 0 et "+MAX);
@@ -452,6 +450,8 @@ while(userGuess !== randomNumber) {
     else if (userGuess > randomNumber) {
         console.log("Le nombre à deviner est plus petit");
     }
+    //récup nouvelle saisie de l'utilisateur
+    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
     //on incrémente le nb d'essais
     nbTries++;
 }
@@ -474,11 +474,9 @@ var randomNumber = Math.round(fork);
 //version condensée
 //var randomNumber = Math.round(Math.random()*500);
 
-var nbTries = 0;
-
+var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));;
+var nbTries = 1;
 do {
-    //récup saisie de l'utilisateur
-    var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
     //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
     if (isNaN(userGuess)) {
         console.log("Veuillez saisir un nombre entre 0 et "+MAX);
@@ -493,6 +491,58 @@ do {
     }
     //on incrémente le nb d'essais
     nbTries++;
+    //récup nouvelle saisie de l'utilisateur
+    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
 } while(userGuess !== randomNumber)
 //message gagné
 console.log("Clap clap, vous avez trouvé le nb "+randomNumber+" en "+nbTries+" coups !");`;
+
+export const getNumber = `var getNumber = function() {
+    //on déclare la variable userGuess et on l'assigne avec le prompt
+    var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+    //SI userGuess n'est pas un nombre ALORS on retourne -1 
+    if (isNaN(userGuess)) {
+        return -1;
+    }
+    //SINON on retourne le nombre
+    else {
+        return userGuess;
+    }
+}`;
+
+export const randomWithGetNumber = `var userGuess = getNumber();
+var nbTries = 1;
+
+while(userGuess !== randomNumber) {
+    //SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
+    if (userGuess < randomNumber) {
+        console.log("Le nombre à deviner est plus grand");
+    }
+    //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
+    else if (userGuess > randomNumber) {
+        console.log("Le nombre à deviner est plus petit");
+    }
+    nbTries++;
+    userGuess = getNumber();
+}`;
+
+export const checkNumbersDeclare = `var checkNumbers = function(guess, random) {
+    ...
+}`;
+
+export const checkNumbers = `var checkNumbers = function(guess, random) {
+    //SI userGuess n'est pas un nombre ALORS on retourne -1 
+    if (guess < random) {
+        console.log("Le nombre à deviner est plus grand");
+    }
+    //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
+    else if (guess > random) {
+        console.log("Le nombre à deviner est plus petit");
+    }
+}`;
+
+export const randomWhileDef = `while(userGuess !== randomNumber) {
+    checkNumbers(userGuess, randomNumber);
+    nbTries++;
+    userGuess = getNumber();
+}`;
