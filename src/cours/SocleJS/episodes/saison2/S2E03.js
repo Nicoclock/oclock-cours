@@ -132,162 +132,268 @@ const S2E03 = props => {
                 </Card>
                 <Card title="Fonctions avancées">
                     <Doc type="Slides" url="http://localhost:1234/s2/e3/fonction-II" />
-                    <ListItem title="Les fonctions avancées">
-                        <Item text="Ca fait sérieux là !!" />
-                        <Item text="N'ayez pas peur, ça va bien se passer" />
-                    </ListItem>
-                    <Click dir="right" />
-                    <ListItem title="Paramètres et arguments">
-                        <Item text="Bon, ça c'est pas nouveau, juste quelques précisions à apporter" />
-                    </ListItem>
-                    <Click dir="bottom" />
-                    <ListItem title="Fonction hello">
-                        <Item text="On a donc une fonction hello qui prend info en paramètre" />
-                        <Item text="A l'appel, on lui passe monsieur en argument" />
-                        <Item text="Dans la fonction, info prendra la valeur de monsieur" />
-                        <Item text="Jusque là, pas de surprise" />
-                    </ListItem>
-                    <Click dir="bottom" />
-                    <ListItem title="Fonction hello - 2 args">
-                        <Item text="On l'a vu rapidement hier, une fonction peut avoir plusieurs paramètres" />
-                        <Item text="A l'appel, chaque paramètre prendra la valeur de l'argument dans le même ordre" />
-                        <Item text="Message aura pour valeur coucou, info aura pour valeur monsieur" />
-                        <Item text="Rien de bien transcendant non plus ..." />
-                    </ListItem>
-                    <Click dir="bottom" />
-                    <ListItem title="Params par défaut">
-                        <Item text="Ah ! Quelque chose de nouveau" />
-                        <Item text="En JS, on n'est pas obligé d'utiliser tous les paramètres d'un fonction quand on l'appelle" />
-                        <Item text="Ca fait pas d'erreur, le langage est très permissif" />
-                        <Item text="Mais dans le code de la fonction ça peut poser problème" />
-                        <Item text="Si l'argument est manquant, la valeur du paramètre sera undefined" />
-                        <Item text="On peut éviter ça en lui donnant une valeur par défaut, de remplacement" />
-                        <Item text="On la note dans la déclaration en faisant suivre le nom du param de = valeur" />
-                        <Item text="Ici c'est une string, ça peut être n'importe quel type" />
-                    </ListItem>
-                    <Control>
-                        <BoxItem text="Ok pour vous, vous voyez l'intérêt ?" />
-                    </Control>
-                    <Click dir="right" />
-                    <ListItem title="Retour à l'envoyeur">
-                        <Item text="Je vous le disais en intro, une fonction va aussi pouvoir nous renvoyer des infos" />
-                    </ListItem>
-                    <Click dir="bottom" />
-                    <ListItem title="Retour à hello">
-                        <Item text="Reprenons notre fonction hello" />
-                        <Item text="Vous comprenez son code, elle fait juste un console.log, elle ne renvoie pas d'info" />
-                        <Item text="On dit qu'elle ne retourne rien" />
-                    </ListItem>
-                    <Click dir="bottom" />
-                    <ListItem title="Retour à hello - 2">
-                        <Item text="Ca veut dire quoi ?" />
-                        <Item text="Si on assigne l'appel de la fonction dans une variable, elle prendra la valeur undefined" />
-                        <Item text="La fonction n'a pas retourné d'infos, on n'a rien à mettre dans la variable" />
-                    </ListItem>
-                    <Click dir="bottom" />
-                    <ListItem title="Retour à hello - 3">
-                        <Item text="Ce serait pourtant bien pratique" />
-                        <Item text="Regardez l'exemple : on aimerait bien factoriser la logique et obtenir une valeur en retour" />
-                        <Item text="Pour l'instant, tout ce qu'on obtient c'est undefined" />
-                    </ListItem>
-                    <Click dir="bottom" />
-                    <ListItem title="Hello with return">
-                        <Item text="Si on regarde ce nouveau code, on voit tout de suite le mot-clé return" />
-                        <Item text="Ce qu'on a après, c'est justement la valeur qu'on obtiendra en appelant la fonction" />
-                        <Item text="Ici, on aura la string Bonjour monsieur !" />
-                        <Item text="On pourra stocker cette valeur de retour, la string, dans une variable" />
-                        <Item text="On pourra utiliser cette variable où bon nous semble après" />
-                        <Item text="Comme pour les params par defaut, ici on retourne une string" />
-                        <Item text="La valeur retournée peut être de n'importe quel type" />
-                    </ListItem>
-                    <Control>
-                        <BoxItem text="Des question sur return ? On est bon ?" />
-                    </Control>
-                    <Recap>
-                        <BoxItem text="On a revu comment configurer une fonctions" />
-                        <BoxItem text="On peut mettre plusieurs paramètres dans sa déclaration" />
-                        <BoxItem text="On peut donner des valeurs par défaut à chaque paramètre" />
-                        <BoxItem text="Une fonction peut nous retourner des informations avec return" />
-                    </Recap>
-                    <Transition>
-                        <BoxItem text="Assez de blah blah, j'ai des fourmis dans les doigts" />
-                        <BoxItem text="Du code du code" />
-                    </Transition>
-                    <Doc type="repo CHallengeS2E02" url="http://localhost:1235/E02/ChallengeS2E02/html/" />
-                    <ListItem title="Exo autonomie">
-                        <Item text="Repartons de notre beau code du dernier challenge" />
-                        <Item text="Faisons un peu de refactoring" />
-                        <Item text="On va se créer une fonction qui va prendre en charge :" />
-                        <SubItem text="La demande de saisie d'un nombre à l'utilisateur" />
-                        <SubItem text="La validation que la saisie est bien un nombre" />
-                        <SubItem text="Si c'est un nombre, la fonction doit retourner le nombre saisi en type number" />
-                        <SubItem text="Sinon, elle retournera -1" />
-                        <Item text="A vous de jouer, comment on fait ça ?" />
-                    </ListItem>
-                    <ListItem title="Exo dirigé">
-                        <Item text="Déjà, on déclare notre nouvelle fonction" />
-                        <Question text="Est-ce qu'on a besoin de paramètres ?" />
-                        <Item text="Pas de paramètres ici" />
-                        <SubItem text="On déclare la variable userGuess et on l'assigne avec la valeur du prompt" />
-                        <SubItem text="On convertit en number avec Number ou parseInt" />
-                        <SubItem text="Et on teste : SI pas un nombre ALORS on retourne -1 SINON on retourne le nombre" />
-                    </ListItem>
-                    <Demo type="repo ChallengeS2E02">
-                        <Code language="JavaScript" code={code.getNumber} />
-                    </Demo>
-                    <ListItem title="Exo dirigé - 2">
-                        <Item text="Maintenant, faut appaler notre nouvelle fonction dans la boucle while" />
-                        <Question text="Je vous écoute, qu'est-ce que je tape ?" />
-                    </ListItem>
-                    <Demo type="repo ChallengeS2E02">
-                        <Code language="JavaScript" code={code.randomWithGetNumber} />
-                    </Demo>
-                    <Control>
-                        <BoxItem text="Des questions là-dessus ?" />
-                    </Control>
-                    <ListItem title="Exo dirigé - 3">
-                        <Item text="Si tout est clair, on va s'enrefaire une petite" />
-                        <Item text="Je voudrais qu'on mette dans une fonction la logique des autres messages d'erreur" />
-                        <Item text="Je vous donne la déclaration de la fonction" />
-                        <Item text="Votre mission, si vous l'acceptez :" />
-                        <SubItem text="Implémenter la fonction" />
-                        <SubItem text="L'appeler dans notre code" />
-                        <SubItem text="On se retrouve dans 5 minutes ?" />
-                    </ListItem>
-                    <Demo type="repo ChallengeS2E02">
-                        <Code language="JavaScript" code={code.checkNumbersDeclare} />
-                    </Demo>
-                    <ListItem title="Exo dirigé - 4">
-                        <Item text="OK, on commence par copier coller les instrucctions qui nous intéressent dans le corps de la fonction" />
-                        <Item text="On remplace les noms des variables par les noms des paramètres" />
-                        <Item text="Et c'est tout pour la fonction" />
-                    </ListItem>
-                    <Demo type="repo ChallengeS2E02">
-                        <Code language="JavaScript" code={code.checkNumbers} />
-                    </Demo>
-                    <ListItem title="Exo dirigé - 5">
-                        <Item text="Pour finir, on met l'appel à notre fonction dans la boucle" />
-                        <Item text="La paramètre guess aura la valeur de userGuess" />
-                        <Item text="La paramètre random aura la valeur de randomNumber" />
-                    </ListItem>
-                    <Demo type="repo ChallengeS2E02">
-                        <Code language="JavaScript" code={code.randomWhileDef} />
-                    </Demo>
-                    <Control>
-                        <BoxItem text="C'est bon pour tout le monde ?" />
-                        <BoxItem text="Vraiment n'hésitez pas à poser des questions" />
-                        <BoxItem text="Faut bien comprendre ce mécanisme pour la suite" />
-                    </Control>
-                    <Recap>
-                        <BoxItem text="Vous voyez le code tout propre qu'on a maintenant ?" />
-                        <BoxItem text="On a segmenté chaque partie de l'algo dans une fonction dédiée" />
-                        <BoxItem text="Nous les devs, On adore ça, empaqueter le code !" />
-                    </Recap>
-                    <Transition>
-                        <BoxItem text="Bon, on a fait un bon 'tit tour des fonctions" />
-                        <BoxItem text="On va continuer dans l'art d'empaqueter avec un nouveau type de variable : les Objects" />
-                        <BoxItem text="Vous êtes prêts ? Alors accrochez vous, on décole !" />
-                    </Transition>
+                    <List>
+                        <ListItem title="Les fonctions avancées">
+                            <Item text="Ca fait sérieux là !!" />
+                            <Item text="N'ayez pas peur, ça va bien se passer" />
+                        </ListItem>
+                        <Click dir="right" />
+                        <ListItem title="Paramètres et arguments">
+                            <Item text="Bon, ça c'est pas nouveau, juste quelques précisions à apporter" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Fonction hello">
+                            <Item text="On a donc une fonction hello qui prend info en paramètre" />
+                            <Item text="A l'appel, on lui passe monsieur en argument" />
+                            <Item text="Dans la fonction, info prendra la valeur de monsieur" />
+                            <Item text="Jusque là, pas de surprise" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Fonction hello - 2 args">
+                            <Item text="On l'a vu rapidement hier, une fonction peut avoir plusieurs paramètres" />
+                            <Item text="A l'appel, chaque paramètre prendra la valeur de l'argument dans le même ordre" />
+                            <Item text="Message aura pour valeur coucou, info aura pour valeur monsieur" />
+                            <Item text="Rien de bien transcendant non plus ..." />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Params par défaut">
+                            <Item text="Ah ! Quelque chose de nouveau" />
+                            <Item text="En JS, on n'est pas obligé d'utiliser tous les paramètres d'un fonction quand on l'appelle" />
+                            <Item text="Ca fait pas d'erreur, le langage est très permissif" />
+                            <Item text="Mais dans le code de la fonction ça peut poser problème" />
+                            <Item text="Si l'argument est manquant, la valeur du paramètre sera undefined" />
+                            <Item text="On peut éviter ça en lui donnant une valeur par défaut, de remplacement" />
+                            <Item text="On la note dans la déclaration en faisant suivre le nom du param de = valeur" />
+                            <Item text="Ici c'est une string, ça peut être n'importe quel type" />
+                        </ListItem>
+                        <Control>
+                            <BoxItem text="Ok pour vous, vous voyez l'intérêt ?" />
+                        </Control>
+                        <Click dir="right" />
+                        <ListItem title="Retour à l'envoyeur">
+                            <Item text="Je vous le disais en intro, une fonction va aussi pouvoir nous renvoyer des infos" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Retour à hello">
+                            <Item text="Reprenons notre fonction hello" />
+                            <Item text="Vous comprenez son code, elle fait juste un console.log, elle ne renvoie pas d'info" />
+                            <Item text="On dit qu'elle ne retourne rien" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Retour à hello - 2">
+                            <Item text="Ca veut dire quoi ?" />
+                            <Item text="Si on assigne l'appel de la fonction dans une variable, elle prendra la valeur undefined" />
+                            <Item text="La fonction n'a pas retourné d'infos, on n'a rien à mettre dans la variable" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Retour à hello - 3">
+                            <Item text="Ce serait pourtant bien pratique" />
+                            <Item text="Regardez l'exemple : on aimerait bien factoriser la logique et obtenir une valeur en retour" />
+                            <Item text="Pour l'instant, tout ce qu'on obtient c'est undefined" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Hello with return">
+                            <Item text="Si on regarde ce nouveau code, on voit tout de suite le mot-clé return" />
+                            <Item text="Ce qu'on a après, c'est justement la valeur qu'on obtiendra en appelant la fonction" />
+                            <Item text="Ici, on aura la string Bonjour monsieur !" />
+                            <Item text="On pourra stocker cette valeur de retour, la string, dans une variable" />
+                            <Item text="On pourra utiliser cette variable où bon nous semble après" />
+                            <Item text="Comme pour les params par defaut, ici on retourne une string" />
+                            <Item text="La valeur retournée peut être de n'importe quel type" />
+                        </ListItem>
+                        <Control>
+                            <BoxItem text="Des question sur return ? On est bon ?" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="On a revu comment configurer une fonctions" />
+                            <BoxItem text="On peut mettre plusieurs paramètres dans sa déclaration" />
+                            <BoxItem text="On peut donner des valeurs par défaut à chaque paramètre" />
+                            <BoxItem text="Une fonction peut nous retourner des informations avec return" />
+                        </Recap>
+                        <Transition>
+                            <BoxItem text="Assez de blah blah, j'ai des fourmis dans les doigts" />
+                            <BoxItem text="Du code du code" />
+                        </Transition>
+                        <Doc type="repo CHallengeS2E02" url="http://localhost:1235/E02/ChallengeS2E02/html/" />
+                        <ListItem title="Exo autonomie">
+                            <Item text="Repartons de notre beau code du dernier challenge" />
+                            <Item text="Faisons un peu de refactoring" />
+                            <Item text="On va se créer une fonction qui va prendre en charge :" />
+                            <SubItem text="La demande de saisie d'un nombre à l'utilisateur" />
+                            <SubItem text="La validation que la saisie est bien un nombre" />
+                            <SubItem text="Si c'est un nombre, la fonction doit retourner le nombre saisi en type number" />
+                            <SubItem text="Sinon, elle retournera -1" />
+                            <Item text="A vous de jouer, comment on fait ça ?" />
+                        </ListItem>
+                        <ListItem title="Exo dirigé">
+                            <Item text="Déjà, on déclare notre nouvelle fonction" />
+                            <Question text="Est-ce qu'on a besoin de paramètres ?" />
+                            <Item text="Pas de paramètres ici" />
+                            <SubItem text="On déclare la variable userGuess et on l'assigne avec la valeur du prompt" />
+                            <SubItem text="On convertit en number avec Number ou parseInt" />
+                            <SubItem text="Et on teste : SI pas un nombre ALORS on retourne -1 SINON on retourne le nombre" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS2E02">
+                            <Code language="JavaScript" code={code.getNumber} />
+                        </Demo>
+                        <ListItem title="Exo dirigé - 2">
+                            <Item text="Maintenant, faut appaler notre nouvelle fonction dans la boucle while" />
+                            <Question text="Je vous écoute, qu'est-ce que je tape ?" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS2E02">
+                            <Code language="JavaScript" code={code.randomWithGetNumber} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Des questions là-dessus ?" />
+                        </Control>
+                        <ListItem title="Exo dirigé - 3">
+                            <Item text="Si tout est clair, on va s'enrefaire une petite" />
+                            <Item text="Je voudrais qu'on mette dans une fonction la logique des autres messages d'erreur" />
+                            <Item text="Je vous donne la déclaration de la fonction" />
+                            <Item text="Votre mission, si vous l'acceptez :" />
+                            <SubItem text="Implémenter la fonction" />
+                            <SubItem text="L'appeler dans notre code" />
+                            <SubItem text="On se retrouve dans 5 minutes ?" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS2E02">
+                            <Code language="JavaScript" code={code.checkNumbersDeclare} />
+                        </Demo>
+                        <ListItem title="Exo dirigé - 4">
+                            <Item text="OK, on commence par copier coller les instrucctions qui nous intéressent dans le corps de la fonction" />
+                            <Item text="On remplace les noms des variables par les noms des paramètres" />
+                            <Item text="Et c'est tout pour la fonction" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS2E02">
+                            <Code language="JavaScript" code={code.checkNumbers} />
+                        </Demo>
+                        <ListItem title="Exo dirigé - 5">
+                            <Item text="Pour finir, on met l'appel à notre fonction dans la boucle" />
+                            <Item text="La paramètre guess aura la valeur de userGuess" />
+                            <Item text="La paramètre random aura la valeur de randomNumber" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS2E02">
+                            <Code language="JavaScript" code={code.randomWhileDef} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="C'est bon pour tout le monde ?" />
+                            <BoxItem text="Vraiment n'hésitez pas à poser des questions" />
+                            <BoxItem text="Faut bien comprendre ce mécanisme pour la suite" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="Vous voyez le code tout propre qu'on a maintenant ?" />
+                            <BoxItem text="On a segmenté chaque partie de l'algo dans une fonction dédiée" />
+                            <BoxItem text="Nous les devs, On adore ça, empaqueter le code !" />
+                        </Recap>
+                        <Transition>
+                            <BoxItem text="Bon, on a fait un bon 'tit tour des fonctions" />
+                            <BoxItem text="On va continuer dans l'art d'empaqueter avec un nouveau type de variable : les Objects" />
+                            <BoxItem text="Vous êtes prêts ? Alors accrochez vous, on décole !" />
+                        </Transition>
+                    </List>
+                </Card>
+                <Card title="Intro aux objets">
+                    <Doc type="Slides" url="http://localhost:1234/s2/e3/objet-intro" />
+                    <List>
+                        <Recap>
+                            <BoxItem text="On a déjà vu plusieurs types de variables" />
+                            <BoxItem text="Les types primitifs : boolean, number, string" />
+                            <BoxItem text="Un type plus complexe : Array" />
+                            <BoxItem text="Array a un parent, il est de type Object" />
+                        </Recap>
+                        <Click dir="right" />
+                        <ListItem title="Object : qu'est-ce que c'est ?">
+                            <Item text="En prog, on a la manie de tout empaqueter" />
+                            <Item text="Plus pratique pour partager le code, le réutiliser" />
+                            <Item text="Un Object va nous permettre d'empaqueter le code à un niveau supérieur" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Collection d'information">
+                            <Item text="Pour le dire grossièrement, C'est un tableau++" />
+                            <Item text="A une seule ref, le nom de l'object, on va pouvoir associer :" />
+                            <SubItem text="des variables qu'on va appeler propriétés ou champs" />
+                            <SubItem text="Spoiler : des fonctions qu'on va appeler méthodes" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Exemple personne">
+                            <Item text="Présentation complète ... oui si on veut" />
+                            <Item text="Association d'un nom et d'une valeur" />
+                            <Item text="Adresse : cas spécial, la valeur n'est pas primitive" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Détail composition">
+                            <Item text="Pour chaque info on a :" />
+                            <SubItem text="un nom que dans notre jargon on appelle une clé" />
+                            <SubItem text="Une valeur : l'information elle-même" />
+                            <SubItem text="Même schéma que pour les variables : nom/valeur devient clé/valeur" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Graphiquement">
+                            <Item text="Ex slide : on détaille" />
+                            <Item text="Adresse : valeur pas comme les autres" />
+                            <Item text="Pour valeur, on peut avoir tous les types possibles :" />
+                            <SubItem text="Les types primitifs : boolean, number, string" />
+                            <SubItem text="Les type plus complexe : Array, Object ou respoiler function" />
+                        </ListItem>
+                        <Click dir="right" />
+                        <ListItem title="Implémentation">
+                            <Item text="Qu'est-ce que ça donne en JS ?" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Définition">
+                            <Item text="mot-clé var, le nom de l'object, {}" />
+                            <Item text="On a un objet vide, comme pour le tableau avec = []" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Constructeur">
+                            <Item text="Autre façon de définir l'object" />
+                            <Item text="Non, c'est pas un pokémon !!" />
+                            <Item text="C'est un fonction un peu particulière" />
+                            <Item text="On la repère grâce au mot-clé new" />
+                            <Item text="Ca s'appelle un constructeur, on en reparlera bientôt" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Ajout infos">
+                            <Item text="On a notre objet vide, faut lui donner à manger" />
+                            <Item text="Plusieurs façons de faire" />
+                            <Item text="A la mode tableau en utilisant les crochets" />
+                            <Item text="Au lieu d'un index (number), on va utiliser la clé du champ, son nom dans l'objet" />
+                            <Item text="Autre méthode : le ." />
+                            <Item text="nom_object.nom_key = valeur" />
+                            <Item text="Ca fait exactement la même chose, juste façon différente de l'écrire" />
+                            <Item text="Enfin, comme pour les tableaux, on peut faire ça à la déclaration" />
+                            <Item text="Entre les accolades, on définit des paires clé/valeur notées key: value" />
+                            <Item text="Pour définir plusieurs champs, on les sépare par des virgules" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Lire infos">
+                            <Item text="Pour accéder aux infos de l'objet : " />
+                            <SubItem text="nom_object.nom_key" />
+                            <SubItem text="nom_object[nom_key]" />
+                        </ListItem>
+                        <Click dir="bottom" />
+                        <ListItem title="Exemple personne complet">
+                            <Item text="Ex slide: on détaille" />
+                        </ListItem>
+                        <Control>
+                            <BoxItem text="Object ville" />
+                            <BoxItem text={`Ajout code postal : cp of ville = 17370, ville[cp] = 17370, ville[cp] = 17370`}/>
+                            <BoxItem text={`Lecture code postal : console.log(cp of ville), console.log(cp.ville), console.log(ville.cp)`}/>
+                        </Control>
+                        <Click dir="right" />
+                        <Recap>
+                            <BoxItem text="Un Object est une sorte de tableau amélioré" />
+                            <BoxItem text="Infos stockées sour forme de paires clé/valeur" />
+                            <BoxItem text="Valeurs peuvent être de n'importe quel type" />
+                            <BoxItem text="Création : {} ou constructeur new Object()" />
+                            <BoxItem text="Ajouter des infos : nom_object[nom_key] = value ou nom_object.nom_key = value" />
+                            <BoxItem text="Lire des infos : nom_object[nom_key] ou nom_object.nom_key" />
+                        </Recap>
+                        <Click dir="bottom" />
+                        <Transition>
+                            <BoxItem text="Beaucoup d'infos d'un coup !" />
+                            <BoxItem text="Allons vite pratiquer tout ça !!" />
+                        </Transition>
+                    </List>
                 </Card>
             </div>
         </Fragment>
