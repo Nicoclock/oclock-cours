@@ -332,7 +332,7 @@ const S2E03 = props => {
                             <Item text="Adresse : valeur pas comme les autres" />
                             <Item text="Pour valeur, on peut avoir tous les types possibles :" />
                             <SubItem text="Les types primitifs : boolean, number, string" />
-                            <SubItem text="Les type plus complexe : Array, Object ou respoiler function" />
+                            <SubItem text="Les type plus complexes : Array, Object ou re-spoiler function" />
                         </ListItem>
                         <Click dir="right" />
                         <ListItem title="Implémentation">
@@ -356,7 +356,7 @@ const S2E03 = props => {
                             <Item text="On a notre objet vide, faut lui donner à manger" />
                             <Item text="Plusieurs façons de faire" />
                             <Item text="A la mode tableau en utilisant les crochets" />
-                            <Item text="Au lieu d'un index (number), on va utiliser la clé du champ, son nom dans l'objet" />
+                            <Item text="Au lieu d'un index (number), on va utiliser la clé du champ(string), son nom dans l'objet" />
                             <Item text="Autre méthode : le ." />
                             <Item text="nom_object.nom_key = valeur" />
                             <Item text="Ca fait exactement la même chose, juste façon différente de l'écrire" />
@@ -393,8 +393,78 @@ const S2E03 = props => {
                             <BoxItem text="Beaucoup d'infos d'un coup !" />
                             <BoxItem text="Allons vite pratiquer tout ça !!" />
                         </Transition>
+                        <Doc type="repo Europe" url="http://localhost:1235/E02/Europe/" />
+                        <ListItem title="Exo en autonomie">
+                            <Item text="On va donc jouer un peu avec les objets" />
+                            <Item text="Commençons par récupérer le repo" />
+                        </ListItem>
+                        <Demo type="repo Europe">
+                            <BoxItem text="Recup avec git clone" />
+                            <BoxItem text="On affiche le index.html" />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Tout le monde voit la carte ?" />
+                        </Control>
+                        <Doc type="Ressource" url="https://www.touteleurope.eu/les-pays-de-l-union-europeenne.html" />
+                        <ListItem title="Présentation">
+                            <Item text="On a donc une 'tite carte de l'Europe" />
+                            <Item text="Quelques pays sont indiqués" />
+                            <Item text="Si on clique sur un nom, on a :" />
+                            <SubItem text="Une div avec des infos fictives sur le pays" />
+                            <SubItem text="Un message console très sommaire" />
+                            <Item text="Votre mission, si vous l'aceptez :" />
+                            <SubItem text="Ouvrir le fichier ./js/europe.js" />
+                            <SubItem text="Compléter les infos pays dans l'objet europe" />
+                            <SubItem text="Compléter la fonction logCountry pour prendre en compte toutes les infos" />
+                            <Item text="On va faire la France ensemble, je vous laisserai vous débrouiller pour les autres pays" />
+                        </ListItem>
+                        <Demo type="repo Europe">
+                            <Code language="JavaScript" code={code.france} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Regardez ce qui se passe quand on clique sur France maintenant" />
+                            <BoxItem text="La div utilise les infos de l'objet pour son affichage" />
+                            <BoxItem text="C'est bon pour vous ? Vous me faites les autres pays ?" />
+                            <BoxItem text="Je vous laisse quelques minutes" />
+                            <BoxItem text="Sondage : c'est ok, j'y arrive pô" />
+                        </Control>
+                        <Demo type="repo Europe">
+                            <BoxItem text="On reprend les infos sur le site pour chaque pays" />
+                            <Code language="JavaScript" code={code.allemagne} />
+                            <Code language="JavaScript" code={code.italie} />
+                            <Code language="JavaScript" code={code.espagne} />
+                            <Code language="JavaScript" code={code.irlande} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Bon, la manipulation d'object, ça rentre ?" />
+                            <BoxItem text="Comment vous vous sentez ? trop fastoche, mouais bof ..., ayé je pleure !" />
+                        </Control>
+                        <ListItem title="logCountry">
+                            <Item text="Il nous reste la fonction à compléter" />
+                            <Item text="Normalement, vous n'avez pas besoin de moi ..." />
+                            <Item text="Je vous laisse 2 minutes ?" />
+                        </ListItem>
+                        <Demo type="repo Europe">
+                            <Code language="JavaScript" code={code.logCountry} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Vous commencez à voir l'intérêt des objects ?" />
+                            <BoxItem text="C'est de l'empaquetage de pro ça non ?" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="Bon, on a pas mal manipulé les propriétés des objects" />
+                            <BoxItem text="On peut mettre n'importe quel type de valeur dans les propriétés" />
+                            <BoxItem text="'Tit spoiler pour demain : avec JS, on a pu modifier les balises et le css " />
+                        </Recap>
+                        <Transition>
+                            <BoxItem text="On commence à voir la terre promise" />
+                            <BoxItem text="C'est le début d'une grande aventure avec JS" />
+                            <BoxItem text="En attendant, un tit challenge pour ce soir ? Si si !!" />
+                        </Transition>
+                        <ListItem title="Présentation challenge" />
                     </List>
                 </Card>
+            
             </div>
         </Fragment>
     );

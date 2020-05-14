@@ -546,3 +546,67 @@ export const randomWhileDef = `while(userGuess !== randomNumber) {
     nbTries++;
     userGuess = getNumber();
 }`;
+
+export const france = `var europe = {
+    france: {
+        nom: "France",
+        capitale: "Paris",
+        superficie: 632734,
+        population: 67.03,
+        villesPrincipales: ["Paris", "Marseille", "Lyon", "Toulouse", "Nice"]
+    },
+    ...
+}`;
+
+export const allemagne = `var europe = {
+    ...
+    allemagne: {
+        nom: "Allemagne",
+        capitale: "Berlin",
+        superficie: 357167,
+        population: 83.02,
+        villesPrincipales: ["Berlin", "Hambourg", "Munich", "Cologne", "Francfort"]
+    },
+    ...
+}`;
+
+export const italie = `var europe = {
+    ...
+    italie: {
+        nom: "Italie",
+        capitale: "Rome",
+        superficie: 302073,
+        population: 60.36,
+        villesPrincipales: ["Rome", "Milan", "Naples", "Turin", "Palerme"]
+    },
+    ...
+}`;
+
+export const espagne = `var espagne = {
+    ...
+    espagne: {
+        nom: "Madrid",
+        capitale: "Berlin",
+        superficie: 505991,
+        population: 46.93,
+        villesPrincipales: ["Madrid", "Barcelone", "Valence", "Séville", "Saragosse"]
+    },
+    ...
+}`;
+
+export const irlande = `var europe = {
+    ...
+    irlande: {
+        nom: "Irlande",
+        capitale: "Dublin",
+        superficie: 69797,
+        population: 4.90,
+        villesPrincipales: ["Dublin", "Cork", "Galway", "Limerick"]
+    }
+}`;
+
+export const logCountry = `var logCountry = function(country) {
+    console.log("Nom du pays: " + country.nom + ", capitale : " + country.capitale + 
+    ", superficie : " + country.superficie + ", population : " +  country.population +
+    ", ville sprincipales : " + tabToString(country.villesPrincipales));
+}`;
