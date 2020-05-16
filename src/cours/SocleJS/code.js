@@ -610,3 +610,109 @@ export const logCountry = `var logCountry = function(country) {
     ", superficie : " + country.superficie + ", population : " +  country.population +
     ", ville sprincipales : " + tabToString(country.villesPrincipales));
 }`;
+
+export const gameObject = `var game = {
+    attemps: 0,
+    searchNumber: undefined
+};`;
+
+export const gamePlay1 = `var play = function() {
+    var randomPart = Math.random();
+    var randomNum = max * randomPart;
+    var randomNumRounded = Math.round(randomNum);
+    /*version courte :
+    var randomNumRounded = Math.round(max * Math.random());
+    */
+    game.searchedNumber = randomNumRounded;
+    alert("Nouvelle partie");
+}`;
+
+export const gamePlay2 = `var play = function() {
+    ...
+    game.attemps++;
+    var enteredNumber =  parseInt(prompt('Quel est le nombre à trouver ?'));
+    ...
+}`;
+
+export const gamePlay3 = `var play = function() {
+    ...
+    while (enteredNumber !== game.searchedNumber) {
+        if (enteredNumber < game.searchedNumber) {
+            enteredNumber =  parseInt(prompt('C\'est plus'));
+        }
+        else {
+            enteredNumber =  parseInt(prompt('C\'est moins'));
+        }
+        game.attemps++;
+    }
+    ...
+}`;
+
+export const gamePlay4 = `var play = function() {
+    ...
+    alert('Bravo ! C\'était bien ' + game.searchedNumber + ' - Nombre d\'essais : ' + game.attemps);
+    ...
+}`;
+
+export const gamePlay = `play();`;
+
+export const random1 = `var generateRandomNumber = function(min, max) {
+    var randomPart = Math.random();
+    var randomNum = min + (max-min)*randomPart;
+    var randomNumRounded = Math.round(randomNum);
+    return randomNumRounded;
+    /*version courte :
+    return Math.round(min + (max-min)*Math.random());
+    */
+}`;
+
+export const random2 = `var game = {
+    min: 10,
+    max: 20,
+    attemps: 0,
+    searchNumber: undefined
+};`;
+
+export const random3 = `var play = function() {
+    // var randomPart = Math.random();
+    // var randomNum = max * randomPart;
+    // var randomNumRounded = Math.round(randomNum);
+    // /*version courte :
+    // var randomNumRounded = Math.round(max * Math.random());
+    // */
+    game.searchedNumber = generateRandomNumber(game.min, game.max);
+   ...
+}`;
+
+export const random4 = `var game = {
+    min: 10,
+    max: 20,
+    attemps: 0
+};`;
+
+export const gameFull = `var game = {
+    min: 10,
+    max: 20,
+    attemps: 0,
+    scores: []
+};`;
+
+export const scoresFill = `game.scores.push(game.attemps);`;
+
+export const scoresDisplay = `game.scores.push(game.attemps);
+console.log(game.scores);
+play();`;
+
+export const gameReplay = `    if (confirm("Rejouer ?")) {
+    play();
+}
+else {
+    console.log(game.scores);
+}`;
+
+export const scoresBetter = `...
+else {
+    for (var gameIndex=0; gameIndex<game.scores.length; gameIndex++) {
+        alert("Partie " + (gameIndex+1) + " : " + game.scores[gameIndex]+ " essais");
+    }
+}`;

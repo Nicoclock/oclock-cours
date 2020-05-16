@@ -11,7 +11,7 @@ const S2E03 = props => {
             <div className="Title">Objets</div>
             <div className="Inner">
                 <Card title="Correction">
-                    <Doc type="repo CHallengeS2E02" url="http://localhost:1235/E02/ChallengeS2E02/html/" />
+                    <Doc type="repo ChallengeS2E02" url="http://localhost:1235/E02/ChallengeS2E02/html/" />
                     <List>
                         <Recap>
                             <BoxItem text="Hier on a donc vu :" />
@@ -393,7 +393,7 @@ const S2E03 = props => {
                             <BoxItem text="Beaucoup d'infos d'un coup !" />
                             <BoxItem text="Allons vite pratiquer tout ça !!" />
                         </Transition>
-                        <Doc type="repo Europe" url="http://localhost:1235/E02/Europe/" />
+                        <Doc type="repo Europe" url="http://localhost:1235/E03/Europe/" />
                         <ListItem title="Exo en autonomie">
                             <Item text="On va donc jouer un peu avec les objets" />
                             <Item text="Commençons par récupérer le repo" />

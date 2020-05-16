@@ -35,6 +35,15 @@
     border-radius: 20px;
 }
 
+.BoxTitle {
+    position: absolute;
+    top: -20px;
+    left: 35%;
+    width: 30%;
+    font-size: 16px;
+    text-align: center;
+}
+
 .List {
     position: relative;
     width: 90%;
@@ -102,16 +111,31 @@
     border: 3px solid red;
 }
 
+.ControlTitle {
+    @extend .BoxTitle;
+    color: red;
+}
+
 .Recap {
     @extend .ListBox;
     background-color: rgba(0, 255, 0, 0.1);
     border: 3px solid green;
 }
 
+.RecapTitle {
+    @extend .BoxTitle;
+    color: green;
+}
+
 .Transition {
     @extend .ListBox;
     background-color: rgba(0, 0, 255, 0.1);
     border: 3px solid blue;
+}
+
+.TransitionTitle {
+    @extend .BoxTitle;
+    color: blue;
 }
 
 .Demo {
