@@ -638,10 +638,10 @@ export const gamePlay3 = `var play = function() {
     ...
     while (enteredNumber !== game.searchedNumber) {
         if (enteredNumber < game.searchedNumber) {
-            enteredNumber =  parseInt(prompt('C\'est plus'));
+            enteredNumber =  parseInt(prompt("C'est plus"));
         }
         else {
-            enteredNumber =  parseInt(prompt('C\'est moins'));
+            enteredNumber =  parseInt(prompt("C'est moins"));
         }
         game.attemps++;
     }
@@ -650,7 +650,7 @@ export const gamePlay3 = `var play = function() {
 
 export const gamePlay4 = `var play = function() {
     ...
-    alert('Bravo ! C\'était bien ' + game.searchedNumber + ' - Nombre d\'essais : ' + game.attemps);
+    alert("Bravo ! C'était bien ' + game.searchedNumber + ' - Nombre d'essais : " + game.attemps);
     ...
 }`;
 
@@ -715,4 +715,222 @@ else {
     for (var gameIndex=0; gameIndex<game.scores.length; gameIndex++) {
         alert("Partie " + (gameIndex+1) + " : " + game.scores[gameIndex]+ " essais");
     }
+}`;
+
+export const displaySores = `var displayScore = function() {
+    for (var gameIndex=0; gameIndex<game.scores.length; gameIndex++) {
+        alert("Partie " + (gameIndex+1) + " : " + game.scores[gameIndex]+ " essais");
+    }
+}
+
+function play() {
+    ...
+    if (confirm("Rejouer ?")) {
+        play();
+    }
+    else {
+        displayScores();
+    }
+}`;
+
+export const spaceship = `var spaceship = {
+    name: "Millenium Falcon",
+    driver: "Han Solo",
+    lightspeed: function() {
+        console.log("Entering hyperspace ...");
+    }
+};`;
+
+export const lightspeed = `spaceship.lightspeed();`;
+
+
+
+export const embedRandom = `var game {
+    ...
+    generateRandomNumber: function (min, max) {
+        return Math.round(min + (max-min)*Math.random());
+    },
+    ...
+}`;
+
+export const embedDisplay = `var game {
+    ...
+    displayScores: function () {
+        for (var gameIndex=0; gameIndex<game.scores.length; gameIndex++) {
+            alert("Partie " + (gameIndex+1) + " : " + game.scores[gameIndex]+ " essais");
+        }
+    },
+    ...
+}
+
+function play() {
+    ...
+    if (confirm("Rejouer ?")) {
+        play();
+    }
+    else {
+        game.displayScores();
+    }
+}`;
+
+export const embedPlay = `var game {
+    ...
+    play: function() {
+        game.searchedNumber = game.generateRandomNumber(game.min, game.max);
+        alert("Nouvelle partie");
+    
+        game.attemps++;
+        var enteredNumber =  parseInt(prompt('Quel est le nombre à trouver ?'));
+    
+        while (enteredNumber !== game.searchedNumber) {
+            if (enteredNumber < game.searchedNumber) {
+                enteredNumber =  parseInt(prompt("C'est plus"));
+            }
+            else {
+                enteredNumber =  parseInt(prompt("C'est moins"));
+            }
+            game.attemps++;
+        }
+        alert("Bravo ! C'était bien ' + game.searchedNumber + ' - Nombre d'essais : " + game.attemps);
+        game.scores.push(game.attemps);
+    
+        if (confirm("Rejouer ?")) {
+            game.play();
+        }
+        else {
+            game.displayScores();
+        }
+    }
+}`;
+
+export const scoresDiv = `<div id="scores">
+
+</div>
+<script src="../js/main.js"></script>`;
+
+export const displayScoresStart = `displayScores: function() {
+    var target = document.getElementById("scores");
+    console.log(target);
+    console.dir(target);
+}`;
+
+export const displayScoresCreate = `displayScores: function() {
+    ...
+    var title = document.createElement("h1");
+    title.className = "scores-title";
+    title.innerHTML = "Resultats de vos <strong>"+game.scores.length+" parties</strong>";
+}`;
+
+export const scoresTitle = `#scores {
+    width: 500px;
+    margin: 2em auto;
+    font-family: sans-serif;
+}
+
+.scores-title {
+    color: #44a1fb;
+}`;
+
+export const scoresAppend = `displayScores: function() {
+    ...
+    target.appendChild(title);
+}`;
+
+export const scoresTable = `displayScores: function() {
+    ...
+    var table = document.createElement("table");
+}`;
+
+export const scoresThead = `displayScores: function() {
+    ...
+    var tableHeader = document.createElement("thead");
+    var headerContent = "<tr>";
+    headerContent += "<th>Partie</th>";
+    headerContent += "<th>Essais</th>";
+    headerContent += "</tr>";
+    tableHeader.innerHTML = headerContent;
+    table.appendChild(tableHeader)
+}`;
+
+export const scoresTbody = `displayScores: function() {
+    ...
+    var tableBody = document.createElement("tbody");
+}`;
+
+export const scoresRows = `displayScores: function() {
+    ...
+    for (var gameIndex=0; gameIndex < game.scores.length; gameIndex++) {
+        var tr = document.createElement("tr");
+        
+        var tdGame = document.createElement("td");
+        tdGame.textContent = gameIndex + 1;
+        tr.appendChild(tdGame);
+
+        var tdAttemps = document.createElement("td");
+        tdAttemps.textContent = game.scores[gameIndex];
+        tr.appendChild(tdAttemps);
+
+        tableBody.appendChild(tr);
+    }
+}`;
+
+export const scoresAppendTab = `displayScores: function() {
+    ...
+    table.appendChild(tableBody);
+    target.appendChild(table);
+}`;
+
+export const chronoFirst = `var chrono = {
+    dixiemes: 0,
+    secondes: 0,
+    minutes: 0
+}`;
+
+export const chronoInit1 = `init: function() {
+    var target = document.getElementById("chrono");
+}`;
+
+export const chronoInit2 = `init: function() {
+    ...
+    var minutes = document.createElement("div");
+    minutes.id = "minutes";
+    minutes.textContent = chrono.minutes;        
+    target.appendChild(minutes);
+}`;
+
+export const chronoInit3 = `init: function() {
+    ...
+    var secondes = document.createElement("div");
+    secondes.id = "secondes";
+    secondes.textContent = chrono.secondes;        
+    target.appendChild(secondes);
+
+    var dixiemes = document.createElement("div");
+    dixiemes.id = "dixiemes";
+    dixiemes.textContent = chrono.dixiemes;        
+    target.appendChild(dixiemes);
+}`;
+
+export const chronoDisplay = `display: function() {
+    document.querySelector("#dixiemes").textContent = chrono.dixiemes;
+    document.querySelector("#secondes").textContent = chrono.secondes;
+    document.querySelector("#minutes").textContent = chrono.minutes;
+}`;
+
+export const chronoAddTime = `addTime: function() {
+    chrono.dixiemes += 1;
+    if (chrono.dixiemes === 10) {
+        chrono.dixiemes = 0;
+        chrono.secondes += 1;
+    }
+    if (chrono.secondes === 60) {
+        chrono.secondes = 0;
+        chrono.minutes += 1;
+    }
+    chrono.display();
+}`;
+
+export const chronoStart = `start: function() {
+    chrono.addTime();
+    setInterval(chrono.addTime, 100);
 }`;

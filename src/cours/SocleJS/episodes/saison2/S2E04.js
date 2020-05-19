@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem} from "../../../../common";
+import {Card, Doc, Code, List, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem} from "../../../../common";
 import * as code from "../../code";
 
 import "../../../style.scss"
@@ -181,12 +181,349 @@ const S2E04 = props => {
                             <BoxItem text="On a mis notre logique de jeu dans une fonction" />
                             <BoxItem text="Ca c'est un chouette refactoring" />
                         </Recap>
-                        <Tansition>
+                        <Transition>
                             <BoxItem text="On va essayer de pousser un peu plus" />
                             <BoxItem text="Temps d'utiliser toutes les possibilités d'un object" />
                             <BoxItem text="En plus des infos, on va y mettre la logique du jeu" />
-                        </Tansition>
+                        </Transition>
                     </List>                    
+                </Card>
+                <Card title="Un vrai Object">
+                    <List>
+                        <ListItem title="Fonction displayScores">
+                            <Item text="Mettons déjà le code d'affichage dans une fonction" />
+                            <Item text="On change l'appel" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS203">
+                            <Code language="JavaScript" code={code.displaySores} />
+                        </Demo>
+                        <Transition>
+                            <Item text="Bon rien de très nouveau, rien de très compliqué" />
+                            <Item text="Passons à la partie plus sympa !" />
+                        </Transition>
+                        <ListItem title="Exemple console">
+                            <Item text="Dit rapidement déjà, dans un object on peut stocker des infos mais aussi de la logique" />
+                            <Item text="Démo rapide pour montrer le principe" />
+                            <Item text="Crée un objecft spaceship" />
+                        </ListItem>
+                        <Demo type="Console">
+                            <Code language="JavaScript" code={code.spaceship} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Console.log de spaceship.lightspeed" />
+                            <Item text="On voit le code de la fonction" />
+                            <Question text="Si on veut appeler cette fonction, que faire ?" />
+                            <Item text="Comme une fonction classique : appel avec () et éventuellement arguments" />
+                        </ListItem>
+                        <Demo type="Console">
+                            <Code language="JavaScript" code={code.lightspeed} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Code de la fonction exécuté" />
+                            <Item text="Avantage : tout le code concernant le spaceship stocké dans un object unique" />
+                            <Item text="Voyons comment faire pour object game" />
+                        </ListItem>
+                        <ListItem title="Refactoring - 1">
+                            <Item text="On va ajouter des propriétés à notre object game" />
+                            <Item text="Au lieu de leur assigner une string, un number, ... on leur assigne une fonction" />
+                            <Item text="Je vous fais voir" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS203">
+                            <Code language="JavaScript" code={code.embedRandom} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Vous comprenez le principe ?" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="La fonction devient une propriété de l'object, comme les autres" />
+                            <BoxItem text="Pour la déclarer : nomFonction + : + function() ..." />
+                        </Recap>
+                        <Transition>
+                            <BoxItem text="Fonction fait maintenant partie de l'object" />
+                            <BoxItem text="On doit modifier son appel dans la fonction play" />
+                        </Transition>
+                        <ListItem title="Refactoring - 2">
+                            <Item text="Pour l'instant, notre appel c'est  game.searchedNumber = generateRandomNumber..." />
+                            <Question text="Je vous écoute, comment je fais pour appeler la fonction de l'objet ? A votre avis ?" />
+                            <Item text="On ajoute game. devant, on appelle la propriété de l'objet" />
+                            <Item text="Comme pour fonction classique, on l'appelle avec () et arguments" />
+                        </ListItem>
+                        <Control>
+                            <BoxItem text="C'est important là, bien clair pour tout le monde ?" />
+                            <BoxItem text="On fait la même chose pour displayScore ?" />
+                        </Control>
+                        <ListItem title="Refactoring - 3">
+                            <Item text="De la même façon, on déclare la fonction dans le corps de l'object" />
+                            <Item text="On place le code de la fonction après les :" />
+                            <Item text="Modif de l'appel dans play" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS203">
+                            <Code language="JavaScript" code={code.embedDisplay} />
+                        </Demo>
+                        <ListItem title="Refactoring - 3">
+                            <Item text="Empaquetons jusqu'au bout" />
+                            <Item text="On intègre la fonction play dans l'object" />
+                        </ListItem>
+                        <Demo type="repo ChallengeS203">
+                            <Code language="JavaScript" code={code.embedPlay} />
+                        </Demo>
+                        <ListItem title="Refactoring - 4">
+                            <Item text="L'object game est empaqueté, les variables et la logique du jeu lui appartiennent" />
+                            <Item text="Plus pratique pour intégrer dans portail de jeu" />
+                            <Item text="Si plusieurs jeux avec même noms de vras ou fonctions, pas de problème" />
+                        </ListItem>
+                        <Transition>
+                            <BoxItem text="Bonne nouvelle, on a fini de dégrossir le langage" />
+                            <BoxItem text="On va pouvoir commencer à jouer pour de vrai !" />
+                            <BoxItem text="Je sais pas vous mais moi, raz le bol des messages alert" />
+                            <BoxItem text="Après tout, on a page web toute vierge" />
+                            <BoxItem text="Et si on écrivait dedans plutôt ?" />
+                        </Transition>
+                    </List>
+                </Card>
+                <Card title="Object et DOM">
+                    <List>
+                        <ListItem title="Objects JS">
+                            <Item text="Avant d'attaquer, quelques objects fournis par JS :" />
+                            <SubItem text="window" />
+                            <SubItem text="navigator" />
+                            <SubItem text="document" />
+                        </ListItem>
+                        <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/API/Window" />
+                        <ListItem title="window">
+                            <Item text="Vous l'avez utilisé sans le savoir" />
+                            <Item text="alert, prompt, confirm, parseInt" />
+                            <Item text="C'est l'object qui représente la fenêtre, l'onglet" />
+                            <Item text="TRES nombreuses propriétés et méthode, je vous laisse voir la doc" />
+                        </ListItem>
+                        <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/API/Navigator" />
+                        <ListItem title="navigator">
+                            <Item text="Donne des infos sur le client" />
+                            <Item text="Type de navigateur utilisé (userAgent)" />
+                            <Item text="Infos de geolocalisation (geolocation, si utilisateur ok)" />
+                        </ListItem>
+                        <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/API/Document" />
+                        <ListItem title="document">
+                            <Item text="En tant que devs, le plus utile" />
+                            <Item text="Donne accès au DOM de la page" />
+                            <Item text="On va pouvoir commencer à le manipuler !" />
+                        </ListItem>
+                        <ListItem title="Scores table">
+                            <Item text="On va modifier l'affichage des scores" />
+                            <Item text="Moins d'alert, plus agréable à jouer" />
+                            <Item text="Modif du html : ajout de div#scores" />
+                        </ListItem>
+                        <Demo type="Repo ChallengeS203">
+                            <Code language="HTML" code={code.scoresDiv} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Pour le modifier depuis JS, il faut cibler l'élément" />
+                            <Item text="Besoin d'une référence sur cette balise" />
+                            <Item text="Object document permet ça avec méthode getElementById" />
+                        </ListItem>
+                        <Demo type="Repo ChallengeS203">
+                            <Code language="HTML" code={code.displayScoresStart} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="console.log nous donne une string" />
+                            <Item text="console.dir donne un object" />
+                            <Item text="Regardez toutes ces props qu'on va pouvoir modifier" />
+                            <Item text="Valable pour chaque balise de la page" />
+                            <Item text="Des fois, des méthodes en plus selon la balise (ex: form, video)" />
+                        </ListItem>
+                        <Transition>
+                            <BoxItem text="On a notre référence, à quoi elle va servir ?" />
+                            <BoxItem text="Onva pouvoir lui ajouter des éléments direct depuis JS" />
+                        </Transition>
+                        <ListItem>
+                            <Item text="Commençons par créer un élément" />
+                            <Item text="object document sait faire : createElement" />
+                        </ListItem>
+                        <Demo type="Repo ChallengeS203">
+                            <Code language="JavaScript" code={code.displayScoresCreate} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Dès création élément, on peut le manipuler" />
+                            <Item text="Ajout d'une class css avec .className" />
+                            <Item text="Ajout de contenu avec .innerHTML" />
+                            <Item text="Diff avec .textContent : que du text, innerHTML peut contenir des balises" />
+                            <Item text="On a ajouté une class, créons le css" />
+                        </ListItem>
+                        <Demo type="Repo ChallengeS203">
+                            <Code language="CSS" code={code.scoresTitle} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Pour terminer avec ce titre, il faut encore ajouter dans notre div" />
+                            <Item text="Pour ça, notre ref target a une méthode : appendChild" />
+                        </ListItem>
+                        <Demo type="Repo ChallengeS203">
+                            <Code language="JavaScript" code={code.scoresAppend} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="On raffraichit pour voir" />
+                            <Item text="C'est super, on vient de créer notre 1er élément HTML depuis JS !" />
+                        </ListItem>
+                        <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/HTML/Element/table" />
+                        <ListItem>
+                            <Item text="On va stocker nos scores dans un tableau" />
+                            <Item text="Une ligne pour chaque score" />
+                            <Item text="on se crée une var table pour contenir la ref" />
+                            <Question text="je vous écoute, j'écris quoi pour créer un élément table ?" />
+                        </ListItem>
+                        <Demo type="Repo ChallengeS203">
+                            <Code language="JavaScript" code={code.scoresTable} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="On créer un nouvel élément pour contenir le header du tab" />
+                            <Item text="On y définit les titres de nos colonnes" />
+                            <Item text="Toujours plusieurs solutions pour insérer du contenu" />
+                            <Item text="Cette fois, on construit une string HTML qu'on va ajouter avec .innerHTML" />
+                            <Item text="On aurait pu construire chaque élément tr, th avec createElement mais + rapide comme ça" />
+                        </ListItem>
+                        <Demo type="Repo ChallengeS203">
+                            <Code language="JavaScript" code={code.scoresThead} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Tout le monde est là ? J'ai perdu personne ?" />
+                        </Control>
+                        <ListItem>
+                            <Item text="On passe donc au corps du tableau, élément tbody" />
+                            <Item text="'tit spoiler, comment je crée ça ?" />
+                        </ListItem>
+                        <Demo type="Repo ChallengeS203">
+                            <Code language="JavaScript" code={code.scoresTbody} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Chaque ligne contient un score" />
+                            <Item text="On reprend notre for pour parcourir" />
+                            <Item text="A chaque tout de boucle, on va ajouter une tr au body" />
+                        </ListItem>
+                        <Demo type="Repo ChallengeS203">
+                            <Code language="JavaScript" code={code.scoresRows} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Toutes les infos sont dans le corps du tableau" />
+                            <Item text="Il nous reste à :" />
+                            <SubItem text="Ajouter le corps au tableau" />
+                            <SubItem text="Ajouter le tableau à notre div#scores" />
+                        </ListItem>
+                        <Demo type="Repo ChallengeS203">
+                            <Code language="JavaScript" code={code.scoresAppendTab} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="On raffraichit et magique, les scores apparaissent" />
+                        </ListItem>
+                        <Recap>
+                            <BoxItem text="On crée un élément avec document.createElement" />
+                            <BoxItem text="Récup object JS, on peut modifier ses propriétés et utiliser ses méthodes" />
+                            <BoxItem text="Ajout de contenu avec innerHTML ou textContent" />
+                            <BoxItem text="Création de l'arborescence avec appendChild" />
+                        </Recap>
+                        <Control>
+                            <BoxItem text="Beaucoup d'un coup là ..." />
+                            <BoxItem text="Comment vous vous sentez ?" />
+                            <BoxItem text="Sondage : tout compris, à pratiquer, au secours !" />
+                        </Control>
+                        <Transition>
+                            <BoxItem text="'tit exo pour pratiquer tout ça ?" />
+                            <BoxItem text="Si si, vous en mourez d'envie, je le sais !" />
+                        </Transition>
+                        <Doc type="repo Chrono" url="http://localhost:1235/E04/Chrono/" />
+                        <ListItem title="exo dirigé">
+                            <Item text="On va se faire un chronomètre tout simple" />
+                            <Item text="Aperçu gestion du temps en JS" />
+                            <Item text="Principe : ajouter 3 divs pour les minutes, les secondes, les 1/10 de secondes" />
+                            <Item text="Tous les 1/10 de secondes, mise à jour de l'affichage" />
+                            <Item text="On a déjà le html et le css, attaquons le JS !" />
+                            <Item text="premier boulot, on se crée un object pour contenir nos infos" />
+                        </ListItem>                        
+                        <Demo type="Repo Chrono">
+                            <Code language="JavaScript" code={code.chronoFirst} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Maintenant, on se crée une méthode pour remplir la div#chrono" />
+                            <Question text="Comment je récupère ma cible ?" />
+                        </ListItem>                        
+                        <Demo type="Repo Chrono">
+                            <Code language="JavaScript" code={code.chronoInit1} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="On crée une div d'id minutes pour commencer" />
+                            <Question text="'tit spoiler, comment je crée l'élément ?" />
+                            <Item text="On lui ajoute la prop id=minutes" />
+                            <Item text="Init du contenu avec propriété de chrono" />
+                            <Item text="Ajout à div#chrono" />
+                        </ListItem>
+                        <Demo type="Repo Chrono">
+                            <Code language="JavaScript" code={code.chronoInit2} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Même principe pour secondes et dixiemes" />
+                            <Question text="Je vous laisse 2 minutes ? Vous complétez ?" />
+                        </ListItem>
+                        <Demo type="Repo Chrono">
+                            <Code language="JavaScript" code={code.chronoInit3} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Penser à appeler la méthode en fin de fichier, sinon ... on verra rien" />
+                            <Item text="On crée une autre méthode display pour modifier l'affichage" />
+                            <Item text="Nouvelle façon de récup un élément : querySelector" />
+                            <Item text="Même principe que getElementById avec sélécteurs css" />
+                            <Item text="Ce qui va changer : les propriétés de chrono" />
+                            <Item text="On raffraichit l'affichage en ré-assignant le .textContent avec valeurs de chrono" />
+                        </ListItem>
+                        <Demo type="Repo Chrono">
+                            <Code language="JavaScript" code={code.chronoDisplay} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Maintenant, méthode pour gérer la mise à jour des props de chrono" />
+                            <Item text="On ajoute 1 à dixième" />
+                            <Item text="SI dixiemes = 10, on les remet à 0 et on ajoute une seconde" />
+                            <Item text="SI secondes = 60, on les remet à 0 et on ajoute une minute" />
+                            <Item text="On raffraichit l'affichage avec un appel à display" />
+                        </ListItem>
+                        <Demo type="Repo Chrono">
+                            <Code language="JavaScript" code={code.chronoAddTime} />
+                        </Demo>
+                        <Doc type="Ressource" url="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval" />
+                        <ListItem>
+                            <Item text="Reste mise à jour à chaque 1/10 de secondes" />
+                            <Item text="Pour gérer le temps, JS propose plusieurs méthodes" />
+                            <Item text="setInterval : permet d'éxecuter du code toutes les x millisecondes" />
+                            <Item text="Premier param : la fonction à exécuter, 2nd, le délai" />
+                            <Item text="Dans notre cas, chaque dixième de seconde, en milli = 100" />
+                            <Item text="Un peu comme une boule avec en plus aspect temps qui passe" />
+                            <Question text="Qu'est-ce qu'on va vouloir répéter ici ? Quelle méthode ?" />
+                            <Item text="AddTime : va mettre à jour les props de chrono ET l'affichage, nickel !" />
+                        </ListItem>
+                        <Demo type="Repo Chrono">
+                            <Code language="JavaScript" code={code.chronoStart} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Pour finir, y a plus qu'à appeler chrono start() en fin de fichier" />
+                        </ListItem>
+                        <Control>
+                            <BoxItem text="Ca vous a paru compliqué ?" />
+                            <BoxItem text="Vous avez des points de blocage ?" />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="Plusieurs façons de récup un élément : getElementById, querySelector (entre autres)" />
+                            <BoxItem text="Avec JS, on peut modifier chaque propriété d'un élément" />
+                            <BoxItem text="On peut gérer le temps avec, par exemple, setInterval" />
+                        </Recap>
+                        <Transition>
+                            <BoxItem text="Aperçu rapide mais vous commencez à voir la taille du terrain de jeu" />
+                            <BoxItem text="Possibilités immenses, on est un 'tit glaçon au sommet de l'iceberg" />
+                            <BoxItem text="Un dernier truc : on peut modifier le css depuis JS" />
+                        </Transition>
+                        <ListItem title="Modif CSS">
+                            <Item text="Element en JS a une propriété style" />
+                            <Item text="Contient tout le css défini pour cet élément" />
+                            <Item text="Pour modifier : element.style.prop = " />
+                            <Item text="Pour props avec 2 mots (-), on utilise le camelCase" />
+                            <Item text="text-align devient textAlign, background-color, backgroundColor, etc..." />
+                        </ListItem>
+                    </List>
                 </Card>
             </div>
         </Fragment>
