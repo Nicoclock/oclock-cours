@@ -818,7 +818,8 @@ export const displayScoresCreate = `displayScores: function() {
     ...
     var title = document.createElement("h1");
     title.className = "scores-title";
-    title.innerHTML = "Resultats de vos <strong>"+game.scores.length+" parties</strong>";
+    title.innerHTML = "Resultats de vos <strong>"
+        +game.scores.length+" parties</strong>";
 }`;
 
 export const scoresTitle = `#scores {
@@ -934,3 +935,49 @@ export const chronoStart = `start: function() {
     chrono.addTime();
     setInterval(chrono.addTime, 100);
 }`;
+
+export const move = `var move = {
+
+};`;
+
+export const moveText = `var move = {
+    text: document.querySelector(".text"),
+    ...
+}`;
+
+export const moveInit = `init: function() {
+    move.text.style.position = "absolute";
+    move.text.style.top = "0%";
+    move.text.style.left = "0%";
+    move.text.style.width = "200px";
+    move.text.style.fontSize = "1.5em";
+    move.text.style.padding = "1em";
+    move.text.style.textAlign = "center";
+    move.text.style.backgroundColor = "#ae9ff3";
+    move.text.style.transition = "all linear 0.1s";
+}`;
+
+export const moveDisplay = `display: function(top, left) {
+    move.text.style.top = top+"%";
+    move.text.style.left = left+"%";
+    move.text.style.filter = "hue-rotate("+(top * 360 / 100)+"deg)";
+}`;
+
+export const moveChange = `change: function() {
+    var top = parseInt(move.text.style.top, 10);
+    top += 1;
+    if (top === 100) {
+        top = 0;
+    }
+    var left = parseInt(move.text.style.left, 10);
+    left += 1;
+    if (left === 100) {
+        left = 0;
+    }
+    move.display(top, left);
+}`;
+
+export const moveStart = `start: function() {
+    setInterval(move.change, 100);
+}`;
+

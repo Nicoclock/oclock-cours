@@ -486,10 +486,12 @@ const S2E04 = props => {
                             <Code language="JavaScript" code={code.chronoAddTime} />
                         </Demo>
                         <Doc type="Ressource" url="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval" />
+                        <Doc type="Ressource" url="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout" />
                         <ListItem>
                             <Item text="Reste mise à jour à chaque 1/10 de secondes" />
                             <Item text="Pour gérer le temps, JS propose plusieurs méthodes" />
                             <Item text="setInterval : permet d'éxecuter du code toutes les x millisecondes" />
+                            <Item text="setTimeout : permet d'éxecuter du code au bout de x millisecondes" />
                             <Item text="Premier param : la fonction à exécuter, 2nd, le délai" />
                             <Item text="Dans notre cas, chaque dixième de seconde, en milli = 100" />
                             <Item text="Un peu comme une boule avec en plus aspect temps qui passe" />
@@ -523,6 +525,78 @@ const S2E04 = props => {
                             <Item text="Pour props avec 2 mots (-), on utilise le camelCase" />
                             <Item text="text-align devient textAlign, background-color, backgroundColor, etc..." />
                         </ListItem>
+                        <Transition>
+                            <BoxItem text="Dernier exo pour pratiquer tout ça ?" />
+                            <BoxItem text="Si si, dernier exo pour pratiquer tout ça !" />
+                        </Transition>
+                        <Doc type="repo Chrono" url="http://localhost:1235/E04/MoveText/" />
+                        <ListItem title="Exo autonomie">
+                            <Item text="Je vous ai préparé un 'tit repo" />
+                            <Item text="HTML et CSS sont fait, on va juste s'occuper du JS" />
+                            <Item text="Notre mission : " />
+                            <SubItem text="styliser la div de class .text" />
+                            <SubItem text="mécanisme pour aller de top left à bottom right avec setInterval" />
+                            <Item text="Commençons par créer un object move" />
+                        </ListItem>
+                        <Demo type="repo MoveText">
+                            <Code language="JavaScript" code={code.move} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Ajout prop text pour référencer l'élément à modifier" />
+                            <Question text="Comment je peux référencer un élément qui n'a as d'id ?" />
+                        </ListItem>
+                        <Demo type="repo MoveText">
+                            <Code language="JavaScript" code={code.moveText} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Ajout méthode init pour le styliser" />
+                            <Item text="Pas oublier appel en fin de fichier" />
+                        </ListItem>
+                        <Demo type="repo MoveText">
+                            <Code language="JavaScript" code={code.moveInit} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Notre div est belle, on va la faire bouger maintenant" />
+                            <Item text="Définition méthode display avec 2 params, top et left" />
+                            <Item text="On va mettre à jour le css avec ces 2 valeurs" />
+                            <Item text="On va utiliser top pour faire un hue-rotate" />
+                        </ListItem>
+                        <Demo type="repo MoveText">
+                            <Code language="JavaScript" code={code.moveDisplay} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="On définit la méthode qui va effectuer les changement sur top et left" />
+                            <Item text="Dernière instruction de la méthode : move.display avec les nouveaux top et left" />
+                            <Item text="parseInt : pratique pour récup les props sous forme de nombre" />
+                        </ListItem>
+                        <Demo type="repo MoveText">
+                            <Code language="JavaScript" code={code.moveChange} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Enfin on ajoute la gestion du temps avec setInterval" />
+                            <Item text="Délai : 1/10ème de seconde, comme dans la transition" />
+                            <Item text="Attention : attend un délai en millisecondes" />
+                            <Item text="Comme ex précédent, on appelle move.start en fin de fichier" />
+                        </ListItem>
+                        <Demo type="repo MoveText">
+                            <Code language="JavaScript" code={code.moveStart} />
+                        </Demo>
+                        <Control>
+                            <BoxItem text="Ca vous a paru très compliqué ?" />
+                            <BoxItem text="Tout ce qu'on peut faire en quelques lignes de code ..." />
+                        </Control>
+                        <Recap>
+                            <BoxItem text="Info : pas une bonne pratique de faire tout CSS en JS, juste pour l'exemple" />
+                            <BoxItem text="Toutes les propriétés CSS sont accessibles en JS" />
+                            <BoxItem text="une prop avec - s'écrit en camelCase" />
+                            <BoxItem text="Gestion du temps permet 'tits effets sympas" />
+                        </Recap>
+                        <Transition>
+                            <BoxItem text="Maintenant on sait gérer une page en JS" />
+                            <BoxItem text="Dernier morceau pour demain : événements" />
+                            <BoxItem text="Actions utilisateurs, mais pas que ..." />
+                        </Transition>
+                        <ListItem text="Présentation challenge" />
                     </List>
                 </Card>
             </div>
