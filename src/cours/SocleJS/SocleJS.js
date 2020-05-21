@@ -2,7 +2,7 @@ import React, {Component, Fragment} from "react";
 
 import {Saison} from "../../common";
 
-import * as episodes from "./episodes";
+import * as episodes from "./";
 
 import "../style.scss";
 

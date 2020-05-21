@@ -151,3 +151,27 @@
     font-weight: bold;
 }
 
+.Sondage {
+    @extend .ItemDefault;
+    width: 50%;
+    margin: 10px auto;
+    font-size: 20px;
+    background-color: #ddd;
+    text-align: left;
+    padding: 5px 50px;
+    border: 1px solid black
+}
+
+.SondageTitle {
+    font-weight: bold;
+    text-align: center;
+}
+
+.SondageQuest {
+    font-weight: bold;
+}
+
+.SondageResp {
+    font-size: 18px;
+    text-indent: 20px;
+}
