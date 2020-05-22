@@ -9,13 +9,13 @@ var x = 0; //commentaire en fin de ligne
 /*Commentaire sur
 plusieurs lignes*/`;
 
-export const firstName = `var firstName = "Nico";
+export const firstName = `var firstName = 'Nico';
 console.log(firstName) // Nico;
 
 var otherName;
 console.log(otherName); //undefined`;
 
-export const firstName2 = `firstName = "Nicolas";
+export const firstName2 = `firstName = 'Nicolas';
 console.log(firstName);`;
 
 export const isNice = `var isNice = true;
@@ -24,15 +24,15 @@ console.log(isNice);
 isNice = false;
 console.log(isNice)`;
 
-export const firstConcat = `console.log("Nico" + " " + "Charpin");
+export const firstConcat = `console.log('Nico' + ' ' + 'Charpin');
 
-var prenom = "Nico";
-var nom = "Charpin";
-console.log(prenom + " " + nom);`;
+var prenom = 'Nico';
+var nom = 'Charpin';
+console.log(prenom + ' ' + nom);`;
 
-export const plus = `"2" + "5"; //25
+export const plus = `'2' + '5'; //25
 2 + 5; //7
-"2" + 5; //25`;
+'2' + 5; //25`;
 
 export const addSub = `5 + 18; //23
 25.3 + 24.7; //50
@@ -44,23 +44,23 @@ export const multDiv = `25 * 4; //100
 100 / 5; //20
 25.5 / 2; //12.75`;
 
-export const consoleLog = `console.log("Hello, Nico vous parle");
+export const consoleLog = `console.log('Hello, Nico vous parle');
 console.log(7 + 5);
-var book = "Dune";
+var book = 'Dune';
 console.log(book);`;
 
-export const consoleLog2 = `console.log("test", true, 12345, book);`;
+export const consoleLog2 = `console.log('test', true, 12345, book);`;
 
 export const book = `//ceci est une instruction
-var title = "Harry Potter and the goblet of fire";
+var title = 'Harry Potter and the goblet of fire';
 var author = 'J.K. Rowling';
 var yearOfParution = 2000;
 var price = 12.5;
 var isRead = true;
-console.log(title + " de " + author);`;
+console.log(title + ' de ' + author);`;
 
-export const bookDesc = `var phrase = title + " de " + author + " - Année de sortie : " 
-    + yearOfParution + " - Prix : " + price + " - Déjà lu : " + isRead;
+export const bookDesc = `var phrase = title + ' de ' + author + ' - Année de sortie : ' 
+    + yearOfParution + ' - Prix : ' + price + ' - Déjà lu : ' + isRead;
 console.log(phrase);`;
 
 export const addition = `var number1 = 12.5;
@@ -68,109 +68,109 @@ var number2 = 375;
 
 //addition
 var addition = number1 + number2;
-console.log("addition", addition);
+console.log('addition', addition);
 `;
 
 export const operations = `//soustraction
 var subtraction = number2 - number1;
-console.log("soustraction", subtraction);
+console.log('soustraction', subtraction);
 
 //multiplication
 var multiplication = number1 * number2;
-console.log("multiplication", multiplication);
+console.log('multiplication', multiplication);
 
 //division
 var division = number1 / number2;
-console.log("division", division);
+console.log('division', division);
 `;
 
-export const alertBox = `alert("Mon chouette message !");`;
+export const alertBox = `alert('Mon chouette message !');`;
 
-export const promptBox = `//alert("Mon chouette message !");
-var firstName = prompt("Quel est votre prenom ?");
+export const promptBox = `//alert('Mon chouette message !');
+var firstName = prompt('Quel est votre prenom ?');
 console.log(firstName);`;
 
 export const promptBoxes = `//exo : afficher Bonjour prenom nom, vous avez age ans
-var lastName = prompt("Quel est votre nom ?");
-var age = prompt("Quel est votre âge ?");
-console.log("Bonjour "+firstName+" "+lastName+", vous avez "+age+" ans");`;
+var lastName = prompt('Quel est votre nom ?');
+var age = prompt('Quel est votre âge ?');
+console.log('Bonjour '+firstName+' '+lastName+', vous avez '+age+' ans');`;
 
 export const confirmBox = `//demander à l'utilisateur s'il veut jouer à un jeu en utilisant confirm
-var result = confirm("Voulez-vous jouer à un jeu ?");
-console.log("réponse", result);
+var result = confirm('Voulez-vous jouer à un jeu ?');
+console.log('réponse', result);
 if (result === true) {
-    console.log("Bienvenue !");
+    console.log('Bienvenue !');
 }
 else {
-    console.log("Une prochaine fois alors ...");
+    console.log('Une prochaine fois alors ...');
 }
 `;
 
-export const exo1 = `var question1 = "Quelle mer borde la ville de Sébastopol ?";
-var solution1 = "la mer Noire";`;
+export const exo1 = `var question1 = 'Quelle mer borde la ville de Sébastopol ?';
+var solution1 = 'la mer Noire';`;
 
 export const exo2Prompt = `var reponse1 = prompt(question1);`;
 
 export const exo2Algo = `SI (réponse égale solution)
-ALORS affiche "Gagné !"
+ALORS affiche 'Gagné !'
 SINON affiche Perdu ...`;
 
 export const exo2Condition = `if (reponse1 === solution1) {
-    alert("Gagné !");
+    alert('Gagné !');
 }
 else {
-    alert("Perdu...");
+    alert('Perdu...');
 }`;
 
-export const exo3Reponse = `var question2 = "Quel est l'âge du capitaine ?";
+export const exo3Reponse = `var question2 = 'Quel est l'âge du capitaine ?';
 var solution2 = 63;
 var reponse2 = prompt(question2);`;
 
-export const parseIntTest = `parseInt("35"); //35
-parseInt("35.5"); //35, parseInt renvoie un entier
-parseInt("35px"); //35
+export const parseIntTest = `parseInt('35'); //35
+parseInt('35.5'); //35, parseInt renvoie un entier
+parseInt('35px'); //35
 
-var num = parseInt("35");
+var num = parseInt('35');
 typeof num; //number
 
-var str = "test";
+var str = 'test';
 typeof str; //string
 
-parseInt("test"); //NaN, c'est quoi ce truc bizarre ?`;
+parseInt('test'); //NaN, c'est quoi ce truc bizarre ?`;
 
-export const NumberTest = `Number("35"); //35
-Number("35.5"); //35.5, prend en compte les float
+export const NumberTest = `Number('35'); //35
+Number('35.5'); //35.5, prend en compte les float
 
-var num = Number("35.5");
+var num = Number('35.5');
 typeof num; //number
 
-Number("35px"); //NaN`;
+Number('35px'); //NaN`;
 
 
 export const exo3Number = `var reponse2Number = paserInt(reponse2, 10);
 if (reponse2Number === solution2) {
-    alert("Gagné !");
+    alert('Gagné !');
 }
 else {
-    alert("Perdu...")
+    alert('Perdu...')
 }`;
 
 export const scoreDeclare = `var score = 0;`;
 
 export const scoreIncrement = `{
-    alert("Gagné !);
+    alert('Gagné !);
     score = score + 1;
     //score += 1;
     //score++;
 }`;
 
 export const scoreDisplay = `//SI score supérieur à 1 ALORS afficher avec s SINON afficher sans s
-var message = "";
+var message = ';
 if (score > 1) {
-    message = "Vous avez " + score + " bonnes réponses";
+    message = 'Vous avez ' + score + ' bonnes réponses';
 }
 else {
-    message = "Vous avez " + score + " bonne réponse";
+    message = 'Vous avez ' + score + ' bonne réponse';
 }
 alert(message);`;
 
@@ -179,52 +179,52 @@ export const checkReponseDeclare = `var checkReponse = function(reponse, solutio
 //SI solution est de type number ALORS on convertit reponse avec parseInt ou Number
 
 //SI reponse égale la solution
-//ALORS affiche "Gagné !", mise à jour du score
-//SINON affiche "Perdu ..."
+//ALORS affiche 'Gagné !', mise à jour du score
+//SINON affiche 'Perdu ...'
 
 }`;
 
-export const checkReponseCast = `if (typeof solution === "number) {
+export const checkReponseCast = `if (typeof solution === 'number) {
     reponse = parseInt(reponse, 10);
 }`;
 
 export const checkReponseCompare = `if (reponse === solution) {
-    alert("Gagné !");
+    alert('Gagné !');
     score += 1;
 } 
 else {
-    alert("Perdu...");
+    alert('Perdu...');
 }`;
 
-export const checkReponseCall = `var question1 = "Quelle mer borde la ville de Sébastopol ?";
-var solution1 = "la mer Noire";
+export const checkReponseCall = `var question1 = 'Quelle mer borde la ville de Sébastopol ?';
+var solution1 = 'la mer Noire';
 var reponse1 = prompt(question1);
 checkReponse(reponse1, solution1)
 
-var question2 = "Quel est l'âge du capitaine ?";
+var question2 = 'Quel est l'âge du capitaine ?';
 var solution2 = 63;
 var reponse2 = prompt(question2);
 checkReponse(reponse2, solution2)
 `;
 
 export const displayScore = `var displayScore = function() {
-    var message = "";
+    var message = ';
     if (score > 1) {
-        message = "Vous avez " + score + " bonnes réponses";
+        message = 'Vous avez ' + score + ' bonnes réponses';
     }
     else {
-        message = "Vous avez " + score + " bonne réponse";
+        message = 'Vous avez ' + score + ' bonne réponse';
     }
     alert(message);
 }`;
 
 export const carreV1 = `var carre = function(num) {
     var square = num * num;
-    console.log(num + " au carré : " + square);
+    console.log(num + ' au carré : ' + square);
 }
 carre(12);`;
 
-export const isNaN = `var test = "text";
+export const isNaN = `var test = 'text';
 isNaN(text);
 var num = 12;
 isNaN(num);`;
@@ -232,27 +232,27 @@ isNaN(num);`;
 export const carreV2 = `var carre = function(numStr) {
     var num = Number(numStr);
     if (isNaN(num)) {
-        console.log("Saisissez un nombre !");
+        console.log('Saisissez un nombre !');
     } 
     else {
         var square = num * num;
-        console.log(num + " au carré : " + square);
+        console.log(num + ' au carré : ' + square);
     }
 }
-var numberString = prompt("Quel nombre voulez-vous mettre au carré ?");
+var numberString = prompt('Quel nombre voulez-vous mettre au carré ?');
 carre(numberString);`;
 
 export const carreV3 = `var carre = function(numStr) {
     var num = Number(numStr);
     if (isNaN(num)) {
-        console.log("Saisissez un nombre !");
+        console.log('Saisissez un nombre !');
     } 
     else {
         var square = Math.pow(num, 2);
-        console.log(num + " au carré : " + square);
+        console.log(num + ' au carré : ' + square);
     }
 }
-var numberString = prompt("Quel nombre voulez-vous mettre au carré ?");
+var numberString = prompt('Quel nombre voulez-vous mettre au carré ?');
 carre(numberString);`;
 
 export const randomMultiplyV1 = `var randomMultiply = function(num) {
@@ -271,42 +271,42 @@ randomMultiply(49);`;
 export const emptyTab = `var prenoms = [];
 console.log(prenoms);`;
 
-export const prenomsTab = `var prenoms = ["Philippe", "Simon", "Etienne"];`;
+export const prenomsTab = `var prenoms = ['Philippe', 'Simon', 'Etienne'];`;
 
 export const prenomsRead = `console.log(prenoms[1];`;
 
-export const prenomsAdd = `prenoms[3] = "Nico";
+export const prenomsAdd = `prenoms[3] = 'Nico';
 console.log(prenoms);`;
 
-export const prenomsEmptyVal = `var prenoms = ["Philippe", "Simon", "Etienne"];
-prenoms[4] = "Nico";
+export const prenomsEmptyVal = `var prenoms = ['Philippe', 'Simon', 'Etienne'];
+prenoms[4] = 'Nico';
 console.log(prenoms);
 console.log(prenoms[3]);`;
 
-export const prenomsOverride = `var prenoms = ["Philippe", "Simon", "Etienne"];
-prenoms[1] = "Nico";
+export const prenomsOverride = `var prenoms = ['Philippe', 'Simon', 'Etienne'];
+prenoms[1] = 'Nico';
 console.log(prenoms);`;
 
 export const prenomsLength = `console.log(prenoms.length);`;
 
-export const prenomsAddLength = `prenoms[prenoms.length] = "Simon";
+export const prenomsAddLength = `prenoms[prenoms.length] = 'Simon';
 console.log(prenoms);`;
 
-export const prenomsPush = `prenoms.push("Lucie");
+export const prenomsPush = `prenoms.push('Lucie');
 console.log(prenoms);`;
 
-export const tabWithVars = `var nom = "Nico";
+export const tabWithVars = `var nom = 'Nico';
 var age = 42;
 var tab = [nom, age]`;
 
-export const stringTab = `var test = "du texte";
+export const stringTab = `var test = 'du texte';
 console.log(test[3]); //t
 console.log(test.length); //8`;
 
-export const fruits = `var fruits = ["pomme", "poire", "banane", "goyave"];
+export const fruits = `var fruits = ['pomme', 'poire', 'banane', 'goyave'];
 
-console.log("Je mange une " + fruits[2]);
-console.log("Je mange une " + fruits[Math.floor(Math.random()*fruits.length)]);`;
+console.log('Je mange une ' + fruits[2]);
+console.log('Je mange une ' + fruits[Math.floor(Math.random()*fruits.length)]);`;
 
 export const whileStart = `//avec TANT QUE
 
@@ -319,7 +319,7 @@ var compteur = 0;`;
 export const whileFoireux = `//on lance la boucle
 while(compteur < 10) {
     //on vérifie la valeur du compteur dans cette itération
-    console.log("Valeur du compteur de la boucle while : ", compteur);
+    console.log('Valeur du compteur de la boucle while : ', compteur);
 
     //on stocke la valeur du compteur dans le tableau
     tab[compteur] = compteur;
@@ -328,7 +328,7 @@ while(compteur < 10) {
 export const whileOk = `//on lance la boucle
 while(compteur < 10) {
     //on vérifie la valeur du compteur dans cette itération
-    console.log("Valeur du compteur de la boucle while : ", compteur);
+    console.log('Valeur du compteur de la boucle while : ', compteur);
     //on stocke la valeur du compteur dans le tableau
     tab[compteur] = compteur;
     //on incrémente notre compteur
@@ -346,14 +346,14 @@ var compteur = 0;
 //on lance la boucle
 while(compteur < 10) {
     //on vérifie la valeur du compteur dans cette itération
-    console.log("Valeur du compteur de la boucle while : ", compteur);
+    console.log('Valeur du compteur de la boucle while : ', compteur);
     //on stocke la valeur du compteur dans le tableau
     tab[compteur] = compteur;
     //on incrémente notre compteur
     compteur++
 }
 //on vérifie le nb d'éléments dans le tableau
-console.log("Le tableau rempli par while contient " + tab.length + " éléments");`;
+console.log('Le tableau rempli par while contient ' + tab.length + ' éléments');`;
 
 export const forFull = `//avec POUR
 
@@ -363,13 +363,13 @@ var tab2 = [];
 //on lance la boucle 
 for (var compteur2 = 0; compteur2 < 10; compteur2++) {
     //on vérifie la valeur du compteur dans cette itération
-    console.log("Valeur du compteur de la boucle for : ", compteur2);
+    console.log('Valeur du compteur de la boucle for : ', compteur2);
 
     //on stocke la valeur du compteur dans le tableau
     tab2[compteur2] = compteur2;
 }
 //on vérifie le nb d'éléments dans le tableau
-console.log("Le tableau rempli par for contient " + tab2.length + " éléments");`;
+console.log('Le tableau rempli par for contient ' + tab2.length + ' éléments');`;
 
 export const randomNumber = `//on déclare un variable max
 var MAX = 500;
@@ -387,36 +387,36 @@ var randomGuess = Math.round(fork);
 //version condensée
 //var randomGuess = Math.round(Math.random()*500);`;
 
-export const randomInput = `var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));`;
+export const randomInput = `var userGuess = Number(prompt('Devinez un nombre entre 0 et '+MAX+' :'));`;
 
 export const randomWhile = `while(userGuess !== randomNumber) {
-    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+    userGuess = Number(prompt('Devinez un nombre entre 0 et '+MAX+' :'));
 }`;
 
 export const randomNan = `//SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
 if (isNaN(userGuess)) {
-    console.log("Veuillez saisir un nombre entre 0 et "+MAX);
+    console.log('Veuillez saisir un nombre entre 0 et '+MAX);
 }`;
 
 export const randomWhileFull = `while(userGuess !== randomNumber) {
     //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
     if (isNaN(userGuess)) {
-        console.log("Veuillez saisir un nombre entre 0 et "+MAX);
+        console.log('Veuillez saisir un nombre entre 0 et '+MAX);
     }
     //SINON SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
     else if (userGuess < randomNumber) {
-        console.log("Le nombre à deviner est plus grand");
+        console.log('Le nombre à deviner est plus grand');
     }
     //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
     else if (userGuess > randomNumber) {
-        console.log("Le nombre à deviner est plus petit");
+        console.log('Le nombre à deviner est plus petit');
     }
     //récup saisie de l'utilisateur
-    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+    userGuess = Number(prompt('Devinez un nombre entre 0 et '+MAX+' :'));
 }`;
 
 export const randomWin = `//message gagné
-console.log("Clap clap, vous avez trouvé le nb "+randomNumber);`;
+console.log('Clap clap, vous avez trouvé le nb '+randomNumber);`;
 
 export const randomFull = `//on déclare un variable max
 var MAX = 500;
@@ -434,29 +434,29 @@ var randomNumber = Math.round(fork);
 //version condensée
 //var randomNumber = Math.round(Math.random()*500);
 
-var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+var userGuess = Number(prompt('Devinez un nombre entre 0 et '+MAX+' :'));
 var nbTries = 1;
 
 while(userGuess !== randomNumber) {
     //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
     if (isNaN(userGuess)) {
-        console.log("Veuillez saisir un nombre entre 0 et "+MAX);
+        console.log('Veuillez saisir un nombre entre 0 et '+MAX);
     }
     //SINON SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
     else if (userGuess < randomNumber) {
-        console.log("Le nombre à deviner est plus grand");
+        console.log('Le nombre à deviner est plus grand');
     }
     //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
     else if (userGuess > randomNumber) {
-        console.log("Le nombre à deviner est plus petit");
+        console.log('Le nombre à deviner est plus petit');
     }
     //récup nouvelle saisie de l'utilisateur
-    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+    userGuess = Number(prompt('Devinez un nombre entre 0 et '+MAX+' :'));
     //on incrémente le nb d'essais
     nbTries++;
 }
 //message gagné
-console.log("Clap clap, vous avez trouvé le nb "+randomNumber+" en "+nbTries+" coups !");`;
+console.log('Clap clap, vous avez trouvé le nb '+randomNumber+' en '+nbTries+' coups !');`;
 
 export const randomDoWhile = `//on déclare un variable max
 var MAX = 500;
@@ -474,32 +474,32 @@ var randomNumber = Math.round(fork);
 //version condensée
 //var randomNumber = Math.round(Math.random()*500);
 
-var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));;
+var userGuess = Number(prompt('Devinez un nombre entre 0 et '+MAX+' :'));;
 var nbTries = 1;
 do {
     //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
     if (isNaN(userGuess)) {
-        console.log("Veuillez saisir un nombre entre 0 et "+MAX);
+        console.log('Veuillez saisir un nombre entre 0 et '+MAX);
     }
     //SINON SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
     else if (userGuess < randomNumber) {
-        console.log("Le nombre à deviner est plus grand");
+        console.log('Le nombre à deviner est plus grand');
     }
     //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
     else if (userGuess > randomNumber) {
-        console.log("Le nombre à deviner est plus petit");
+        console.log('Le nombre à deviner est plus petit');
     }
     //on incrémente le nb d'essais
     nbTries++;
     //récup nouvelle saisie de l'utilisateur
-    userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+    userGuess = Number(prompt('Devinez un nombre entre 0 et '+MAX+' :'));
 } while(userGuess !== randomNumber)
 //message gagné
-console.log("Clap clap, vous avez trouvé le nb "+randomNumber+" en "+nbTries+" coups !");`;
+console.log('Clap clap, vous avez trouvé le nb '+randomNumber+' en '+nbTries+' coups !');`;
 
 export const getNumber = `var getNumber = function() {
     //on déclare la variable userGuess et on l'assigne avec le prompt
-    var userGuess = Number(prompt("Devinez un nombre entre 0 et "+MAX+" :"));
+    var userGuess = Number(prompt('Devinez un nombre entre 0 et '+MAX+' :'));
     //SI userGuess n'est pas un nombre ALORS on retourne -1 
     if (isNaN(userGuess)) {
         return -1;
@@ -516,11 +516,11 @@ var nbTries = 1;
 while(userGuess !== randomNumber) {
     //SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
     if (userGuess < randomNumber) {
-        console.log("Le nombre à deviner est plus grand");
+        console.log('Le nombre à deviner est plus grand');
     }
     //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
     else if (userGuess > randomNumber) {
-        console.log("Le nombre à deviner est plus petit");
+        console.log('Le nombre à deviner est plus petit');
     }
     nbTries++;
     userGuess = getNumber();
@@ -533,11 +533,11 @@ export const checkNumbersDeclare = `var checkNumbers = function(guess, random) {
 export const checkNumbers = `var checkNumbers = function(guess, random) {
     //SI userGuess n'est pas un nombre ALORS on retourne -1 
     if (guess < random) {
-        console.log("Le nombre à deviner est plus grand");
+        console.log('Le nombre à deviner est plus grand');
     }
     //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
     else if (guess > random) {
-        console.log("Le nombre à deviner est plus petit");
+        console.log('Le nombre à deviner est plus petit');
     }
 }`;
 
@@ -549,11 +549,11 @@ export const randomWhileDef = `while(userGuess !== randomNumber) {
 
 export const france = `var europe = {
     france: {
-        nom: "France",
-        capitale: "Paris",
+        nom: 'France',
+        capitale: 'Paris',
         superficie: 632734,
         population: 67.03,
-        villesPrincipales: ["Paris", "Marseille", "Lyon", "Toulouse", "Nice"]
+        villesPrincipales: ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Nice']
     },
     ...
 }`;
@@ -561,11 +561,11 @@ export const france = `var europe = {
 export const allemagne = `var europe = {
     ...
     allemagne: {
-        nom: "Allemagne",
-        capitale: "Berlin",
+        nom: 'Allemagne',
+        capitale: 'Berlin',
         superficie: 357167,
         population: 83.02,
-        villesPrincipales: ["Berlin", "Hambourg", "Munich", "Cologne", "Francfort"]
+        villesPrincipales: ['Berlin', 'Hambourg', 'Munich', 'Cologne', 'Francfort']
     },
     ...
 }`;
@@ -573,11 +573,11 @@ export const allemagne = `var europe = {
 export const italie = `var europe = {
     ...
     italie: {
-        nom: "Italie",
-        capitale: "Rome",
+        nom: 'Italie',
+        capitale: 'Rome',
         superficie: 302073,
         population: 60.36,
-        villesPrincipales: ["Rome", "Milan", "Naples", "Turin", "Palerme"]
+        villesPrincipales: ['Rome', 'Milan', 'Naples', 'Turin', 'Palerme']
     },
     ...
 }`;
@@ -585,11 +585,11 @@ export const italie = `var europe = {
 export const espagne = `var espagne = {
     ...
     espagne: {
-        nom: "Madrid",
-        capitale: "Berlin",
+        nom: 'Madrid',
+        capitale: 'Berlin',
         superficie: 505991,
         population: 46.93,
-        villesPrincipales: ["Madrid", "Barcelone", "Valence", "Séville", "Saragosse"]
+        villesPrincipales: ['Madrid', 'Barcelone', 'Valence', 'Séville', 'Saragosse']
     },
     ...
 }`;
@@ -597,18 +597,18 @@ export const espagne = `var espagne = {
 export const irlande = `var europe = {
     ...
     irlande: {
-        nom: "Irlande",
-        capitale: "Dublin",
+        nom: 'Irlande',
+        capitale: 'Dublin',
         superficie: 69797,
         population: 4.90,
-        villesPrincipales: ["Dublin", "Cork", "Galway", "Limerick"]
+        villesPrincipales: ['Dublin', 'Cork', 'Galway', 'Limerick']
     }
 }`;
 
 export const logCountry = `var logCountry = function(country) {
-    console.log("Nom du pays: " + country.nom + ", capitale : " + country.capitale + 
-    ", superficie : " + country.superficie + ", population : " +  country.population +
-    ", ville sprincipales : " + tabToString(country.villesPrincipales));
+    console.log('Nom du pays: ' + country.nom + ', capitale : ' + country.capitale + 
+    ', superficie : ' + country.superficie + ', population : ' +  country.population +
+    ', ville sprincipales : ' + tabToString(country.villesPrincipales));
 }`;
 
 export const gameObject = `var game = {
@@ -624,7 +624,7 @@ export const gamePlay1 = `var play = function() {
     var randomNumRounded = Math.round(max * Math.random());
     */
     game.searchedNumber = randomNumRounded;
-    alert("Nouvelle partie");
+    alert('Nouvelle partie');
 }`;
 
 export const gamePlay2 = `var play = function() {
@@ -638,10 +638,10 @@ export const gamePlay3 = `var play = function() {
     ...
     while (enteredNumber !== game.searchedNumber) {
         if (enteredNumber < game.searchedNumber) {
-            enteredNumber =  parseInt(prompt("C'est plus"));
+            enteredNumber =  parseInt(prompt('C'est plus'));
         }
         else {
-            enteredNumber =  parseInt(prompt("C'est moins"));
+            enteredNumber =  parseInt(prompt('C'est moins'));
         }
         game.attemps++;
     }
@@ -650,7 +650,7 @@ export const gamePlay3 = `var play = function() {
 
 export const gamePlay4 = `var play = function() {
     ...
-    alert("Bravo ! C'était bien ' + game.searchedNumber + ' - Nombre d'essais : " + game.attemps);
+    alert('Bravo ! C'était bien ' + game.searchedNumber + ' - Nombre d'essais : ' + game.attemps);
     ...
 }`;
 
@@ -703,7 +703,7 @@ export const scoresDisplay = `game.scores.push(game.attemps);
 console.log(game.scores);
 play();`;
 
-export const gameReplay = `    if (confirm("Rejouer ?")) {
+export const gameReplay = `    if (confirm('Rejouer ?')) {
     play();
 }
 else {
@@ -713,19 +713,19 @@ else {
 export const scoresBetter = `...
 else {
     for (var gameIndex=0; gameIndex<game.scores.length; gameIndex++) {
-        alert("Partie " + (gameIndex+1) + " : " + game.scores[gameIndex]+ " essais");
+        alert('Partie ' + (gameIndex+1) + ' : ' + game.scores[gameIndex]+ ' essais');
     }
 }`;
 
 export const displaySores = `var displayScore = function() {
     for (var gameIndex=0; gameIndex<game.scores.length; gameIndex++) {
-        alert("Partie " + (gameIndex+1) + " : " + game.scores[gameIndex]+ " essais");
+        alert('Partie ' + (gameIndex+1) + ' : ' + game.scores[gameIndex]+ ' essais');
     }
 }
 
 function play() {
     ...
-    if (confirm("Rejouer ?")) {
+    if (confirm('Rejouer ?')) {
         play();
     }
     else {
@@ -734,10 +734,10 @@ function play() {
 }`;
 
 export const spaceship = `var spaceship = {
-    name: "Millenium Falcon",
-    driver: "Han Solo",
+    name: 'Millenium Falcon',
+    driver: 'Han Solo',
     lightspeed: function() {
-        console.log("Entering hyperspace ...");
+        console.log('Entering hyperspace ...');
     }
 };`;
 
@@ -757,7 +757,7 @@ export const embedDisplay = `var game {
     ...
     displayScores: function () {
         for (var gameIndex=0; gameIndex<game.scores.length; gameIndex++) {
-            alert("Partie " + (gameIndex+1) + " : " + game.scores[gameIndex]+ " essais");
+            alert('Partie ' + (gameIndex+1) + ' : ' + game.scores[gameIndex]+ ' essais');
         }
     },
     ...
@@ -765,7 +765,7 @@ export const embedDisplay = `var game {
 
 function play() {
     ...
-    if (confirm("Rejouer ?")) {
+    if (confirm('Rejouer ?')) {
         play();
     }
     else {
@@ -777,24 +777,24 @@ export const embedPlay = `var game {
     ...
     play: function() {
         game.searchedNumber = game.generateRandomNumber(game.min, game.max);
-        alert("Nouvelle partie");
+        alert('Nouvelle partie');
     
         game.attemps++;
         var enteredNumber =  parseInt(prompt('Quel est le nombre à trouver ?'));
     
         while (enteredNumber !== game.searchedNumber) {
             if (enteredNumber < game.searchedNumber) {
-                enteredNumber =  parseInt(prompt("C'est plus"));
+                enteredNumber =  parseInt(prompt('C'est plus'));
             }
             else {
-                enteredNumber =  parseInt(prompt("C'est moins"));
+                enteredNumber =  parseInt(prompt('C'est moins'));
             }
             game.attemps++;
         }
-        alert("Bravo ! C'était bien ' + game.searchedNumber + ' - Nombre d'essais : " + game.attemps);
+        alert('Bravo ! C'était bien ' + game.searchedNumber + ' - Nombre d'essais : ' + game.attemps);
         game.scores.push(game.attemps);
     
-        if (confirm("Rejouer ?")) {
+        if (confirm('Rejouer ?')) {
             game.play();
         }
         else {
@@ -803,23 +803,23 @@ export const embedPlay = `var game {
     }
 }`;
 
-export const scoresDiv = `<div id="scores">
+export const scoresDiv = `<div id='scores'>
 
 </div>
-<script src="../js/main.js"></script>`;
+<script src='../js/main.js'></script>`;
 
 export const displayScoresStart = `displayScores: function() {
-    var target = document.getElementById("scores");
+    var target = document.getElementById('scores');
     console.log(target);
     console.dir(target);
 }`;
 
 export const displayScoresCreate = `displayScores: function() {
     ...
-    var title = document.createElement("h1");
-    title.className = "scores-title";
-    title.innerHTML = "Resultats de vos <strong>"
-        +game.scores.length+" parties</strong>";
+    var title = document.createElement('h1');
+    title.className = 'scores-title';
+    title.innerHTML = 'Resultats de vos <strong>'
+        +game.scores.length+' parties</strong>';
 }`;
 
 export const scoresTitle = `#scores {
@@ -839,35 +839,35 @@ export const scoresAppend = `displayScores: function() {
 
 export const scoresTable = `displayScores: function() {
     ...
-    var table = document.createElement("table");
+    var table = document.createElement('table');
 }`;
 
 export const scoresThead = `displayScores: function() {
     ...
-    var tableHeader = document.createElement("thead");
-    var headerContent = "<tr>";
-    headerContent += "<th>Partie</th>";
-    headerContent += "<th>Essais</th>";
-    headerContent += "</tr>";
+    var tableHeader = document.createElement('thead');
+    var headerContent = '<tr>';
+    headerContent += '<th>Partie</th>';
+    headerContent += '<th>Essais</th>';
+    headerContent += '</tr>';
     tableHeader.innerHTML = headerContent;
     table.appendChild(tableHeader)
 }`;
 
 export const scoresTbody = `displayScores: function() {
     ...
-    var tableBody = document.createElement("tbody");
+    var tableBody = document.createElement('tbody');
 }`;
 
 export const scoresRows = `displayScores: function() {
     ...
     for (var gameIndex=0; gameIndex < game.scores.length; gameIndex++) {
-        var tr = document.createElement("tr");
+        var tr = document.createElement('tr');
         
-        var tdGame = document.createElement("td");
+        var tdGame = document.createElement('td');
         tdGame.textContent = gameIndex + 1;
         tr.appendChild(tdGame);
 
-        var tdAttemps = document.createElement("td");
+        var tdAttemps = document.createElement('td');
         tdAttemps.textContent = game.scores[gameIndex];
         tr.appendChild(tdAttemps);
 
@@ -888,34 +888,34 @@ export const chronoFirst = `var chrono = {
 }`;
 
 export const chronoInit1 = `init: function() {
-    var target = document.getElementById("chrono");
+    var target = document.getElementById('chrono');
 }`;
 
 export const chronoInit2 = `init: function() {
     ...
-    var minutes = document.createElement("div");
-    minutes.id = "minutes";
+    var minutes = document.createElement('div');
+    minutes.id = 'minutes';
     minutes.textContent = chrono.minutes;        
     target.appendChild(minutes);
 }`;
 
 export const chronoInit3 = `init: function() {
     ...
-    var secondes = document.createElement("div");
-    secondes.id = "secondes";
+    var secondes = document.createElement('div');
+    secondes.id = 'secondes';
     secondes.textContent = chrono.secondes;        
     target.appendChild(secondes);
 
-    var dixiemes = document.createElement("div");
-    dixiemes.id = "dixiemes";
+    var dixiemes = document.createElement('div');
+    dixiemes.id = 'dixiemes';
     dixiemes.textContent = chrono.dixiemes;        
     target.appendChild(dixiemes);
 }`;
 
 export const chronoDisplay = `display: function() {
-    document.querySelector("#dixiemes").textContent = chrono.dixiemes;
-    document.querySelector("#secondes").textContent = chrono.secondes;
-    document.querySelector("#minutes").textContent = chrono.minutes;
+    document.querySelector('#dixiemes').textContent = chrono.dixiemes;
+    document.querySelector('#secondes').textContent = chrono.secondes;
+    document.querySelector('#minutes').textContent = chrono.minutes;
 }`;
 
 export const chronoAddTime = `addTime: function() {
@@ -941,26 +941,26 @@ export const move = `var move = {
 };`;
 
 export const moveText = `var move = {
-    text: document.querySelector(".text"),
+    text: document.querySelector('.text'),
     ...
 }`;
 
 export const moveInit = `init: function() {
-    move.text.style.position = "absolute";
-    move.text.style.top = "0%";
-    move.text.style.left = "0%";
-    move.text.style.width = "200px";
-    move.text.style.fontSize = "1.5em";
-    move.text.style.padding = "1em";
-    move.text.style.textAlign = "center";
-    move.text.style.backgroundColor = "#ae9ff3";
-    move.text.style.transition = "all linear 0.1s";
+    move.text.style.position = 'absolute';
+    move.text.style.top = '0%';
+    move.text.style.left = '0%';
+    move.text.style.width = '200px';
+    move.text.style.fontSize = '1.5em';
+    move.text.style.padding = '1em';
+    move.text.style.textAlign = 'center';
+    move.text.style.backgroundColor = '#ae9ff3';
+    move.text.style.transition = 'all linear 0.1s';
 }`;
 
 export const moveDisplay = `display: function(top, left) {
-    move.text.style.top = top+"%";
-    move.text.style.left = left+"%";
-    move.text.style.filter = "hue-rotate("+(top * 360 / 100)+"deg)";
+    move.text.style.top = top+'%';
+    move.text.style.left = left+'%';
+    move.text.style.filter = 'hue-rotate('+(top * 360 / 100)+'deg)';
 }`;
 
 export const moveChange = `change: function() {
@@ -982,9 +982,9 @@ export const moveStart = `start: function() {
 }`;
 
 export const diceStart = `var createDice = function() {
-    var dice = document.createElement("div");
-    dice.className = "dice";
-    document.getElementById("player").appendChild(dice);
+    var dice = document.createElement('div');
+    dice.className = 'dice';
+    document.getElementById('player').appendChild(dice);
 }
 
 createDice();`;
@@ -1002,41 +1002,41 @@ export const dicePosition = `var createDice = function() {
     ...
     var diceValue = app.getRandom(1, 6);
     var offset = (diceValue - 1) * 100;
-    dice.style.backgroundPosition = "-" + offset + "px 0";
+    dice.style.backgroundPosition = '-' + offset + 'px 0';
 ...
 }`;
 
-export const diceNb = `var nbDices = Number(prompt("Nombre de dés : "));
+export const diceNb = `var nbDices = Number(prompt('Nombre de dés : '));
 while(isNaN(nbDices)) {
-    nbDices = prompt("Veuillez saisir un nombre de dés : ");
+    nbDices = prompt('Veuillez saisir un nombre de dés : ');
 }
 
 for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
     createDice();
 }`;
 
-export const diceDealer = `<div id="app">
-    <div class="board" id="player"></div>
-    <div class="board" id="dealer"></div>
+export const diceDealer = `<div id='app'>
+    <div class='board' id='player'></div>
+    <div class='board' id='dealer'></div>
 </div>`;
 
 export const diceCreate = `var createDice = function(target) {
-    var dice = document.createElement("div");
-    dice.className = "dice";
+    var dice = document.createElement('div');
+    dice.className = 'dice';
     var diceValue = app.getRandom(1, 6);
     var offset = (diceValue - 1) * 100;
-    dice.style.backgroundPosition = "-" + offset + "px 0";
+    dice.style.backgroundPosition = '-' + offset + 'px 0';
     document.getElementById(target).appendChild(dice);
 }`;
 
 export const diceDistrib = `for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
-    createDice("player");
-    createDice("dealer");
+    createDice('player');
+    createDice('dealer');
 }`;
 
-export const diceHtml = `<div id="ui">
-<button type="button" id="play-button">Jouer avec 6 dés</button>
-<p class="precision">psst, appuyer sur une touche du clavier, ça marche aussi &#x1F600;</p>
+export const diceHtml = `<div id='ui'>
+<button type='button' id='play-button'>Jouer avec 6 dés</button>
+<p class='precision'>psst, appuyer sur une touche du clavier, ça marche aussi &#x1F600;</p>
 </div>`;
 
 export const diceCss = `#ui {
@@ -1060,9 +1060,9 @@ export const diceCss = `#ui {
     margin: 3px;
   }`;
 
-export const diceListener = `var playButton = document.getElementById("play-button");
+export const diceListener = `var playButton = document.getElementById('play-button');
 
-playButton.addEventListener("click", 
+playButton.addEventListener('click', 
     //2ème argument : fonction pour lancer un nouveau jeu
         //effacer le jeu précédent
         //afficher un nouveau avec 6 dés
@@ -1073,13 +1073,13 @@ export const diceNewGame = `var newGame = function() {
     //afficher un nouveau avec 6 dés
 }
 
-var playButton = document.getElementById("play-button");
+var playButton = document.getElementById('play-button');
 
-playButton.addEventListener("click", newGame);`;
+playButton.addEventListener('click', newGame);`;
 
 export const diceResetBoard = `var resetBoard = function() {
-    document.getElementById("player").textContent = 
-    document.getElementById("dealer").textContent = "";
+    document.getElementById('player').textContent = 
+    document.getElementById('dealer').textContent = ';
 }
 
 var newGame = function() {
@@ -1090,8 +1090,8 @@ var newGame = function() {
 
 export const dicePlay = `var play = function(nbDices) {
     for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
-        createDice("player");
-        createDice("dealer");
+        createDice('player');
+        createDice('dealer');
     }
 }
 
@@ -1102,7 +1102,7 @@ var newGame = function() {
     play(6);
 }`;
 
-export const diceKeyboard = `document.body.addEventListener("keyup", newGame);`;
+export const diceKeyboard = `document.body.addEventListener('keyup', newGame);`;
 
 export const diceApp = `var app = {};`;
 
@@ -1116,25 +1116,25 @@ export const diceMethods = `var app = {
         // return Math.floor(min + Math.random()*(max - min + 1))
     },
     createDice: function(target) {
-        var dice = document.createElement("div");
-        dice.className = "dice";
+        var dice = document.createElement('div');
+        dice.className = 'dice';
         var diceValue = app.getRandom(1, 6);
         var offset = (diceValue - 1) * 100;
-        dice.style.backgroundPosition = "-" + offset + "px 0";
+        dice.style.backgroundPosition = '-' + offset + 'px 0';
         document.getElementById(target).appendChild(dice);
     },
     resetBoard: function() {
-        document.getElementById("player").textContent = 
-        document.getElementById("dealer").textContent = "";
+        document.getElementById('player').textContent = 
+        document.getElementById('dealer').textContent = ';
     },
     play: function(nbDices) {
         for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
-            app.createDice("player");
-            app.createDice("dealer");
+            app.createDice('player');
+            app.createDice('dealer');
         }
     },
     newGame: function() {
-        console.log("new game");
+        console.log('new game');
         //effacer le jeu précédent
         app.resetBoard();
         //afficher un nouveau avec 6 dés
@@ -1145,9 +1145,9 @@ export const diceMethods = `var app = {
 export const diceLaunch = `var app = {
     ...
     init: function() {
-        var playButton = document.getElementById("play-button");
-        playButton.addEventListener("click", app.newGame);
-        document.body.addEventListener("keyup", app.newGame);
+        var playButton = document.getElementById('play-button');
+        playButton.addEventListener('click', app.newGame);
+        document.body.addEventListener('keyup', app.newGame);
     }
 };
 
@@ -1199,28 +1199,28 @@ export const diceNewCss = `#app {
     display: flex;
 }`;
 
-export const diceWelcome = `<div id="welcome">
-    <button type="buton" class="btn" id="play">Jouer</button>
+export const diceWelcome = `<div id='welcome'>
+    <button type='buton' class='btn' id='play'>Jouer</button>
 </div>
-<div id="app" class="hidden">
+<div id='app' class='hidden'>
 ...
 </div>`;
 
 export const diceNewStart = `init: function() {
     ...
-    var welcomeButton = document.getElementById("play");
-    welcomeButton.addEventListener("click", app.start);
+    var welcomeButton = document.getElementById('play');
+    welcomeButton.addEventListener('click', app.start);
 },
 start: function() {
-    document.getElementById("welcome").classList.add("hidden");
-    document.getElementById("app").classList.remove("hidden");
+    document.getElementById('welcome').classList.add('hidden');
+    document.getElementById('app').classList.remove('hidden');
 }`;
 
-export const diceForm = `<div class="form">
-    <form id="game-form">
-        <input type="range" id="dice-number-input" min="1" max="20" value="3" />
-        <span id="dice-number"></span>
-        <button class="btn">Valider le nombre de dés et lancer</button>
+export const diceForm = `<div class='form'>
+    <form id='game-form'>
+        <input type='range' id='dice-number-input' min='1' max='20' value='3' />
+        <span id='dice-number'></span>
+        <button class='btn'>Valider le nombre de dés et lancer</button>
     </form>
 </div>`;
 
@@ -1250,21 +1250,21 @@ display: flex;
 
 export const diceSlider = `init: function() {
     ...
-    app.diceNumberInput = document.getElementById("dice-number-input");
-    app.diceNumberInput.addEventListener("change", app.changeNumber);
+    app.diceNumberInput = document.getElementById('dice-number-input');
+    app.diceNumberInput.addEventListener('change', app.changeNumber);
     app.changeNumber();
 },
 changeNumber: function() {
     app.nbDices = app.diceNumberInput.value;
-    var diceNumber = document.getElementById("dice-number");
+    var diceNumber = document.getElementById('dice-number');
     diceNumber.textContent = app.nbDices;
 
 }`;
 
 export const diceFormSubmit = `init: function() {
     ...
-    var gameForm = document.getElementById("game-form");
-    gameForm.addEventListener("submit", app.play);
+    var gameForm = document.getElementById('game-form');
+    gameForm.addEventListener('submit', app.play);
 }`;
 
 export const diceNewPlay = `play: function(event) {
@@ -1272,27 +1272,27 @@ export const diceNewPlay = `play: function(event) {
     event.preventDefault();
     app.resetBoard();
     for (var diceIndex=0; diceIndex<app.nbDices; diceIndex++) {
-        app.createDice("player");
-        app.createDice("dealer");
+        app.createDice('player');
+        app.createDice('dealer');
     }
 }`;
 
 export const diceNewKeyboard = `init: function() {
     ...
-    document.body.addEventListener("keyup", function(event) {
+    document.body.addEventListener('keyup', function(event) {
         console.dir(event);
-        if (event.code === "Space") {
+        if (event.code === 'Space') {
             app.start();
         }
     });
 }`;
 
 export const diceNewCreateDice = `createDice: function(target) {
-    var dice = document.createElement("div");
-    dice.className = "dice";
+    var dice = document.createElement('div');
+    dice.className = 'dice';
     var diceValue = app.getRandom(1, 6);
     var offset = (diceValue - 1) * 100;
-    dice.style.backgroundPosition = "-" + offset + "px 0";
+    dice.style.backgroundPosition = '-' + offset + 'px 0';
     document.getElementById(target).appendChild(dice);
     return diceValue;
 }`;
@@ -1308,10 +1308,10 @@ export const diceCreateAllDices = `createAllDices: function(target) {
 export const dicePlayWithScores = `play: function(event) {
     event.preventDefault();
     app.resetBoard();
-    var playerScore = app.createAllDices("player");
-    var dealerScore = app.createAllDices("dealer");
-    console.log("player score : ", playerScore);
-    console.log("dealer score : ", dealerScore);
+    var playerScore = app.createAllDices('player');
+    var dealerScore = app.createAllDices('dealer');
+    console.log('player score : ', playerScore);
+    console.log('dealer score : ', dealerScore);
 }`;
 
 export const dicePlayWithScores2 = `play: function(event) {
@@ -1321,19 +1321,19 @@ export const dicePlayWithScores2 = `play: function(event) {
     } else if (playerScore < dealerScore) {
         app.defeat++;
     }
-    console.log("Victoires : ", app.victory);
-    console.log("Défaites : ", app.defeat);
+    console.log('Victoires : ', app.victory);
+    console.log('Défaites : ', app.defeat);
 }`;
 
 export const diceDisplayResult = `play: function(event) {
     ...
-    app.displayResult("player", app.victory);
-    app.displayResult("dealer", app.defeat);
+    app.displayResult('player', app.victory);
+    app.displayResult('dealer', app.defeat);
 
 },
 displayResult: function(target, counter) {
-    var result = document.createElement("div");
-    result.className = "result";
+    var result = document.createElement('div');
+    result.className = 'result';
     result.textContent = counter;
     document.getElementById(target).appendChild(result);
 },`;
@@ -1361,9 +1361,9 @@ export const diceResultCssAnim = `@keyframes fade {
 }`;
 
 export const diceNewReset = `resetBoard: function() {
-    var boards = document.querySelectorAll(".board");
+    var boards = document.querySelectorAll('.board');
     for (var boardIndex=0; boardIndex<boards.length; bordIndex++) {
-        boards[boardIndex].innerHTML = "";
+        boards[boardIndex].innerHTML = ';
     }
 }`;
 
@@ -1372,14 +1372,14 @@ export const diceDealerPlay = `play: function(event) {
     app.dealerPlay(playerScore);
 },
 dealerPlay: function(playerScore) {
-    var dealerScore = app.createAllDices("dealer");
+    var dealerScore = app.createAllDices('dealer');
     if (playerScore > dealerScore) {
         app.victory++;
     } else if (playerScore < dealerScore) {
         app.defeat++;
     }
-    app.displayResult("player", app.victory);
-    app.displayResult("dealer", app.defeat);
+    app.displayResult('player', app.victory);
+    app.displayResult('dealer', app.defeat);
 }`;
 
 export const diceTimeout = `play: function(event) {
@@ -1426,10 +1426,10 @@ export const diceCreateCounter = `play: function(event) {
 ...
 createCounter: function() {
     app.counter = 3;
-    app.counterElement = document.createElement("div");
-    app.counterElement.className = "counter";
+    app.counterElement = document.createElement('div');
+    app.counterElement.className = 'counter';
     app.counterElement.textContent = app.counter;
-    document.getElementById("app").appendChild(app.counterElement);
+    document.getElementById('app').appendChild(app.counterElement);
     app.counterInterval = setInterval(game.countdown, 1000);
 }`;
 

@@ -251,6 +251,7 @@ const S2E05 = props => {
                             <Item text="Bon, on a tout cassé" />
                             <Item text="Allons arranger ça avec CSS" />
                         </ListItem>
+                        <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/CSS/calc" />
                         <Demo type="repo ChallengeS2E04">
                             <Code language="CSS" code={code.diceNewCss} />
                         </Demo>
