@@ -1346,7 +1346,7 @@ export const diceResultCss = `.result {
     background-color:rgba(0, 0, 0, 0.3);
     color: #fff;
     font-size: 3em;
-    padding: 3em;
+    padding: 1em;
     text-align: center;
 }`;
 
