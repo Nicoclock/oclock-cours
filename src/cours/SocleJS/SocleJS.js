@@ -43,13 +43,13 @@ class SocleJS extends Component {
                             episode={this.state.episode} setEpisode={this.setEpisode} resetEpisode={this.resetEpisode}/>
                     ))}
                 </div>
-                    <div className="Content">
-                        {this.state.saison && this.state.episode ? 
-                            React.createElement(episodes[this.state.saison+this.state.episode])
-                        :
-                            null
-                        }
-                    </div>
+                <div className="Content">
+                    {this.state.saison && this.state.episode ? 
+                        React.createElement(episodes[this.state.saison+this.state.episode])
+                    :
+                        null
+                    }
+                </div>
             </Fragment>
         );
     }

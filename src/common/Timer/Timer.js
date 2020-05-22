@@ -16,7 +16,6 @@ class Timer extends Component {
     }
 
     removeTime = () => {
-        console.log("removing time");
         let {hours, minutes, seconds} = this.state;
         if (!this.state.isNeg) {
             seconds -= 1;

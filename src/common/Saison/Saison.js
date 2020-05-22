@@ -16,7 +16,6 @@ class Saison extends Component {
     }
 
     toggle = () => {
-        console.log("in toggle");
         if (this.props.saison !== this.props.code)
             this.props.setSaison(this.props.code);
         else {

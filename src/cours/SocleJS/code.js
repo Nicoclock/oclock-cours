@@ -981,3 +981,481 @@ export const moveStart = `start: function() {
     setInterval(move.change, 100);
 }`;
 
+export const diceStart = `var createDice = function() {
+    var dice = document.createElement("div");
+    dice.className = "dice";
+    document.getElementById("player").appendChild(dice);
+}
+
+createDice();`;
+
+export const diceRandom = `var getRandom = function(min, max) {
+    var randomPart = Math.random();
+    var randomNumber = min + randomPart*(max - min + 1);
+    var randomInteger = Math.floor(randomNumber);
+    return randomInteger;
+    //version courte
+    // return Math.floor(min + Math.random()*(max - min + 1))
+}`;
+
+export const dicePosition = `var createDice = function() {
+    ...
+    var diceValue = app.getRandom(1, 6);
+    var offset = (diceValue - 1) * 100;
+    dice.style.backgroundPosition = "-" + offset + "px 0";
+...
+}`;
+
+export const diceNb = `var nbDices = Number(prompt("Nombre de dés : "));
+while(isNaN(nbDices)) {
+    nbDices = prompt("Veuillez saisir un nombre de dés : ");
+}
+
+for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
+    createDice();
+}`;
+
+export const diceDealer = `<div id="app">
+    <div class="board" id="player"></div>
+    <div class="board" id="dealer"></div>
+</div>`;
+
+export const diceCreate = `var createDice = function(target) {
+    var dice = document.createElement("div");
+    dice.className = "dice";
+    var diceValue = app.getRandom(1, 6);
+    var offset = (diceValue - 1) * 100;
+    dice.style.backgroundPosition = "-" + offset + "px 0";
+    document.getElementById(target).appendChild(dice);
+}`;
+
+export const diceDistrib = `for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
+    createDice("player");
+    createDice("dealer");
+}`;
+
+export const diceHtml = `<div id="ui">
+<button type="button" id="play-button">Jouer avec 6 dés</button>
+<p class="precision">psst, appuyer sur une touche du clavier, ça marche aussi &#x1F600;</p>
+</div>`;
+
+export const diceCss = `#ui {
+    background-color: #aa6324;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 5em;
+  }
+  
+  #play-button {
+    background-color: #ffbe56;
+    padding: 5px 15px;
+    border-radius: 2px;
+    border: none;
+  }
+  
+  .precision {
+    font-style: italic;
+    margin: 3px;
+  }`;
+
+export const diceListener = `var playButton = document.getElementById("play-button");
+
+playButton.addEventListener("click", 
+    //2ème argument : fonction pour lancer un nouveau jeu
+        //effacer le jeu précédent
+        //afficher un nouveau avec 6 dés
+);`;
+
+export const diceNewGame = `var newGame = function() {
+    //effacer le jeu précédent
+    //afficher un nouveau avec 6 dés
+}
+
+var playButton = document.getElementById("play-button");
+
+playButton.addEventListener("click", newGame);`;
+
+export const diceResetBoard = `var resetBoard = function() {
+    document.getElementById("player").textContent = 
+    document.getElementById("dealer").textContent = "";
+}
+
+var newGame = function() {
+    //effacer le jeu précédent
+    resetBoard();
+    //afficher un nouveau avec 6 dés
+}`;
+
+export const dicePlay = `var play = function(nbDices) {
+    for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
+        createDice("player");
+        createDice("dealer");
+    }
+}
+
+var newGame = function() {
+    //effacer le jeu précédent
+    resetBoard();
+    //afficher un nouveau avec 6 dés
+    play(6);
+}`;
+
+export const diceKeyboard = `document.body.addEventListener("keyup", newGame);`;
+
+export const diceApp = `var app = {};`;
+
+export const diceMethods = `var app = {
+    getRandom: function(min, max) {
+        var randomPart = Math.random();
+        var randomNumber = min + randomPart*(max - min + 1);
+        var randomInteger = Math.floor(randomNumber);
+        return randomInteger;
+        //version courte
+        // return Math.floor(min + Math.random()*(max - min + 1))
+    },
+    createDice: function(target) {
+        var dice = document.createElement("div");
+        dice.className = "dice";
+        var diceValue = app.getRandom(1, 6);
+        var offset = (diceValue - 1) * 100;
+        dice.style.backgroundPosition = "-" + offset + "px 0";
+        document.getElementById(target).appendChild(dice);
+    },
+    resetBoard: function() {
+        document.getElementById("player").textContent = 
+        document.getElementById("dealer").textContent = "";
+    },
+    play: function(nbDices) {
+        for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
+            app.createDice("player");
+            app.createDice("dealer");
+        }
+    },
+    newGame: function() {
+        console.log("new game");
+        //effacer le jeu précédent
+        app.resetBoard();
+        //afficher un nouveau avec 6 dés
+        app.play(6);
+    }
+};`;
+
+export const diceLaunch = `var app = {
+    ...
+    init: function() {
+        var playButton = document.getElementById("play-button");
+        playButton.addEventListener("click", app.newGame);
+        document.body.addEventListener("keyup", app.newGame);
+    }
+};
+
+app.init();`;
+
+export const diceNewCss = `#app {
+    display: flex;
+    flex-direction: column;
+}
+...
+.board {
+    position: relative;
+    width:100%;
+    min-height: 100vh;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+... (after dice)
+#welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1.6em;
+}
+
+#app.hidden, #welcome.hidden {
+    display: none;
+}
+
+.btn {
+  padding: 1em 2em;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  border-bottom: 4px solid #ad5304;
+}
+
+.btn:hover {
+    margin-top: 1px;
+    border-bottom-width: 3px;
+}
+
+#game {
+    display: flex;
+}`;
+
+export const diceWelcome = `<div id="welcome">
+    <button type="buton" class="btn" id="play">Jouer</button>
+</div>
+<div id="app" class="hidden">
+...
+</div>`;
+
+export const diceNewStart = `init: function() {
+    ...
+    var welcomeButton = document.getElementById("play");
+    welcomeButton.addEventListener("click", app.start);
+},
+start: function() {
+    document.getElementById("welcome").classList.add("hidden");
+    document.getElementById("app").classList.remove("hidden");
+}`;
+
+export const diceForm = `<div class="form">
+    <form id="game-form">
+        <input type="range" id="dice-number-input" min="1" max="20" value="3" />
+        <span id="dice-number"></span>
+        <button class="btn">Valider le nombre de dés et lancer</button>
+    </form>
+</div>`;
+
+export const diceFormCss = `.board {
+    ...
+    min-height: calc(100vh - 150px);
+    ...
+}
+...
+.form {
+    height: 150px;
+    background-color: #111;
+}
+
+#game-form {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+#dice-number {
+    margin: .5em 0;
+    color: #fff;
+    font-weight: bold;
+}`;
+
+export const diceSlider = `init: function() {
+    ...
+    app.diceNumberInput = document.getElementById("dice-number-input");
+    app.diceNumberInput.addEventListener("change", app.changeNumber);
+    app.changeNumber();
+},
+changeNumber: function() {
+    app.nbDices = app.diceNumberInput.value;
+    var diceNumber = document.getElementById("dice-number");
+    diceNumber.textContent = app.nbDices;
+
+}`;
+
+export const diceFormSubmit = `init: function() {
+    ...
+    var gameForm = document.getElementById("game-form");
+    gameForm.addEventListener("submit", app.play);
+}`;
+
+export const diceNewPlay = `play: function(event) {
+    console.log(event);
+    event.preventDefault();
+    app.resetBoard();
+    for (var diceIndex=0; diceIndex<app.nbDices; diceIndex++) {
+        app.createDice("player");
+        app.createDice("dealer");
+    }
+}`;
+
+export const diceNewKeyboard = `init: function() {
+    ...
+    document.body.addEventListener("keyup", function(event) {
+        console.dir(event);
+        if (event.code === "Space") {
+            app.start();
+        }
+    });
+}`;
+
+export const diceNewCreateDice = `createDice: function(target) {
+    var dice = document.createElement("div");
+    dice.className = "dice";
+    var diceValue = app.getRandom(1, 6);
+    var offset = (diceValue - 1) * 100;
+    dice.style.backgroundPosition = "-" + offset + "px 0";
+    document.getElementById(target).appendChild(dice);
+    return diceValue;
+}`;
+
+export const diceCreateAllDices = `createAllDices: function(target) {
+    var score = 0;
+    for (var diceIndex=0; diceIndex<app.nbDices; diceIndex++) {
+        score += app.createDice(target);
+    }
+    return score;
+}`;
+
+export const dicePlayWithScores = `play: function(event) {
+    event.preventDefault();
+    app.resetBoard();
+    var playerScore = app.createAllDices("player");
+    var dealerScore = app.createAllDices("dealer");
+    console.log("player score : ", playerScore);
+    console.log("dealer score : ", dealerScore);
+}`;
+
+export const dicePlayWithScores2 = `play: function(event) {
+    ...
+    if (playerScore > dealerScore) {
+        app.victory++;
+    } else if (playerScore < dealerScore) {
+        app.defeat++;
+    }
+    console.log("Victoires : ", app.victory);
+    console.log("Défaites : ", app.defeat);
+}`;
+
+export const diceDisplayResult = `play: function(event) {
+    ...
+    app.displayResult("player", app.victory);
+    app.displayResult("dealer", app.defeat);
+
+},
+displayResult: function(target, counter) {
+    var result = document.createElement("div");
+    result.className = "result";
+    result.textContent = counter;
+    document.getElementById(target).appendChild(result);
+},`;
+
+export const diceResultCss = `.result {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 3em;
+    padding: 3em;
+    text-align: center;
+}`;
+
+export const diceResultCssAnim = `@keyframes fade {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.result {
+    ...
+    animation: fade 0.4s ease 0s 1;
+}`;
+
+export const diceNewReset = `resetBoard: function() {
+    var boards = document.querySelectorAll(".board");
+    for (var boardIndex=0; boardIndex<boards.length; bordIndex++) {
+        boards[boardIndex].innerHTML = "";
+    }
+}`;
+
+export const diceDealerPlay = `play: function(event) {
+    ...
+    app.dealerPlay(playerScore);
+},
+dealerPlay: function(playerScore) {
+    var dealerScore = app.createAllDices("dealer");
+    if (playerScore > dealerScore) {
+        app.victory++;
+    } else if (playerScore < dealerScore) {
+        app.defeat++;
+    }
+    app.displayResult("player", app.victory);
+    app.displayResult("dealer", app.defeat);
+}`;
+
+export const diceTimeout = `play: function(event) {
+    ...
+    setTimeout(app.dealerPlay, 3000, playerScore);
+}`;
+
+export const diceIsPlaying = `var app = {
+    ...
+    isPlaying: false,
+    ...
+    play: function(event) {
+        ...
+        //équivalent à app.isPlaying === false
+        if (!app.isPlaying) {
+            app.isPlaying = true;
+            ...
+        }
+    },
+    dealerPlay: function(playerScore) {
+        ...
+        app.isPlaying = false;
+    }
+}`;
+
+export const diceAnim = `@keyframes pop {
+    0% {transform: scale(0);}
+    75% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+.dice {
+    ...
+    animation: pop .4s ease 0s 1;
+}`;
+
+export const diceCreateCounter = `play: function(event) {
+    ...
+    if (!app.isPlaying) {
+        ...
+        app.createCounter();
+    }
+}
+...
+createCounter: function() {
+    app.counter = 3;
+    app.counterElement = document.createElement("div");
+    app.counterElement.className = "counter";
+    app.counterElement.textContent = app.counter;
+    document.getElementById("app").appendChild(app.counterElement);
+    app.counterInterval = setInterval(game.countdown, 1000);
+}`;
+
+export const diceCountdown = `countdown: function() {
+    app.counter--;
+    app.counterElement.textContent = app.counter;
+    if (app.counter === 0) {
+        app.deleteCounter();
+    }
+}`;
+
+export const diceDeleteCounter = `deleteCounter: function() {
+    clearInterval(app.counterInterval);
+    app.counterElement.remove();
+}`;
+
+export const diceCounterCss = `.counter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 75vh;
+    text-shadow: 5px 5px 0 #000;
+}`;
