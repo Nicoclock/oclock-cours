@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 
 import {Card, Doc, Code, List, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage} from "../../../common";
-import * as code from "../code";
+import * as code from "./code";
 
 import "../../style.scss"
 
@@ -251,7 +251,6 @@ const S2E05 = props => {
                             <Item text="Bon, on a tout cassé" />
                             <Item text="Allons arranger ça avec CSS" />
                         </ListItem>
-                        <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/CSS/calc" />
                         <Demo type="repo ChallengeS2E04">
                             <Code language="CSS" code={code.diceNewCss} />
                         </Demo>
@@ -276,6 +275,7 @@ const S2E05 = props => {
                         <ListItem>
                             <Item text="On retourne dans le CSS pour styliser tout ça" />
                         </ListItem>
+                        <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/CSS/calc" />
                         <Demo type="repo ChallengeS2E04">
                             <Code language="CSS" code={code.diceFormCss} />
                         </Demo>

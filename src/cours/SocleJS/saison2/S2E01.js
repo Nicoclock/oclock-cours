@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 
 import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage} from "../../../common";
-import * as code from "../code";
+import * as code from "./code";
 
 import "../../style.scss"
 
@@ -85,9 +85,7 @@ const S2E01 = props => {
                         <Click dir="bottom" />
                         <ListItem title="Non mais sérieux">
                             <Item text="J'étais très sérieux déjà !" />
-                        </ListItem>
-                        <Click dir="bottom" />
-                        <ListItem title="Plus concrètement">
+                            <Item text="Plus concrètement" />
                         </ListItem>
                         <Click dir="bottom x 2" />
                         <ListItem title="Action sans recharger la page">
@@ -143,6 +141,7 @@ const S2E01 = props => {
                         <Control>
                             <BoxItem text="J'ai perdu personne ? Tout le monde est là ?" />
                         </Control>
+                        <Click dir="right" />
                         <Recap>
                             <BoxItem text="Maintenant, on sait un peu plus ce qu'on va faire pendant cette saison" />
                             <BoxItem text="On a un but : faire des jeux en JS !" />
@@ -154,12 +153,13 @@ const S2E01 = props => {
                     </List>
                 </Card>
                 <Card title="Programmation" duration="0:30:00">
-                    <Doc type="RPG" url="http://localhost:1235/E01/RPG/" />
+                    <Doc type="RPG" url="http://localhost:1235/E01/Ressources/RPG/" />
                     <List>
                         <ListItem title="Qu'est-ce que c'est la programmation ?">
                             <Question text="Y en parmi vous qui ont déjà écrit du code ?" />
+                            <Sondage question="Qui a déjà écrit du code ?" reponses={["Oui j'en ai écrit", "J'en ai déjà lu", "Non, ça me file des boutons"]} />
                             <Question text="Dans quel langage ? Pour faire quoi ?" />
-                            <Item text="Prog a 2 buts distincts :" />
+                            <Item text="Prog a 2 aspects :" />
                             <SubItem text="Stockage d'informations, on verra les différentes façons de faire" />
                             <SubItem text="Utiliser les informations stockées" />
                             <Item text="Pour ça, avec du code, on indique à l'ordi comment :" />
@@ -214,7 +214,7 @@ const S2E01 = props => {
                     </List>
                 </Card>
                 <Card title="Ca sert à quoi ?" duration="0:30:00">
-                    <Doc type="RPG" url="http://localhost:1235/E01/RPG/" />
+                    <Doc type="RPG" url="http://localhost:1235/E01/Ressources/RPG/" />
                     <List>
                         <ListItem title="Actions possibles">
                             <Item text="Voyons quelles fonctionnalités les devs ont mis à notre dispo" />
@@ -300,7 +300,7 @@ const S2E01 = props => {
                             <Item text="Nous, on va mettre dans un fichier externe" />
                             <Question text="Vous voyez pourquoi c'est mieux ?" />
                             <Question text="Avantage du fichier externe ?" />
-                            <Item text="Séparation logique / présentations" />
+                            <Item text="Séparation logique / présentation" />
                             <Item text="Code plus lisible" />
                             <Item text="Code réutilisable par d'autres pages HTML" />
                             <Item text="Nous les développeurs, on n'aime pas se répéter, on préfère les fichiers externes" />
@@ -376,7 +376,7 @@ const S2E01 = props => {
                         <Recap>
                             <BoxItem text="Déclarer une variable avec var, lui assigner une valeur avec =" />
                             <BoxItem text="Sans assignation, la variable a pour valeur undefined" />
-                            <BoxItem text="Modifier la valeur d'une variable en lui assignat une nouvelle valeur avec =" />
+                            <BoxItem text="Modifier la valeur d'une variable en lui assignant une nouvelle valeur avec =" />
                             <BoxItem text="Pour parler JS avec l'ordi, on écrit des instructions sur une ligne terminées par ;" />
                         </Recap>
                         <Transition>
@@ -401,7 +401,7 @@ const S2E01 = props => {
                             <Item text="Type le plus simple" />
                             <Item text="Ne peut prendre que 2 valeurs : frai ou faux" />
                             <Item text="En anglais, comme en JS : true ou false" />
-                            <Item text="Convention : on les appelle isXXX" />
+                            <Item text="Convention : on les appelle isXXX ou hasXXX" />
                         </ListItem>
                         <Demo type="console">
                             <Code language="JavaScript" code={code.isNice} />
@@ -507,7 +507,7 @@ const S2E01 = props => {
                         </Transition>
                         <Demo type="repo Syntaxe">
                             <Code language="JavaScript" code={code.book} />
-                            <BoxItem text="exo : Ajout - Date de parution : year - Prix : price - Déjà lu : isRead" />
+                            <BoxItem text="exo : Ajout - Date de parution : year - Prix : price - Déjà lu : hasBeenRead" />
                             <Code language="JavaScript" code={code.bookDesc} />
                         </Demo>
                         <Control>
@@ -731,9 +731,9 @@ const S2E01 = props => {
                         </ListItem>
                         <Control>
                             <BoxItem text="Quiz opérateurs" />
-                            <BoxItem text={`25 > 15 : vrai ou faux ?`} />
-                            <BoxItem text={`12 <= 12 : vrai ou faux ?`} />
-                            <BoxItem text={`"5" === 5 : vrai ou faux ?`} />
+                            <Sondage question={`25 > 15 ?`} reponses={["true", "false"]} />
+                            <Sondage question={`12 <= 12 ?`} reponses={["true", "false"]} />
+                            <Sondage question={`"5" === 5 ?`} reponses={["true", "false"]} />
                         </Control>
                         <Click dir="bottom" />
                         <ListItem title="Combinaison">
@@ -745,9 +745,9 @@ const S2E01 = props => {
                         </ListItem>
                         <Control>
                             <BoxItem text="Quiz combinaisons" />
-                            <BoxItem text={`12 < 30 && 15 > 10 : true ou false ?`} />
-                            <BoxItem text={`12 > 30 && 15 > 10 : true ou false ?`} />
-                            <BoxItem text={`"5" === "5" || 12 > 30 : true ou false ?`} />
+                            <Sondage question={`12 < 30 && 15 > 10 ?`} reponses={["true", "false"]} />
+                            <Sondage question={`12 > 30 && 15 > 10 ?`} reponses={["true", "false"]} />
+                            <Sondage question={`"5" === "5" || 12 > 30 ?`} reponses={["true", "false"]} />
                         </Control>
                         <Click dir="right" />
                         <Recap>

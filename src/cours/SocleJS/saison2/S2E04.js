@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 
 import {Card, Doc, Code, List, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage} from "../../../common";
-import * as code from "../code";
+import * as code from "./code";
 
 import "../../style.scss"
 
