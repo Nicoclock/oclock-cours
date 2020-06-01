@@ -41,7 +41,7 @@ const S2E04 = props => {
                             <SubItem text="le nombre à trouver (undefined, on le rajoutera à chaud)" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.gameObject} />
+                            <Code code={code.gameObject} />
                         </Demo>
                         <Control>
                             <BoxItem text="Pas de problème particulier ici ?" />
@@ -51,7 +51,7 @@ const S2E04 = props => {
                             <Item text="génération nombre à deviner" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.gamePlay1} />
+                            <Code code={code.gamePlay1} />
                         </Demo>
                         <ListItem title="Fonction play - 2">
                             <Item text="Incrémente le nombre d'essai" />
@@ -59,27 +59,27 @@ const S2E04 = props => {
                             <Item text="On transforme la string en number" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.gamePlay2} />
+                            <Code code={code.gamePlay2} />
                         </Demo>
                         <ListItem title="Fonction play - 3">
                             <Item text="On ajoute notre boucle while" />
                             <Item text="Attention aux variables qui appartiennent à game !" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.gamePlay3} />
+                            <Code code={code.gamePlay3} />
                         </Demo>
                         <ListItem title="Fonction play - 4">
                             <Item text="On termine par le message de félicitations" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.gamePlay4} />
+                            <Code code={code.gamePlay4} />
                         </Demo>
                         <ListItem title="Lancement jeu">
                             <Question text="Qu'est-ce qui manque pour pouvoir jouer ?" />
-                            <Item text="On appalle la fonction pour exécuter son code" />
+                            <Item text="On appelle la fonction pour exécuter son code" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.gamePlay} />
+                            <Code code={code.gamePlay} />
                         </Demo>
                         <Control>
                             <BoxItem text="Fonction play, on est pas mal" />
@@ -97,14 +97,14 @@ const S2E04 = props => {
                             <Item text="On retourne le nombre obtenu" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.random1} />
+                            <Code code={code.random1} />
                         </Demo>
                         <ListItem title="Fonction generateRandomNumber - 2">
                             <Item text="Bon on a notre fonction" />
                             <Item text="On va rajouter min et max à notre object game" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.random2} />
+                            <Code code={code.random2} />
                         </Demo>
                         <ListItem title="Fonction generateRandomNumber - 3">
                             <Item text="On va remplacer code dans play par appel fonction" />
@@ -113,14 +113,14 @@ const S2E04 = props => {
                             <Item text="On va les utiliser en arguments de la fonction" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.random3} />
+                            <Code code={code.random3} />
                         </Demo>
                         <ListItem title="Ajout à chaud">
                             <Item text="Pas obligé de déclarer searchNumber à undefined" />
                             <Item text="On peut ajouter des propriétés à chaud, en cours d'exécution" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.random4} />
+                            <Code code={code.random4} />
                         </Demo>
                         <Control>
                             <BoxItem text="Fonction generateRandomNumber, c'est fait !" />
@@ -135,7 +135,7 @@ const S2E04 = props => {
                             <Item text="On a un bel object game, autant l'utiliser" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.gameFull} />
+                            <Code code={code.gameFull} />
                         </Demo>
                         <ListItem title="Scores - 2">
                             <Item text="Ok, on a le tableau" />
@@ -143,7 +143,7 @@ const S2E04 = props => {
                             <Item text="Après while, quand le jeu en cours est gagné" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.scoresFill} />
+                            <Code code={code.scoresFill} />
                         </Demo>
                         <ListItem title="Scores - 3">
                             <Item text="Le tableau est rempli, y a plus qu'à l'afficher" />
@@ -151,7 +151,7 @@ const S2E04 = props => {
                             <Item text="Et on relance le jeu" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.scoresDisplay} />
+                            <Code code={code.scoresDisplay} />
                         </Demo>
                         <Control>
                             <BoxItem text="Des question sur cette partie ?" />
@@ -166,7 +166,7 @@ const S2E04 = props => {
                             <Item text="Confirm nous renvoie un boolean, on peut l'utiliser directement dans un if" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.gameReplay} />
+                            <Code code={code.gameReplay} />
                         </Demo>
                         <ListItem title="Scores - 5">
                             <Item text="Enfin, on améliore l'affichage des scores, l'est pas top ..." />
@@ -179,7 +179,7 @@ const S2E04 = props => {
                             <Item text="On veut juste afficher sa valeur + 1" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.scoresBetter} />
+                            <Code code={code.scoresBetter} />
                         </Demo>
                         <Recap>
                             <BoxItem text="Bon on a vu plein de choses encore !" />
@@ -197,7 +197,7 @@ const S2E04 = props => {
                             <Item text="On change l'appel" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.displaySores} />
+                            <Code code={code.displaySores} />
                         </Demo>
                         <Transition>
                             <Item text="Bon rien de très nouveau, rien de très compliqué" />
@@ -209,7 +209,7 @@ const S2E04 = props => {
                             <Item text="Crée un objecft spaceship" />
                         </ListItem>
                         <Demo type="Console">
-                            <Code language="JavaScript" code={code.spaceship} />
+                            <Code code={code.spaceship} />
                         </Demo>
                         <ListItem>
                             <Item text="Console.log de spaceship.lightspeed" />
@@ -218,7 +218,7 @@ const S2E04 = props => {
                             <Item text="Comme une fonction classique : appel avec () et éventuellement arguments" />
                         </ListItem>
                         <Demo type="Console">
-                            <Code language="JavaScript" code={code.lightspeed} />
+                            <Code code={code.lightspeed} />
                         </Demo>
                         <ListItem>
                             <Item text="Code de la fonction exécuté" />
@@ -231,7 +231,7 @@ const S2E04 = props => {
                             <Item text="Je vous fais voir" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.embedRandom} />
+                            <Code code={code.embedRandom} />
                         </Demo>
                         <Control>
                             <BoxItem text="Vous comprenez le principe ?" />
@@ -260,14 +260,14 @@ const S2E04 = props => {
                             <Item text="Modif de l'appel dans play" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.embedDisplay} />
+                            <Code code={code.embedDisplay} />
                         </Demo>
                         <ListItem title="Refactoring - 3">
                             <Item text="Empaquetons jusqu'au bout" />
                             <Item text="On intègre la fonction play dans l'object" />
                         </ListItem>
                         <Demo type="repo ChallengeS203">
-                            <Code language="JavaScript" code={code.embedPlay} />
+                            <Code code={code.embedPlay} />
                         </Demo>
                         <ListItem title="Refactoring - 4">
                             <Item text="L'object game est empaqueté, les variables et la logique du jeu lui appartiennent" />
@@ -342,7 +342,7 @@ const S2E04 = props => {
                             <Item text="object document sait faire : createElement" />
                         </ListItem>
                         <Demo type="Repo ChallengeS203">
-                            <Code language="JavaScript" code={code.displayScoresCreate} />
+                            <Code code={code.displayScoresCreate} />
                         </Demo>
                         <ListItem>
                             <Item text="Dès création élément, on peut le manipuler" />
@@ -359,7 +359,7 @@ const S2E04 = props => {
                             <Item text="Pour ça, notre ref target a une méthode : appendChild" />
                         </ListItem>
                         <Demo type="Repo ChallengeS203">
-                            <Code language="JavaScript" code={code.scoresAppend} />
+                            <Code code={code.scoresAppend} />
                         </Demo>
                         <ListItem>
                             <Item text="On raffraichit pour voir" />
@@ -373,7 +373,7 @@ const S2E04 = props => {
                             <Question text="je vous écoute, j'écris quoi pour créer un élément table ?" />
                         </ListItem>
                         <Demo type="Repo ChallengeS203">
-                            <Code language="JavaScript" code={code.scoresTable} />
+                            <Code code={code.scoresTable} />
                         </Demo>
                         <ListItem>
                             <Item text="On créer un nouvel élément pour contenir le header du tab" />
@@ -383,7 +383,7 @@ const S2E04 = props => {
                             <Item text="On aurait pu construire chaque élément tr, th avec createElement mais + rapide comme ça" />
                         </ListItem>
                         <Demo type="Repo ChallengeS203">
-                            <Code language="JavaScript" code={code.scoresThead} />
+                            <Code code={code.scoresThead} />
                         </Demo>
                         <Control>
                             <BoxItem text="Tout le monde est là ? J'ai perdu personne ?" />
@@ -393,7 +393,7 @@ const S2E04 = props => {
                             <Item text="'tit spoiler, comment je crée ça ?" />
                         </ListItem>
                         <Demo type="Repo ChallengeS203">
-                            <Code language="JavaScript" code={code.scoresTbody} />
+                            <Code code={code.scoresTbody} />
                         </Demo>
                         <ListItem>
                             <Item text="Chaque ligne contient un score" />
@@ -401,7 +401,7 @@ const S2E04 = props => {
                             <Item text="A chaque tout de boucle, on va ajouter une tr au body" />
                         </ListItem>
                         <Demo type="Repo ChallengeS203">
-                            <Code language="JavaScript" code={code.scoresRows} />
+                            <Code code={code.scoresRows} />
                         </Demo>
                         <ListItem>
                             <Item text="Toutes les infos sont dans le corps du tableau" />
@@ -410,7 +410,7 @@ const S2E04 = props => {
                             <SubItem text="Ajouter le tableau à notre div#scores" />
                         </ListItem>
                         <Demo type="Repo ChallengeS203">
-                            <Code language="JavaScript" code={code.scoresAppendTab} />
+                            <Code code={code.scoresAppendTab} />
                         </Demo>
                         <ListItem>
                             <Item text="On raffraichit et magique, les scores apparaissent" />
@@ -443,14 +443,14 @@ const S2E04 = props => {
                             <Item text="premier boulot, on se crée un object pour contenir nos infos" />
                         </ListItem>                        
                         <Demo type="Repo Chrono">
-                            <Code language="JavaScript" code={code.chronoFirst} />
+                            <Code code={code.chronoFirst} />
                         </Demo>
                         <ListItem>
                             <Item text="Maintenant, on se crée une méthode pour remplir la div#chrono" />
                             <Question text="Comment je récupère ma cible ?" />
                         </ListItem>                        
                         <Demo type="Repo Chrono">
-                            <Code language="JavaScript" code={code.chronoInit1} />
+                            <Code code={code.chronoInit1} />
                         </Demo>
                         <ListItem>
                             <Item text="On crée une div d'id minutes pour commencer" />
@@ -460,14 +460,14 @@ const S2E04 = props => {
                             <Item text="Ajout à div#chrono" />
                         </ListItem>
                         <Demo type="Repo Chrono">
-                            <Code language="JavaScript" code={code.chronoInit2} />
+                            <Code code={code.chronoInit2} />
                         </Demo>
                         <ListItem>
                             <Item text="Même principe pour secondes et dixiemes" />
                             <Question text="Je vous laisse 2 minutes ? Vous complétez ?" />
                         </ListItem>
                         <Demo type="Repo Chrono">
-                            <Code language="JavaScript" code={code.chronoInit3} />
+                            <Code code={code.chronoInit3} />
                         </Demo>
                         <ListItem>
                             <Item text="Penser à appeler la méthode en fin de fichier, sinon ... on verra rien" />
@@ -478,7 +478,7 @@ const S2E04 = props => {
                             <Item text="On raffraichit l'affichage en ré-assignant le .textContent avec valeurs de chrono" />
                         </ListItem>
                         <Demo type="Repo Chrono">
-                            <Code language="JavaScript" code={code.chronoDisplay} />
+                            <Code code={code.chronoDisplay} />
                         </Demo>
                         <ListItem>
                             <Item text="Maintenant, méthode pour gérer la mise à jour des props de chrono" />
@@ -488,7 +488,7 @@ const S2E04 = props => {
                             <Item text="On raffraichit l'affichage avec un appel à display" />
                         </ListItem>
                         <Demo type="Repo Chrono">
-                            <Code language="JavaScript" code={code.chronoAddTime} />
+                            <Code code={code.chronoAddTime} />
                         </Demo>
                         <Doc type="Ressource" url="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval" />
                         <Doc type="Ressource" url="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout" />
@@ -504,7 +504,7 @@ const S2E04 = props => {
                             <Item text="AddTime : va mettre à jour les props de chrono ET l'affichage, nickel !" />
                         </ListItem>
                         <Demo type="Repo Chrono">
-                            <Code language="JavaScript" code={code.chronoStart} />
+                            <Code code={code.chronoStart} />
                         </Demo>
                         <ListItem>
                             <Item text="Pour finir, y a plus qu'à appeler chrono start() en fin de fichier" />
@@ -544,21 +544,21 @@ const S2E04 = props => {
                             <Item text="Commençons par créer un object move" />
                         </ListItem>
                         <Demo type="repo MoveText">
-                            <Code language="JavaScript" code={code.move} />
+                            <Code code={code.move} />
                         </Demo>
                         <ListItem>
                             <Item text="Ajout prop text pour référencer l'élément à modifier" />
                             <Question text="Comment je peux référencer un élément qui n'a as d'id ?" />
                         </ListItem>
                         <Demo type="repo MoveText">
-                            <Code language="JavaScript" code={code.moveText} />
+                            <Code code={code.moveText} />
                         </Demo>
                         <ListItem>
                             <Item text="Ajout méthode init pour le styliser" />
                             <Item text="Pas oublier appel en fin de fichier" />
                         </ListItem>
                         <Demo type="repo MoveText">
-                            <Code language="JavaScript" code={code.moveInit} />
+                            <Code code={code.moveInit} />
                         </Demo>
                         <ListItem>
                             <Item text="Notre div est belle, on va la faire bouger maintenant" />
@@ -567,7 +567,7 @@ const S2E04 = props => {
                             <Item text="On va utiliser top pour faire un hue-rotate" />
                         </ListItem>
                         <Demo type="repo MoveText">
-                            <Code language="JavaScript" code={code.moveDisplay} />
+                            <Code code={code.moveDisplay} />
                         </Demo>
                         <ListItem>
                             <Item text="On définit la méthode qui va effectuer les changement sur top et left" />
@@ -575,7 +575,7 @@ const S2E04 = props => {
                             <Item text="parseInt : pratique pour récup les props sous forme de nombre" />
                         </ListItem>
                         <Demo type="repo MoveText">
-                            <Code language="JavaScript" code={code.moveChange} />
+                            <Code code={code.moveChange} />
                         </Demo>
                         <ListItem>
                             <Item text="Enfin on ajoute la gestion du temps avec setInterval" />
@@ -584,7 +584,7 @@ const S2E04 = props => {
                             <Item text="Comme ex précédent, on appelle move.start en fin de fichier" />
                         </ListItem>
                         <Demo type="repo MoveText">
-                            <Code language="JavaScript" code={code.moveStart} />
+                            <Code code={code.moveStart} />
                         </Demo>
                         <Control>
                             <BoxItem text="Ca vous a paru très compliqué ?" />

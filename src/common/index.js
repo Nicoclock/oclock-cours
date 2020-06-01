@@ -15,5 +15,9 @@ import Transition from "./List/Transition";
 import Demo from "./List/Demo";
 import BoxItem from "./List/BoxItem";
 import Sondage from "./List/Sondage";
+import Exo from "./List/Exo";
+import Enonce from "./List/Enonce";
+import Snippet from "./List/Snippet";
+import ExoSondage from "./List/ExoSondage";
 
-export {Saison, Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Timer, Sondage};
+export {Saison, Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Timer, Sondage, Exo, Enonce, Snippet, ExoSondage};

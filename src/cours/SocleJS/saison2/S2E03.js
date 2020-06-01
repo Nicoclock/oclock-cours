@@ -11,7 +11,7 @@ const S2E03 = props => {
             <div className="Title">Objets</div>
             <div className="Inner">
                 <Card title="Correction" duration="2:00:00">
-                    <Doc type="repo ChallengeS2E02" url="http://localhost:1235/E02/ChallengeS2E02/html/" />
+                    <Doc type="repo Correction" url="http://localhost:1235/E03/Correction/html/" />
                     <List>
                         <Recap>
                             <BoxItem text="Hier on a donc vu :" />
@@ -40,8 +40,8 @@ const S2E03 = props => {
                             <SubItem text="On l'arrondit avec Math.round pour avoir un nombre entier" />
                             <SubItem text="On peut détailler les étapes ou mettre tout dans la même instruction, plus concis" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.randomNumber} />
+                        <Demo type="repo Correction">
+                            <Code code={code.randomNumber} />
                         </Demo>
                         <ListItem title="Correction - 2">
                             <Item text="On a notre nombre aléatoire, on va demander à l'utilisateur de saisir un nombre" />
@@ -49,8 +49,8 @@ const S2E03 = props => {
                             <Item text="On est des pros maintenant, je mets ça sur une seule ligne" />
                             <Item text="J'utilise MAX dans la question. Si on change de fourchette, on aura juste MAX à modifier" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.randomInput} />
+                        <Demo type="repo Correction">
+                            <Code code={code.randomInput} />
                         </Demo>
                         <ListItem title="Correction - 3">
                             <Item text="On a notre nombre aléatoire, on a le nombre choisi par l'utilisateur" />
@@ -62,8 +62,8 @@ const S2E03 = props => {
                             <Item text="La valeur de userGuess va changer à chaque tour de boucle, chaque itération" />
                             <Item text="Quand randomNumber et userGuess sont égaux, la condition passe à false, on sort de la boucle" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.randomWhile} />
+                        <Demo type="repo Correction">
+                            <Code code={code.randomWhile} />
                         </Demo>
                         <ListItem title="Correction - 4">
                             <Item text="Le plus gros de la boucle est fait mais c'est un peu sommaire" />
@@ -75,8 +75,8 @@ const S2E03 = props => {
                             <Question text="Vous vous souvenez comment faire pour tester si c'est pas un nombre?" />
                             <Item text="On va tester : SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.randomNan} />
+                        <Demo type="repo Correction">
+                            <Code code={code.randomNan} />
                         </Demo>
                         <ListItem title="Correction - 5">
                             <Item text="Tel quel le jeu est un peu compliqué, ça peut être très long de trouver" />
@@ -89,15 +89,15 @@ const S2E03 = props => {
                             <SubItem text="SINON SI randomNumber est plus grand que userGuess ALORS on affiche Le nombre à deviner est plus grand" />
                             <SubItem text="SINON SI randomNumber est plus petit que userGuess ALORS on affiche Le nombre à deviner est plus petit" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.randomWhileFull} />
+                        <Demo type="repo Correction">
+                            <Code code={code.randomWhileFull} />
                         </Demo>
                         <ListItem title="Correction - 6">
                             <Item text="Bon c'est super tout ça mais quand on sort de la boucle il se passe rien" />
                             <Item text="On rajoute un 'tit message pour dire à l'utilisateur qu'il a trouvé" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.randomWin} />
+                        <Demo type="repo Correction">
+                            <Code code={code.randomWin} />
                         </Demo>
                         <Control>
                             <BoxItem text="On est pas mal pour cet exo, c'est bon pour vous ? Des question ?" />
@@ -108,8 +108,8 @@ const S2E03 = props => {
                             <Item text="On déclare nbTries = 1 juste après le premier prompt" />
                             <Item text="Si on passe dans la boucle, c'est un essai supplémentaire, on incrémente" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.randomFull} />
+                        <Demo type="repo Correction">
+                            <Code code={code.randomFull} />
                         </Demo>
                         <Control>
                             <BoxItem text="Voilà pour ce challenge, on a tout fait on est bon" />
@@ -122,8 +122,8 @@ const S2E03 = props => {
                             <Item text="En faisant ça, on passe dans la boucle au moins une fois" />
                             <Item text="La condition est évaluée à la fin de l'itération" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.randomDoWhile} />
+                        <Demo type="repo Correction">
+                            <Code code={code.randomDoWhile} />
                         </Demo>
                         <Transition>
                             <BoxItem text="Maintenant qu'on est bon là-dessus, revenons un peu sur les fonctions" />
@@ -218,7 +218,7 @@ const S2E03 = props => {
                             <BoxItem text="Assez de blah blah, j'ai des fourmis dans les doigts" />
                             <BoxItem text="Du code du code" />
                         </Transition>
-                        <Doc type="repo CHallengeS2E02" url="http://localhost:1235/E02/ChallengeS2E02/html/" />
+                        <Doc type="repo CHallengeS2E02" url="http://localhost:1235/E03/Correction/html/" />
                         <ListItem title="Exo autonomie">
                             <Item text="Repartons de notre beau code du dernier challenge" />
                             <Item text="Faisons un peu de refactoring" />
@@ -237,15 +237,15 @@ const S2E03 = props => {
                             <SubItem text="On convertit en number avec Number ou parseInt" />
                             <SubItem text="Et on teste : SI pas un nombre ALORS on retourne -1 SINON on retourne le nombre" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.getNumber} />
+                        <Demo type="repo Correction">
+                            <Code code={code.getNumber} />
                         </Demo>
                         <ListItem title="Exo dirigé - 2">
                             <Item text="Maintenant, faut appaler notre nouvelle fonction dans la boucle while" />
                             <Question text="Je vous écoute, qu'est-ce que je tape ?" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.randomWithGetNumber} />
+                        <Demo type="repo Correction">
+                            <Code code={code.randomWithGetNumber} />
                         </Demo>
                         <Control>
                             <BoxItem text="Des questions là-dessus ?" />
@@ -259,24 +259,24 @@ const S2E03 = props => {
                             <SubItem text="L'appeler dans notre code" />
                             <SubItem text="On se retrouve dans 5 minutes ?" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.checkNumbersDeclare} />
+                        <Demo type="repo Correction">
+                            <Code code={code.checkNumbersDeclare} />
                         </Demo>
                         <ListItem title="Exo dirigé - 4">
                             <Item text="OK, on commence par copier coller les instrucctions qui nous intéressent dans le corps de la fonction" />
                             <Item text="On remplace les noms des variables par les noms des paramètres" />
                             <Item text="Et c'est tout pour la fonction" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.checkNumbers} />
+                        <Demo type="repo Correction">
+                            <Code code={code.checkNumbers} />
                         </Demo>
                         <ListItem title="Exo dirigé - 5">
                             <Item text="Pour finir, on met l'appel à notre fonction dans la boucle" />
                             <Item text="La paramètre guess aura la valeur de userGuess" />
                             <Item text="La paramètre random aura la valeur de randomNumber" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E02">
-                            <Code language="JavaScript" code={code.randomWhileDef} />
+                        <Demo type="repo Correction">
+                            <Code code={code.randomWhileDef} />
                         </Demo>
                         <Control>
                             <BoxItem text="C'est bon pour tout le monde ?" />
@@ -380,8 +380,8 @@ const S2E03 = props => {
                         </ListItem>
                         <Control>
                             <BoxItem text="Object ville" />
-                            <BoxItem text={`Ajout code postal : cp of ville = 17370, ville[cp] = 17370, ville[cp] = 17370`}/>
-                            <BoxItem text={`Lecture code postal : console.log(cp of ville), console.log(cp.ville), console.log(ville.cp)`}/>
+                            <Sondage question="Comment ajouter le code postal (cp) ?" reponses={["cp of ville = 17370", "ville[cp] = 17370", "cp[ville] = 17370"]} />
+                            <Sondage question="Comment lire le code postal(cp) ?" reponses={["console.log(cp of ville)", "console.log(cp.ville)", "console.log(ville.cp)"]} />
                         </Control>
                         <Click dir="right" />
                         <Recap>
@@ -397,12 +397,12 @@ const S2E03 = props => {
                             <BoxItem text="Beaucoup d'infos d'un coup !" />
                             <BoxItem text="Allons vite pratiquer tout ça !!" />
                         </Transition>
-                        <Doc type="repo Europe" url="http://localhost:1235/E03/Europe/" />
+                        <Doc type="repo Code" url="http://localhost:1235/E03/Code/" />
                         <ListItem title="Exo en autonomie">
                             <Item text="On va donc jouer un peu avec les objets" />
                             <Item text="Commençons par récupérer le repo" />
                         </ListItem>
-                        <Demo type="repo Europe">
+                        <Demo type="repo Code">
                             <BoxItem text="Recup avec git clone" />
                             <BoxItem text="On affiche le index.html" />
                         </Demo>
@@ -411,7 +411,7 @@ const S2E03 = props => {
                         </Control>
                         <Doc type="Ressource" url="https://www.touteleurope.eu/les-pays-de-l-union-europeenne.html" />
                         <ListItem title="Présentation">
-                            <Item text="On a donc une 'tite carte de l'Europe" />
+                            <Item text="On a donc une 'tite carte de l'Code" />
                             <Item text="Quelques pays sont indiqués" />
                             <Item text="Si on clique sur un nom, on a :" />
                             <SubItem text="Une div avec des infos fictives sur le pays" />
@@ -422,8 +422,8 @@ const S2E03 = props => {
                             <SubItem text="Compléter la fonction logCountry pour prendre en compte toutes les infos" />
                             <Item text="On va faire la France ensemble, je vous laisserai vous débrouiller pour les autres pays" />
                         </ListItem>
-                        <Demo type="repo Europe">
-                            <Code language="JavaScript" code={code.france} />
+                        <Demo type="repo Code">
+                            <Code code={code.france} />
                         </Demo>
                         <Control>
                             <BoxItem text="Regardez ce qui se passe quand on clique sur France maintenant" />
@@ -432,24 +432,24 @@ const S2E03 = props => {
                             <BoxItem text="Je vous laisse quelques minutes" />
                             <Sondage question="Les autres pays ?" reponses={["ok, c'est fait", "presque, 2 secondes...", "j'y arrive pô !"]} />
                         </Control>
-                        <Demo type="repo Europe">
+                        <Demo type="repo Code">
                             <BoxItem text="On reprend les infos sur le site pour chaque pays" />
-                            <Code language="JavaScript" code={code.allemagne} />
-                            <Code language="JavaScript" code={code.italie} />
-                            <Code language="JavaScript" code={code.espagne} />
-                            <Code language="JavaScript" code={code.irlande} />
+                            <Code code={code.allemagne} />
+                            <Code code={code.italie} />
+                            <Code code={code.espagne} />
+                            <Code code={code.irlande} />
                         </Demo>
                         <Control>
                             <BoxItem text="Bon, la manipulation d'object, ça rentre ?" />
-                            <BoxItem text="Comment vous vous sentez ? trop fastoche, mouais bof ..., ayé je pleure !" />
+                            <Sondage question="Comment vous vous sentez ?" reponses={["trop fastoche", "mouais bof ...", "ayé je pleure !"]} />
                         </Control>
                         <ListItem title="logCountry">
                             <Item text="Il nous reste la fonction à compléter" />
                             <Item text="Normalement, vous n'avez pas besoin de moi ..." />
                             <Item text="Je vous laisse 2 minutes ?" />
                         </ListItem>
-                        <Demo type="repo Europe">
-                            <Code language="JavaScript" code={code.logCountry} />
+                        <Demo type="repo Code">
+                            <Code code={code.logCountry} />
                         </Demo>
                         <Control>
                             <BoxItem text="Vous commencez à voir l'intérêt des objects ?" />

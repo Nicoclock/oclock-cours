@@ -5,11 +5,13 @@ import style from "./Code.module.scss";
 
 const Code = props => {
     return (
-        <Highlight language={props.language}>
-            <pre className={style.Pre}>
-                <code>{props.code}</code>
-            </pre>
-        </Highlight>
+        <div className={style.Container}>
+            <Highlight language={props.language ? props.language : props.step && props.step.language ? props.step.language : "JavaScript"}>
+                <pre className={style.Pre}>
+                    <code>{props.code || props.step.code}</code>
+                </pre>
+            </Highlight>
+        </div>
     );
 };
 

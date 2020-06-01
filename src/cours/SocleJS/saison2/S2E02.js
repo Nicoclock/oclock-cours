@@ -6,12 +6,15 @@ import * as code from "./code";
 import "../../style.scss"
 
 const S2E02 = props => {
+    var age = prompt ('Quel est l\'âge du capitaine ?') ;
+    var ageNumber = parseInt(age);
+    console.log(ageNumber);
     return (
         <Fragment>
             <div className="Title">JS, ça fonctionne bien</div>
             <div className="Inner">
                 <Card title="Correction" duration="1:00:00">
-                    <Doc type="Challenge" url="http://localhost:1235/E01/ChallengeS2E01/" />
+                    <Doc type="Challenge" url="http://localhost:1235/E02/Correction/" />
                     <List>
                         <Recap>
                             <BoxItem text="A quoi peut servir JS" />
@@ -37,8 +40,8 @@ const S2E02 = props => {
                             <Item text="pas de feinte, même principe qu'hier" />
                             <Item text="on déclare nos 2 variables et on leur assigne une valeur" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                            <Code language="JavaScript" code={code.exo1} />
+                        <Demo type="repo Correction">
+                            <Code code={code.exo1} />
                         </Demo>
                         <Control>
                             <BoxItem text="Ok exo 1 ? Y avait pas de piège ..." />
@@ -46,20 +49,20 @@ const S2E02 = props => {
                         <ListItem title="Correction exo2 - 1">
                             <Question text="Qu'est-ce qu'on va utiliser comme fonction ?" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                        <Code language="JavaScript" code={code.exo2Prompt} />
+                        <Demo type="repo Correction">
+                        <Code code={code.exo2Prompt} />
                         </Demo>
                         <ListItem title="Correction exo2 - 2">
                             <Item text="Vous avez remarqué la phrase ? On dirait de l'algo ..." />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                        <Code language="JavaScript" code={code.exo2Algo} />
+                        <Demo type="repo Correction">
+                        <Code code={code.exo2Algo} />
                         </Demo>
                         <ListItem title="Correction exo2 - 3">
                             <Question text="Qui me dit comment on va implémenter ça ?" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                        <Code language="JavaScript" code={code.exo2Condition} />
+                        <Demo type="repo Correction">
+                        <Code code={code.exo2Condition} />
                         </Demo>
                         <Control>
                             <BoxItem text="C'est clair ce if ?" />
@@ -69,8 +72,8 @@ const S2E02 = props => {
                             <Item text="Au début pas de souci, on déclare question2 et solution2" />
                             <Item text="On pose la question et on stocke dans reponse2" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                        <Code language="JavaScript" code={code.exo3Reponse} />
+                        <Demo type="repo Correction">
+                        <Code code={code.exo3Reponse} />
                         </Demo>
                         <ListItem title="Correction exo3 - 2">
                             <Item text="Ensuite on doit comparer avec la bonne réponse, c'est là que ça se corse :" />
@@ -86,7 +89,7 @@ const S2E02 = props => {
                         </ListItem>
                         <Demo type="console">
                             <BoxItem text={`parseInt("35"), retourne 35`} />
-                            <Code language="JavaScript" code={code.parseIntTest} />
+                            <Code code={code.parseIntTest} />
                         </Demo>
                         <ListItem title="Correction exo3 - 4">
                             <Item text="NaN : not a number, la conversion n'a pas marché" />
@@ -95,7 +98,7 @@ const S2E02 = props => {
                         </ListItem>
                         <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Number" />
                         <Demo type="console">
-                        <Code language="JavaScript" code={code.NumberTest} />
+                        <Code code={code.NumberTest} />
                         </Demo>
                         <Recap>
                             <BoxItem text="2 méthodes pour transformer une string en number" />
@@ -111,8 +114,8 @@ const S2E02 = props => {
                             <Question text="C'est a vous maintenant, qu'est-ce que je fais pour les comparer ?" />
                             <Item text="On va transformer reponse2 en number" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                        <Code language="JavaScript" code={code.exo3Number} />
+                        <Demo type="repo Correction">
+                        <Code code={code.exo3Number} />
                         </Demo>
                         <ListItem title="Correction bonus - 1">
                             <Question text="Réfléchissons ensemble, c'est quoi les étapes ?" />
@@ -120,8 +123,8 @@ const S2E02 = props => {
                             <Item text="On va la mettre à jour à chaque bonne réponse" />
                             <Item text="On va afficher le score à la fin du jeu" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                            <Code language="JavaScript" code={code.scoreDeclare} />
+                        <Demo type="repo Correction">
+                            <Code code={code.scoreDeclare} />
                         </Demo>
                         <ListItem title="Correction bonus - 2">
                             <Item text="On doit donc ajouter 1 à score à chaque bonne réponse" />
@@ -129,16 +132,16 @@ const S2E02 = props => {
                             <Item text="Il faut incrémenter la variable, lui ajouter 1" />
                             <Item text="On assigne une nouvelle valeur : l'ancienne valeur + 1" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                        <Code language="JavaScript" code={code.scoreIncrement} />
+                        <Demo type="repo Correction">
+                        <Code code={code.scoreIncrement} />
                         </Demo>
                         <ListItem title="Correction bonus - 3">
                             <Item text="Il nous reste à afficher le score en fin de partie" />
                             <Item text="On va afficher un message différent : au pluriel si score > 1, sinon singulier" />
                             <Question text="On va utiliser une ... ?" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                        <Code language="JavaScript" code={code.scoreDisplay} />
+                        <Demo type="repo Correction">
+                        <Code code={code.scoreDisplay} />
                         </Demo>
                         <Recap>
                             <BoxItem text="Dans ce challenge on a révisé les variables, les conditions et les comparaisons" />
@@ -295,22 +298,22 @@ const S2E02 = props => {
                     </List>
                 </Card>
                 <Card title="Isoler son code" duration="1:15:00">
-                    <Doc type="Challenge" url="http://localhost:1235/E01/ChallengeS2E01/" />
+                    <Doc type="Challenge" url="http://localhost:1235/E02/Correction/" />
                     <List>
                         <ListItem title="Analyse">
-                            <Item text="Commençons par repérer les code qui se ressemble, qui se répète" />
+                            <Item text="Commençons par repérer les bouts de code qui se ressemblent, qui se répètent" />
                             <Question text="Qu'est-ce qu'on peut factoriser ?" />
                             <Item text="Comparer la réponse et la solution" />
                             <Item text="Mettre le score à jour si besoin" />
                             <Item text="Afficher le message adéquat" />
-                            <Question text="Y a une 'tite dubtilité, différence de traitement. Vous la voyez ?" />
+                            <Question text="Y a une 'tite subtilité, différence de traitement. Vous la voyez ?" />
                             <Item text="Avant comparaison, on check si la solution est un number" />
                             <Item text="SI solution est de type number ALORS transforme réponse en number" />
                         </ListItem>
                         <Recap>
                             <BoxItem text="Vérifier si solution est number" />
                             <BoxItem text="Si number, on transforme la réponse en number" />
-                            <BoxItem text="Vérifier si solution eet réponse sont égales" />
+                            <BoxItem text="Vérifier si solution et réponse sont égales" />
                             <BoxItem text="Si bonne réponse, mise à jour du score" />
                         </Recap>
                         <ListItem title="Déclaration fonction">
@@ -318,8 +321,8 @@ const S2E02 = props => {
                             <Question text="Qu'est-ce qu'on met comme paramètres ?" />
                             <Item text="On fait la déclaration ensemble" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                            <Code language="javaScript" code={code.checkReponseDeclare} />
+                        <Demo type="repo Correction">
+                            <Code code={code.checkReponseDeclare} />
                         </Demo>
                         <ListItem title="Implémentation en autonomie">
                             <Item text="A vous de jouer, essayez d'implémenter cet algo" />
@@ -331,22 +334,22 @@ const S2E02 = props => {
                             <Item text={`On va comparer typeof solution avec "number"`} />
                             <Item text="SI comparaison est true, on convertit" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                            <Code language="javaScript" code={code.checkReponseCast} />
+                        <Demo type="repo Correction">
+                            <Code code={code.checkReponseCast} />
                         </Demo>
                         <ListItem title="Implémentation">
                             <Item text="Maintenant que tout est en string, on peut comparer reponse et solution" />
                             <Item text="Si gagné, on n'oublie pas d'incrémenter le score" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                            <Code language="javaScript" code={code.checkReponseCompare} />
+                        <Demo type="repo Correction">
+                            <Code code={code.checkReponseCompare} />
                         </Demo>
                         <ListItem title="Appel fonction">
                             <Item text="Il nous reste à appeler notre fonction dans le code" />
                             <Item text="Je vous écoute, on l'appelle où et comment ? Avec quels arguments ?" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                            <Code language="javaScript" code={code.checkReponseCall} />
+                        <Demo type="repo Correction">
+                            <Code code={code.checkReponseCall} />
                         </Demo>
                         <Control>
                             <BoxItem text="Comment ça va jusque là ?" />
@@ -360,8 +363,8 @@ const S2E02 = props => {
                             <Item text="On va juste déplacer la logique dans le corps de notre fonction" />
                             <Item text="On va l'appeler après chaque appel à checkReponse" />
                         </ListItem>
-                        <Demo type="repo ChallengeS1E01">
-                            <Code language="javaScript" code={code.displayScore} />
+                        <Demo type="repo Correction">
+                            <Code code={code.displayScore} />
                         </Demo>
                         <Control>
                             <BoxItem text="C'est bon pour tout le monde ?" />
@@ -376,7 +379,7 @@ const S2E02 = props => {
                             <BoxItem text="Commit / push" />
                         </Demo>
                     </List>
-                    <Doc type="Challenge" url="http://localhost:1235/E02/Maths/" />
+                    <Doc type="Challenge" url="http://localhost:1235/E02/Code/" />
                     <List>
                         <ListItem title="Exo autonomie - 1">
                             <Item text="Fonction avec un nombre en paramètre" />
@@ -392,7 +395,7 @@ const S2E02 = props => {
                             <BoxItem text="Vous voulez qu'on fasse la déclaration ensemble ?" />
                         </Control>
                         <Demo type="repo Maths">
-                            <Code language="JavaScript" code={code.carreV1} />
+                            <Code code={code.carreV1} />
                         </Demo>
                         <ListItem title="Exo autonomie - 2">
                             <Item text="Le nombre à mettre au carré est demandé à l'utilisateur" />
@@ -404,18 +407,18 @@ const S2E02 = props => {
                             <Item text="is not a number" />
                         </ListItem>
                         <Demo type="repo console">
-                            <Code language="JavaScript" code={code.isNaN} />
+                            <Code code={code.isNaN} />
                         </Demo>
                         <Recap>
                             <BoxItem text="L'utilisateur saisi quelque chose au clavier" />
                             <BoxItem text="On passe cette saisie en argument à carre()" />
-                            <BoxItem text="Dans la fonction, on convertie la saisie en number" />
+                            <BoxItem text="Dans la fonction, on convertit la saisie en number" />
                             <BoxItem text="On verifie avec isNaN si on a bien un nombre" />
                             <BoxItem text="Si oui, on affiche le carre dans la console" />
                             <BoxItem text="Si non, on affiche un message d'erreur" />
                         </Recap>
                         <Demo type="repo Maths">
-                            <Code language="JavaScript" code={code.carreV2} />
+                            <Code code={code.carreV2} />
                         </Demo>
                         <Transition>
                             <BoxItem text="On va faire une dernière version qui va utiliser une bibliothèque javascript" />
@@ -430,7 +433,7 @@ const S2E02 = props => {
                             <Question text="Comment on peut utiliser Math.pow dans notre code ?" />
                         </ListItem>
                         <Demo type="repo Maths">
-                            <Code language="JavaScript" code={code.carreV3} />
+                            <Code code={code.carreV3} />
                         </Demo>
                         <ListItem title="Exo autonomie - 4">
                             <Item text="Autre méthode super utile : Math.random" />
@@ -440,7 +443,7 @@ const S2E02 = props => {
                             <Item text="En multipliant 49 par random, on obtient % de 49" />
                         </ListItem>
                         <Demo type="repo Maths">
-                            <Code language="JavaScript" code={code.randomMultiplyV1} />
+                            <Code code={code.randomMultiplyV1} />
                         </Demo>
                         <ListItem title="Exo autonomie - 4">
                             <Item text="Au loto, y a pas de nombre à virgule" />
@@ -448,7 +451,7 @@ const S2E02 = props => {
                             <Item text="Math.floor, Math.ceil, Math.round" />
                         </ListItem>
                         <Demo type="repo Maths">
-                            <Code language="JavaScript" code={code.randomMultiplyV2} />
+                            <Code code={code.randomMultiplyV2} />
                         </Demo>
                         <Control>
                             <BoxItem text="Vous vous sentez bien toujours ?" />
@@ -502,7 +505,7 @@ const S2E02 = props => {
                             <Item text="Si pas de valeur entre crochets, le tableau existe, pas undefined, juste vide" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.emptyTab} />
+                            <Code code={code.emptyTab} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Déclaration avec valeurs">
@@ -511,7 +514,7 @@ const S2E02 = props => {
                             <Item text="Chaque valeur est séparée par une virgule" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.prenomsTab} />
+                            <Code code={code.prenomsTab} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Lecture des valeurs">
@@ -521,7 +524,7 @@ const S2E02 = props => {
                             <Item text="Ex slide : on accède à la deuxième valeur du tab avec l'index 1" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.prenomsRead} />
+                            <Code code={code.prenomsRead} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Ajout de valeurs">
@@ -531,7 +534,7 @@ const S2E02 = props => {
                             <Item text="Prochain index 3, on ajoute la valeur avec [3]" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.prenomsAdd} />
+                            <Code code={code.prenomsAdd} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Entrées vides">
@@ -541,7 +544,7 @@ const S2E02 = props => {
                             <Item text="Log de cet élément : undefined" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.prenomsEmptyVal} />
+                            <Code code={code.prenomsEmptyVal} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Override">
@@ -549,7 +552,7 @@ const S2E02 = props => {
                             <Item text="Y a déjà une valeur à cet index, elle va être écrasée par la nouvelle valeur" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.prenomsOverride} />
+                            <Code code={code.prenomsOverride} />
                         </Demo>
                         <ListItem title="Contourner index - 1">
                             <Item text="Cette histoire d'index : un peu fastidieux" />
@@ -557,7 +560,7 @@ const S2E02 = props => {
                             <Item text="Les tableaux en js ont une propriété, une variable qui leur appartient : length" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.prenomsLength} />
+                            <Code code={code.prenomsLength} />
                         </Demo>
                         <ListItem title="Contourner index - 2">
                             <Item text="Vous remarquez ? le nombre renvoyé par length, c'est le nb d'éléments du tab" />
@@ -566,22 +569,21 @@ const S2E02 = props => {
                             <Item text="On peut ajouter une valeur en fin de tableau en utilisant length" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.prenomsAddLength} />
+                            <Code code={code.prenomsAddLength} />
                         </Demo>
                         <ListItem title="Contourner index - 3">
                             <Item text="Autre solution : utiliser une méthode des tableaux, une fonction rattaché à un type d'objet" />
                             <Item text="push() permet d'ajouter un élément en fin de tableau" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.prenomsPush} />
+                            <Code code={code.prenomsPush} />
                         </Demo>
                         <Control>
                             <BoxItem text="Comment ça va jusqu'à maintenant ?" />
                             <BoxItem text="Vous commencez à voir l'intérêt des tableaux ?" />
                             <BoxItem text={`Quiz : on le tableau suivant : var tirage = ["boule1", "boule2", "boule3"];`} />
-                            <BoxItem text="Quel élément est à l'index 2 ? boule1, boule2, boule3" />
-                            <BoxItem text="Comment afficher le 2ème élément ?" />
-                             <BoxItem text="console.log(tirage[0]), console.log(tirage[1]), console.log(tirage[2])" />
+                            <Sondage question="Quel élément est à l'index 2 ?" reponses={["boule1", "boule2", "boule3"]} />
+                            <Sondage question="Comment afficher le 2ème élément ?" reponses={["console.log(tirage[0])", "console.log(tirage[1])", "console.log(tirage[2])"]} />
                         </Control>
                         <Recap>
                             <BoxItem text="On a vu comment déclarer un tableau" />
@@ -605,7 +607,7 @@ const S2E02 = props => {
                             <Item text="Pas obligé de mettre des valeurs en dur, on peut mettre des variables" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.tabWithVars} />
+                            <Code code={code.tabWithVars} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Stockage - 2">
@@ -621,7 +623,7 @@ const S2E02 = props => {
                             <Item text="On peut connaitre sa longueur avec length" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.stringTab} />
+                            <Code code={code.stringTab} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Présentation">
@@ -641,7 +643,7 @@ const S2E02 = props => {
                         <Transition>
                             <BoxItem text="Assez de théorie, allons pratiquer avec un 'tit exo" />
                         </Transition>
-                        <Doc type="repo Fruits" url="http://localhost:1235/E02/Fruits/" />
+                        <Doc type="repo Fruits" url="http://localhost:1235/E02/Code/" />
                         <ListItem title="Exo en autonomie">
                             <Item text="On va se créer un nouveau répertoire avec index et js/fruits.js" />
                             <Item text="Dans le js, on déclare un tableau de quelques fruits" />
@@ -650,8 +652,8 @@ const S2E02 = props => {
                             <Item text="Si vous le sentez, essayez de mettre un index aléatoire avec Math.random" />
                             <Item text="Faut un nombre entier pour les index, faudra combiner avec une autre méthode de Math" />
                         </ListItem>
-                        <Demo type="console">
-                            <Code language="JavaScript" code={code.fruits} />
+                        <Demo type="repo Code">
+                            <Code code={code.fruits} />
                         </Demo>
                         <Control>
                             <BoxItem text="Ok pour tout le monde ? les tableaux sont vos amis ?" />
@@ -759,7 +761,7 @@ const S2E02 = props => {
                         <Transition>
                             <BoxItem text="pour que ça rentre bien, il faut qu'on pratique, allons jouer !" />
                         </Transition>
-                        <Doc type="repo Boucles" url="http://localhost:1235/E02/Boucles/" />
+                        <Doc type="repo Boucles" url="http://localhost:1235/E02/Code/" />
                         <ListItem title="exo autonomie">
                             <Item text="Rien de tel qu'un 'tit exo" />
                             <Item text="On va se créer un nouveau repo Boucles, index, js/boucles" />
@@ -773,14 +775,14 @@ const S2E02 = props => {
                             <Item text="On commence par déclarer notre tableau vide" />
                         </ListItem>
                         <Demo type="repo Boucles">
-                            <Code language="JavaScript" code={code.whileStart} />
+                            <Code code={code.whileStart} />
                         </Demo>
                         <ListItem>
                             <Question text="Ensuite, qu'est-ce qu'il faut qu'on fasse ?" />
                             <Item text="Il faut initialiser notre compteur" />
                         </ListItem>
                         <Demo type="repo Boucles">
-                            <Code language="JavaScript" code={code.whileCounter} />
+                            <Code code={code.whileCounter} />
                         </Demo>
                         <ListItem>
                             <Item text="On a notre tableau pour stocker les résultats, on a notre compteur" />
@@ -788,7 +790,7 @@ const S2E02 = props => {
                             <Item text="On va lancer la boucle" />
                         </ListItem>
                         <Demo type="repo Boucles">
-                            <Code language="JavaScript" code={code.whileFoireux} />
+                            <Code code={code.whileFoireux} />
                         </Demo>
                         <Control>
                             <BoxItem text="Ma boucle est foireuse là" />
@@ -799,13 +801,13 @@ const S2E02 = props => {
                             <Item text="Je lance pas ma page, je corrige d'abord !" />
                         </ListItem>
                         <Demo type="repo Boucles">
-                            <Code language="JavaScript" code={code.whileOk} />
+                            <Code code={code.whileOk} />
                         </Demo>
                         <ListItem>
                             <Item text="Pour finir, on va afficher un message pour vérifier combien d'éléments dans le tab" />
                         </ListItem>
                         <Demo type="repo Boucles">
-                            <Code language="JavaScript" code={code.whileFull} />
+                            <Code code={code.whileFull} />
                         </Demo>
                         <Control>
                             <BoxItem text="C'est ok pour le while ? Clair pour vous ?" />
@@ -814,7 +816,7 @@ const S2E02 = props => {
                             <Item text="Dans le coup, à vous de jouer pour le for" />
                         </ListItem>
                         <Demo type="repo Boucles">
-                            <Code language="JavaScript" code={code.forFull} />
+                            <Code code={code.forFull} />
                         </Demo>
                         <ListItem>
                             <Item text="On déclare un autre tableau" />

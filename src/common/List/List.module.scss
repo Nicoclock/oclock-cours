@@ -162,6 +162,17 @@
     border: 1px solid black
 }
 
+.Exo {
+    @extend .Sondage;
+    width: 80%;
+    background-color: #ccc;
+}
+
+.ExoSondage {
+    @extend .Sondage;
+    width: 90%;
+}
+
 .SondageTitle {
     font-weight: bold;
     text-align: center;
@@ -174,4 +185,12 @@
 .SondageResp {
     font-size: 18px;
     text-indent: 20px;
+}
+
+
+.Enonce {
+    @extend .ItemDefault;
+    margin: 10px auto;
+    font-size: 20px;
+    text-align: left;
 }

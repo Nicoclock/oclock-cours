@@ -233,22 +233,22 @@ const S2E01 = props => {
                             <Item text="Les devs ont mis à dispo plusieurs actions :" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.moveForward} />
+                            <Code code={code.moveForward} />
                         </Demo>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.turnLeft} />
+                            <Code code={code.turnLeft} />
                         </Demo>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.turnRight} />
+                            <Code code={code.turnRight} />
                         </Demo>
                         <ListItem>
                             <Item text="Aussi des fonctionnalités plus exotiques :" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.surprise} />
+                            <Code code={code.surprise} />
                         </Demo>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.makeBeautiful} />
+                            <Code code={code.makeBeautiful} />
                         </Demo>
                         <ListItem>
                             <Item text="Ca sert pas à grand-chose mais c'est rigolo" />
@@ -317,7 +317,7 @@ const S2E01 = props => {
                         <Demo type="repo Syntaxe">
                             <BoxItem text="Création js/syntaxe.js" />
                             <BoxItem text="Exemple de commentaires" />
-                            <Code language="JavaScript" code={code.commentaires} />
+                            <Code code={code.commentaires} />
                             <BoxItem text="Creation repo" />
                             <BoxItem text="First commit and push" />
                         </Demo>
@@ -346,7 +346,7 @@ const S2E01 = props => {
                         </ListItem>
                         <Demo type="console">
                             <BoxItem text="console.log" />
-                            <Code language="JavaScript" code={code.firstName} />
+                            <Code code={code.firstName} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Modification">
@@ -354,7 +354,7 @@ const S2E01 = props => {
                             <Item text="Pour la modifier, on assigne une nouvelle valeur avec =" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.firstName2} />
+                            <Code code={code.firstName2} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Instructions">
@@ -404,7 +404,7 @@ const S2E01 = props => {
                             <Item text="Convention : on les appelle isXXX ou hasXXX" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.isNice} />
+                            <Code code={code.isNice} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Les chaines de caractères (string)">
@@ -412,7 +412,7 @@ const S2E01 = props => {
                             <Item text="On peut les ajouter, les concaténer avec +" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.firstConcat} />
+                            <Code code={code.firstConcat} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Opérateur +">
@@ -426,7 +426,7 @@ const S2E01 = props => {
                             <Item text="sur 1 nombre et 1 string, concaténation" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.plus} />
+                            <Code code={code.plus} />
                         </Demo>
                         <Control>
                             <BoxItem text="Ca va ? Pas trop mal au crâne encore ?" />
@@ -451,7 +451,7 @@ const S2E01 = props => {
                             <Item text="opérateur - pour la soustraction" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.addSub} />
+                            <Code code={code.addSub} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Multiplication / division">
@@ -459,7 +459,7 @@ const S2E01 = props => {
                             <Item text="opérateur /" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.multDiv} />
+                            <Code code={code.multDiv} />
                         </Demo>
                         <Click dir="right" />
                         <ListItem title="Pratique">
@@ -486,13 +486,13 @@ const S2E01 = props => {
                             <Item text="même des variables" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.consoleLog} />
+                            <Code code={code.consoleLog} />
                         </Demo>
                         <ListItem title="Plusieurs arguments">
                             <Item text="Entre les paranthèses, on peut mettre plusieurs éléments de plusieurs type séparés par une virgule" />
                         </ListItem>
                         <Demo type="console">
-                            <Code language="JavaScript" code={code.consoleLog2} />
+                            <Code code={code.consoleLog2} />
                         </Demo>
                         <Control>
                             <Sondage question="Fonctionnement de la console, c'est ok ?" reponses={["yep", "à pratiquer", "nope"]} />
@@ -506,9 +506,9 @@ const S2E01 = props => {
                             <BoxItem text="On retourne dans notre repo syntaxe" />
                         </Transition>
                         <Demo type="repo Syntaxe">
-                            <Code language="JavaScript" code={code.book} />
+                            <Code code={code.book} />
                             <BoxItem text="exo : Ajout - Date de parution : year - Prix : price - Déjà lu : hasBeenRead" />
-                            <Code language="JavaScript" code={code.bookDesc} />
+                            <Code code={code.bookDesc} />
                         </Demo>
                         <Control>
                             <Sondage question="C'est bon la concaténation ?" reponses={["yep", "à pratiquer", "nope"]} />
@@ -516,9 +516,9 @@ const S2E01 = props => {
                         <Demo type="repo Syntaxe">
                             <BoxItem text="Commit / push" />
                             <BoxItem text="Addition ensemble" />
-                            <Code language="JavaScript" code={code.addition} />
+                            <Code code={code.addition} />
                             <BoxItem text="Soustraction, multiplication division en autonomie" />
-                            <Code language="JavaScript" code={code.operations} />
+                            <Code code={code.operations} />
                         </Demo>
                         <Control>
                             <Sondage question="C'est ok les opérations ?" reponses={["yep", "à pratiquer", "nope"]} />
@@ -546,7 +546,7 @@ const S2E01 = props => {
                             <Item text="On peut afficher un message autrement" />
                         </ListItem>
                         <Demo type="repo Syntaxe">
-                            <Code language="JavaScript" code={code.alertBox} />
+                            <Code code={code.alertBox} />
                         </Demo>
                         <ListItem title="Pas idéal">
                             <Item text="Chargement coincé tant qu'on a pas cliqué ok" />
@@ -558,7 +558,7 @@ const S2E01 = props => {
                         </ListItem>
                         <Demo type="repo Syntaxe">
                             <BoxItem text="Commenter alert" />
-                            <Code language="JavaScript" code={code.promptBox} />
+                            <Code code={code.promptBox} />
                         </Demo>
                         <ListItem title="Utilisation">
                             <Item text="On déclare une variable pour stocker la saisie utilisateur" />
@@ -580,7 +580,7 @@ const S2E01 = props => {
                             <Question text="Dites-moi tout, comment on fait ça ?" />
                         </ListItem>
                         <Demo type="repo Syntaxe">
-                            <Code language="JavaScript" code={code.promptBoxes} />
+                            <Code code={code.promptBoxes} />
                         </Demo>
                         <Recap>
                             <BoxItem text="On a déjà dégrossi pas mal de choses" />
@@ -763,7 +763,7 @@ const S2E01 = props => {
                         </Transition>
                         <Demo type="repo Syntaxe">
                             <BoxItem text="Exo : Demander à l'utilisateur s'il veut jouer avec confirm" />
-                            <Code language="JavaScript" code={code.confirmBox} />
+                            <Code code={code.confirmBox} />
                         </Demo>
                         <Transition>
                             <BoxItem text="Le challenge de ce soir va vous refaire pratiquer tout ça" />

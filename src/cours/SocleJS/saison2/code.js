@@ -122,7 +122,7 @@ else {
     alert('Perdu...');
 }`;
 
-export const exo3Reponse = `var question2 = 'Quel est l'âge du capitaine ?';
+export const exo3Reponse = `var question2 = 'Quel est l\\'âge du capitaine ?';
 var solution2 = 63;
 var reponse2 = prompt(question2);`;
 
@@ -165,7 +165,7 @@ export const scoreIncrement = `{
 }`;
 
 export const scoreDisplay = `//SI score supérieur à 1 ALORS afficher avec s SINON afficher sans s
-var message = ';
+var message = '';
 if (score > 1) {
     message = 'Vous avez ' + score + ' bonnes réponses';
 }
@@ -184,7 +184,7 @@ export const checkReponseDeclare = `var checkReponse = function(reponse, solutio
 
 }`;
 
-export const checkReponseCast = `if (typeof solution === 'number) {
+export const checkReponseCast = `if (typeof solution === 'number') {
     reponse = parseInt(reponse, 10);
 }`;
 
@@ -201,14 +201,14 @@ var solution1 = 'la mer Noire';
 var reponse1 = prompt(question1);
 checkReponse(reponse1, solution1)
 
-var question2 = 'Quel est l'âge du capitaine ?';
+var question2 = 'Quel est l\\'âge du capitaine ?';
 var solution2 = 63;
 var reponse2 = prompt(question2);
 checkReponse(reponse2, solution2)
 `;
 
 export const displayScore = `var displayScore = function() {
-    var message = ';
+    var message = '';
     if (score > 1) {
         message = 'Vous avez ' + score + ' bonnes réponses';
     }
@@ -332,7 +332,7 @@ while(compteur < 10) {
     //on stocke la valeur du compteur dans le tableau
     tab[compteur] = compteur;
     //on incrémente notre compteur
-    compteur++
+    compteur++;
 }`;
 
 export const whileFull = `//avec TANT QUE
@@ -638,10 +638,10 @@ export const gamePlay3 = `var play = function() {
     ...
     while (enteredNumber !== game.searchedNumber) {
         if (enteredNumber < game.searchedNumber) {
-            enteredNumber =  parseInt(prompt('C'est plus'));
+            enteredNumber =  parseInt(prompt('C\\'est plus'));
         }
         else {
-            enteredNumber =  parseInt(prompt('C'est moins'));
+            enteredNumber =  parseInt(prompt('C\\'est moins'));
         }
         game.attemps++;
     }
@@ -784,10 +784,10 @@ export const embedPlay = `var game {
     
         while (enteredNumber !== game.searchedNumber) {
             if (enteredNumber < game.searchedNumber) {
-                enteredNumber =  parseInt(prompt('C'est plus'));
+                enteredNumber =  parseInt(prompt('C\\'est plus'));
             }
             else {
-                enteredNumber =  parseInt(prompt('C'est moins'));
+                enteredNumber =  parseInt(prompt('C\\'est moins'));
             }
             game.attemps++;
         }
