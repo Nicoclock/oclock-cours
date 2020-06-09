@@ -374,11 +374,205 @@ const carre_arrow_xtrem = num => num*num;`
         code:
 ``
     }
-]
+],
+switch: [
+    {
+        code:
+`const value = prompt('Saisissez 1 ou 2');
 
-};
+//avec if ... else if ... else ...
 
+if (value === '1') {
+    //traitement
+}
+else if (value === '2') {
+    //traitement
+}
+else {
+    //si erreur de saisie, cas non couvert
+}`
+    },
+    {
+        code:
+`//avec switch
 
+switch(value) {
+    case '1': 
+        //traitement
+        break;
+    case '2': 
+        //traitement
+        break;
+    default:
+        //si erreur de saisie, cas non couvert
+}`
+    }
+]};
+
+export const day9 = {
+    timeout: [
+        {
+            code:
+`//je crée ma fonction à exécuter au bout de x millisecondes
+const delayedFunction = () => {
+    console.log('Fonction lancée à :', new Date());
+}`
+        },
+        {
+            code:
+`//je lance le timeout, le délai, avec en 1er argument, le nom de la fonction à exécuter, 
+//en 2ème argument, le délai en millisecondes
+console.log('Lancement du timeout : ', new Date());
+setTimeout(delayedFunction, 3000);`
+        },
+        {
+            code:
+`//cas avec var et let
+
+console.log('Test dans une boule');
+//le problème ici : la boucle va plus vite que la fonction
+//i est considéré comme une variable globale rattachée à window
+//il prend la valeur 10 avant la fin du délai
+//la fonction va afficher 10 fois 'Valeur de i : 10'
+for (var i=0; i<10; i++) {
+    //on introduit un timeout, un délai de 1 seconde avant l'exécution de la fonction
+    setTimeout(() => {
+        console.log('Valeur de i avec var :', i);
+    }, 1000)
+}`
+        },
+        {
+            code:
+`//let règle ce problème et donne le comportement attendu
+//i n'est défini qu'à l'intérieur des accolades
+//il 'stocke' la bonne valeur de i dans l'instruction console.log
+//on obtient bien 10 logs différents même avec un délai avant l'exécution
+for (let i=0; i<10; i++) {
+    setTimeout(() => {
+        console.log('Valeur de i avec let :', i);
+    }, 1000)
+}`
+        },
+        {
+            code:
+`//on peut souhaiter stopper un timeout
+//on récupère sa ref dans une variable
+console.log('lancement du timeout');
+let timeoutRef = setTimeout(delayedFunction, 3000);
+console.log('timeout supprimé, pas d\'exécution');
+clearTimeout(timeoutRef);`
+        }
+    ],
+    interval: [
+        {
+            code:
+`//je crée ma fonction à exécuter toutes les x millisecondes
+const toRepeat = () => {
+    console.log('Fonction lancée à :', new Date());
+}`
+        },
+        {
+            code:
+`//je lance le setInterval
+setInterval(toRepeat, 3000);`
+        },
+        {
+            code:
+`//je souhaite pouvoir stopper l'exécution
+//je stocke la référence de setInterval dans une variable
+let intervalRef = setInterval(toRepeat, 3000);`
+        },
+        {
+            code:
+`//j'utilise setTimeout pour stopper l'exécution au bout de 10 secondes
+setTimeout(() => {
+    console.log('Appel à clearInterval, exécution stoppée');
+    clearInterval(intervalRef);
+}, 10000);`
+        }
+    ],
+    spread: [
+        {
+            code:
+`//partons d'un tableau de base
+const profs = ['McGonagal', 'Chourave', 'Flitwick'];`
+        },
+        {
+            code:
+`//on peut le copier (nouvelle référence) avec le spread
+const profsCopie = [...profs];
+console.log('Copie de profs', profsCopie);`
+        },
+        {
+            code:
+`//pas même référence
+console.log('les tableaux sont égaux', profs === profsCopie);`
+        },
+        {
+            code:
+`//on peut concaténer 2 tableaux
+const students = ['Harry', 'Hermione', 'Ron'];
+
+const persos = [...profs, ...students];
+console.log('tableau persos', persos);`
+        },
+        {
+            code:
+`//on peut extraire certains éléments
+const [prof1, prof2, prof3, ...restTab] = persos;
+console.log('prof1', prof1);
+console.log('prof2', prof2);
+console.log('prof3', prof3);
+console.log('reste du tableau', restTab);`
+        },
+        {
+            code:
+`//utile pour passer d'un tab à une liste de paramètres
+console.log(persos);
+console.log(...persos); //equivalent à console.log(persos[0], persos[1], ...)`
+        },
+        {
+            code:
+`//fonctionne aussi avec les objects
+const shape = {
+    type: "rectangle",
+    dimensions: {
+        x: 10,
+        y: 20
+    }
+}`
+        },
+        {
+            code:
+`//copie d'un object
+const shapeCopie = {...shape};
+console.log('copie', shapeCopie);`
+        },
+        {
+            code:
+`//pas même référence
+console.log('les objects sont égaux', shape === shapeCopie);`
+        },
+        {
+            code:
+`//extraction de certains champs
+const {type, ...restObject} = shape;
+console.log('type', type);
+console.log('reste de l\'object', restObject);`
+        },
+        {
+            code:
+`//on peut concaténer des objects
+const css = {
+    color: 'blue',
+    border: '1px solid black'
+}
+
+const fullShape = {...shape, ...css};
+console.log('forme complète', fullShape);`
+        }
+    ]
+}
 
 
 

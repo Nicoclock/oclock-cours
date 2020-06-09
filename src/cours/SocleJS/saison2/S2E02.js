@@ -6,9 +6,6 @@ import * as code from "./code";
 import "../../style.scss"
 
 const S2E02 = props => {
-    var age = prompt ('Quel est l\'âge du capitaine ?') ;
-    var ageNumber = parseInt(age);
-    console.log(ageNumber);
     return (
         <Fragment>
             <div className="Title">JS, ça fonctionne bien</div>

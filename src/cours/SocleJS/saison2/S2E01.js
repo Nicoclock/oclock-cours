@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage} from "../../../common";
+import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce} from "../../../common";
 import * as code from "./code";
 
 import "../../style.scss"
@@ -772,6 +772,54 @@ const S2E01 = props => {
                         <Demo type="repo ChallengeS1E01">
                             <BoxItem text="Manip partage challenge du jour" />
                         </Demo>
+                    </List>
+                </Card>
+                <Card title="Exos">
+                    <List>
+                        <Sondage question="Quelle est la bonne façon de définir une variable ?"
+                            reponses={[`firstName = "Nico"`, "var firstName = 'Nico';", "firstName: Nico", "C'est quoi une variable ?"]} />
+                        <Sondage question="Une variable string, boolean ou number est dite ... ?" 
+                            reponses={["primordiale", "primitive", "primaire"]} />
+                        <Sondage question="Un algorithme est ... ?" reponses={["juste un vilain mot", "une maladie contagieuse", "un cheminement de pensée"]} />
+                        <Sondage question="Pour traduire du pseudo-code en JS, on fait ... ?" reponses={["l'implémentation", "une prière à l'ordi", "F5"]} />
+                        <Sondage question="Pour conditionner le traitement, le critère est de type ... ?" 
+                            reponses={["number", "string", "boolean"]} />
+                        <Sondage question="Un critère de condition s'écrit ... ?" reponses={["entre parenthèses", "entre accolades", "comme ça"]} />
+                        <Sondage question="Pour combiner des conditions, on utilise ... ?" reponses={["< ou >", "&& ou ||", "=== ou !=="]} />
+                        <Sondage question="var test = '12345'; Quel est le type de test ?" reponses={["number", "string", "boolean"]} />
+                        <Sondage question="var test = 12345; Quel est le type de test ?" reponses={["number", "string", "boolean"]} />
+                        <Sondage question="var test =  prompt('Que voulez-vous tester ?'); Quel est le type de test ?" reponses={["number", "string", "boolean"]} />
+                        <Sondage question="99 < 25 || '12' === 12" reponses={["vrai", "faux"]} />
+                        <Sondage question={`25 >= 23 && 15 <= 18`} reponses={["vrai", "faux"]} />
+                        <Exo>
+                            <Enonce text="Implémentez l'algorithme suivant :" />
+                            <Enonce text="Demander Quel est votre livre préféré ?" />
+                            <Enonce text="SI le livre n'est pas Dune" />
+                            <Enonce text="ALORS afficher oui bon ... personne n'est parfait" />
+                            <Enonce text="SINON afficher aaahhh voilà quelqu'un de bien !" />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="Implémentez l'algorithme suivant :" />
+                            <Enonce text="Demander Etes vous inscrit à la médiathèque ?" />
+                            <Enonce text="SI oui ALORS" />
+                            <Enonce text="ALORS demander quel livre voulez-vous emprûnter et afficher le livre" />
+                            <Enonce text="SINON" />
+                            <Enonce text="Demander Voulez-vous vous inscrire maintenant ?" />
+                            <Enonce text="SI oui ALORS afficher Remplissez le formulaire" />
+                            <Enonce text="SINON afficher Bah ... pas de bras, pas de bouquin ..." />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="Implémentez l'algorithme suivant :" />
+                            <Enonce text="Demander Etes vous fan de Star Wars ?" />
+                            <Enonce text="SI oui ALORS" />
+                            <Enonce text="Demander Quel est votre perso préféré ?" />
+                            <Enonce text="SI le perso est Yoda ALORS afficher May the force be with you !" />
+                            <Enonce text="SINON SI le perso est Chewie ALORS afficher Arf, vous aimez les poils ..." />
+                            <Enonce text="SINON afficher De toute façon on les aime tous !" />
+                            <Enonce text="SINON afficher Vous savez pas ce que vous perdez ..." />
+                            
+                        </Exo>
+                        
                         <ListItem title="Présentation challenge" />
                     </List>
                 </Card>

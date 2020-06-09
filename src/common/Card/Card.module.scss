@@ -1,10 +1,11 @@
 .CardButton {
     width: 50%;
     margin: 10px auto;
+    padding: 0px 20px;
     min-height: 70px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border: 3px solid black;
     border-radius: 20px;
     color: black;
@@ -18,4 +19,9 @@
 
 .Blank {
     margin-bottom: 1000px;
+}
+
+.Duration {
+    font-size: 18px;
+    text-align: right;
 }

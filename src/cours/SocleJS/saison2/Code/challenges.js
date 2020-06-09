@@ -563,3 +563,379 @@ addStyle: function(style) {
 
     ] 
 };
+
+export const rpg = {
+    etapes: [
+        {
+            language: "HTML",
+            code: 
+`<body>
+    <div id="board">
+
+    </div>
+    ...
+</body>`
+        },
+        {
+            code:
+`init: () => {
+    console.log('init !');
+}`
+        },
+        {
+            code: 
+`player: {
+    x: 0,
+    y: 0,
+    direction: 'right'
+},
+targetCell: {
+    x: 5,
+    y: 3
+},
+`
+        },
+        {
+            code: 
+`drawBoard: () => {
+    const target = document.getElementById('board');
+    //on ajoute les 4 lignes de class row
+    for (let currentLine=0; currentLine<4; currentLine++) {
+        let line = document.createElement('div');
+        line.className = 'row';
+        /*
+            création des colonnes
+        */
+        //on ajoute la nouvelle line à la div#board
+        target.appendChild(line);
+    }
+  },`
+        },
+        {
+            code:
+`drawBoard: () => {
+    const target = document.getElementById('board');
+    //on ajoute les 4 lignes de class row
+    for (let currentLine=0; currentLine<4; currentLine++) {
+        let line = document.createElement('div');
+        line.className = 'row';
+        //dans chaque ligne, on veut ajouter 6 div de class cell
+        for (let currentCol=0; currentCol<6; currentCol++) {
+            let cell = document.createElement('div');
+            cell.className = 'cell';
+            //on ajoute la nouvelle cell à la div.row courante
+            line.appendChild(cell);
+        }
+        //on ajoute la nouvelle line à la div#board
+        target.appendChild(line);
+    }
+  },`
+        },
+        {
+            language: "CSS",
+            code: 
+`#board {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    margin: auto; 
+}
+
+.cell {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+}`
+        },
+        {
+            code: 
+`drawBoard: () => {
+    ...
+    for (let currentLine=0; currentLine<4; currentLine++) {
+        ...
+        for (let currentCol=0; currentCol<6; currentCol++) {
+            ...
+            //SI coordonnées courantes sont égales aux coordonnées de targetCell
+            //ALORS on ajoute la class targetCell
+            if (currentCol === app.targetCell.x && currentLine === app.targetCell.y) {
+                cell.classList.add('targetCell');
+            }
+
+            //SI coordonnées courantes sont égales aux coordonnées du joueur
+            //ALORS on ajoute la div.player dans la cell
+            if (currentCol === app.player.x && currentLine === app.player.y) {
+                let player = document.createElement('div');
+                player.className = 'player';
+                cell.appendChild(player);
+            }
+            ...
+        }
+        ...
+    }
+  },`
+        },
+        {
+            language: "CSS",
+            code: 
+`.targetCell {
+    background-color: green;
+}`
+        },
+        {
+            code: 
+`clearBoard: () => {
+    //on récupère la target
+    const board = document.getElementById('board');
+    //version propre
+    //TANT QUE board contient des éléments, on efface l'élément courant
+    while(board.firstChild) {
+        board.firstChild.remove();
+    }
+    //version moins propre mais efficace !
+    //board.innerHTML = '';
+},`
+        },
+        {
+            code: 
+`redrawBoard: function() {
+    //on efface la grille
+    app.clearBoard();
+    //on la redessine
+    app.drawBoard();
+},`
+        },
+        {
+            code: 
+`turnLeft: () => {
+    //on étudie la direction actuelle du player
+    switch(app.player.direction) {
+        //si direction right, un turnLeft donne une direction up
+        case 'right':
+            app.player.direction = 'up';
+            break;
+        //si direction up, un turnLeft donne une direction left
+        case 'up':
+            app.player.direction = 'left';
+            break;
+        //si direction left, un turnLeft donne une direction down
+        case 'left':
+            app.player.direction = 'down';
+            break;
+        //si direction down, un turnLeft donne une direction right
+        case 'down':
+            app.player.direction = 'right';
+            break;
+        default: break;
+    }
+},
+turnRight: () => {
+    //on étudie la direction actuelle du player
+    switch(app.player.direction) {
+        //si direction right, un turnRight donne une direction down
+        case 'right':
+            app.player.direction = 'down';
+            break;
+        //si direction up, un turnRight donne une direction left
+        case 'down':
+            app.player.direction = 'left';
+            break;
+        //si direction left, un turnRight donne une direction up
+        case 'left':
+            app.player.direction = 'up';
+            break;
+        //si direction down, un turnRight donne une direction right
+        case 'up':
+            app.player.direction = 'right';
+            break;
+        default: break;
+    }
+},`
+        },
+        {
+            code: 
+`drawBoard: () => {
+    ...
+    for (let currentLine=0; currentLine<4; currentLine++) {
+        ...
+        for (let currentCol=0; currentCol<6; currentCol++) {
+            ...
+            //SI coordonnées courantes sont égales aux coordonnées du joueur
+            //ALORS on ajoute la div.player dans la cell
+            if (currentCol === app.player.x && currentLine === app.player.y) {
+                let player = document.createElement('div');
+                player.className = 'player player--'+app.player.direction;
+                cell.appendChild(player);
+            }
+            ...
+        }
+        ...
+    }
+    },`
+                    },
+        {
+            code: 
+`/* .player--right est facultatif, pas de rotation */
+.player--right {
+  transform: rotate(0deg);
+}
+
+.player--down {
+  transform: rotate(90deg);
+}
+
+.player--left {
+  transform: rotate(180deg);
+}
+
+.player--up {
+  transform: rotate(-90deg);
+}`
+        },
+        {
+            code: 
+`moveForward: () => {
+    switch(app.player.direction) {
+        case 'right':
+            if (app.player.x < 5) {
+                app.player.x += 1;
+                console.log(\`Player à la position (\${app.player.x}, \${app.player.y})\`);
+            }
+            else {
+                console.log('Player au bord du vide, mouvement impossible')            
+            }
+            break;
+        case 'down':
+            if (app.player.y < 3) {
+                app.player.y += 1;
+                console.log(\`Player à la position (\${app.player.x}, \${app.player.y})\`);
+            }
+            else {
+                console.log('Player au bord du vide, mouvement impossible')            
+            }
+            break;
+        case 'left':
+            if (app.player.x > 0) {
+                app.player.x -= 1;
+                console.log(\`Player à la position (\${app.player.x}, \${app.player.y})\`);
+            }
+            else {
+                console.log('Player au bord du vide, mouvement impossible')            
+            }
+            break;
+        case 'up':
+            if (app.player.y > 0) {
+                app.player.y -= 1;
+                console.log(\`Player à la position (\${app.player.x}, \${app.player.y})\`);
+            }
+            else {
+                console.log('Player au bord du vide, mouvement impossible')            
+            }
+            break;
+        default: break;
+        
+    }
+},`
+        },
+        {
+            code: 
+`listenKeyboardEvents: () => {
+    //ajout du listener sur document
+    //callback en arrow function
+    document.addEventListener('keyup', (event) => {
+        switch(event.keyCode) {
+            case 37: //flèche gauche
+                app.turnLeft();
+                break;
+            case 38: //flèche haut
+                app.moveForward();
+                break;
+            case 39: //flèche droite
+                app.turnRight();
+                break;
+            default: break;
+        }
+    });
+},
+init: () => {
+  console.log('init !');
+  app.drawBoard();
+  app.listenKeyboardEvents();
+}`
+        },
+        {
+            code: 
+`//si gameOver est à true, on sort de la fonction
+if (app.gameOver) { //équivalent à if (app.gameOver === true)
+    return;
+}`
+        },
+        {
+            code: 
+`isGameOver: () => {
+    //on checke si les coordonnées du player sont égales à celles de la targetCell
+    if (app.player.x === app.targetCell.x && app.player.y === app.targetCell.y) {
+        gameOver = true;
+        alert('Victoire !');
+    }
+},`
+        },
+        {
+            code: 
+`isGameOver: () => {
+    //on checke si les coordonnées du player sont égales à celles de la targetCell
+    if (app.player.x === app.targetCell.x && app.player.y === app.targetCell.y) {
+        app.gameOver = true;
+        alert(\`Victoire en \${app.nbMoves} coups !\`);
+    }
+},`
+        },
+        {
+            language: "CSS",
+            code: 
+`/* version sprite */
+
+.beautiful .player {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/sprite.png');
+  background-repeat: no-repeat;
+  background-size: auto 280px;
+  border: none;
+  margin: auto;
+  transform: none;
+  transition: none;
+}
+
+.beautiful .player--up {
+  background-position-y: -210px;
+}
+
+.beautiful .player--left {
+  background-position-y: -70px;
+}
+
+.beautiful .player--right {
+  background-position-y: -140px;
+}
+
+.beautiful .player--down {
+  background-position-y: 0px;
+}`
+        },
+        {
+            code: 
+``
+        },
+        {
+            code: 
+``
+        },
+        {
+            code: 
+``
+        },
+    ]
+};

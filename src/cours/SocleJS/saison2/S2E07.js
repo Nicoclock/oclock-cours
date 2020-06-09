@@ -47,7 +47,7 @@ const S2E07 = props => {
                             <Item text="Installation : " />
                             <SubItem text="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" />
                             <SubItem text="Via le gestionnaire d'extensions : eslint dans zone recherche" />
-                            <SubItem text="Ligne de commande : code --install-extension dbaeymer.vscode-eslint" />
+                            <SubItem text="Ligne de commande : code --install-extension dbaeumer.vscode-eslint" />
                         </ListItem>
                         <Control>
                             <Sondage question="Installation plugin eslint ok ?" reponses={["yep", "nope"]} />

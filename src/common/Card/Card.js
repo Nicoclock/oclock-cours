@@ -21,7 +21,10 @@ class Card extends Component {
                         {this.props.duration ? <Timer startTime={this.props.duration} /> : null}
                     </Fragment>
                 :
-                    <div className={style.CardButton} onClick={() => this.setState({show: true})}>{this.props.title}</div>
+                    <div className={style.CardButton} onClick={() => this.setState({show: true})}>
+                        {this.props.title}
+                        <span className={style.Duration}>{this.props.duration}</span>
+                    </div>
                 }
             </Fragment>
         );

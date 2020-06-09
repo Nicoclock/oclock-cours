@@ -6,8 +6,6 @@ import * as episodes from "./";
 
 import "../style.scss";
 
-import {Snippet, Enonce, Exo, ExoSondage} from "../../common";
-
 class SocleJS extends Component {
 
     state = {
@@ -48,15 +46,8 @@ class SocleJS extends Component {
                 <div className="Content">
                     {this.state.saison && this.state.episode ? 
                         React.createElement(episodes[this.state.saison+this.state.episode])
-                    :
-                        <Exo>
-                        <Enonce text="On considère le code JS suivant :" />
-                        <Snippet lines={`var x = 5;
-for (var i=0; i<x; i++) {
-    x += i;
-}`} />
-                        <ExoSondage question="Quelle variable représente le compteur ?" reponses={["x", "i"]} />
-                        </Exo>
+                    : 
+                        null
                     }
                 </div>
             </Fragment>
