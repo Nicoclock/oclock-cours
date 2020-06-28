@@ -1,11 +1,17 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage} from "../../../common";
-import * as code from "./code";
-
+import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage, Git, Exo, Enonce} from "../../../common";
+import {day2 as snippets} from "./Code/snippets";
+import {first} from "./Code/challenges";
 import "../../style.scss"
 
-const S2E02 = props => {
+const S2E02 = () => {
+    let challenge = 0;
+    let snippet = 0;
+    const resetSnippet = () => {
+        snippet = 0;
+    }
+
     return (
         <Fragment>
             <div className="Title">JS, ça fonctionne bien</div>
@@ -26,7 +32,6 @@ const S2E02 = props => {
                                 "trop facile",
                                 "m'en suis tiré",
                                 "j'ai galéré !",
-                                "z'êtes malades !!",
                                 "papu/pasu/pavoulu"
                             ]} />
                         </Control>
@@ -38,7 +43,7 @@ const S2E02 = props => {
                             <Item text="on déclare nos 2 variables et on leur assigne une valeur" />
                         </ListItem>
                         <Demo type="repo Correction">
-                            <Code code={code.exo1} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <Control>
                             <BoxItem text="Ok exo 1 ? Y avait pas de piège ..." />
@@ -47,19 +52,19 @@ const S2E02 = props => {
                             <Question text="Qu'est-ce qu'on va utiliser comme fonction ?" />
                         </ListItem>
                         <Demo type="repo Correction">
-                        <Code code={code.exo2Prompt} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Correction exo2 - 2">
                             <Item text="Vous avez remarqué la phrase ? On dirait de l'algo ..." />
                         </ListItem>
                         <Demo type="repo Correction">
-                        <Code code={code.exo2Algo} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Correction exo2 - 3">
                             <Question text="Qui me dit comment on va implémenter ça ?" />
                         </ListItem>
                         <Demo type="repo Correction">
-                        <Code code={code.exo2Condition} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <Control>
                             <BoxItem text="C'est clair ce if ?" />
@@ -70,7 +75,7 @@ const S2E02 = props => {
                             <Item text="On pose la question et on stocke dans reponse2" />
                         </ListItem>
                         <Demo type="repo Correction">
-                        <Code code={code.exo3Reponse} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Correction exo3 - 2">
                             <Item text="Ensuite on doit comparer avec la bonne réponse, c'est là que ça se corse :" />
@@ -83,10 +88,10 @@ const S2E02 = props => {
                         <ListItem title="Correction exo3 - 3">
                             <Item text="Ca a l'air nickel, c'est bien ça qu'on veut faire" />
                             <Item text="Dans notre cas, c'est la base 10" />
+                            <Item text="On va pouvoir vérifier son type avec typeof" />
                         </ListItem>
                         <Demo type="console">
-                            <BoxItem text={`parseInt("35"), retourne 35`} />
-                            <Code code={code.parseIntTest} />
+                            <Code step={snippets.numbers[snippet++]} />
                         </Demo>
                         <ListItem title="Correction exo3 - 4">
                             <Item text="NaN : not a number, la conversion n'a pas marché" />
@@ -95,7 +100,7 @@ const S2E02 = props => {
                         </ListItem>
                         <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Number" />
                         <Demo type="console">
-                        <Code code={code.NumberTest} />
+                            <Code step={snippets.numbers[snippet++]} />
                         </Demo>
                         <Recap>
                             <BoxItem text="2 méthodes pour transformer une string en number" />
@@ -112,7 +117,7 @@ const S2E02 = props => {
                             <Item text="On va transformer reponse2 en number" />
                         </ListItem>
                         <Demo type="repo Correction">
-                        <Code code={code.exo3Number} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Correction bonus - 1">
                             <Question text="Réfléchissons ensemble, c'est quoi les étapes ?" />
@@ -121,7 +126,7 @@ const S2E02 = props => {
                             <Item text="On va afficher le score à la fin du jeu" />
                         </ListItem>
                         <Demo type="repo Correction">
-                            <Code code={code.scoreDeclare} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Correction bonus - 2">
                             <Item text="On doit donc ajouter 1 à score à chaque bonne réponse" />
@@ -130,7 +135,7 @@ const S2E02 = props => {
                             <Item text="On assigne une nouvelle valeur : l'ancienne valeur + 1" />
                         </ListItem>
                         <Demo type="repo Correction">
-                        <Code code={code.scoreIncrement} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Correction bonus - 3">
                             <Item text="Il nous reste à afficher le score en fin de partie" />
@@ -138,13 +143,14 @@ const S2E02 = props => {
                             <Question text="On va utiliser une ... ?" />
                         </ListItem>
                         <Demo type="repo Correction">
-                        <Code code={code.scoreDisplay} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <Recap>
                             <BoxItem text="Dans ce challenge on a révisé les variables, les conditions et les comparaisons" />
                             <BoxItem text="On a découvert comment transformer une string en number" />
-                            <BoxItem text="On a aussi vu 3 façon d'incrémenter une variable : oldValue+1, value += 1; value++" />
+                            <BoxItem text="On a aussi vu 3 façons d'incrémenter une variable : oldValue+1, value += 1; value++" />
                         </Recap>
+                        <Git commit="Correction challenge + bonus" />
                         <Transition>
                             <BoxItem text="Le code fonctionne, c'est le but 1er c'est super !" />
                             <BoxItem text="Est-ce que vous remarquez qu'entre question 1 et question2 le code se ressemble vachement ?" />
@@ -162,10 +168,10 @@ const S2E02 = props => {
                             <Item text="On évite au maximum de se répéter :" />
                             <SubItem text="le code est plus propre, plus agréable à lire" />
                             <SubItem text="en cas de modif, on ne change qu'à un seul endroit" />
-                            <Item text="Imaginez un déménagement, quest-ce qu'il vaut mieux : 15 voitures qui se suivent ou un gros camion" />
+                            <Item text="Imaginez un déménagement, qu'est-ce qu'il vaut mieux : 15 voitures qui se suivent ou un gros camion" />
                             <Item text="Si camion change de route, pas grave, 15 bagnoles, plus dur, vaut mieux factoriser les ressources" />
                             <Item text="La fonction fait ça avec les instructions" />
-                            <Item text="Liste d'instructions qu'on va exécuter en appelant la fonction" />
+                            <Item text="Sac à code, Liste d'instructions qu'on va exécuter en appelant la fonction" />
                         </ListItem>
                         <Click dir="right" />
                         <ListItem title="Point de départ">
@@ -234,6 +240,7 @@ const S2E02 = props => {
                             <BoxItem text={`Déclarer une fonction : function nom () {}`} />
                             <BoxItem text="Appeler/exécuter une fonction: nom + ()" />
                         </Recap>
+                        <Doc type="Schema" url="http://localhost:1235/E02/noParamNoReturn.jpg" />
                         <Transition>
                             <BoxItem text="C'est déjà chouette mais on peut faire bien plus" />
                             <BoxItem text="Pour code souple et réutilisable, on va le configurer, le rendre adaptable" />
@@ -254,10 +261,12 @@ const S2E02 = props => {
                             <Item text="On ne va plus déclarer message dans la fonction avec du code en dur" />
                             <Item text="On définit un paramètre message entre les parenthèses" />
                             <Item text="Paramètre va agir comme une variable dans la fonction" />
+                            <Item text="A la déclaration, enveloppe vide" />
                         </ListItem>
                         <Click dir="bottom" />
                         <ListItem title="Argument message">
                             <Item text="A l'appel, on passe la valeur de message qu'on souhaite" />
+                            <Item text="On remplit l'enveloppe vide avec valeur" />
                             <Item text="Au lieu de Bonjour!!, on aura Hello!!" />
                         </ListItem>
                         <Click dir="bottom" />
@@ -283,19 +292,66 @@ const S2E02 = props => {
                             <BoxItem text="Tout le monde est là ?" />
                             <BoxItem text="Y en a qui pleurent ou pas ? Faut me le dire !" />
                         </Control>
+                        <Doc type="Schema" url="http://localhost:1235/E02/paramNoReturn.jpg" />
                         <Recap>
                             <BoxItem text="On a vu comment déclarer avec function nom() et appeler une fonction" />
                             <BoxItem text="Comment la configurer avec paramètres pour code plus souple et l'appeler avec arguments" />
                             <BoxItem text="2ème façon de déclarer avec var nom = function()" />
                         </Recap>
                         <Transition>
-                            <BoxItem text="Pratiquons avec code du challenge" />
+                            <BoxItem text="Pratiquons avec un exemple puis avec code du challenge" />
                             <BoxItem text="On va le rendre beau, propre, réutilisable" />
                         </Transition>
                     </List>
                 </Card>
                 <Card title="Isoler son code" duration="1:15:00">
-                    <Doc type="Challenge" url="http://localhost:1235/E02/Correction/" />
+                    <Doc type="Demo" url="http://localhost:1235/E02/Demo/Maths/" />
+                    <List>
+                        <Demo type="repo Maths">
+                            <BoxItem text="Création repo, index.html, js/maths.js" />
+                        </Demo>
+                        <Exo>
+                            <Enonce text="Déclarez une fonction carre qui prend un nombre en parametre" />
+                            <Enonce text="La fonction doit afficher ce nombre au carré dans la console" />
+                            <Enonce text="Appelez la fonction pour la tester" />
+                        </Exo>
+                        <Control>
+                            <BoxItem text="Vous êtes à l'aise ou pas ?" />
+                            <BoxItem text="Vous voulez qu'on fasse la déclaration ensemble ?" />
+                        </Control>
+                        {console.log(resetSnippet())}
+                        <Demo type="repo Maths">
+                            <Code step={snippets.maths[snippet++]} />
+                        </Demo>
+                        <ListItem title="Exo autonomie - 2">
+                            <Item text="Le nombre à mettre au carré est demandé à l'utilisateur" />
+                            <Item text="Fonction avec une string en paramètre" />
+                            <Question text="Ca va poser des problèmes dans notre code. Vous voyez lequels ?" />
+                            <Item text="Prévoir conversion string to number" />
+                            <Item text="Vérifier que la conversion a marché" />
+                            <Item text="Nouvelle fonction : isNaN qui va retourner true si son argument n'est PAS un nombre" />
+                            <Item text="is not a number" />
+                        </ListItem>
+                        <Demo type="Console">
+                            <Code step={snippets.maths[snippet++]} />
+                        </Demo>
+                        <Recap>
+                            <BoxItem text="L'utilisateur saisi quelque chose au clavier" />
+                            <BoxItem text="On passe cette saisie en argument à carre()" />
+                            <BoxItem text="Dans la fonction, on convertit la saisie en number" />
+                            <BoxItem text="On verifie avec isNaN si on a bien un nombre" />
+                            <BoxItem text="Si oui, on affiche le carre dans la console" />
+                            <BoxItem text="Si non, on affiche un message d'erreur" />
+                        </Recap>
+                        <Demo type="repo Maths">
+                            <Code step={snippets.maths[snippet++]} />
+                        </Demo>
+                        <Git commit="Fonction carre v1 et v2" />
+                        <Transition>
+                            <BoxItem text="Essayons d'appliquer ce qu'on vient de voir au challenge d'hier" />
+                        </Transition>
+                    </List>
+                     <Doc type="Challenge" url="http://localhost:1235/E02/Correction/" />
                     <List>
                         <ListItem title="Analyse">
                             <Item text="Commençons par repérer les bouts de code qui se ressemblent, qui se répètent" />
@@ -319,7 +375,7 @@ const S2E02 = props => {
                             <Item text="On fait la déclaration ensemble" />
                         </ListItem>
                         <Demo type="repo Correction">
-                            <Code code={code.checkReponseDeclare} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Implémentation en autonomie">
                             <Item text="A vous de jouer, essayez d'implémenter cet algo" />
@@ -332,21 +388,21 @@ const S2E02 = props => {
                             <Item text="SI comparaison est true, on convertit" />
                         </ListItem>
                         <Demo type="repo Correction">
-                            <Code code={code.checkReponseCast} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Implémentation">
                             <Item text="Maintenant que tout est en string, on peut comparer reponse et solution" />
                             <Item text="Si gagné, on n'oublie pas d'incrémenter le score" />
                         </ListItem>
                         <Demo type="repo Correction">
-                            <Code code={code.checkReponseCompare} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Appel fonction">
                             <Item text="Il nous reste à appeler notre fonction dans le code" />
                             <Item text="Je vous écoute, on l'appelle où et comment ? Avec quels arguments ?" />
                         </ListItem>
                         <Demo type="repo Correction">
-                            <Code code={code.checkReponseCall} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <Control>
                             <BoxItem text="Comment ça va jusque là ?" />
@@ -356,12 +412,12 @@ const S2E02 = props => {
                             <Item text="Poussons le vice un peu" />
                             <Item text="Je voudrais mettre la logique d'affichage du score dans une fonction displayScore" />
                             <Item text="On pourra l'appeler après chaque question pour voir le score au fur et à mesure" />
-                            <Question text="Est-ce qu'on a besoin de configurer cette fonction ? ?" />
+                            <Question text="Est-ce qu'on a besoin de configurer cette fonction ?" />
                             <Item text="On va juste déplacer la logique dans le corps de notre fonction" />
                             <Item text="On va l'appeler après chaque appel à checkReponse" />
                         </ListItem>
                         <Demo type="repo Correction">
-                            <Code code={code.displayScore} />
+                            <Code step={first.etapes[challenge++]} />
                         </Demo>
                         <Control>
                             <BoxItem text="C'est bon pour tout le monde ?" />
@@ -372,53 +428,11 @@ const S2E02 = props => {
                             <BoxItem text="On crée une fonction qui va stocker les instructions" />
                             <BoxItem text="On remplace le code par un appel à la fonction" />
                         </Recap>
-                        <Demo type="repo Syntaxe">
-                            <BoxItem text="Commit / push" />
-                        </Demo>
+                        <Git commit="Refactoring avec fonctions" />
                     </List>
-                    <Doc type="Challenge" url="http://localhost:1235/E02/Code/" />
                     <List>
-                        <ListItem title="Exo autonomie - 1">
-                            <Item text="Fonction avec un nombre en paramètre" />
-                            <Item text="Doit afficher ce nombre au carre en console" />
-                            <Item text="Son nom : carre" />
-                            <Item text="On fait un test en l'appelant" />
-                        </ListItem>
-                        <Demo type="repo Maths">
-                            <BoxItem text="Création repo, index.html, js/maths.js" />
-                        </Demo>
-                        <Control>
-                            <BoxItem text="Vous êtes à l'aise ou pas ?" />
-                            <BoxItem text="Vous voulez qu'on fasse la déclaration ensemble ?" />
-                        </Control>
-                        <Demo type="repo Maths">
-                            <Code code={code.carreV1} />
-                        </Demo>
-                        <ListItem title="Exo autonomie - 2">
-                            <Item text="Le nombre à mettre au carré est demandé à l'utilisateur" />
-                            <Item text="Fonction avec une string en paramètre" />
-                            <Question text="Ca va poser des problèmes dans notre code. Vous voyez lequels ?" />
-                            <Item text="Prévoir conversion string to number" />
-                            <Item text="Vérifier que la conversion a marché" />
-                            <Item text="Nouvelle fonction : isNaN qui va retourner true si son argument n'est PAS un nombre" />
-                            <Item text="is not a number" />
-                        </ListItem>
-                        <Demo type="repo console">
-                            <Code code={code.isNaN} />
-                        </Demo>
-                        <Recap>
-                            <BoxItem text="L'utilisateur saisi quelque chose au clavier" />
-                            <BoxItem text="On passe cette saisie en argument à carre()" />
-                            <BoxItem text="Dans la fonction, on convertit la saisie en number" />
-                            <BoxItem text="On verifie avec isNaN si on a bien un nombre" />
-                            <BoxItem text="Si oui, on affiche le carre dans la console" />
-                            <BoxItem text="Si non, on affiche un message d'erreur" />
-                        </Recap>
-                        <Demo type="repo Maths">
-                            <Code code={code.carreV2} />
-                        </Demo>
-                        <Transition>
-                            <BoxItem text="On va faire une dernière version qui va utiliser une bibliothèque javascript" />
+                       <Transition>
+                            <BoxItem text="On va faire une dernière version de carre() qui va utiliser une bibliothèque javascript" />
                             <BoxItem text="C'est un ensemble de fonctions qu'on a regroupé" />
                             <BoxItem text="La lib s'appelle Math et permet nombreuses opérations" />
                             <BoxItem text="N'hésitez pas à checker la doc" />
@@ -430,7 +444,7 @@ const S2E02 = props => {
                             <Question text="Comment on peut utiliser Math.pow dans notre code ?" />
                         </ListItem>
                         <Demo type="repo Maths">
-                            <Code code={code.carreV3} />
+                            <Code step={snippets.maths[snippet++]} />
                         </Demo>
                         <ListItem title="Exo autonomie - 4">
                             <Item text="Autre méthode super utile : Math.random" />
@@ -440,7 +454,7 @@ const S2E02 = props => {
                             <Item text="En multipliant 49 par random, on obtient % de 49" />
                         </ListItem>
                         <Demo type="repo Maths">
-                            <Code code={code.randomMultiplyV1} />
+                            <Code step={snippets.maths[snippet++]} />
                         </Demo>
                         <ListItem title="Exo autonomie - 4">
                             <Item text="Au loto, y a pas de nombre à virgule" />
@@ -448,7 +462,7 @@ const S2E02 = props => {
                             <Item text="Math.floor, Math.ceil, Math.round" />
                         </ListItem>
                         <Demo type="repo Maths">
-                            <Code code={code.randomMultiplyV2} />
+                            <Code step={snippets.maths[snippet++]} />
                         </Demo>
                         <Control>
                             <BoxItem text="Vous vous sentez bien toujours ?" />
@@ -458,6 +472,7 @@ const S2E02 = props => {
                             <BoxItem text="Refactoring du code : plus beau ou plus efficace" />
                             <BoxItem text="La lib Math : plein d'opérations disponibles" />
                         </Recap>
+                        <Git commit="Fonction carre v3 avec Math" />
                         <Transition>
                             <BoxItem text="Pour un vrai tirage du loto, on aurait besoin de garder des traces des tirages" />
                             <BoxItem text="Il faudrait qu'on les stocke pour les afficher" />
@@ -501,8 +516,9 @@ const S2E02 = props => {
                             <Item text="Tableau se note entre crochets" />
                             <Item text="Si pas de valeur entre crochets, le tableau existe, pas undefined, juste vide" />
                         </ListItem>
+                        {console.log(resetSnippet())}
                         <Demo type="console">
-                            <Code code={code.emptyTab} />
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Déclaration avec valeurs">
@@ -511,7 +527,7 @@ const S2E02 = props => {
                             <Item text="Chaque valeur est séparée par une virgule" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.prenomsTab} />
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Lecture des valeurs">
@@ -521,7 +537,7 @@ const S2E02 = props => {
                             <Item text="Ex slide : on accède à la deuxième valeur du tab avec l'index 1" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.prenomsRead} />
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Ajout de valeurs">
@@ -531,7 +547,7 @@ const S2E02 = props => {
                             <Item text="Prochain index 3, on ajoute la valeur avec [3]" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.prenomsAdd} />
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Entrées vides">
@@ -541,7 +557,7 @@ const S2E02 = props => {
                             <Item text="Log de cet élément : undefined" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.prenomsEmptyVal} />
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Override">
@@ -549,7 +565,7 @@ const S2E02 = props => {
                             <Item text="Y a déjà une valeur à cet index, elle va être écrasée par la nouvelle valeur" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.prenomsOverride} />
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <ListItem title="Contourner index - 1">
                             <Item text="Cette histoire d'index : un peu fastidieux" />
@@ -557,7 +573,7 @@ const S2E02 = props => {
                             <Item text="Les tableaux en js ont une propriété, une variable qui leur appartient : length" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.prenomsLength} />
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <ListItem title="Contourner index - 2">
                             <Item text="Vous remarquez ? le nombre renvoyé par length, c'est le nb d'éléments du tab" />
@@ -566,14 +582,14 @@ const S2E02 = props => {
                             <Item text="On peut ajouter une valeur en fin de tableau en utilisant length" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.prenomsAddLength} />
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <ListItem title="Contourner index - 3">
                             <Item text="Autre solution : utiliser une méthode des tableaux, une fonction rattaché à un type d'objet" />
                             <Item text="push() permet d'ajouter un élément en fin de tableau" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.prenomsPush} />
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <Control>
                             <BoxItem text="Comment ça va jusqu'à maintenant ?" />
@@ -586,7 +602,7 @@ const S2E02 = props => {
                             <BoxItem text="On a vu comment déclarer un tableau" />
                             <BoxItem text="Comment y stocker des valeurs" />
                             <BoxItem text="Comment accéder à ces valeurs avec l'index" />
-                            <BoxItem text="Comment ajouter des valeurs avec l'index, en utilisant length ou avec push" />
+                            <BoxItem text="Comment ajouter des valeurs avec l'index ou en utilisant length ou avec push" />
                         </Recap>
                         <Click dir="right" />
                         <Transition>
@@ -604,7 +620,7 @@ const S2E02 = props => {
                             <Item text="Pas obligé de mettre des valeurs en dur, on peut mettre des variables" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.tabWithVars} />
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Stockage - 2">
@@ -620,7 +636,7 @@ const S2E02 = props => {
                             <Item text="On peut connaitre sa longueur avec length" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.stringTab} />
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Présentation">
@@ -643,14 +659,16 @@ const S2E02 = props => {
                         <Doc type="repo Fruits" url="http://localhost:1235/E02/Code/" />
                         <ListItem title="Exo en autonomie">
                             <Item text="On va se créer un nouveau répertoire avec index et js/fruits.js" />
-                            <Item text="Dans le js, on déclare un tableau de quelques fruits" />
-                            <Item text={`On va afficher en console "je mange " + un fruit du tableau`} />
-                            <Item text="en utilisant un index pour récup la valeur" />
-                            <Item text="Si vous le sentez, essayez de mettre un index aléatoire avec Math.random" />
-                            <Item text="Faut un nombre entier pour les index, faudra combiner avec une autre méthode de Math" />
                         </ListItem>
-                        <Demo type="repo Code">
-                            <Code code={code.fruits} />
+                        <Exo>
+                            <Enonce text="Déclarez un tableau contenant quelques fruits" />
+                            <Enonce text="Affichez un console un message du genre 'je mange xxx'" />
+                            <Enonce text="Utilisez un index pour récupérer une valeur du tableau" />
+                            <Enonce text="Bonus : afficher un fruit de façon aléatoire en utilisant Math.random" />
+                            <Enonce text="Attention : un index est un entier, vous devrez combiner avec une autre méthode de Math" />
+                        </Exo>
+                        <Demo type="repo Fruits">
+                            <Code step={snippets.array[snippet++]} />
                         </Demo>
                         <Control>
                             <BoxItem text="Ok pour tout le monde ? les tableaux sont vos amis ?" />
@@ -735,7 +753,7 @@ const S2E02 = props => {
                             <Item text="On l'écrit différemment" />
                             <Item text="POUR devient for en JS" />
                             <Item text="entre les parenthèses, on décrit le comportement de notre compteur (ici index)" />
-                            <Item text="3 instructions condensés sur 1 ligne séparées par ;" />
+                            <Item text="3 instructions condensées sur 1 ligne séparées par ;" />
                             <SubItem text="déclaration : var index = 0;" />
                             <SubItem text="condition : index < 3;" />
                             <SubItem text="incrémentation : index++; ou index += 1; ou index = index+1;" />
@@ -758,28 +776,29 @@ const S2E02 = props => {
                         <Transition>
                             <BoxItem text="pour que ça rentre bien, il faut qu'on pratique, allons jouer !" />
                         </Transition>
-                        <Doc type="repo Boucles" url="http://localhost:1235/E02/Code/" />
+                        <Doc type="repo Boucles" url="http://localhost:1235/E02/Boucles/" />
                         <ListItem title="exo autonomie">
                             <Item text="Rien de tel qu'un 'tit exo" />
                             <Item text="On va se créer un nouveau repo Boucles, index, js/boucles" />
-                            <Item text="Dans le js, on va se créer un tableau" />
-                            <Item text="Avec une boucle, on va le remplir avec les chiffres de 0 à 9" />
-                            <Item text="On va le faire avec while d'abord, on le refera avec for" />
-                            <Question text="Vous vous sentez de faire ça tout seul ?" />
-                            <Question text="On se fait le while ensemble ?" />
                         </ListItem>
+                        <Exo>
+                            <Enonce text="Créez un tableau vide" />
+                            <Enonce text="Avec une boucle while ou une boucle for, remplissez ce tableau avec les chiffres de 0 à 9" />
+                            <Enonce text="Affichez en console le tableau obtenu" />
+                        </Exo>
                         <ListItem>
                             <Item text="On commence par déclarer notre tableau vide" />
                         </ListItem>
+                        {console.log(resetSnippet())}
                         <Demo type="repo Boucles">
-                            <Code code={code.whileStart} />
+                            <Code step={snippets.loops[snippet++]} />
                         </Demo>
                         <ListItem>
                             <Question text="Ensuite, qu'est-ce qu'il faut qu'on fasse ?" />
                             <Item text="Il faut initialiser notre compteur" />
                         </ListItem>
                         <Demo type="repo Boucles">
-                            <Code code={code.whileCounter} />
+                            <Code step={snippets.loops[snippet++]} />
                         </Demo>
                         <ListItem>
                             <Item text="On a notre tableau pour stocker les résultats, on a notre compteur" />
@@ -787,7 +806,7 @@ const S2E02 = props => {
                             <Item text="On va lancer la boucle" />
                         </ListItem>
                         <Demo type="repo Boucles">
-                            <Code code={code.whileFoireux} />
+                            <Code step={snippets.loops[snippet++]} />
                         </Demo>
                         <Control>
                             <BoxItem text="Ma boucle est foireuse là" />
@@ -798,13 +817,13 @@ const S2E02 = props => {
                             <Item text="Je lance pas ma page, je corrige d'abord !" />
                         </ListItem>
                         <Demo type="repo Boucles">
-                            <Code code={code.whileOk} />
+                            <Code step={snippets.loops[snippet++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Pour finir, on va afficher un message pour vérifier combien d'éléments dans le tab" />
                         </ListItem>
                         <Demo type="repo Boucles">
-                            <Code code={code.whileFull} />
+                            <Code step={snippets.loops[snippet++]} />
                         </Demo>
                         <Control>
                             <BoxItem text="C'est ok pour le while ? Clair pour vous ?" />
@@ -813,7 +832,7 @@ const S2E02 = props => {
                             <Item text="Dans le coup, à vous de jouer pour le for" />
                         </ListItem>
                         <Demo type="repo Boucles">
-                            <Code code={code.forFull} />
+                            <Code step={snippets.loops[snippet++]} />
                         </Demo>
                         <ListItem>
                             <Item text="On déclare un autre tableau" />
@@ -832,9 +851,6 @@ const S2E02 = props => {
                             <BoxItem text="Encore une bonne journée !! Riche en nouveautés !" />
                             <BoxItem text="Vous allez repratiquer tout ça dans le challenge, on le regarde tout de suite" />
                         </Transition>
-                        <Demo type="repo ChallengeS1E02">
-                            <BoxItem text="Manip partage challenge du jour" />
-                        </Demo>
                         <ListItem title="Présentation challenge" />
                     </List>
                 </Card>

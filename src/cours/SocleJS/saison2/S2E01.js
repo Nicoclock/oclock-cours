@@ -1,11 +1,13 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce} from "../../../common";
-import * as code from "./code";
+import {Card, Doc, Code, Click, List, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce, Git, Snippet, ExoSondage} from "../../../common";
+import {day1 as snippets} from "./Code/snippets";
 
 import "../../style.scss"
 
-const S2E01 = props => {
+const S2E01 = () => {
+    let snippet = 0;
+
     return (
         <Fragment>
             <div className="Title">Programmer</div>
@@ -233,22 +235,22 @@ const S2E01 = props => {
                             <Item text="Les devs ont mis à dispo plusieurs actions :" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.moveForward} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Demo type="console">
-                            <Code code={code.turnLeft} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Demo type="console">
-                            <Code code={code.turnRight} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Aussi des fonctionnalités plus exotiques :" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.surprise} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Demo type="console">
-                            <Code code={code.makeBeautiful} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Ca sert pas à grand-chose mais c'est rigolo" />
@@ -289,10 +291,8 @@ const S2E01 = props => {
                             <SubItem text="Sur une ligne ou en fin de ligne : //" />
                             <SubItem text="Sur plusieurs lignes : /* */" />
                         </ListItem>
-                        <Demo type="repo Syntaxe">
-                            <BoxItem text="Création index.html" />
-                        </Demo>
                         <ListItem title="Où mettre le code ?">
+                            <Item text="Création index.html" />
                             <Item text="Dans une balise script" />
                             <Item text="Comme CSS, plusieurs endroits possible :" />
                             <SubItem text="directement dans le HTML, en fin de body" />
@@ -317,10 +317,9 @@ const S2E01 = props => {
                         <Demo type="repo Syntaxe">
                             <BoxItem text="Création js/syntaxe.js" />
                             <BoxItem text="Exemple de commentaires" />
-                            <Code code={code.commentaires} />
-                            <BoxItem text="Creation repo" />
-                            <BoxItem text="First commit and push" />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
+                        <Git commit="Commentaires" />
                         <Click dir="bottom" />
                         <ListItem title="Variables">
                             <Item text="En prog, on entendra tout le temps parler de variables" />
@@ -346,7 +345,7 @@ const S2E01 = props => {
                         </ListItem>
                         <Demo type="console">
                             <BoxItem text="console.log" />
-                            <Code code={code.firstName} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Modification">
@@ -354,7 +353,7 @@ const S2E01 = props => {
                             <Item text="Pour la modifier, on assigne une nouvelle valeur avec =" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.firstName2} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Instructions">
@@ -393,8 +392,7 @@ const S2E01 = props => {
                             <Item text="Nombre à virgule, on met un ." />
                         </ListItem>
                         <Demo type="console">
-                            <BoxItem text="entier" />
-                            <BoxItem text="décimal" />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Les booléens">
@@ -404,7 +402,7 @@ const S2E01 = props => {
                             <Item text="Convention : on les appelle isXXX ou hasXXX" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.isNice} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Les chaines de caractères (string)">
@@ -412,7 +410,7 @@ const S2E01 = props => {
                             <Item text="On peut les ajouter, les concaténer avec +" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.firstConcat} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Opérateur +">
@@ -426,7 +424,7 @@ const S2E01 = props => {
                             <Item text="sur 1 nombre et 1 string, concaténation" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.plus} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Control>
                             <BoxItem text="Ca va ? Pas trop mal au crâne encore ?" />
@@ -451,7 +449,7 @@ const S2E01 = props => {
                             <Item text="opérateur - pour la soustraction" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.addSub} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Click dir="bottom" />
                         <ListItem title="Multiplication / division">
@@ -459,7 +457,7 @@ const S2E01 = props => {
                             <Item text="opérateur /" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.multDiv} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Click dir="right" />
                         <ListItem title="Pratique">
@@ -486,13 +484,13 @@ const S2E01 = props => {
                             <Item text="même des variables" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.consoleLog} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <ListItem title="Plusieurs arguments">
                             <Item text="Entre les paranthèses, on peut mettre plusieurs éléments de plusieurs type séparés par une virgule" />
                         </ListItem>
                         <Demo type="console">
-                            <Code code={code.consoleLog2} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Control>
                             <Sondage question="Fonctionnement de la console, c'est ok ?" reponses={["yep", "à pratiquer", "nope"]} />
@@ -506,26 +504,35 @@ const S2E01 = props => {
                             <BoxItem text="On retourne dans notre repo syntaxe" />
                         </Transition>
                         <Demo type="repo Syntaxe">
-                            <Code code={code.book} />
-                            <BoxItem text="exo : Ajout - Date de parution : year - Prix : price - Déjà lu : hasBeenRead" />
-                            <Code code={code.bookDesc} />
+                            <Code step={snippets.syntaxe[snippet++]} />
+                        </Demo>
+                        <Exo>
+                            <Enonce text="Complétez la variable phase pour obtenir une string de la forme :" />
+                            <Enonce text="titre de auteur - Année de sortie : XXXX - Prix : xxxx - Déjà lu : xxx" />
+                        </Exo>
+                        <Demo type="repo Syntaxe">
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Control>
                             <Sondage question="C'est bon la concaténation ?" reponses={["yep", "à pratiquer", "nope"]} />
                         </Control>
+                        <Git commit="Types primitifs et concaténation" />
                         <Demo type="repo Syntaxe">
-                            <BoxItem text="Commit / push" />
                             <BoxItem text="Addition ensemble" />
-                            <Code code={code.addition} />
-                            <BoxItem text="Soustraction, multiplication division en autonomie" />
-                            <Code code={code.operations} />
+                            <Code step={snippets.syntaxe[snippet++]} />
+                        </Demo>
+                        <Exo>
+                            <Enonce text="Créez les variables soustraction, multiplication et division" />
+                            <Enonce text="Elles doivent avoir pour valeur les opérations qu'elles décrivent" />
+                            <Enonce text="Pour chacune, faire un console.log afin de vérifier le résultat" />
+                        </Exo>
+                        <Demo type="repo Syntaxe">
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <Control>
                             <Sondage question="C'est ok les opérations ?" reponses={["yep", "à pratiquer", "nope"]} />
                         </Control>
-                        <Demo type="repo Syntaxe">
-                            <BoxItem text="Commit / push" />
-                        </Demo>
+                        <Git commit="Opérations arithmétiques" />
                         <Recap>
                             <BoxItem text="Où mettre notre code js : appel dans body, src dans fichier externe dans un répertoire" />
                             <BoxItem text="Déclaration de nos premières variables" />
@@ -546,7 +553,7 @@ const S2E01 = props => {
                             <Item text="On peut afficher un message autrement" />
                         </ListItem>
                         <Demo type="repo Syntaxe">
-                            <Code code={code.alertBox} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <ListItem title="Pas idéal">
                             <Item text="Chargement coincé tant qu'on a pas cliqué ok" />
@@ -557,8 +564,7 @@ const S2E01 = props => {
                             <Item text="Permet de demander des infos à l'utilisateur" />
                         </ListItem>
                         <Demo type="repo Syntaxe">
-                            <BoxItem text="Commenter alert" />
-                            <Code code={code.promptBox} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
                         <ListItem title="Utilisation">
                             <Item text="On déclare une variable pour stocker la saisie utilisateur" />
@@ -567,9 +573,6 @@ const S2E01 = props => {
                         <Control>
                             <BoxItem text="C'est clair l'utilisation de prompt ?" />
                         </Control>
-                        <Demo type="repo Syntaxe">
-                            <BoxItem text="Commit / push" />
-                        </Demo>
                         <ListItem title="Exo">
                             <Item text="On a le prénom, demandons le nom" />
                             <Question text="A vous de jouer, comment vous feriez ça ?" />
@@ -580,8 +583,9 @@ const S2E01 = props => {
                             <Question text="Dites-moi tout, comment on fait ça ?" />
                         </ListItem>
                         <Demo type="repo Syntaxe">
-                            <Code code={code.promptBoxes} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
+                        <Git commit="Alert et prompt" />
                         <Recap>
                             <BoxItem text="On a déjà dégrossi pas mal de choses" />
                             <BoxItem text="On a commencé à jouer avec des variables" />
@@ -603,7 +607,7 @@ const S2E01 = props => {
                             <Item text="Mécanisme qui va renvoyer un boolean" />
                             <Item text="Rappel : un boolean ne peut être que true ou false" />
                             <Item text="Mécanisme renvoie true => certain traitement" />
-                            <Item text="Mécanisme renvoie false => aucun traitement ou autre traiement" />
+                            <Item text="Mécanisme renvoie false => aucun traitement ou autre traitement" />
                         </ListItem>
                         <Click dir="bottom" />
                         <ListItem title="Mise en place">
@@ -761,21 +765,31 @@ const S2E01 = props => {
                             <BoxItem text="Marche comme prompt mais au lieu d'une string, retourne un boolean quand click ok" />
                             <BoxItem text="Pratique pour les conditions :-)" />
                         </Transition>
+                        <Exo>
+                            <Enonce text="Demander à l'utilisateur 'Voulez-vous jouer avec moi ?' en utilisant confirm" />
+                            <Enonce text="SI il répond oui ALORS on affiche 'Bienvenue !'" />
+                            <Enonce text="SINON on affiche 'Une prochaine fois alors ...'" />
+                        </Exo>
                         <Demo type="repo Syntaxe">
-                            <BoxItem text="Exo : Demander à l'utilisateur s'il veut jouer avec confirm" />
-                            <Code code={code.confirmBox} />
+                            <Code step={snippets.syntaxe[snippet++]} />
                         </Demo>
+                        <Git commit="Confirm" />
                         <Transition>
                             <BoxItem text="Le challenge de ce soir va vous refaire pratiquer tout ça" />
-                            <BoxItem text="Je vous le met en ligne et je vous le présente" />
                         </Transition>
-                        <Demo type="repo ChallengeS1E01">
-                            <BoxItem text="Manip partage challenge du jour" />
-                        </Demo>
                     </List>
                 </Card>
                 <Card title="Exos">
                     <List>
+                        <Recap>
+                            <BoxItem text="Concepts de prog, algorithme et implémentation" />
+                            <BoxItem text="Variables : déclaratin, assignation, modification" />
+                            <BoxItem text="Types : number, boolean, string" />
+                            <BoxItem text="Console : outil indispensable" />
+                            <BoxItem text="alert, prompt, confirm" />
+                            <BoxItem text="Conditions SI ... ALORS" />
+                            <BoxItem text="Combinaisons" />
+                        </Recap>
                         <Sondage question="Quelle est la bonne façon de définir une variable ?"
                             reponses={[`firstName = "Nico"`, "var firstName = 'Nico';", "firstName: Nico", "C'est quoi une variable ?"]} />
                         <Sondage question="Une variable string, boolean ou number est dite ... ?" 
@@ -786,11 +800,76 @@ const S2E01 = props => {
                             reponses={["number", "string", "boolean"]} />
                         <Sondage question="Un critère de condition s'écrit ... ?" reponses={["entre parenthèses", "entre accolades", "comme ça"]} />
                         <Sondage question="Pour combiner des conditions, on utilise ... ?" reponses={["< ou >", "&& ou ||", "=== ou !=="]} />
-                        <Sondage question="var test = '12345'; Quel est le type de test ?" reponses={["number", "string", "boolean"]} />
-                        <Sondage question="var test = 12345; Quel est le type de test ?" reponses={["number", "string", "boolean"]} />
-                        <Sondage question="var test =  prompt('Que voulez-vous tester ?'); Quel est le type de test ?" reponses={["number", "string", "boolean"]} />
-                        <Sondage question="99 < 25 || '12' === 12" reponses={["vrai", "faux"]} />
-                        <Sondage question={`25 >= 23 && 15 <= 18`} reponses={["vrai", "faux"]} />
+                        <Exo>
+                            <Enonce text="On a la déclaration suivante :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <ExoSondage question="Quel est le type de test ?" reponses={["number", "string", "boolean"]} />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="On a la déclaration suivante :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <ExoSondage question="Quel est le type de test ?" reponses={["number", "string", "boolean"]} />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="On a la déclaration suivante :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <ExoSondage question="D'après le nom de la variable, pouvez-vous déduire son type ?" reponses={["number", "string", "boolean"]} />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="On a la déclaration suivante :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <ExoSondage question="Quel est le type de test ?" reponses={["number", "string", "boolean"]} />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="On a la déclaration suivante :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <ExoSondage question="Quel est le type de test ?" reponses={["number", "string", "boolean"]} />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="On a l'expression suivante :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <ExoSondage question="Cette expression vaut ... ?" reponses={["true", "false"]} />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="On a l'expression suivante :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <ExoSondage question="Cette expression vaut ... ?" reponses={["true", "false"]} />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="On a l'expression suivante :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <ExoSondage question="Cette expression vaut ... ?" reponses={["true", "false"]} />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="On a l'expression suivante :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <ExoSondage question="Cette expression vaut ... ?" reponses={["true", "false"]} />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="On a l'expression suivante :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <ExoSondage question="Cette expression vaut ... ?" reponses={["true", "false"]} />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="On a l'expression suivante :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <ExoSondage question="Cette expression vaut ... ?" reponses={["true", "false"]} />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="Le code suivant est buggé :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <Enonce text="Quel est le problème ?" />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="Le code suivant est buggé :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <Enonce text="Quel est le problème ?" />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="Le code suivant est buggé :" />
+                            <Snippet lines={snippets.syntaxe[snippet++].code} />
+                            <Enonce text="Quel est le problème ?" />
+                        </Exo>
                         <Exo>
                             <Enonce text="Implémentez l'algorithme suivant :" />
                             <Enonce text="Demander Quel est votre livre préféré ?" />
@@ -801,7 +880,7 @@ const S2E01 = props => {
                         <Exo>
                             <Enonce text="Implémentez l'algorithme suivant :" />
                             <Enonce text="Demander Etes vous inscrit à la médiathèque ?" />
-                            <Enonce text="SI oui ALORS" />
+                            <Enonce text="SI oui" />
                             <Enonce text="ALORS demander quel livre voulez-vous emprûnter et afficher le livre" />
                             <Enonce text="SINON" />
                             <Enonce text="Demander Voulez-vous vous inscrire maintenant ?" />
@@ -811,15 +890,15 @@ const S2E01 = props => {
                         <Exo>
                             <Enonce text="Implémentez l'algorithme suivant :" />
                             <Enonce text="Demander Etes vous fan de Star Wars ?" />
-                            <Enonce text="SI oui ALORS" />
-                            <Enonce text="Demander Quel est votre perso préféré ?" />
+                            <Enonce text="SI oui" />
+                            <Enonce text="ALORS Demander Quel est votre perso préféré ?" />
                             <Enonce text="SI le perso est Yoda ALORS afficher May the force be with you !" />
                             <Enonce text="SINON SI le perso est Chewie ALORS afficher Arf, vous aimez les poils ..." />
                             <Enonce text="SINON afficher De toute façon on les aime tous !" />
-                            <Enonce text="SINON afficher Vous savez pas ce que vous perdez ..." />
+                            <Enonce text="SINON (pas fan de Star Wars) afficher Vous savez pas ce que vous perdez ..." />
                             
                         </Exo>
-                        
+                        <Git commit="Exos pratiques" />
                         <ListItem title="Présentation challenge" />
                     </List>
                 </Card>

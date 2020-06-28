@@ -1,11 +1,11 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage} from "../../../common";
+import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Recap, Transition, Demo, BoxItem} from "../../../common";
 import {day9 as snippets} from "./Code/snippets";
 
 import "../../style.scss"
 
-const S2E09 = props => {
+const S2E09 = () => {
     let snippet = 0;
     const resetSnippet = () => {
         snippet = 0;

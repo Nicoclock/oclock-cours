@@ -1,8 +1,961 @@
+export const day1 = {
+    syntaxe: [
+        {
+            code:
+`moveFoward();`
+        },
+        {
+            code:
+`turnLeft();`
+        },
+        {
+            code:
+`turnRight();`
+        },
+        {
+            code:
+`surprise();`
+        },
+        {
+            code:
+`makeBeautiful();`
+        },
+        {
+            code:
+`//je suis un commentaire sur une seule ligne
+
+var x = 0; //je suis un commentaire en fin de ligne
+
+/*
+Je suis un commentaire
+sur plusieurs lignes
+*/`
+        },
+        {
+            code:
+`var firstName = 'Nico';
+console.log(firstName) // Nico;
+
+var otherName;
+console.log(otherName); //undefined`
+        },
+        {
+            code:
+`firstName = 'Nicolas';
+console.log(firstName);`
+        },
+        {
+            code:
+`var number = 23;
+var floatNumber = 156.47;`
+        },
+        {
+            code:
+`var isNice = true;
+console.log(isNice);
+
+isNice = false;
+console.log(isNice);`
+        },
+        {
+            code:
+`console.log('Nico' + ' ' + 'Charpin');
+
+var prenom = 'Nico';
+var nom = 'Charpin';
+console.log(prenom + ' ' + nom);`
+        },
+        {
+            code:
+`'2' + '5'; //25
+2 + 5; //7
+'2' + 5; //25`
+        },
+        {
+            code:
+`5 + 18; //23
+25.3 + 24.7; //50
+12 - 5; //7
+17.3 - 4.8; //12.5`
+        },
+        {
+            code:
+`25 * 4; //100
+12.5 * 4; //50
+100 / 5; //20
+25.5 / 2; //12.75`
+        },
+        {
+            code:
+`console.log('Hello, Nico vous parle');
+console.log(7 + 5);
+var book = 'Dune';
+console.log(book);`
+        },
+        {
+            code:
+`console.log('test', true, 12345, book);`
+        },
+        {
+            code:
+`var title = 'Harry Potter and the goblet of fire'; //ceci est une instruction
+var author = 'J.K. Rowling';
+var yearOfParution = 2000;
+var price = 12.5;
+var hasBeenRead = true;
+console.log(title + ' de ' + author);`
+        },
+        {
+            code:
+`var phrase = title + ' de ' + author + ' - Année de sortie : ' 
++ yearOfParution + ' - Prix : ' + price + ' - Déjà lu : ' + hasBeenRead;
+console.log(phrase);`
+        },
+        {
+            code:
+`var number1 = 12.5;
+var number2 = 375;
+
+//addition
+var addition = number1 + number2;
+console.log('addition', addition);`
+        },
+        {
+            code:
+`//soustraction
+var subtraction = number2 - number1;
+console.log('soustraction', subtraction);
+
+//multiplication
+var multiplication = number1 * number2;
+console.log('multiplication', multiplication);
+
+//division
+var division = number1 / number2;
+console.log('division', division);`
+        },
+        {
+            code:
+`alert('Mon chouette message !');`
+        },
+        {
+            code:
+`//alert('Mon chouette message !');
+var firstName = prompt('Quel est votre prenom ?');
+console.log(firstName);`
+        },
+        {
+            code:
+`//exo : afficher Bonjour prenom nom, vous avez xxx ans
+var lastName = prompt('Quel est votre nom ?');
+var age = prompt('Quel est votre âge ?');
+console.log('Bonjour '+firstName+' '+lastName+', vous avez '+age+' ans');`
+        },
+        {
+            code:
+`//demander à l'utilisateur s'il veut jouer à un jeu en utilisant confirm
+var result = confirm('Voulez-vous jouer à un jeu ?');
+console.log('réponse', result);
+if (result === true) {
+    console.log('Bienvenue !');
+}
+else {
+    console.log('Une prochaine fois alors ...');
+}`
+        },
+        {
+            code:
+`var test = '12345';`
+        },
+        {
+            code:
+`var test = 12345;`
+        },
+        {
+            code:
+`var hasWon;`
+        },
+        {
+            code:
+`var test =  prompt('Que voulez-vous tester ?');`
+        },
+        {
+            code:
+`var test = confirm('Voulez-vous vous inscrire ?');`
+        },
+        {
+            code:
+`99 < 25 || '12' === 12`
+        },
+        {
+            code:
+`25 >= 23 && 15 <= 18`
+        },
+        {
+            code:
+`12 !== 12 || 23 <= 23`
+        },
+        {
+            code:
+`25 > 25 && 10 <= 10`
+        },
+        {
+            code:
+`15 > 18 || 15 < 23`
+        },
+        {
+            code:
+`30 === 30 && 10 <= 10`
+        },
+        {
+            code:
+`var test = confirm('Vous êtes sûr(e) ?');
+if test === true {
+    console.log('Il ou elle est sûr(e)');
+}`
+        },
+        {
+            code:
+`var test = confirm('Vous êtes sûr(e) ?');
+if (test === false)
+    console.log('Il ou elle n'est pas sûr(e)');
+    console.log('Faudra pour tant qu'il ou elle se décide');
+else {
+    console.log('Ah bah ça va alors ...);
+}`
+        },
+        {
+            code:
+`var test = prompt('Vous êtes sûr(e) ?');
+if (test === true) {
+    console.log('Il ou elle est sûr(e)');
+}`
+        }
+    ]
+}
+
+export const day2 = {
+    numbers: [
+        {
+            code:
+`parseInt('35'); //35
+parseInt('35.5'); //35, parseInt renvoie un entier
+parseInt('35px'); //35
+
+var num = parseInt('35');
+typeof num; //number
+
+var str = 'test';
+typeof str; //string
+
+parseInt('test'); //NaN, c'est quoi ce truc bizarre ?`
+        },
+        {
+            code:
+`Number('35'); //35
+Number('35.5'); //35.5, prend en compte les float
+
+var num = Number('35.5');
+typeof num; //number
+
+Number('35px'); //NaN`
+        }
+    ],
+    maths: [
+        {
+            code:
+`var carre = function(num) {
+    var square = num * num;
+    console.log(num + ' au carré : ' + square);
+}
+carre(12);`
+        },
+        {
+            code:
+`var test = 'text';
+isNaN(text);
+var num = 12;
+isNaN(num);`
+        },
+        {
+            code:
+`var carre = function(numStr) {
+    var num = Number(numStr);
+    if (isNaN(num)) {
+        console.log('Saisissez un nombre !');
+    } 
+    else {
+        var square = num * num;
+        console.log(num + ' au carré : ' + square);
+    }
+}
+var numberString = prompt('Quel nombre voulez-vous mettre au carré ?');
+carre(numberString);`
+        },
+        {
+            code:
+`var carre = function(numStr) {
+    var num = Number(numStr);
+    if (isNaN(num)) {
+        console.log('Saisissez un nombre !');
+    } 
+    else {
+        var square = Math.pow(num, 2);
+        console.log(num + ' au carré : ' + square);
+    }
+}
+var numberString = prompt('Quel nombre voulez-vous mettre au carré ?');
+carre(numberString);`
+        },
+        {
+            code:
+`var randomMultiply = function(num) {
+    var randomNum = num * Math.random();
+    console.log(randomNum);
+}
+randomMultiply(49);`
+        },
+        {
+            code:
+`var randomMultiply = function(num) {
+    var randomNum = num * Math.random();
+    var randomInt = Math.floor(randomNum);
+    console.log(randomInt);
+}
+randomMultiply(49);`
+        }
+    ],
+    array: [
+        {
+            code:
+`var prenoms = [];
+console.log(prenoms);`
+        },
+        {
+            code:
+`var prenoms = ['Alexis', 'Simon', 'Etienne'];`
+        },
+        {
+            code:
+`console.log(prenoms[1];`
+        },
+        {
+            code:
+`prenoms[3] = 'Nico';
+console.log(prenoms);`
+        },
+        {
+            code:
+`var prenoms = ['Alexis', 'Simon', 'Etienne'];
+prenoms[4] = 'Nico';
+console.log(prenoms);
+console.log(prenoms[3]);`
+        },
+        {
+            code:
+`var prenoms = ['Alexis', 'Simon', 'Etienne'];
+prenoms[1] = 'Nico';
+console.log(prenoms);`
+        },
+        {
+            code:
+`console.log(prenoms.length);`
+        },
+        {
+            code:
+`prenoms[prenoms.length] = 'Simon';
+console.log(prenoms);`
+        },
+        {
+            code:
+`prenoms.push('Lucie');
+console.log(prenoms);`
+        },
+        {
+            code:
+`var nom = 'Nico';
+var age = 42;
+var tab = [nom, age]`
+        },
+        {
+            code:
+`var test = 'du texte';
+console.log(test[3]); //t
+console.log(test.length); //8`
+        },
+        {
+            code:
+`var fruits = ['pomme', 'poire', 'banane', 'goyave'];
+
+console.log('Je mange une ' + fruits[2]);
+console.log('Je mange une ' + fruits[Math.floor(Math.random()*fruits.length)]);`
+        }
+    ],
+    loops: [
+        {
+            code:
+`//avec TANT QUE
+
+//on initialise le tableau qui va contenir les résultats
+var tab = [];`
+        },
+        {
+            code:
+`//on initialise notre compteur
+var compteur = 0;`
+        },
+        {
+            code:
+`//on lance la boucle
+while(compteur < 10) {
+    //on vérifie la valeur du compteur dans cette itération
+    console.log('Valeur du compteur de la boucle while : ', compteur);
+
+    //on stocke la valeur du compteur dans le tableau
+    tab[compteur] = compteur;
+}`
+        },
+        {
+            code:
+`//on lance la boucle
+while(compteur < 10) {
+    //on vérifie la valeur du compteur dans cette itération
+    console.log('Valeur du compteur de la boucle while : ', compteur);
+    //on stocke la valeur du compteur dans le tableau
+    tab[compteur] = compteur;
+    //on incrémente notre compteur
+    compteur++;
+}`
+        },
+        {
+            code:
+`//avec TANT QUE
+
+//on initialise le tableau qui va contenir les résultats
+var tab = [];
+
+//on initialise notre compteur
+var compteur = 0;
+
+//on lance la boucle
+while(compteur < 10) {
+    //on vérifie la valeur du compteur dans cette itération
+    console.log('Valeur du compteur de la boucle while : ', compteur);
+    //on stocke la valeur du compteur dans le tableau
+    tab[compteur] = compteur;
+    //on incrémente notre compteur
+    compteur++
+}
+//on vérifie le nb d'éléments dans le tableau
+console.log('Le tableau rempli par while contient ' + tab.length + ' éléments');`
+        },
+        {
+            code:
+`//avec POUR
+
+//on initialise un nouveau tableau de résultats
+var tab2 = [];
+
+//on lance la boucle 
+for (var compteur2 = 0; compteur2 < 10; compteur2++) {
+    //on vérifie la valeur du compteur dans cette itération
+    console.log('Valeur du compteur de la boucle for : ', compteur2);
+
+    //on stocke la valeur du compteur dans le tableau
+    tab2[compteur2] = compteur2;
+}
+//on vérifie le nb d'éléments dans le tableau
+console.log('Le tableau rempli par for contient ' + tab2.length + ' éléments');`
+        }
+    ]
+}
+
+export const day3 = {
+    fonctions: [
+        {
+            code:
+`function greetings() {
+    return "bonjour";
+}`
+        },
+        {
+            code:
+`function greetings() {
+    var str = "bonjour";
+    return str;
+    console.log(str);
+}
+greetings();`
+        }
+    ],
+    europe: [
+        {
+            code:
+`var europe = {
+    france: {
+        nom: 'France',
+        capitale: 'Paris',
+        superficie: 632734,
+        population: 67.03,
+        villesPrincipales: ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Nice']
+    },
+    ...
+}`
+        },
+        {
+            code:
+`var europe = {
+    ...
+    allemagne: {
+        nom: 'Allemagne',
+        capitale: 'Berlin',
+        superficie: 357167,
+        population: 83.02,
+        villesPrincipales: ['Berlin', 'Hambourg', 'Munich', 'Cologne', 'Francfort']
+    },
+    ...
+}`
+        },
+        {
+            code:
+`var europe = {
+    ...
+    italie: {
+        nom: 'Italie',
+        capitale: 'Rome',
+        superficie: 302073,
+        population: 60.36,
+        villesPrincipales: ['Rome', 'Milan', 'Naples', 'Turin', 'Palerme']
+    },
+    ...
+}`
+        },
+        {
+            code:
+`var espagne = {
+    ...
+    espagne: {
+        nom: 'Madrid',
+        capitale: 'Berlin',
+        superficie: 505991,
+        population: 46.93,
+        villesPrincipales: ['Madrid', 'Barcelone', 'Valence', 'Séville', 'Saragosse']
+    },
+    ...
+}`
+        },
+        {
+            code:
+`var europe = {
+    ...
+    irlande: {
+        nom: 'Irlande',
+        capitale: 'Dublin',
+        superficie: 69797,
+        population: 4.90,
+        villesPrincipales: ['Dublin', 'Cork', 'Galway', 'Limerick']
+    }
+}`
+        },
+        {
+            code:
+`var logCountry = function(country) {
+    console.log('Nom du pays: ' + country.nom + ', capitale : ' + country.capitale + 
+    ', superficie : ' + country.superficie + ', population : ' +  country.population +
+    ', ville sprincipales : ' + tabToString(country.villesPrincipales));
+}`
+        }        
+    ],
+    hogwards: [
+        {
+            code:
+`var hogwards = {
+    headMaster: 'Albus Dumbledore',
+    gryffindor: {
+        headOfHouse: 'Minerva McGonagal',
+        students: ['Harry Potter', 'Hermione Granger', 'Ronald Weasley'],
+        nbPoints: 523
+    },
+    ravenclaw: {
+        headOfHouse: 'Filius Flitwick',
+        students: ['Cho Chang', 'Luna Lovegood', 'Penelope Clearwater'],
+        nbPoints: 495
+    },
+    hufflepuff: {
+        headOfHouse: 'Pomona Sprout',
+        students: ['Ernie McMillan', 'Cedric Digory', 'Hannah Abbott'],
+        nbPoints: 419
+    },
+    slytherin: {
+        headOfHouse: 'Severus Snape',
+        students: ['Draco Malefoy', 'Vincent Crabbe', 'Gregory Goyle'],
+        nbPoints: 385
+    }
+}`
+        }
+    ]
+}
+
+export const day4 = {
+    spaceship: [
+        {
+            code:
+`var spaceship = {
+    name: 'Millenium Falcon',
+    driver: 'Han Solo',
+    lightspeed: function() {
+        console.log('Entering hyperspace ...');
+    }
+};`
+        },
+        {
+            code:
+`spaceship.lightspeed();`
+        }
+    ],
+    dom: [
+        {
+            code:
+`//création d'un élément header
+var header = document.createElement('header');
+
+//ajout de l'élément à la balise body
+document.body.appendChild(header);
+
+//ajout d'un élément main au body
+var main = document.createElement('main');
+document.body.appendChild(main);`
+        },
+        {
+            code:
+`//création d'un nouvel élément
+var h1 = document.createElement('h1');
+
+//on lui met du texte
+h1.textContent = 'Bienvenue sur mon site !';
+
+//on l'ajoute au DOM dans la balise header
+header.appendChild(h1);`
+        },
+        {
+            code:
+`console.log(h1);
+console.dir(h1);`
+        },
+        {
+            code:
+`//ajout d'un peu de style
+h1.style.color = 'blue';
+h1.style.textAlign = 'center';`
+        },
+        {
+            code:
+`//on récupère l'élément cible dans une variable en utilisant son id
+var container = document.getElementById('container');
+
+//on crée un nouveau paragraphe
+var p = document.createElement('p');
+p.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab numquam sit unde eaque! Eaque, assumenda? Fugit, saepe! Ad, delectus veritatis.';
+
+//on ajoute ce paragraphe à la div container
+container.appendChild(p);`
+        },
+        {
+            code:
+`//on cible la div title
+var title = document.getElementById('title');
+
+//on lui met du texte
+title.textContent = 'Rô la belle div !';
+
+//on lui met du style
+title.style.color = 'green';
+title.style.textAlign = 'center';`
+        }
+    ],
+    chrono: [
+        {
+            language: 'HTML',
+            code:
+`<h1>My beautiful Chrono !</h1>
+<div id="chrono">
+
+</div>`
+        },
+        {
+            code:
+`var chrono = {
+    dixiemes: 0,
+    secondes: 0,
+    minutes: 0
+}`
+        },
+        {
+            code:
+`init: function() {
+    var target = document.getElementById('chrono');
+}`
+        },
+        {
+            code:
+`init: function() {
+    ...
+    var minutes = document.createElement('div');
+    minutes.id = 'minutes';
+    minutes.textContent = chrono.minutes;        
+    target.appendChild(minutes);
+}`
+        },
+        {
+            code:
+`init: function() {
+    ...
+    var secondes = document.createElement('div');
+    secondes.id = 'secondes';
+    secondes.textContent = chrono.secondes;        
+    target.appendChild(secondes);
+
+    var dixiemes = document.createElement('div');
+    dixiemes.id = 'dixiemes';
+    dixiemes.textContent = chrono.dixiemes;        
+    target.appendChild(dixiemes);
+}`
+        },
+        {
+            code:
+`display: function() {
+    document.querySelector('#dixiemes').textContent = chrono.dixiemes;
+    document.querySelector('#secondes').textContent = chrono.secondes;
+    document.querySelector('#minutes').textContent = chrono.minutes;
+}`
+        },
+        {
+            code:
+`addTime: function() {
+    chrono.dixiemes += 1;
+    if (chrono.dixiemes === 10) {
+        chrono.dixiemes = 0;
+        chrono.secondes += 1;
+    }
+    if (chrono.secondes === 60) {
+        chrono.secondes = 0;
+        chrono.minutes += 1;
+    }
+    chrono.display();
+}`
+        },
+        {
+            code:
+`start: function() {
+    chrono.addTime();
+    setInterval(chrono.addTime, 100);
+}`
+        },
+        {
+            language: 'CSS',
+            code:
+`h1 {
+    text-align: center;
+}
+
+#chrono {
+    width: 400px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#minutes, #secondes, #dixiemes {
+    width: 75px;
+    height: 30px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 24px;
+}`
+        }
+    ],
+    moveText: [
+        {
+            code:
+`var move = {
+
+};`
+        },
+        {
+            code:
+`var move = {
+    text: document.querySelector('.text'),
+    ...
+}`
+        },
+        {
+            code:
+`init: function() {
+    move.text.style.position = 'absolute';
+    move.text.style.top = '0%';
+    move.text.style.left = '0%';
+    move.text.style.width = '200px';
+    move.text.style.fontSize = '1.5em';
+    move.text.style.padding = '1em';
+    move.text.style.textAlign = 'center';
+    move.text.style.backgroundColor = '#ae9ff3';
+    move.text.style.transition = 'all linear 0.1s';
+}
+
+...
+
+move.init();`
+        },
+        {
+            code:
+`display: function(top, left) {
+    move.text.style.top = top+'%';
+    move.text.style.left = left+'%';
+    move.text.style.filter = 'hue-rotate('+(top * 360 / 100)+'deg)';
+}`
+        },
+        {
+            code:
+`change: function() {
+    var top = parseInt(move.text.style.top, 10);
+    top += 1;
+    if (top === 100) {
+        top = 0;
+    }
+    var left = parseInt(move.text.style.left, 10);
+    left += 1;
+    if (left === 100) {
+        left = 0;
+    }
+    move.display(top, left);
+}`
+        },
+        {
+            code:
+`start: function() {
+    setInterval(move.change, 100);
+}`
+        }
+    ]
+}
+
+export const day5 = {
+    event: [
+        {
+            language: 'HTML',
+            code:
+`<body>
+    <input type="text" id="test" />
+    <div>
+        <button>Bouton 1</button>
+        <button>Bouton 2</button>
+        <button>Bouton 3</button>
+    </div>
+    <script src="../js/event.js"></script> 
+</body>`
+        },
+        {
+            code:
+`//on cible l'input dans la page
+var input = document.getElementById('test');`
+        },
+        {
+            code:
+`//on lui associe un EventListener
+//nom de l'event : keyup
+//callback : fonction anonyme qui affiche la value du champ
+input.addEventListener('keyup', function(event) {
+    console.log('Texte dans le champ : ', event.target.value);
+});`
+        },
+        {
+            code:
+`//on crée la fonction callback pour les boutons
+var toExecuteOnClick = function(event) {
+    console.log("bouton cliqué");
+    console.dir(event);
+    console.log('Le bouton ' + event.target.textContent + ' a été cliqué');
+}`
+        },
+        {
+            code:
+`//on cible tous les éléments button de la page
+var buttons = document.getElementsByTagName('button');
+//avec une boucle, on associe un EventListener à chaque bouton
+//Au click, on appelle la fonction callback
+for (var button of buttons) {
+    button.addEventListener('click', toExecuteOnClick);
+}`
+        },
+        {
+            code:
+`var callback = function(event) {
+	console.log('Bouton cliqué');
+};
+
+var button = document.getElementById('button');
+
+button.addEventListener('onClick', callback);`
+        },
+        {
+            code:
+`var callback = function(event) {
+	console.log('Bouton cliqué');
+};
+
+var button = document.getElementById('button');
+
+button.addEventListener('click', callback());`
+        }
+    ]
+}
+
+
 export const day7 = {
+    eslint: [
+        {
+            language: 'JSON',
+            code:
+`{
+    "env": {
+        "browser": true,
+        "es6": true       
+    },
+    ...
+}`
+        },
+        {
+            language: 'JSON',
+            code:
+`{
+    ...
+    "extends": "eslint:recommended",
+    ...
+}`
+        },
+        {
+            language: 'JSON',
+            code:
+`{
+    ...
+    "rules": {
+        "indent": ["error", 4],
+        "quotes": ["error", "single"],
+        "semi": ["warn", "always"]
+    }
+}`
+        },
+        {
+            code:
+`/* eslint-disable indent */
+// eslint-disable-next-line indent`
+        }
+    ],
 classList: [
 {
 code:
-`//on référence l'éléménet qu'on veut cibler
+`//on référence l'élément qu'on veut cibler
 var target = document.getElementById('test');`
 },
 {
@@ -459,7 +1412,7 @@ for (let i=0; i<10; i++) {
 //on récupère sa ref dans une variable
 console.log('lancement du timeout');
 let timeoutRef = setTimeout(delayedFunction, 3000);
-console.log('timeout supprimé, pas d\'exécution');
+console.log('timeout supprimé, pas d\\'exécution');
 clearTimeout(timeoutRef);`
         }
     ],
@@ -558,7 +1511,7 @@ console.log('les objects sont égaux', shape === shapeCopie);`
 `//extraction de certains champs
 const {type, ...restObject} = shape;
 console.log('type', type);
-console.log('reste de l\'object', restObject);`
+console.log('reste de l\\'object', restObject);`
         },
         {
             code:

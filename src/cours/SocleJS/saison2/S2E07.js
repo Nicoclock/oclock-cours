@@ -1,13 +1,12 @@
 import React, {Fragment} from "react";
 
 import {Card, Doc, Code, List, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage} from "../../../common";
-import * as code from "./code";
 import {invaders} from "./Code/challenges";
 import {day7 as snippets} from "./Code/snippets";
 
 import "../../style.scss"
 
-const S2E07 = props => {
+const S2E07 = () => {
     let challenge = 0;
     let snippet = 0;
 
@@ -60,7 +59,7 @@ const S2E07 = props => {
                             <Item text="On se prépare pour la suite : es6 pour accepter la nouvelle syntaxe" />
                         </ListItem>
                         <Demo type="repo Correction">
-                            <Code language="JSON" code={code.eslintEnv} />
+                            <Code step={snippets.eslint[snippet++]} />
                         </Demo>
                         <ListItem title=".eslintrc extends">
                             <Item text="Pour que le linter fonctionne, on utilise des règles pré-définies" />
@@ -70,7 +69,7 @@ const S2E07 = props => {
                         <Doc type="Resosurce" url="https://eslint.org/docs/rules/" />
                         <Doc type="Ressource" url="https://www.npmjs.com/search?q=eslint-config" />
                         <Demo type="repo Correction">
-                            <Code language="JSON" code={code.eslintExtends} />
+                            <Code step={snippets.eslint[snippet++]} />
                         </Demo>
                         <ListItem title=".eslintrc rules">
                             <Item text="On peut ajouter nos propres règles" />
@@ -83,14 +82,14 @@ const S2E07 = props => {
                             <SubItem text="La 3ème : erreur si ; manquant en fin d'instruction" />
                         </ListItem>
                         <Demo type="repo Correction">
-                            <Code language="JSON" code={code.eslintRules} />
+                            <Code step={snippets.eslint[snippet++]} />
                         </Demo>
                         <ListItem title="ESLint disable">
                             <Item text="Dans certains cas, besoin de désactiver une règle" />
                             <Item text="On peut le faire pour une ligne ou pour un fichier" />
                         </ListItem>
                         <Demo type="repo Correction">
-                            <Code language="JSON" code={code.eslintDisable} />
+                            <Code step={snippets.eslint[snippet++]} />
                         </Demo>
                         <Control>
                             <Sondage question="ESLint c'est ... ?" reponses={["de la balle", "intéressant mais compliqué", "du souci pour rien"]} />
@@ -124,6 +123,7 @@ const S2E07 = props => {
                             <Question text="Besoin 'tite démo ou c'est bon ?" />
                         </ListItem>
                         <Doc type="repo Demo" url="http://localhost:12345/E07/Demo/QuerySelector/html" />
+                        {console.log(resetSnippet())}
                         <Demo type="repo Demo">
                            <Code step={snippets.querySelector[snippet++]} />
                         </Demo>

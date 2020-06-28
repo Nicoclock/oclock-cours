@@ -1,12 +1,12 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce, ExoSondage, Snippet} from "../../../common";
+import {Card, Doc, Code, List, ListItem, Item, Control, Recap, Demo, BoxItem, Sondage, Exo, Enonce, ExoSondage, Snippet} from "../../../common";
 import {rpg} from "./Code/challenges";
 import {day8 as snippets} from "./Code/snippets";
 
 import "../../style.scss"
 
-const S2E08 = props => {
+const S2E08 = () => {
     let challenge = 0;
     let snippet = 0;
 

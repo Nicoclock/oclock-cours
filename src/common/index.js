@@ -19,5 +19,6 @@ import Exo from "./List/Exo";
 import Enonce from "./List/Enonce";
 import Snippet from "./List/Snippet";
 import ExoSondage from "./List/ExoSondage";
+import Git from "./Git/Git";
 
-export {Saison, Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Timer, Sondage, Exo, Enonce, Snippet, ExoSondage};
+export {Saison, Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Timer, Sondage, Exo, Enonce, Snippet, ExoSondage, Git};

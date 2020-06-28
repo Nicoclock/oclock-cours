@@ -1,11 +1,15 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage} from "../../../common";
-import * as code from "./code";
+import {Card, Doc, Code, List, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce, Snippet} from "../../../common";
+import {day5 as snippets} from "./Code/snippets";
+import {diceRoller} from "./Code/challenges";
 
 import "../../style.scss"
 
-const S2E05 = props => {
+const S2E05 = () => {
+    let challenge = 0;
+    let snippet = 0;
+
     return (
         <Fragment>
             <div className="Title">Events</div>
@@ -26,7 +30,6 @@ const S2E05 = props => {
                                 "trop facile",
                                 "m'en suis tiré",
                                 "j'ai galéré !",
-                                "z'êtes malades !!",
                                 "papu/pasu/pavoulu"
                             ]} />
                         </Control>
@@ -34,7 +37,7 @@ const S2E05 = props => {
                             <BoxItem text="Cette histoire de sprites, moi j'ai eu du mal au début" />
                             <BoxItem text="On voit tout ça ensemble" />
                         </Transition>
-                        <Doc type="repo ChallengeS2E04" url="http://localhost:1235/E04/Dice-roller/html/index.html" />
+                        <Doc type="repo Correction" url="http://localhost:1235/E05/Correction/html/" />
                         <ListItem title="Création dé">
                             <Item text="Commençons par créer le dé" />
                             <Item text="On est des pros maintenant, direct une fonction" />
@@ -43,8 +46,8 @@ const S2E05 = props => {
                             <Item text="Ajout au DOM dans l'élément d'id player" />
                             <Item text="Appel pour exécuter le code" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceStart} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Random">
                             <Item text="On devait ensuite créer un random entre 1 et 6" />
@@ -52,10 +55,10 @@ const S2E05 = props => {
                             <Item text="On veut un nombre entre 1 et 6, pas 1 et 7" />
                             <Item text="Math.floor pour l'entier le + proche par le bas" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceRandom} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
-                        <Doc type="Image" url="http://localhost:1235/E04/Dice-roller/images/sprites.jpg" />
+                        <Doc type="Image" url="http://localhost:1235/E05/sprites.jpg" />
                         <ListItem title="backgroundPosition">
                             <Item text="Random ok, faut l'utiliser pour afficher une face du dé" />
                             <Item text="Pour position sprites, on utilise backgroundPosition" />
@@ -64,8 +67,8 @@ const S2E05 = props => {
                             <Item text="Pour afficher 1, décalage de 0px" />
                             <Item text="Pour 2, décalage de -100px, 3, -200px, etc..." />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.dicePosition} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Nb dices">
                             <Item text="BG positionné, on est bon" />
@@ -75,29 +78,29 @@ const S2E05 = props => {
                             <Item text="Tant que c'est pas un number, on redemande" />
                             <Item text="Enfin, boucle for pour créer nb de dés" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceNb} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Dealer">
                             <Item text="Pour bonus, ajout d'unadversaire" />
                             <Item text="Ajout div dans html" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="HTML" code={code.diceDealer} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Ajout du param target dans createDice" />
                             <Item text="Modif appel getElementById" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="HTML" code={code.diceCreate} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Modif de la boucle for" />
                             <Item text="un dé pour player, un dé pour dealer" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="HTML" code={code.diceDistrib} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <Control>
                             <Sondage question="C'est clair cette correction ?" reponses={["voui voui", "mouais, c'est mieux", "pas encore top", "tu m'as perdu ..."]} />
@@ -116,14 +119,74 @@ const S2E05 = props => {
                 </Card>
                 <Card title="Intro events" duration="1:00:00">
                     <List>
-                        <Doc type="repo ChallengeS2E04" url="http://localhost:1235/E04/Dice-roller/html/index.html" />
+                        <ListItem title="Présentation événements">
+                            <Item text="Pour chaque action de l'utilisateur, JS crée un événement" />
+                            <Item text="Object qui contient plein d'infos :" />
+                            <SubItem text="Type d'événement : Mouse, keyboard, ..." />
+                            <SubItem text="Propriété target : contient un ref vers l'object HTML" />
+                            <Item text="Pour réagir à un événement, on attache un écouter à l'élément" />
+                            <Item text="EventListener : 1er arg : type d'événement, 2ème arg : fct à exécuter" />
+                            <Item text="Fonction de rappel : callback" />
+                            <Item text="Pas exécutée tout de suite, seulement lors de l'événement" />
+                        </ListItem>
+                        <ListItem title="Exemple">
+                            <Item text="On crée quelques éléments HTML" />
+                        </ListItem>
+                        <Demo type="repo Event">
+                            <Code step={snippets.event[snippet++]} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="On cible l'input" />
+                        </ListItem>
+                        <Demo type="repo Event">
+                            <Code step={snippets.event[snippet++]} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Ajout d'un EventListener" />
+                        </ListItem>
+                        <Demo type="repo Event">
+                            <Code step={snippets.event[snippet++]} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="Création du callback" />
+                        </ListItem>
+                        <Demo type="repo Event">
+                            <Code step={snippets.event[snippet++]} />
+                        </Demo>
+                        <ListItem>
+                            <Item text="On cible les boutons, boucle pour associer EventListener" />
+                        </ListItem>
+                        <Demo type="repo Event">
+                            <Code step={snippets.event[snippet++]} />
+                        </Demo>
+                        <Sondage question="Pour gérer un événement, on utilise un ... ?" 
+                            reponses={["calendrier", "écouteur d'événement", "object JS"]} />
+                        <Sondage question="Une fonction de rappel se dit ... ?" 
+                            reponses={["callback", "comeback", "cookback"]} />
+                        <Sondage question="Un callback a toujours un paramètre event" 
+                            reponses={["oui", "non", "C'est quoi un callback ?"]} />
+                        <Sondage question="Ce paramètre event du callback, d'où il sort ?" 
+                            reponses={["il faut le créer", "JS le crée pour nous", "de chez sa mère"]} />
+                        <Sondage question="L'EventListener a deux paramètres :" 
+                            reponses={["le callback et le nom de l'event", "le nom de l'event et le callback", "le premier et le deuxième"]} />
+                        <Exo>
+                            <Enonce text="On a le code suivant :" />
+                            <Snippet lines={snippets.event[snippet++].code} />
+                            <Enonce text="Quel est le problème ?" />
+                        </Exo>
+                        <Exo>
+                            <Enonce text="On a le code suivant :" />
+                            <Snippet lines={snippets.event[snippet++].code} />
+                            <Enonce text="Quel est le problème ?" />
+                        </Exo>
+                        <Doc type="repo Correction" url="http://localhost:1235/E05/Correction/html/" />
                         <ListItem title="Modif HTML">
                             <Item text="Déjà on commente le prompt" />
                             <Item text="On modifie notre html pour ajouter un bouton" />
                             <Item text="Pour commencer, on va toujours lancer 6 dés" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="HTML" code={code.diceHtml} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <Doc type="Ressource" url="https://unicode.org/emoji/charts/full-emoji-list.html" />
                         <ListItem title="Emoticon (si question)">
@@ -136,8 +199,8 @@ const S2E05 = props => {
                             <Item text="Html, c'est fait mais c'est moche !" />
                             <Item text="Vite vite, un peu de css" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="CSS" code={code.diceCss} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem title="Evénements">
                             <Item text="Là, c'est moins moche !" />
@@ -147,16 +210,16 @@ const S2E05 = props => {
                             <Item text="Mécanisme qui va attendre un type d'événement et lui associer une fonction, un callback" />
                             <Item text="Quand l'événement se produit, le listener le capte et exécute le code du callback" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceListener} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Ca c'est le principe" />
                             <Item text="Cette fonction : on voudra l'empaqueter dans un object" />
                             <Item text="On va la définir, et on passera son nom en argument du listener" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceNewGame} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Remarquez bien : pas d'appel !!" />
@@ -168,28 +231,28 @@ const S2E05 = props => {
                             <Item text="on efface le contenu des div #player et #dealer" />
                             <Item text="on l'appelle dans newGame" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceResetBoard} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Fonction play : on a déjà le code, boucle for" />
                             <Item text="On n'a plus la variable nbDices : même pas mal, on la met en paramètre" />
                             <Item text="on l'appelle dans newGame" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.dicePlay} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Dans l'appel a play, passe 6 en argument" />
                             <Item text="On le met en dur pour l'instant, on fera mieux après" />
                             <Item text="Dans la précision, on dit qu'on peut jouer en tapant une touche" />
-                            <Item text="Faut prévenir JS : on va metre un leistener keyup sur le body" />
+                            <Item text="Faut prévenir JS : on va metre un listener keyup sur le body" />
                             <Item text="Quand touche de clavier cliquée, on va lancer un nouveau jeu" />
                             <Item text="Pour accéder au body en JS : document.body" />
                             <Question text="On a la cible, on a le nom de l'événement, je tape quoi ?" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceKeyboard} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Avantage de fonction newGame : pas de code répété" />
@@ -212,22 +275,22 @@ const S2E05 = props => {
                             <Item text="Mettons la logique du jeu dans un object bien propre" />
                             <Item text="On le déclare" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceApp} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="on prend toutes les fonctions et on les passent en props" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceMethods} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Encore 'tit bout de code qui traine" />
                             <Item text="Intégration dans l'object : init" />
                             <Item text="Appel app.init() en fin de fichier" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceLaunch} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <Transition>
                             <BoxItem text="Continuons à jouer avec DOM et events" />
@@ -244,15 +307,15 @@ const S2E05 = props => {
                             <Item text="D'abord, le HTML, c'est parti" />
                             <Item text="Ajout div#welcome et class hidden a app" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="HTML" code={code.diceWelcome} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Bon, on a tout cassé" />
                             <Item text="Allons arranger ça avec CSS" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="CSS" code={code.diceNewCss} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="On a notre page d'accueil" />
@@ -260,8 +323,8 @@ const S2E05 = props => {
                             <Item text="On fait une méthode start pour gérer switch welcome / app" />
                             <Item text="On ajoute un listener sur click dans init" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceNewStart} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Le listener est en place, on peut de nouveau jouer" />
@@ -269,15 +332,15 @@ const S2E05 = props => {
                             <Item text="Remplaçons la div#ui par un 'tit formulaire" />
                             <Item text="C'est parti pour le HTML" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="HTML" code={code.diceForm} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="On retourne dans le CSS pour styliser tout ça" />
                         </ListItem>
                         <Doc type="Ressource" url="https://developer.mozilla.org/fr/docs/Web/CSS/calc" />
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="CSS" code={code.diceFormCss} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Ca ressemble à quelque chose maintenant" />
@@ -288,8 +351,8 @@ const S2E05 = props => {
                             <SubItem text="Socke la valeur dans object app, on en aura besoin" />
                             <SubItem text="MAJ contenu div#dice-number" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceSlider} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="La gestion du slider est en place" />
@@ -297,8 +360,8 @@ const S2E05 = props => {
                             <Item text="Ajout d'un listener sur event submit dans init" />
                             <Item text="OK dans init, sera appelé seulement lors du submit" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceFormSubmit} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Mais que ce passe-t-il ? Pourquoi ça marche pas ?" />
@@ -310,8 +373,8 @@ const S2E05 = props => {
                             <Item text="Bonne pratique, plus calir de l'appeler event" />
                             <Item text="Il est fourni par défaut, on peut l'ajouter en paramètre de la fonction play" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceNewPlay} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="L'est de mieux en mieux cette appli" />
@@ -319,8 +382,8 @@ const S2E05 = props => {
                             <Item text="Limité à la touche espace" />
                             <Item text="Nouvelle façon de déclarer un callback : fonction anonyme" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceNewKeyboard} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <Recap>
                             <BoxItem text="On a ajouté une page d'accueil" />
@@ -335,22 +398,22 @@ const S2E05 = props => {
                             <Item text="On va modifier méthode createDice" />
                             <Item text="Elle va retourner le nombre de points sur le dé" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceNewCreateDice} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Ca suffit pas bien-sûr" />
                             <Item text="Il faut cumuler les points de chaque dés pour avoir un score" />
                             <Item text="On va se faire une méthode qui se charge de ça" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceCreateAllDices} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="On va modifier méthode play pour prendre en compte cette fonction" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.dicePlayWithScores} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Ca fonctionne, on a nb de points, on peut dire qui a gagné !" />
@@ -359,8 +422,8 @@ const S2E05 = props => {
                             <Item text="SINON SI scorePlayer < scoreDealer ALORS defaite" />
                             <Item text="SINON rien" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.dicePlayWithScores2} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Ca tourne mais affichage console pas top ..." />
@@ -370,22 +433,22 @@ const S2E05 = props => {
                             <Item text="On a besoin de l'id du joueur et du nombre à afficher" />
                             <Item text="On remplace les console.log par l'appel qui va bien" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceDisplayResult} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Visiblement, on a besoin de CSS" />
                             <Item text="Définissons la class result" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="CSS" code={code.diceResultCss} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="C'est chouette mais un peu tristouille ..." />
                             <Item text="On va animer l'affichage, plus dynamique" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="CSS" code={code.diceResultCssAnim} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Yes, plus sympa comme ça" />
@@ -393,8 +456,8 @@ const S2E05 = props => {
                             <Item text="Découvrir une autre méthode pour sélectionner des éléments" />
                             <Item text="querySelectorAll : return tableau avec éléments concernés par sélecteur" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceNewReset} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Dans ce cas là, innerHTML et textContent sont interchangeables" />
@@ -404,8 +467,8 @@ const S2E05 = props => {
                             <Item text="Il faut qu'on affiche le score seulement quand dealer ok" />
                             <Item text="Faisons déjà la méthode et modifions play, on fera le timeout après" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceDealerPlay} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Comportement inchangé, méthode ok" />
@@ -414,8 +477,8 @@ const S2E05 = props => {
                             <Item text="Attention, on a un argment à passer" />
                             <Question text="Vous vous souvenez comment faire ?" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceTimeout} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Ca marche mais dans le coup problème" />
@@ -427,16 +490,16 @@ const S2E05 = props => {
                             <Item text="'tit bout de code pour désactiver code bouton si isPlaying à true" />
                             <Item text="A la fin du timeout, repasse à false pour rejouer" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceIsPlaying} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Pas mal pas mal, ça commence à avoir de la gueule" />
                             <Item text="On rajoute un peu de dynamisme ? On anime les dés ?" />
                             <Item text="On va mettre 'tit effet à l'apparition, direction CSS" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="CSS" code={code.diceAnim} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Cool, ça claque !" />
@@ -447,8 +510,8 @@ const S2E05 = props => {
                             <Item text="setInterval, très adapté. On va le stocker pour pouvoir l'arrêter" />
                             <Item text="Déjà créons le compteur avec une méthode qu'on appelle dans play" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceCreateCounter} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="setInterval utilise une méthode qui n'existe pas, créons-la !" />
@@ -456,23 +519,23 @@ const S2E05 = props => {
                             <Item text="Quand compteur à 0, on va appeler une méthode deleteCounter" />
                             <Item text="On va la créer juste après" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceCountdown} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="countdown, on est bon, faisons deleteCounter" />
                             <Item text="On va stopper notre interval avec clearInterval" />
                             <Item text="Le compteur ne sert plus, on va le retirer du DOM" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code code={code.diceDeleteCounter} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <ListItem>
                             <Item text="Il nous reste à styliser la div.counter" />
                             <Item text="Direction le CSS" />
                         </ListItem>
-                        <Demo type="repo ChallengeS2E04">
-                            <Code language="CSS" code={code.diceCounterCss} />
+                        <Demo type="repo Correction">
+                            <Code step={diceRoller.etapes[challenge++]} />
                         </Demo>
                         <Recap>
                             <BoxItem text="Alors ce carrelage, magnifique ou pas magnifique ?" />
@@ -484,7 +547,7 @@ const S2E05 = props => {
                         <Control>
                             <BoxItem text="A fiouf, c'était intense !!" />
                             <Sondage question="Vous l'avez vécu comment, on a des morts ou pas ?" reponses={[
-                                "ça va, imoothep !",
+                                "ça va, imothep !",
                                 "je vais revoir ça tranquille",
                                 "pas clair, pas clair ...",
                                 "je suis PER-DU !!",

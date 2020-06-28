@@ -1,3 +1,1191 @@
+export const first = {
+    etapes: [
+        {
+            code:
+`var question1 = 'Quelle mer borde la ville de Sébastopol ?';
+var solution1 = 'la mer Noire';`
+        },
+        {
+            code:
+`var reponse1 = prompt(question1);`
+        },
+        {
+            code:
+`SI (réponse égale solution)
+ALORS affiche 'Gagné !'
+SINON affiche Perdu ...`
+        },
+        {
+            code:
+`if (reponse1 === solution1) {
+    alert('Gagné !');
+}
+else {
+    alert('Perdu...');
+}`
+        },
+        {
+            code:
+`var question2 = 'Quel est l\\'âge du capitaine ?';
+var solution2 = 63;
+var reponse2 = prompt(question2);`
+        },
+        {
+            code:
+`var reponse2Number = parseInt(reponse2, 10);
+if (reponse2Number === solution2) {
+    alert('Gagné !');
+}
+else {
+    alert('Perdu...')
+}`
+        },
+        {
+            code:
+`var score = 0;`
+        },
+        {
+            code:
+`{
+    alert('Gagné !);
+    score = score + 1;
+    //score += 1;
+    //score++;
+}`
+        },
+        {
+            code:
+`//SI score supérieur à 1 ALORS afficher avec s SINON afficher sans s
+var message = '';
+if (score > 1) {
+    message = 'Vous avez ' + score + ' bonnes réponses';
+}
+else {
+    message = 'Vous avez ' + score + ' bonne réponse';
+}
+alert(message);`
+        },
+        {
+            code:
+`var checkReponse = function(reponse, solution) {
+    // check si solution est number en vérifiant son type
+    //SI solution est de type number ALORS on convertit reponse avec parseInt ou Number
+    
+    //SI reponse égale la solution
+    //ALORS affiche 'Gagné !', mise à jour du score
+    //SINON affiche 'Perdu ...'
+    
+}`
+        },
+        {
+            code:
+`if (typeof solution === 'number') {
+    reponse = parseInt(reponse, 10);
+}`
+        },
+        {
+            code:
+`if (reponse === solution) {
+    alert('Gagné !');
+    score += 1;
+} 
+else {
+    alert('Perdu...');
+}`
+        },
+        {
+            code:
+`var question1 = 'Quelle mer borde la ville de Sébastopol ?';
+var solution1 = 'la mer Noire';
+var reponse1 = prompt(question1);
+checkReponse(reponse1, solution1)
+
+var question2 = 'Quel est l\\'âge du capitaine ?';
+var solution2 = 63;
+var reponse2 = prompt(question2);
+checkReponse(reponse2, solution2)`
+        },
+        {
+            code:
+`var displayScore = function() {
+    var message = '';
+    if (score > 1) {
+        message = 'Vous avez ' + score + ' bonnes réponses';
+    }
+    else {
+        message = 'Vous avez ' + score + ' bonne réponse';
+    }
+    alert(message);
+}`
+        }
+    ]
+};
+
+export const fourchette = {
+    etapes: [
+        {
+            code:
+`//on déclare un variable max
+var MAX = 500;
+
+//création du nombre aléatoire entre 0 et MAX
+//déja la partie aléatoire
+var random = Math.random();
+
+//on l'applique à notre fourchette en multipliant random par la valeur max
+var fork = MAX * random;
+
+//on arrondit cette fourchette pour avoir un nombre entier
+var randomGuess = Math.round(fork);
+
+//version condensée
+//var randomGuess = Math.round(Math.random()*500);`
+        },
+        {
+            code:
+`var userGuess = parseInt(prompt('Devinez un nombre entre 0 et '+MAX+' :'));`
+        },
+        {
+            code:
+`while(userGuess !== randomNumber) {
+    userGuess = parseInt(prompt('Devinez un nombre entre 0 et '+MAX+' :'));
+}`
+        },
+        {
+            code:
+`//SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
+if (isNaN(userGuess)) {
+    userGuess = parseInt(prompt('Veuillez saisir un NOMBRE entre 0 et '+MAX));
+}`
+        },
+        {
+            code:
+`while(userGuess !== randomNumber) {
+    //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
+    if (isNaN(userGuess)) {
+        userGuess = parseInt(prompt('Veuillez saisir un NOMBRE entre 0 et '+MAX));
+    }
+    //SINON SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
+    else if (userGuess < randomNumber) {
+        userGuess = parseInt(prompt('Le nombre à deviner est plus grand'));
+    }
+    //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
+    else if (userGuess > randomNumber) {
+        userGuess = parseInt(prompt('Le nombre à deviner est plus petit'));
+    }
+}`
+        },
+        {
+            code:
+`//message gagné
+console.log('Clap clap, vous avez trouvé le nb '+randomNumber);`
+        },
+        {
+            code:
+`//on déclare un variable max
+var MAX = 500;
+
+//création du nombre aléatoire entre 0 et MAX
+//déja la partie aléatoire
+var random = Math.random();
+
+//on l'applique à notre fourchette en multipliant random par la valeur max
+var fork = MAX * random;
+
+//on arrondit cette fourchette pour avoir un nombre entier
+var randomNumber = Math.round(fork);
+
+//version condensée
+//var randomNumber = Math.round(Math.random()*500);
+
+var userGuess = parseInt(prompt('Devinez un nombre entre 0 et '+MAX+' :'));
+var nbTries = 1;
+
+while(userGuess !== randomNumber) {
+    //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
+    if (isNaN(userGuess)) {
+        userGuess = parseInt(prompt('Veuillez saisir un NOMBRE entre 0 et '+MAX));
+    }
+    //SINON SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
+    else if (userGuess < randomNumber) {
+        userGuess = parseInt(prompt('Le nombre à deviner est plus grand'));
+    }
+    //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
+    else if (userGuess > randomNumber) {
+        userGuess = parseInt(prompt('Le nombre à deviner est plus petit'));
+    }
+    //on incrémente le nb d'essais
+    nbTries++;
+}
+//message gagné
+console.log('Clap clap, vous avez trouvé le nb '+randomNumber+' en '+nbTries+' coups !');`
+        },
+        {
+            code:
+`//on déclare un variable max
+var MAX = 500;
+
+//création du nombre aléatoire entre 0 et MAX
+//déja la partie aléatoire
+var random = Math.random();
+
+//on l'applique à notre fourchette en multipliant random par la valeur max
+var fork = MAX * random;
+
+//on arrondit cette fourchette pour avoir un nombre entier
+var randomNumber = Math.round(fork);
+
+//version condensée
+//var randomNumber = Math.round(Math.random()*500);
+
+var userGuess = parseInt(prompt('Devinez un nombre entre 0 et '+MAX+' :'));;
+var nbTries = 0;
+do {
+    //SI la saisie n'est pas un nombre ALORS on affiche un message d'erreur
+    if (isNaN(userGuess)) {
+        userGuess = parseInt(prompt('Veuillez saisir un NOMBRE entre 0 et '+MAX));
+    }
+    //SINON SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
+    else if (userGuess < randomNumber) {
+        userGuess = parseInt(prompt('Le nombre à deviner est plus grand'));
+    }
+    //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
+    else if (userGuess > randomNumber) {
+        userGuess = parseInt(prompt('Le nombre à deviner est plus petit'));
+    }
+    //on incrémente le nb d'essais
+    nbTries++;
+} while(userGuess !== randomNumber)
+//message gagné
+console.log('Clap clap, vous avez trouvé le nb '+randomNumber+' en '+nbTries+' coups !');`
+        },
+        {
+            code:
+`var getNumber = function(message) {
+    //on déclare la variable guess et on lui assigne la valeur du prompt convertie en number
+    var guess = parseInt(prompt(message));
+    //TANT QUE guess n'est pas un nombre on redemande 
+    while (isNaN(guess)) {
+        guess = parseInt(prompt('Veuillez saisir un NOMBRE entre 0 et '+MAX));
+    }
+    return guess;
+}`
+        },
+        {
+            code:
+`var userGuess = getNumber('Saisissez un nombre entre 0 et ' + MAX);
+var nbTries = 1;
+
+while(userGuess !== randomNumber) {
+    //SI random est plus grand que guess ALORS on affiche Le nombre à deviner est plus grand
+    if (userGuess < randomNumber) {
+        userGuess = getNumber('Le nombre à deviner est plus grand');
+    }
+    //SINON SI random est plus petit que guess ALORS on affiche Le nombre à deviner est plus petit
+    else if (userGuess > randomNumber) {
+        userGuess = getNumber('Le nombre à deviner est plus petit');
+    }
+    nbTries++;
+}`
+        }
+    ]
+}
+
+export const fourchetteObject = {
+    etapes: [
+        {
+            code:
+`var game = {
+    attemps: 0,
+    searchNumber: undefined
+};`
+        },
+        {
+            code:
+`var play = function() {
+    var randomPart = Math.random();
+    var randomNum = max * randomPart;
+    var randomNumRounded = Math.round(randomNum);
+    /*version courte :
+    var randomNumRounded = Math.round(max * Math.random());
+    */
+    game.searchedNumber = randomNumRounded;
+    alert('Nouvelle partie');
+}`
+        },
+        {
+            code:
+`var play = function() {
+    ...
+    game.attemps++;
+    var enteredNumber =  parseInt(prompt('Quel est le nombre à trouver ?'));
+    ...
+}`
+        },
+        {
+            code:
+`var play = function() {
+    ...
+    while (enteredNumber !== game.searchedNumber) {
+        if (enteredNumber < game.searchedNumber) {
+            enteredNumber =  parseInt(prompt('C\\'est plus'));
+        }
+        else {
+            enteredNumber =  parseInt(prompt('C\\'est moins'));
+        }
+        game.attemps++;
+    }
+    ...
+}`
+        },
+        {
+            code:
+`var play = function() {
+    ...
+    alert('Bravo ! C'était bien ' + game.searchedNumber + ' - Nombre d'essais : ' + game.attemps);
+    ...
+}`
+        },
+        {
+            code:
+`play();`
+        },
+        {
+            code:
+`var generateRandomNumber = function(min, max) {
+    var randomPart = Math.random();
+    var randomNum = min + (max-min)*randomPart;
+    var randomNumRounded = Math.round(randomNum);
+    return randomNumRounded;
+    /*version courte :
+    return Math.round(min + (max-min)*Math.random());
+    */
+}`
+        },
+        {
+            code:
+`var game = {
+    min: 10,
+    max: 20,
+    attemps: 0,
+    searchNumber: undefined
+};`
+        },
+        {
+            code:
+`var play = function() {
+    // var randomPart = Math.random();
+    // var randomNum = max * randomPart;
+    // var randomNumRounded = Math.round(randomNum);
+    // /*version courte :
+    // var randomNumRounded = Math.round(max * Math.random());
+    // */
+    game.searchedNumber = generateRandomparseInt(game.min, game.max);
+   ...
+}`
+        },
+        {
+            code:
+`var game = {
+    min: 10,
+    max: 20,
+    attemps: 0
+};`
+        },
+        {
+            code:
+`var game = {
+    min: 10,
+    max: 20,
+    attemps: 0,
+    scores: []
+};`
+        },
+        {
+            code:
+`game.scores.push(game.attemps);`
+        },
+        {
+            code:
+`game.scores.push(game.attemps);
+console.log(game.scores);
+play();`
+        },
+        {
+            code:
+`if (confirm('Rejouer ?')) {
+    play();
+}
+else {
+    console.log(game.scores);
+}`
+        },
+        {
+            code:
+`...
+else {
+    for (var gameIndex=0; gameIndex<game.scores.length; gameIndex++) {
+        alert('Partie ' + (gameIndex+1) + ' : ' + game.scores[gameIndex]+ ' essais');
+    }
+}`
+        },
+        {
+            code:
+`var displayScore = function() {
+    for (var gameIndex=0; gameIndex<game.scores.length; gameIndex++) {
+        alert('Partie ' + (gameIndex+1) + ' : ' + game.scores[gameIndex]+ ' essais');
+    }
+}
+
+function play() {
+    ...
+    if (confirm('Rejouer ?')) {
+        play();
+    }
+    else {
+        displayScores();
+    }
+}`
+        },
+        {
+            code:
+`var game {
+    ...
+    generateRandomNumber: function (min, max) {
+        return Math.round(min + (max-min)*Math.random());
+    },
+    ...
+}`
+        },
+        {
+            code:
+`var game {
+    ...
+    displayScores: function () {
+        for (var gameIndex=0; gameIndex<game.scores.length; gameIndex++) {
+            alert('Partie ' + (gameIndex+1) + ' : ' + game.scores[gameIndex]+ ' essais');
+        }
+    },
+    ...
+}
+
+function play() {
+    ...
+    if (confirm('Rejouer ?')) {
+        play();
+    }
+    else {
+        game.displayScores();
+    }
+}`
+        },
+        {
+            code:
+`var game {
+    ...
+    play: function() {
+        game.searchedNumber = game.generateRandomparseInt(game.min, game.max);
+        alert('Nouvelle partie');
+    
+        game.attemps++;
+        var enteredNumber =  parseInt(prompt('Quel est le nombre à trouver ?'));
+    
+        while (enteredNumber !== game.searchedNumber) {
+            if (enteredNumber < game.searchedNumber) {
+                enteredNumber =  parseInt(prompt('C\\'est plus'));
+            }
+            else {
+                enteredNumber =  parseInt(prompt('C\\'est moins'));
+            }
+            game.attemps++;
+        }
+        alert('Bravo ! C'était bien ' + game.searchedNumber + ' - Nombre d'essais : ' + game.attemps);
+        game.scores.push(game.attemps);
+    
+        if (confirm('Rejouer ?')) {
+            game.play();
+        }
+        else {
+            game.displayScores();
+        }
+    }
+}`
+        },
+        {
+            language: 'HTML',
+            code:
+`<div id='scores'>
+
+</div>
+<script src='../js/main.js'></script>`
+        },
+        {
+            code:
+`displayScores: function() {
+    var target = document.getElementById('scores');
+}`
+        },
+        {
+            code:
+`displayScores: function() {
+    ...
+    var title = document.createElement('h1');
+    //pour les class CSS
+    title.className = 'scores-title';
+    //ajout de contenu avec des balises
+    title.innerHTML = 'Resultats de vos <strong>'+game.scores.length+' parties</strong>';
+}`
+        },
+        {
+            language: 'CSS',
+            code:
+`#scores {
+    width: 500px;
+    margin: 2em auto;
+    font-family: sans-serif;
+}
+
+.scores-title {
+    color: #44a1fb;
+}`
+        },
+        {
+            code:
+`displayScores: function() {
+    ...
+    target.appendChild(title);
+}`
+        },
+        {
+            code:
+`displayScores: function() {
+    ...
+    var table = document.createElement('table');
+}`
+        },
+        {
+            code:
+`displayScores: function() {
+    ...
+    var tableHeader = document.createElement('thead');
+    //1ère façon d'ajouter des élément : une chaine concaténée et la propriété .innerHTML
+    var headerContent = '<tr>';
+    headerContent += '<th>Partie</th>';
+    headerContent += '<th>Essais</th>';
+    headerContent += '</tr>';
+    tableHeader.innerHTML = headerContent;
+    table.appendChild(tableHeader)
+}`
+        },
+        {
+            code:
+`displayScores: function() {
+    ...
+    var tableBody = document.createElement('tbody');
+}`
+        },
+        {
+            code:
+`displayScores: function() {
+    ...
+    for (var gameIndex=0; gameIndex < game.scores.length; gameIndex++) {
+        var tr = document.createElement('tr');
+        
+        var tdGame = document.createElement('td');
+        tdGame.textContent = gameIndex + 1;
+        tr.appendChild(tdGame);
+
+        var tdAttemps = document.createElement('td');
+        tdAttemps.textContent = game.scores[gameIndex];
+        tr.appendChild(tdAttemps);
+
+        tableBody.appendChild(tr);
+    }
+}`
+        },
+        {
+            code:
+`displayScores: function() {
+    ...
+    table.appendChild(tableBody);
+    target.appendChild(table);
+}`
+        }
+    ]
+}
+
+export const diceRoller = {
+    etapes: [
+        {
+            code:
+`var createDice = function() {
+    var dice = document.createElement('div');
+    dice.className = 'dice';
+    document.getElementById('player').appendChild(dice);
+}
+
+createDice();`
+        },
+        {
+            code:
+`var getRandom = function(min, max) {
+    var randomPart = Math.random();
+    var randomNumber = min + randomPart*(max - min + 1);
+    var randomInteger = Math.floor(randomNumber);
+    return randomInteger;
+    //version courte
+    // return Math.floor(min + Math.random()*(max - min + 1))
+}`
+        },
+        {
+            code:
+`var createDice = function() {
+    ...
+    var diceValue = app.getRandom(1, 6);
+    var offset = (diceValue - 1) * 100;
+    dice.style.backgroundPosition = '-' + offset + 'px 0';
+...
+}`
+        },
+        {
+            code:
+`var nbDices = Number(prompt('Nombre de dés : '));
+while(isNaN(nbDices)) {
+    nbDices = prompt('Veuillez saisir un nombre de dés : ');
+}
+
+for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
+    createDice();
+}`
+        },
+        {
+            language: 'HTML',
+            code:
+`<div id='app'>
+<div class='board' id='player'></div>
+<div class='board' id='dealer'></div>
+</div>`
+        },
+        {
+            code:
+`var createDice = function(target) {
+    var dice = document.createElement('div');
+    dice.className = 'dice';
+    var diceValue = app.getRandom(1, 6);
+    var offset = (diceValue - 1) * 100;
+    dice.style.backgroundPosition = '-' + offset + 'px 0';
+    document.getElementById(target).appendChild(dice);
+}`
+        },
+        {
+            code:
+`for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
+    createDice('player');
+    createDice('dealer');
+}`
+        },
+        {
+            code:
+`<div id='ui'>
+<button type='button' id='play-button'>Jouer avec 6 dés</button>
+<p class='precision'>psst, appuyer sur une touche du clavier, ça marche aussi &#x1F600;</p>
+</div>`
+        },
+        {
+            language: 'CSS',
+            code:
+`#ui {
+    background-color: #aa6324;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 5em;
+}
+
+#play-button {
+    background-color: #ffbe56;
+    padding: 5px 15px;
+    border-radius: 2px;
+    border: none;
+}
+
+.precision {
+    font-style: italic;
+    margin: 3px;
+}`
+        },
+        {
+            code:
+`var playButton = document.getElementById('play-button');
+
+playButton.addEventListener('click', 
+    //2ème argument : fonction pour lancer un nouveau jeu
+        //effacer le jeu précédent
+        //afficher un nouveau avec 6 dés
+);`
+        },
+        {
+            code:
+`var newGame = function() {
+    //effacer le jeu précédent
+    //afficher un nouveau avec 6 dés
+}
+
+var playButton = document.getElementById('play-button');
+
+playButton.addEventListener('click', newGame);`
+        },
+        {
+            code:
+`var resetBoard = function() {
+    document.getElementById('player').textContent = '';
+    document.getElementById('dealer').textContent = '';
+}
+
+var newGame = function() {
+    //effacer le jeu précédent
+    resetBoard();
+    //afficher un nouveau avec 6 dés
+}`
+        },
+        {
+            code:
+`var play = function(nbDices) {
+    for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
+        createDice('player');
+        createDice('dealer');
+    }
+}
+
+var newGame = function() {
+    //effacer le jeu précédent
+    resetBoard();
+    //afficher un nouveau avec 6 dés
+    play(6);
+}`
+        },
+        {
+            code:
+`document.body.addEventListener('keyup', newGame);`
+        },
+        {
+            code:
+`var app = {};`
+        },
+        {
+            code:
+`var app = {
+    getRandom: function(min, max) {
+        var randomPart = Math.random();
+        var randomNumber = min + randomPart*(max - min + 1);
+        var randomInteger = Math.floor(randomNumber);
+        return randomInteger;
+        //version courte
+        // return Math.floor(min + Math.random()*(max - min + 1))
+    },
+    createDice: function(target) {
+        var dice = document.createElement('div');
+        dice.className = 'dice';
+        var diceValue = app.getRandom(1, 6);
+        var offset = (diceValue - 1) * 100;
+        dice.style.backgroundPosition = '-' + offset + 'px 0';
+        document.getElementById(target).appendChild(dice);
+    },
+    resetBoard: function() {
+        document.getElementById('player').textContent = '';
+        document.getElementById('dealer').textContent = '';
+    },
+    play: function(nbDices) {
+        for (var diceIndex=0; diceIndex<nbDices; diceIndex++) {
+            app.createDice('player');
+            app.createDice('dealer');
+        }
+    },
+    newGame: function() {
+        console.log('new game');
+        //effacer le jeu précédent
+        app.resetBoard();
+        //afficher un nouveau avec 6 dés
+        app.play(6);
+    }
+};`
+        },
+        {
+            code:
+`var app = {
+    ...
+    init: function() {
+        var playButton = document.getElementById('play-button');
+        playButton.addEventListener('click', app.newGame);
+        document.body.addEventListener('keyup', app.newGame);
+    }
+};
+
+app.init();`
+        },
+        {
+            code:
+`<div id="welcome">
+    <button type="buton" class="btn" id="play">Jouer</button>
+</div>
+<div id="app" class="hidden">
+    <div class="form">
+        <form id="game-form">
+            <input type="range" id="dice-number-input" min="1" max="20" value="3" />
+            <span id="dice-number"></span>
+            <button class="btn">Valider le nombre de dés et lancer</button>
+        </form>
+    </div>
+    <div id="game">
+        <div class="board" id="player"></div>
+        <div class="board" id="dealer"></div>
+    </div>
+</div>`
+        },
+        {
+            language: 'CSS',
+            code:
+`#app {
+    display: flex;
+    flex-direction: column;
+}
+... (after dice)
+#welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1.6em;
+}
+
+#app.hidden, #welcome.hidden {
+    display: none;
+}
+
+.btn {
+  padding: 1em 2em;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  border-bottom: 4px solid #ad5304;
+}
+
+.btn:hover {
+    margin-top: 1px;
+    border-bottom-width: 3px;
+}
+
+#game {
+    display: flex;
+}`
+        },
+        {
+            code:
+`init: function() {
+    //var playButton = document.getElementById('play-button');
+    //playButton.addEventListener('click', app.newGame);
+    document.body.addEventListener('keyup', app.newGame);
+    var welcomeButton = document.getElementById('play');
+    welcomeButton.addEventListener('click', app.start);
+},
+start: function() {
+    document.getElementById('welcome').classList.add('hidden');
+    document.getElementById('app').classList.remove('hidden');
+}`
+        },
+        {
+            language: 'HTML',
+            code:
+`<div class='form'>
+    <form id='game-form'>
+        <input type='range' id='dice-number-input' min='1' max='20' value='3' />
+        <span id='dice-number'></span>
+        <button class='btn'>Valider le nombre de dés et lancer</button>
+    </form>
+</div>`
+        },
+        {
+            language: 'CSS',
+            code:
+`.form {
+    height: 150px;
+    background-color: #111;
+}
+
+#game-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+#dice-number {
+    margin: .5em 0;
+    color: #fff;
+    font-weight: bold;
+}`
+        },
+        {
+            code:
+`init: function() {
+    ...
+    app.diceNumberInput = document.getElementById('dice-number-input');
+    app.diceNumberInput.addEventListener('change', app.changeNumber);
+    app.changeNumber();
+},
+changeNumber: function() {
+    app.nbDices = app.diceNumberInput.value;
+    var diceNumber = document.getElementById('dice-number');
+    diceNumber.textContent = app.nbDices;
+
+}`
+        },
+        {
+            code:
+`init: function() {
+    ...
+    var gameForm = document.getElementById('game-form');
+    gameForm.addEventListener('submit', app.play);
+}`
+        },
+        {
+            code:
+`play: function(event) {
+    console.log(event);
+    event.preventDefault();
+    app.resetBoard();
+    for (var diceIndex=0; diceIndex<app.nbDices; diceIndex++) {
+        app.createDice('player');
+        app.createDice('dealer');
+    }
+}`
+        },
+        {
+            code:
+`init: function() {
+    ...
+    document.body.addEventListener('keyup', function(event) {
+        console.dir(event);
+        if (event.code === 'Space') {
+            app.start();
+        }
+    });
+}`
+        },
+        {
+            code:
+`createDice: function(target) {
+    var dice = document.createElement('div');
+    dice.className = 'dice';
+    var diceValue = app.getRandom(1, 6);
+    var offset = (diceValue - 1) * 100;
+    dice.style.backgroundPosition = '-' + offset + 'px 0';
+    document.getElementById(target).appendChild(dice);
+    return diceValue;
+}`
+        },
+        {
+            code:
+`createAllDices: function(target) {
+    var score = 0;
+    for (var diceIndex=0; diceIndex<app.nbDices; diceIndex++) {
+        score += app.createDice(target);
+    }
+    return score;
+}`
+        },
+        {
+            code:
+`play: function(event) {
+    event.preventDefault();
+    app.resetBoard();
+    var playerScore = app.createAllDices('player');
+    var dealerScore = app.createAllDices('dealer');
+    console.log('player score : ', playerScore);
+    console.log('dealer score : ', dealerScore);
+}`
+        },
+        {
+            code:
+`play: function(event) {
+    ...
+    if (playerScore > dealerScore) {
+        app.victory++;
+    } else if (playerScore < dealerScore) {
+        app.defeat++;
+    }
+    console.log('Victoires : ', app.victory);
+    console.log('Défaites : ', app.defeat);
+}`
+        },
+        {
+            code:
+`play: function(event) {
+    ...
+    app.displayResult('player', app.victory);
+    app.displayResult('dealer', app.defeat);
+
+},
+displayResult: function(target, counter) {
+    var result = document.createElement('div');
+    result.className = 'result';
+    result.textContent = counter;
+    document.getElementById(target).appendChild(result);
+},`
+        },
+        {
+            language: 'CSS',
+            code:
+`.result {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 3em;
+    padding: 1em;
+    text-align: center;
+}`
+        },
+        {
+            language: 'CSS',
+            code:
+`@keyframes fade {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.result {
+    ...
+    animation: fade 0.4s ease 0s 1;
+}`
+        },
+        {
+            code:
+`resetBoard: function() {
+    var boards = document.querySelectorAll('.board');
+    for (var boardIndex=0; boardIndex<boards.length; bordIndex++) {
+        boards[boardIndex].innerHTML = '';
+    }
+}`
+        },
+        {
+            code:
+`play: function(event) {
+    ...
+    app.dealerPlay(playerScore);
+},
+dealerPlay: function(playerScore) {
+    var dealerScore = app.createAllDices('dealer');
+    if (playerScore > dealerScore) {
+        app.victory++;
+    } else if (playerScore < dealerScore) {
+        app.defeat++;
+    }
+    app.displayResult('player', app.victory);
+    app.displayResult('dealer', app.defeat);
+}`
+        },
+        {
+            code:
+`play: function(event) {
+    ...
+    setTimeout(app.dealerPlay, 3000, playerScore);
+}`
+        },
+        {
+            code:
+`var app = {
+    ...
+    isPlaying: false,
+    ...
+    play: function(event) {
+        ...
+        //équivalent à app.isPlaying === false
+        if (!app.isPlaying) {
+            app.isPlaying = true;
+            ...
+        }
+    },
+    dealerPlay: function(playerScore) {
+        ...
+        app.isPlaying = false;
+    }
+}`
+        },
+        {
+            code:
+`@keyframes pop {
+    0% {transform: scale(0);}
+    75% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+.dice {
+    ...
+    animation: pop .4s ease 0s 1;
+}`
+        },
+        {
+            code:
+`play: function(event) {
+    ...
+    if (!app.isPlaying) {
+        ...
+        app.createCounter();
+    }
+}
+...
+createCounter: function() {
+    app.counter = 3;
+    app.counterElement = document.createElement('div');
+    app.counterElement.className = 'counter';
+    app.counterElement.textContent = app.counter;
+    document.getElementById('app').appendChild(app.counterElement);
+    app.counterInterval = setInterval(game.countdown, 1000);
+}`
+        },
+        {
+            code:
+`countdown: function() {
+    app.counter--;
+    app.counterElement.textContent = app.counter;
+    if (app.counter === 0) {
+        app.deleteCounter();
+    }
+}`
+        },
+        {
+            code:
+`deleteCounter: function() {
+    clearInterval(app.counterInterval);
+    app.counterElement.remove();
+}`
+        },
+        {
+            language: 'CSS',
+            code:
+`.counter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 75vh;
+    text-shadow: 5px 5px 0 #000;
+}`
+        }
+    ]
+}
+
+
 
 export const invaders = {
     etapes: [ 
@@ -924,18 +2112,247 @@ if (app.gameOver) { //équivalent à if (app.gameOver === true)
 .beautiful .player--down {
   background-position-y: 0px;
 }`
+        }
+    ]
+};
+
+export const simon = {
+    etapes: [
+        {
+            code:
+`const app = {...
+};
+
+document.addEventListener('DOMContentLoaded', app.init);`
         },
         {
-            code: 
+            code:
+`showMessage: function (message) {
+    document.getElementById('message').innerHTML = message;
+    document.getElementById('go').style.display = 'none';
+
+}`
+        },
+        {
+            code:
+
+`hideMessage: () => {
+    document.getElementById('message').style.display = 'none';
+    document.getElementById('go').style.display = 'block';
+
+}`
+        },
+        {
+            code:
+`app.showMessage('test');
+app.hideMessage();
+app.showMessage('test');`
+        },
+        {
+            code:
+`showMessage: function (message) {
+    document.getElementById('message').innerHTML = message;
+    document.getElementById('message').style.display = 'block';
+    document.getElementById('go').style.display = 'none';
+}`            
+        },
+        {
+            code:
+`endGame: () => {
+    alert(\`Partie terminée, votre score : \${app.sequence.length}\`);
+    app.hideMessage();
+    app.sequence = [];
+}`
+        },
+        {
+            code:
+`// this var will contain the sequence said by Simon
+sequence: [],
+indice: 0,`
+        },
+        {
+            code:
+`drawCells: function () {
+    const playground = document.getElementById('playground');
+    for (const color of app.colors) {
+        let cell = document.createElement('div');
+        cell.className = 'cell';
+        cell.id = color;
+        cell.style.backgroundColor = color;
+        cell.addEventListener('click', app.playerSays);
+        playground.appendChild(cell);
+    }
+},`
+        },
+        {
+            code:
+`playerSays: (event) => {
+    app.bumpCell(event.target.id);
+    if (event.target.id === app.sequence[app.indice]) {
+        if (app.indice === app.sequence.length - 1) {
+            app.nextMove();
+        }
+        else {
+            app.indice++;
+        }
+    }
+    else {
+        app.endGame();
+    }
+
+}`
+        },
+        {
+            code:
+`nextMove: () => {
+    app.sequence.push(app.colors[Math.floor(Math.random()*4)]);
+    app.indice = 0;
+    setTimeout(() => {
+        app.simonSays(app.sequence);
+    }, 500);
+}`
+        },
+        {
+            code:
+`simonSays: function (sequence) {
+    app.showMessage('Mémorisez la séquence');
+    if (sequence && sequence.length) {
+        // after 500ms, bump the first cell
+        setTimeout(app.bumpCell, 500, sequence[0]);
+        // plays the rest of the sequence after a longer pause
+        setTimeout(app.simonSays, 850, sequence.slice(1));
+    } else {
+        app.showMessage('Reproduisez la séquence');
+    }
+}`
+        },
+        {
+            code:
+`simonSays: function (sequence) {
+    app.showMessage('Mémorisez la séquence');
+    if (sequence && sequence.length) {
+        // after 500ms, bump the first cell
+        setTimeout(app.bumpCell, 500, sequence[0]);
+        // plays the rest of the sequence after a longer pause
+        setTimeout(app.simonSays, 850, sequence.slice(1));
+    } else {
+        app.showMessage('Reproduisez la séquence');
+        app.timeoutRef = setTimeout(app.endGame, 5000);
+    }
+},
+playerSays: (event) => {
+    clearTimeout(app.timeoutRef);
+    app.bumpCell(event.target.id);
+    if (event.target.id === app.sequence[app.indice]) {
+        if (app.indice === app.sequence.length - 1) {
+            app.nextMove();
+        }
+        else {
+            app.timeoutRef = setTimeout(app.endGame, 5000);
+            app.indice++;
+        }
+    }
+    else {
+        app.endGame();
+    }
+}`
+        },
+        {
+            code:
+`sequence: [],
+indice: 0,
+simonOn: false,`
+        },
+        {
+            code:
+`simonSays: function (sequence) {
+    app.showMessage('Mémorisez la séquence');
+    app.simonOn = true;
+    if (sequence && sequence.length) {
+        // after 500ms, bump the first cell
+        setTimeout(app.bumpCell, 500, sequence[0]);
+        // plays the rest of the sequence after a longer pause
+        setTimeout(app.simonSays, 850, sequence.slice(1));
+    } else {
+        app.showMessage('Reproduisez la séquence');
+        app.timeoutRef = setTimeout(app.endGame, 5000);
+        app.simonOn = false;
+    }
+}`
+        },
+        {
+            code:
+`playerSays: (event) => {
+    if (app.simonOn)
+        return;
+    clearTimeout(app.timeoutRef);
+    app.bumpCell(event.target.id);
+    if (event.target.id === app.sequence[app.indice]) {
+        if (app.indice === app.sequence.length - 1) {
+            app.nextMove();
+        }
+        else {
+            app.timeoutRef = setTimeout(app.endGame, 5000);
+            app.indice++;
+        }
+    }
+    else {
+        app.endGame();
+    }
+
+}`
+        },
+        {
+            code:
 ``
         },
         {
-            code: 
+            code:
 ``
         },
         {
-            code: 
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
 ``
         },
     ]
-};
+}
