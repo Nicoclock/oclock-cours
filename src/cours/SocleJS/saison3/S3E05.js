@@ -448,7 +448,7 @@ const S3E05 = () => {
                         <Exo>
                             <Enonce text="Bonus : passez un tableau de passions en paramètre à description.ejs" />
                             <Enonce text="Ajoutez un <ul> à description" />
-                            <Enonce text="Faites un <li> de chaque valeur du tableau avec un for ou un forEach" />
+                            <Enonce text="Faites un <li> de chaque valeur du tableau avec un for" />
                         </Exo>
                         <Demo type="ejs">
                             <Code step={snippets.ejs[snippet++]} />

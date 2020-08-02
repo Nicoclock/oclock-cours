@@ -136,11 +136,6 @@ const S3E01 = props => {
                             <Item text="Equivalent de la console pour le navigateur" />
                             <Item text="Pratique pour tester un truc vite fait" />
                             <Item text="On peut l'utiliser directement : node dans le terminal" />
-                        </ListItem>
-                        <Demo type="REPL">
-                            <Code step={snippets.repl[snippet++]} />
-                        </Demo>
-                        <ListItem>
                             <Item text="Et c'est parti, on peut déclarer nos variables" />
                         </ListItem>
                         <Demo type="REPL">
@@ -257,8 +252,8 @@ const S3E01 = props => {
                             <Item text="On corse un peu, on va modifier l'affichage selon le % obtenu" />
                         </ListItem>
                         <Exo>
-                            <Enonce text="SI pourcentage est inférieur à 15% ALORS afficher un avertissement" />
-                            <Enonce text="SINON SI pourcentage < 4% ALORS afficher une erreur" />
+                            <Enonce text="SI pourcentage est inférieur à 4% ALORS afficher une erreur" />
+                            <Enonce text="SINON SI pourcentage < 15% ALORS afficher un warning" />
                             <Enonce text="SINON afficher un log" />
                         </Exo>
                         <Demo type="Node">

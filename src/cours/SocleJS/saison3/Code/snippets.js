@@ -164,8 +164,6 @@ const answers = [];`
 // l'événement close : https://nodejs.org/docs/latest-v10.x/api/readline.html#readline_event_close
 }).on('close', () => {
     console.log('Merci de votre confiance, ça fera 85€');
-    // rappel : un programme node ne se ferme pas tout seul
-    process.exit(1);
 });`
         },
         {
@@ -1773,4 +1771,233 @@ app.chain(tablify.addTFoot);
 app.chain(tablify.endTable);`
         }
     ]
-}
+};
+
+export const day8 = {
+    post: [
+        {
+            language: 'XML',
+            code:
+`<%- include('partials/header') %>
+
+<form action="/login" method="POST">
+    <div>
+        <label for="username">Nom d'utilisateur :</label>
+        <input type="text" name="username" id="username">
+    </div>
+    <div>
+        <label for="password">Mot de passe :</label>
+        <input type="password" name="password" id="password">
+    </div>
+    <input type="submit" value="Valider">
+</form>
+
+<%- include('partials/footer') %>`
+        },
+        {
+            language: 'CSS',
+            code:
+`form {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 300px;
+    min-height: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  form div {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  form input {
+    text-align: center;
+    padding: 5px;
+  }
+  
+  form input[type="submit"] {
+    width: 50%;
+    margin: 0px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px black;
+}`
+        },
+        {
+            code:
+`//route pour la méthode GET, va faire un rendu de la vue login
+app.get('/login', (request, response) => {
+    response.render('login');
+});`
+        },
+        {
+            code:
+`//route pour la méthode POST, va vérifier les données envoyées
+//Si l'utilisateur est connu, redirection vers la route /
+//Sinon, ajout d'une erreur au formulaire login
+app.post('/login', (request, response) => {
+    //les infos du formulaire en POST se retrouvent dans la propriété body de la requête
+    console.log(request.body);
+
+    response.send('');
+
+    //check utilisateur
+
+    //si connu, on redirige vers /
+    //sinon, en renvoie le formulaire login avec un message d'erreur
+});`
+        },
+        {
+            code:
+`//on importe users.json
+const users = require('./users.json');`
+        },
+        {
+            code:
+`//route pour la méthode POST, va vérifier les données envoyées
+//Si l'utilisateur est connu, redirection vers la route /
+//Sinon, ajout d'une erreur au formulaire login
+app.post('/login', (request, response) => {
+    //les infos du formulaire en POST se retrouvent dans la propriété body de la requête
+    console.log(request.body);
+
+    //check utilisateur
+    const user = users.find(user => user.userName === request.body.username && user.password === request.body.password);
+    if (user) {
+        //si connu, on redirige vers /
+        response.redirect('/');
+    } else {
+        //sinon, en renvoie le formulaire login avec un message d'erreur
+        response.render('login', {error: 'Utilisateur inconnu ...'});
+    }
+});`
+        },
+        {
+            code:
+`//on déclare une variable globale 
+let currentUser;
+
+//on ajoute un middleware qui va rendre cette variable disponible dans toutes les vues
+app.use((request, response, next) => {
+    app.locals.user = currentUser;
+    next();
+});`
+        },
+        {
+            code:
+`//route pour la méthode POST, va vérifier les données envoyées
+//Si l'utilisateur est connu, redirection vers la route /
+//Sinon, ajout d'une erreur au formulaire login
+app.post('/login', (request, response) => {
+    //les infos du formulaire en POST se retrouvent dans la propriété body de la requête
+    console.log(request.body);
+
+    //check utilisateur
+    const user = users.find(user => user.userName === request.body.username && user.password === request.body.password);
+    if (user) {
+        currentUser = user;
+        //si connu, on redirige vers /
+        response.redirect('/');
+    } else {
+        //sinon, en renvoie le formulaire login avec un message d'erreur
+        response.render('login', {error: 'Utilisateur inconnu ...'});
+    }
+});`
+        },
+        {
+            language: 'XML',
+            code:
+`<%- include('partials/header') %>
+
+<form action="/login" method="POST">
+    <div>
+        <label for="username">Nom d'utilisateur :</label>
+        <input type="text" name="username" id="username">
+    </div>
+    <div>
+        <label for="password">Mot de passe :</label>
+        <input type="password" name="password" id="password">
+    </div>
+    <input type="submit" value="Valider">
+</form>
+
+<% if (locals.error) { %>
+    <div class="error"><%= error %></div>
+<% } %>
+
+<%- include('partials/footer') %>`
+        },
+        {
+            language: 'CSS',
+            code:
+`.error {
+    font-size: 20px;
+    text-align: center;
+    color: red;
+}`
+        },
+        {
+            language: 'XML',
+            code:
+`<body>
+<header>
+    <h1>
+        <a href="/">GameHub</a>
+    </h1>
+    <% if (user) {%> 
+        <h2 class="userTitle">Bienvenue <%= user.realName %> </h2>
+    <% } %> 
+    <nav>
+        <ul>
+            <% for (const game of locals.json) { %>
+                <li>
+                    <a href="/game/<%= game.name %>"><%=game.title %></a>
+                </li>
+            <% } %>
+        </ul>
+    </nav>
+</header>`
+        },
+        {
+            language: 'CSS',
+            code:
+`.userTitle {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+}`
+        },
+        {
+            code:
+`//route pour la méthode POST, va vérifier les données envoyées
+//Si l'utilisateur est connu, redirection vers la route /
+//Sinon, ajout d'une erreur au formulaire login
+app.post('/login', (request, response) => {
+    //les infos du formulaire en POST se retrouvent dans la propriété body de la requête
+    console.log(request.body);
+
+    //check utilisateur
+    const user = users.find(user => user.userName === request.body.username && bcrypt.compareSync(request.body.password, user.password));
+    if (user) {
+        currentUser = user;
+        //si connu, on redirige vers /
+        response.redirect('/');
+    } else {
+        //sinon, en renvoie le formulaire login avec un message d'erreur
+        response.render('login', {error: 'Utilisateur inconnu ...'});
+    }
+});`
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+    ]
+};

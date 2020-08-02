@@ -379,7 +379,7 @@ const S3E02 = props => {
                             <Enonce text="Format de la réponse : comme vous voulez, plain ou HTML, mais en UTF-8" />
                             <Enonce text="Bonus : " />
                             <Enonce text="- si la langue n'est pas reconnue, trouvez comment envoyer une erreur 404 en plus du message" />
-                            <Enonce text="- la doc de notre est votre amie : https://nodejs.org/api/http.html" />
+                            <Enonce text="- la doc de node est votre amie : https://nodejs.org/api/http.html" />
                             <Enonce text="Bonus qui pique :" />
                             <Enonce text="- trouvez dans la requête le header qui parle de langue et comment le récupérer" />
                             <Enonce text="- conditionnez votre réponse non plus sur l'URL mais sur la première langue de ce header" />

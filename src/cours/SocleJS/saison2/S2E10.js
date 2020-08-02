@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 
-import {Card, Code, List, ListItem, Item, Control, Recap, Demo, BoxItem, Sondage} from "../../../common";
+import {Card, Code, List, ListItem, Item, Control, Recap, Demo, BoxItem, Sondage, Git} from "../../../common";
 import {simon} from "./Code/challenges";
 
 import "../../style.scss"
@@ -29,6 +29,7 @@ const S2E10 = () => {
                         <Demo type="repo Simon">
                             <Code step={simon.etapes[challenge++]} />
                         </Demo>
+                        <Git commit="Etape 1" />
                         <ListItem title="Etape2">
                             <Item text="On identifie la méthode : showMessage" />
                             <Item text="On identifie l'id du bouton à cacher : go" />
@@ -57,6 +58,7 @@ const S2E10 = () => {
                         <Demo type="repo Simon">
                             <Code step={simon.etapes[challenge++]} />
                         </Demo>
+                        <Git commit="Etape 2" />
                         <ListItem title="Etape 3">
                             <Item text="Pas de feinte, on applique juste l'énoncé" />
                         </ListItem>
@@ -64,6 +66,7 @@ const S2E10 = () => {
                         <Demo type="repo Simon">
                             <Code step={simon.etapes[challenge++]} />
                         </Demo>
+                        <Git commit="Etape 3" />
                         <ListItem title="Etape 4">
                             <Item text="on ajoute une propriété indice à 0 dans l'object" />
                         </ListItem>
@@ -90,6 +93,7 @@ const S2E10 = () => {
                         <Demo type="repo Simon">
                             <Code step={simon.etapes[challenge++]} />
                         </Demo>
+                        <Git commit="Etape 4" />
                         <ListItem title="Etape 5">
                             <Item text="nextMove : on ajoute une couleur à la séquence" />
                             <Item text="On pense bien à remettre indice à 0 pour relire la séquence du début" />
@@ -99,6 +103,7 @@ const S2E10 = () => {
                         <Demo type="repo Simon">
                             <Code step={simon.etapes[challenge++]} />
                         </Demo>
+                        <Git commit="Etape 5" />
                         <ListItem title="Etape 6">
                             <Item text="On met le message quand Simon prend la parole" />
                             <Item text="Où on sait que c'est au player de causer ?" />
@@ -109,6 +114,7 @@ const S2E10 = () => {
                         <Demo type="repo Simon">
                             <Code step={simon.etapes[challenge++]} />
                         </Demo>
+                        <Git commit="Etape 6" />
                         <ListItem title="Etape 7">
                             <Item text="Simon a fini de parler, on sait où c'est dans le code" />
                             <Item text="setTimeout retourne une référence" />
@@ -118,6 +124,7 @@ const S2E10 = () => {
                         <Demo type="repo Simon">
                             <Code step={simon.etapes[challenge++]} />
                         </Demo>
+                        <Git commit="Etape 7" />
                         <ListItem title="Bonus">
                             <Item text="On va utiliser une nouvelle prop. De quel type ?" />
                             <Item text="Quand Simon parle, on la passe à true" />
@@ -128,6 +135,7 @@ const S2E10 = () => {
                         <Demo type="repo Simon">
                             <Code step={simon.etapes[challenge++]} />
                         </Demo>
+                        <Git commit="Bonus" />
                         <Control>
                             <BoxItem text="Comment ça va ? Vous voyez le principe pour ce genre d'exo ?" />
                         </Control>

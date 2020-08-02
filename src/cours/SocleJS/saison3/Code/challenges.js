@@ -20,7 +20,7 @@ export const ettehcruof = {
         {
             code:
 `
-const os = require('os);
+const os = require('os');
 ...
 rl.question('Votre âge ?' + os.EOL, (answer) => {
     console.log('Réponse', answer);
@@ -823,8 +823,8 @@ cityTime.setLocale('fr');`
 `const capitalCities = [
     ...
     {
-        name: 'Reykjavic',
-        tz: 'Atlantic/Reykjavic'
+        name: 'kc',
+        tz: 'Atlantic/Reykjavik'
     },
     {
         name: 'Antananarivo',
@@ -837,7 +837,7 @@ cityTime.setLocale('fr');`
             code:
 `<ul>
     ...
-    <li><a href="/city/reykjavic">Reykjavic</a></li>
+    <li><a href="/city/reykjavik">Reykjavik</a></li>
     <li><a href="/city/antananarivo">Antananarivo</a></li>
 </ul>`
         },
@@ -1152,7 +1152,7 @@ export const gamehubMw = {
             code:
 `<%- include('./partials/header')  %> 
 
-<div class="img404Game"></div>
+<div class="img404"></div>
 
 <%- include('./partials/footer') %>`
         },
@@ -1161,7 +1161,7 @@ export const gamehubMw = {
 `if (game) {
     response.render(nomDuJeu, {game});
 } else {
-    response.status(404).render('404Game');
+    response.status(404).render('404');
 }`
         },
         {
@@ -1213,8 +1213,227 @@ app.use((request, response, next) => {
 });`
         },
         {
+            language: 'JSON',
+            code:
+`{
+    "name": "ettehcruof",
+    "title": "Fourchette over HTTP",
+    "cssFile": "ettehcruof.css",
+    "jsFile": "ettehcruofMessages.js"
+}`
+        },
+        {
+            code:
+`//mise en place route globale pour les jeux
+app.get('/game/ettehcruof', (request, response, next) => {
+    ettehcruof.start();
+    response.locals.action = "new";
+    response.locals.ettehcruof = ettehcruof;
+    next();
+});`
+        },
+        {
+            language: 'XML',
+            code:
+`<p class="answer">
+    <a id="answer-plus" href="/game/ettehcruof?action=plus">Plus</a>
+    <a id="answer-moins" href="/game/ettehcruof?action=moins">Moins</a>
+    <a id="answer-bravo" href="/game/ettehcruof?action=bravo">Bravo</a>
+</p>`
+        },
+        {
+            code:
+`<p class="answer">
+    <a href="/game/ettehcruof">Rejouer</a>
+</p>`
+        },
+        {
+            code:
+`//Ajout du middleware pour récupérer les paramètres de la requête
+app.use(express.urlencoded({extended: true}));`
+        },
+        {
+            code:
+`//mise en place route dédiée à fourchette over HTTP
+app.get('/game/ettehcruof', (request, response, next) => {
+    console.log(request.query);
+    const action = request.query.action;
+    switch(action) {
+        case 'plus':
+            ettehcruof.plus();
+            break;
+        case 'moins':
+            ettehcruof.moins();
+            break;
+        case 'bravo':
+        default:
+            ettehcruof.start();
+    }
+    response.locals.action = action;
+    response.locals.ettehcruof = ettehcruof;
+    next();
+});`
+        },
+        {
             code:
 ``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        }
+    ]
+};
+
+export const chifumi = {
+    etapes: [
+        {
+            code:
+`const game = {
+    values: ['pierre', 'feuille', 'ciseau'],
+    score: {
+        player: 0,
+        machine: 0
+    },
+}
+
+module.exports = game;`
+        },
+        {
+            code:
+`reset: () => {
+    game.score.player = game.score.machine = 0;
+},`
+        },
+        {
+            code:
+`play: (playerValue) => {
+    const machineValue = game.values[Math.floor(Math.random()*game.values.length)];
+    console.log('Value machine : ', machineValue);
+    if (playerValue === machineValue) {
+        return 'draw';
+    }
+    let winner;
+    switch(playerValue) {
+        case 'pierre':
+            winner = machineValue === 'feuille' ? 'machine' : 'player';
+            break;
+        case 'feuille':
+            winner = machineValue === 'ciseau' ? 'machine' : 'player';
+            break;
+        case 'ciseau':
+            winner = machineValue === 'pierre' ? 'machine' : 'player';
+            break;
+        default: return 'Je n\\'ai pas compris ...';
+    }
+    game.score[winner]++;
+    return winner;
+}`
+        },
+        {
+            code:
+`const express = require('express');
+
+const chifumi = require('./modules/chifumi');
+
+const app = express();
+
+const port = 3000;
+
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
+app.listen(port, () => {
+    console.log(\`Server started on \${port}\`);
+});`
+        },
+        {
+            code:
+`<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <title>Chifumi</title>
+    </head>
+    <body>
+        <div>
+            <h3>Scores</h3>
+            <div>Player : <%= player %> </div>
+            <div>Machine : <%= machine %> </div>
+        </div>
+        
+        <form method="POST" action="/">
+            <input type="submit" name="playerValue" value="pierre" />
+            <input type="submit" name="playerValue" value="feuille" />
+            <input type="submit" name="playerValue" value="ciseau" />
+        </form>
+    </body>
+</html>`
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+``
+        },
+        {
+            code:
+`<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <title>Chifumi</title>
+    </head>
+    <body>
+        <div>
+            <h3>Scores</h3>
+            <div>Player : <%= player %> </div>
+            <div>Machine : <%= machine %> </div>
+        </div>
+
+        <% if (locals.result === 'player') { %>
+            <div>Victoire !!</div>
+        <% } else if (locals.result === 'machine') {%> 
+            <div>Défaite ...</div>
+        <% } else { %> 
+            <div>Egalité</div>
+        <% } %>
+        
+        <form method="POST" action="/">
+            <input type="submit" name="playerValue" value="pierre" />
+            <input type="submit" name="playerValue" value="feuille" />
+            <input type="submit" name="playerValue" value="ciseau" />
+        </form>
+    </body>
+</html>`
         },
         {
             code:

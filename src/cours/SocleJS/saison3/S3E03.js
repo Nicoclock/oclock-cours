@@ -171,8 +171,8 @@ const S3E03 = () => {
                             <BoxItem text="Vous digérez ? Vous voyez l'intérêt du truc ?" />
                         </Control>
                         <Sondage question="Un module peut exporter ..." reponses={["un objet", "des variables", "n'importe quelle valeur"]} />
-                        <Sondage question="Pour importer un module, on utilise ..." reponses={["une boite d'import/export", "require", "import"]} />
-                        <Sondage question="Pour exporter, un module utilise ..." reponses={["export module", "module.exports", "un container"]} />
+                        <Sondage question="Pour importer un module, on utilise ..." reponses={["une boite d'import/export", "require", "add"]} />
+                        <Sondage question="Pour exporter des valeurs, un module utilise ..." reponses={["export module", "module.exports", "un camion"]} />
                         <Exo>
                             <Enonce text="On a l'export suivant dans le fichier module.js :" />
                             <Snippet lines={snippets.module[snippet++].code} />
