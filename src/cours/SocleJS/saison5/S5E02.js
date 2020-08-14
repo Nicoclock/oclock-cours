@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce, Snippet, ExoSondage} from "../../../common";
+import {Card, Code, List, ListItem, Item, SubItem, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce, Snippet, ExoSondage} from "../../../common";
 import {day2 as snippets} from "./Code/snippets";
 
 import "../../style.scss"

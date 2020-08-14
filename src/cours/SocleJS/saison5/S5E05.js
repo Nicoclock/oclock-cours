@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce, Snippet, ExoSondage} from "../../../common";
+import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Recap, Transition, Demo, BoxItem, Sondage} from "../../../common";
 import {day5 as snippets} from "./Code/snippets";
 
 import "../../style.scss"
@@ -86,9 +86,6 @@ const S5E05 = () => {
                             <Code step={snippets.ar[snippet++]} />
                         </Demo>
                         <ListItem title="Essai dans test.js" />
-                        <Demo type="repo Code">
-                            <Code step={snippets.ar[snippet++]} />
-                        </Demo>
                         <Demo type="repo Code">
                             <Code step={snippets.ar[snippet++]} />
                         </Demo>

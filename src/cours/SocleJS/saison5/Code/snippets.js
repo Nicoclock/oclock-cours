@@ -1716,7 +1716,7 @@ insert(callback) {
             //dans le callback, on passe l'instance courante fraichement mise à jour
             callback(null, this);
         } else {
-            callback('Une erreur s\'est produite, aucun id reçu en retour', this);
+            callback('Une erreur s\\'est produite, aucun id reçu en retour', this);
         }
     });
 }`
@@ -1756,7 +1756,7 @@ update(callback) {
         if (result.rowCount) {
             callback(null, this);
         } else {
-            callback('Une erreur s\'est produite, aucun enregistrement modifié', this);
+            callback('Une erreur s\\'est produite, aucun enregistrement modifié', this);
         }
     });
 }`
@@ -1790,7 +1790,7 @@ delete(callback) {
             callback(null, true);
         } else {
             //en cas d'erreur, on renvoie l'instance puisqu'elle n'a pas été supprimée
-            callback('Une erreur s\'est produite, aucun enregistrement modifié', this);
+            callback('Une erreur s\\'est produite, aucun enregistrement modifié', this);
         }
     });
 }`
@@ -1861,7 +1861,7 @@ static findAll(callback) {
             this.id = result.rows[0].id;
             callback(null, this);
         } else {
-            callback('Une erreur s\'est produite, aucun id reçu en retour', this);
+            callback('Une erreur s\\'est produite, aucun id reçu en retour', this);
         }
     });
 }`
@@ -1877,7 +1877,7 @@ static findAll(callback) {
         if (result.rowCount) {
             callback(null, this);
         } else {
-            callback('Une erreur s\'est produite, aucun enregistrement modifié', this);
+            callback('Une erreur s\\'est produite, aucun enregistrement modifié', this);
         }
     });
 }`
@@ -1892,7 +1892,7 @@ static findAll(callback) {
         if (result.rowCount) {
             callback(null, true);
         } else {
-            callback('Une erreur s\'est produite, aucun enregistrement modifié', this);
+            callback('Une erreur s\\'est produite, aucun enregistrement modifié', this);
         }
     });
 }`
@@ -2012,7 +2012,7 @@ static findAll(callback) {
             this.id = result.rows[0].id;
             callback(null, this);
         } else {
-            callback('Une erreur s\'est produite, aucun id reçu en retour', this);
+            callback('Une erreur s\\'est produite, aucun id reçu en retour', this);
         }
     });
 }`
@@ -2059,7 +2059,7 @@ static findAll(callback) {
         if (result.rowCount) {
             callback(null, this);
         } else {
-            callback('Une erreur s\'est produite, aucun enregistrement modifié', this);
+            callback('Une erreur s\\'est produite, aucun enregistrement modifié', this);
         }
     });
 }`
@@ -2075,7 +2075,7 @@ static findAll(callback) {
         if (result.rowCount) {
             callback(null, true);
         } else {
-            callback('Une erreur s\'est produite, aucun enregistrement modifié', this);
+            callback('Une erreur s\\'est produite, aucun enregistrement modifié', this);
         }
     });
 }`
@@ -2236,6 +2236,9 @@ Question.findBy({id: 1, quiz_id: 1}, (error, instances) => {
 
 //on commence par importer dotenv pour ajouter le contenu de .env dans les variables d'environnement
 require('dotenv').config();
+
+//on import la classe dont on a besoin
+const {Sequelize} = require("sequelize");
 
 //on import la classe dont on a besoin
 const sequelize = new Sequelize(process.env.PG_URL,{
@@ -2475,7 +2478,7 @@ User.findByPk(3, {
     include: 'quizzes'
 })
 .then(user => {
-    console.log(user.firstname, user.lastname, ' est l\'auteur de ', user.quizzes.length+' quiz');
+    console.log(user.firstname, user.lastname, ' est l\\'auteur de ', user.quizzes.length+' quiz');
 });
 
 //et ça marche dans l'autre sens
@@ -2913,6 +2916,11 @@ router.get('/', mainController.home);
         });
     }
 }`
+        },
+        {
+            code:
+`//infos d'un quiz
+router.get('/quizz/:id', quizzController.getQuizz);`
         }
     ],
     auth: [
@@ -3388,9 +3396,9 @@ Toutes les promesses prennent en argument une fonction avec elle-même 2 argumen
 const myPromise = new Promise(
     function(resolve, reject) {
         if (traitementIsOk) {
-            resolve('TOUT VA BIEN ! Tout s\'est bien passé');
+            resolve('TOUT VA BIEN ! Tout s\\'est bien passé');
         } else {
-            reject('ERROR !! Une erreur s\'est produite');
+            reject('ERROR !! Une erreur s\\'est produite');
         }
     }
 );
@@ -3433,9 +3441,9 @@ const myPromise = new Promise(
     function(resolve, reject) {
         //on simule un temps de traitement (le temps de recevoir des infos de la BDD, de lire un fichier, ...) avec un timeout
         if (myBoolean) {
-            resolve('TOUT VA BIEN ! Tout s\'est bien passé');
+            resolve('TOUT VA BIEN ! Tout s\\'est bien passé');
         } else {
-            reject('ERROR !! Une erreur s\'est produite');
+            reject('ERROR !! Une erreur s\\'est produite');
         }
     }
 );`
@@ -3616,35 +3624,147 @@ const doTheJob = async () => {
 
 //on appelle la fonction pour lancer le traitement
 doTheJob();`
+        }
+    ]
+};
+
+export const day9 = {
+    git: [
+        {
+            language: 'BASH',
+            code: 
+`cd Playlist; git init`
         },
         {
-            code:
+            language: 'BASH',
+            code: 
+`ls -l .git`
+        },
+        {
+            language: 'MARKDOWN',
+            code: 
+`# Commandes GIT
+
+## git init
+
+- initialise le répertoire courant comme dépôt git
+- création du dossier .git contenant les infos nécessaires à la gestion du dépôt`
+        },
+        {
+            language: 'BASH',
+            code: 
+`git add README.md`
+        },
+        {
+            language: 'BASH',
+            code: 
+`git commit -m "Ajout README.md"`
+        },
+        {
+            language: 'MARKDOWN',
+            code: 
+`---
+
+## git status
+
+- donne l'état du dépôt à un moment donné
+
+---
+
+## git add
+
+- ajout d'un ou plusieurs fichiers dans la zone de surveillance
+
+    - \`git add README.md\` ajoute le fichier README.md
+
+    - \`git add fichier1 fichier2\` ajoute les fichiers listés
+
+    - \`git add .\` ajoute tous les fichiers non surveillés 
+
+- à chaque modification, on doit ajouter la nouvelle version du fichier dans la zone de surveillance
+
+---
+
+## git rm --cached 
+
+- retire un ou plusieurs fichiers de la zone de surveillance
+
+    - \`git rm --cached README.md\`
+
+---
+
+## git commit
+
+- enregistre dans l'historique une étape du développement
+
+    - \`git commit -m "message explicite sur l'étape de développement"\``
+        },
+        {
+            language: 'BASH',
+            code: 
+`git commit -m "Complément commandes README.md"`
+        },
+        {
+            language: 'BASH',
+            code: 
+`git log`
+        },
+        {
+            language: 'BASH',
+            code: 
+`git config --global alias.tree 'log --graph --oneline --all'`
+        },
+        {
+            language: 'BASH',
+            code: 
+`git commit --amend`
+        },
+        {
+            language: 'BASH',
+            code: 
+`git add playlist.md
+git commit -m "Ajout playlist.md"`
+        },
+        {
+            language: 'BASH',
+            code: 
+`git remote add origin git@github.com:Nicoclock/playlist.git`
+        },
+        {
+            language: 'BASH',
+            code: 
+`git push -u origin master`
+        },
+        {
+            language: 'BASH',
+            code: 
+`git remote add prof git@`
+        },
+        {
+            language: 'BASH',
+            code: 
+`git remote update`
+        },
+        {
+            language: 'BASH',
+            code: 
 ``
         },
         {
-            code:
+            language: 'BASH',
+            code: 
 ``
         },
         {
-            code:
+            language: 'BASH',
+            code: 
 ``
         },
         {
-            code:
-``
-        },
-        {
-            code:
-``
-        },
-        {
-            code:
-``
-        },
-        {
-            code:
+            language: 'BASH',
+            code: 
 ``
         },
     ]
-}
+};
 

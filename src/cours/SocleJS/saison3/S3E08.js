@@ -1,19 +1,14 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce, Snippet, ExoSondage} from "../../../common";
+import {Card, Doc, Code, List, ListItem, Item, Recap, Demo, BoxItem, Sondage} from "../../../common";
 import {gamehubMw as gamehub} from "./Code/challenges";
 import {day8 as snippets} from "./Code/snippets";
 
 import "../../style.scss"
 
-const S3E08 = props => {
+const S3E08 = () => {
     let challenge = 0;
     let snippet = 0;
-
-    const resetSnippet = () => {
-        snippet = 0;
-        return snippet;
-    };
     return (
         <Fragment>
             <div className="Title">Response parser</div>
