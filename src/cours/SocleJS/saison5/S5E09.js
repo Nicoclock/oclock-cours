@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce, Snippet, ExoSondage} from "../../../common";
+import {Card, Doc, Code, List, ListItem, Item, SubItem, Question, Recap, Demo, BoxItem, Sondage} from "../../../common";
 import {day9 as snippets} from "./Code/snippets";
 
 import "../../style.scss"
@@ -9,10 +9,6 @@ import "../../style.scss"
 
 const S5E09 = () => {
     let snippet = 0;
-    const resetSnippet = () => {
-        snippet = 0;
-        return snippet;
-    };
     return (
         <Fragment>
             <div className="Title">Get Intimate with good Tools</div>

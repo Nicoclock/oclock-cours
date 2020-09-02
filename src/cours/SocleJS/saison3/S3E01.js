@@ -5,7 +5,7 @@ import {day1 as snippets} from "./Code/snippets";
 
 import "../../style.scss"
 
-const S3E01 = props => {
+const S3E01 = () => {
     let snippet = 0;
     const resetSnippet = () => {
         snippet = 0;
