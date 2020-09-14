@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 
-import {Card, Doc, Code, List, Click, ListItem, Item, SubItem, Question, Control, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce} from "../../../common";
+import {Card, Doc, Code, List, Click, ListItem, Item, Recap, Transition, Demo, BoxItem, Sondage, Exo, Enonce} from "../../../common";
 import {day8 as snippets} from "./Code/snippets";
 
 import "../../style.scss"
@@ -17,6 +17,7 @@ const S1E08 = props => {
         <div className="Inner">
             <List>
                 <Card title="Correction" duration="3:00:00">
+                    <Sondage question="Dur ce challenge ?" reponses={["la misèèère !", "les forms ça pique", "j'ai un peu galéré", "ça a été"]} />
                     <ListItem title="Mise en place">
                         <Item text="Copie de index vers cart.html" />
                         <Item text="On repart de cette base pour le CSS et le layout général" />
@@ -145,6 +146,7 @@ const S1E08 = props => {
                     </ListItem>
                     <ListItem title="1er exemple">
                         <Item text="on part de notre panier" />
+                        <Item text="Déjà, on ajoute la meta viewport" />
                         <Item text="CTRL + P : on simule une impression" />
                         <Item text="trop d'infos, pas très utile, on va en virer !" />
                     </ListItem>

@@ -163,7 +163,7 @@ const S2E05 = () => {
                             reponses={["calendrier", "écouteur d'événement", "object JS"]} />
                         <Sondage question="Une fonction de rappel se dit ... ?" 
                             reponses={["callback", "comeback", "cookback"]} />
-                        <Sondage question="Un callback a toujours un paramètre event" 
+                        <Sondage question="Un callback dans addEventListener a toujours un paramètre event" 
                             reponses={["oui", "non", "C'est quoi un callback ?"]} />
                         <Sondage question="Ce paramètre event du callback, d'où il sort ?" 
                             reponses={["il faut le créer", "JS le crée pour nous", "de chez sa mère"]} />
