@@ -884,13 +884,13 @@ On fait comme dans la doc : pas besoin de tout importer, on ne prend que ce qui 
 const {Client} = require('pg');
 
 /* Connection depuis une URL */
-//const client = new Client('postgresql://etudiant:js4life@oclockpg.cbyp1h3aq7pw.eu-west-3.rds.amazonaws.com:5432/trombi');
+//const client = new Client('postgresql://etudiant:XXX@oclockpg.cbyp1h3aq7pw.eu-west-3.rds.amazonaws.com:5432/trombi');
 
 /* Connection avec un object en argument */
 // const client = new Client({
 //     host: 'oclockpg.cbyp1h3aq7pw.eu-west-3.rds.amazonaws.com',
 //     user: 'etudiant',
-//     password: 'js4life',
+//     password: 'XXX',
 //     database: 'trombi'
 // });
 
@@ -900,7 +900,7 @@ On utilisera dotenv pour charger ces variables dans l'environnement
 
 PGHOST=oclockpg.cbyp1h3aq7pw.eu-west-3.rds.amazonaws.com
 PGUSER=etudiant
-PGPASSWORD=js4life
+PGPASSWORD=XXX
 PGDATABASE=trombi
 PGPORT=5432
 */
